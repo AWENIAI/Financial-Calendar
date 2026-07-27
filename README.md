@@ -15,6 +15,12 @@ https://aweniai.github.io/Financial-Calendar/calendar/US_HIGH.ics
 https://aweniai.github.io/Financial-Calendar/calendar/GLOBAL_KEY.ics
 ```
 
+站点首页也可以直接打开：
+
+```text
+https://aweniai.github.io/Financial-Calendar/
+```
+
 | 文件 | 内容 |
 |---|---|
 | `CN_HIGH.ics` | A股高风险事件 |

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Financial Calendar</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        background: #0b1020;
+        color: #e8ecff;
+        line-height: 1.6;
+      }
+      .wrap {
+        max-width: 840px;
+        margin: 0 auto;
+        padding: 40px 20px 56px;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 18px;
+        padding: 20px;
+        margin-top: 18px;
+        backdrop-filter: blur(18px);
+      }
+      h1, h2 { margin: 0 0 12px; }
+      p { margin: 8px 0; }
+      code, a {
+        color: #9dd6ff;
+        word-break: break-all;
+      }
+      ul { margin: 10px 0 0 20px; }
+      .tag {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(157, 214, 255, 0.12);
+        color: #9dd6ff;
+        font-size: 12px;
+        margin-bottom: 14px;
+      }
+      .muted { color: rgba(232, 236, 255, 0.72); }
+      .url {
+        display: block;
+        padding: 10px 12px;
+        margin-top: 8px;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.05);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="tag">Stock Risk Radar · ICS 订阅版</div>
+      <h1>Financial Calendar</h1>
+      <p class="muted">A股、港股、美股交易风险提醒订阅日历。把下面链接直接加到 Apple Calendar / Google Calendar 里。</p>
+
+      <section class="card">
+        <h2>订阅链接</h2>
+        <a class="url" href="calendar/CN_HIGH.ics">CN_HIGH.ics</a>
+        <a class="url" href="calendar/HK_HIGH.ics">HK_HIGH.ics</a>
+        <a class="url" href="calendar/US_HIGH.ics">US_HIGH.ics</a>
+        <a class="url" href="calendar/GLOBAL_KEY.ics">GLOBAL_KEY.ics</a>
+      </section>
+
+      <section class="card">
+        <h2>推荐订阅</h2>
+        <p>先订阅 <code>GLOBAL_KEY.ics</code>，它包含三市场的关键风险提醒。</p>
+        <p>地址：</p>
+        <code>https://aweniai.github.io/Financial-Calendar/calendar/GLOBAL_KEY.ics</code>
+      </section>
+
+      <section class="card">
+        <h2>自动更新</h2>
+        <p>每天北京时间 7:00 自动重新生成 ICS，再由 GitHub Actions 发布到 GitHub Pages。</p>
+      </section>
+    </main>
+  </body>
+  </html>
