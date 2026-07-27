@@ -106,6 +106,10 @@ public/calendar/US_HIGH.ics
 public/calendar/GLOBAL_KEY.ics
 ```
 
+### 自动更新
+
+GitHub Actions 已配置为每天北京时间 7:00 自动重新生成订阅文件，并在内容有变化时提交回 GitHub。这样 raw 订阅链接会保持最新。
+
 ## 新增事件方法
 
 编辑：
@@ -177,4 +181,3 @@ npm run generate
 - 支持 🔴 Critical / 🟠 High 两级风险标题。
 - 每条事件写入来源链接、影响资产、提醒原因和交易前检查清单。
 - README 增加 Apple Calendar / Google Calendar 订阅方法。
-
