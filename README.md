@@ -108,7 +108,12 @@ public/calendar/GLOBAL_KEY.ics
 
 ### 自动更新
 
-GitHub Actions 已配置为每天北京时间 7:00 自动重新生成订阅文件，并发布到 GitHub Pages。这样 Pages 订阅链接会保持最新。
+GitHub Actions 分成两条链路：
+
+1. 每天北京时间 7:00 重新生成订阅文件并推送到 `main`。
+2. `main` 有新提交后，自动发布到 GitHub Pages。
+
+这样 Pages 订阅链接会保持最新。
 
 如果是第一次启用，需要在 GitHub 仓库设置里确认：
 
