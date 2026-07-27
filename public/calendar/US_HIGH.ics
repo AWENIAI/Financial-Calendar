@@ -1,0 +1,177 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//AWEN Financial Calendar//Stock Risk Radar//ZH-CN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Stock Risk Radar - US High
+X-WR-CALDESC:美股高风险交易事件提醒
+X-WR-TIMEZONE:Asia/Shanghai
+BEGIN:VTIMEZONE
+TZID:Asia/Shanghai
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0800
+TZOFFSETTO:+0800
+TZNAME:CST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:risk-US-2026-07-30-43538b0112@financial-calendar
+DTSTAMP:20260727T150700Z
+DTSTART;TZID=Asia/Shanghai:20260730T020000
+DTEND;TZID=Asia/Shanghai:20260730T030000
+LOCATION:美国
+SUMMARY:🔴 [US] FOMC 利率决议：7月会议声明与发布会
+DESCRIPTION:风险等级：CRITICAL\n市场：US\n事件类型：Macro / Fed / FOMC\n影响资产：SPY\, QQQ\, ES\, NQ\, 美债\, 美元指数\, 黄金\n时间状态：confirmed\n来源：Federal Reserve\n来源链接：https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm\n\n为什么提醒：FOMC 利率决议会直接影响利率预期、美债收益率、美元指数和成长股估值。声明和发布会前后，指数期货与高估值科技股波动通常放大。\n\n交易前检查：1. 是否有未保护仓位；2. 是否需要降低杠杆；3. 是否避免声明发布前追单；4. 止损是否过近
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:CRITICAL
+X-SOURCE-URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+BEGIN:VALARM
+TRIGGER;RELATED=START:-P1D
+ACTION:DISPLAY
+DESCRIPTION:🔴 [US] FOMC 利率决议：7月会议声明与发布会
+END:VALARM
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:🔴 [US] FOMC 利率决议：7月会议声明与发布会
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-US-2026-08-07-0e78b395df@financial-calendar
+DTSTAMP:20260727T150700Z
+DTSTART;TZID=Asia/Shanghai:20260807T203000
+DTEND;TZID=Asia/Shanghai:20260807T210000
+LOCATION:美国
+SUMMARY:🔴 [US] 非农就业：7月 Employment Situation
+DESCRIPTION:风险等级：CRITICAL\n市场：US\n事件类型：Macro / Employment / NFP\n影响资产：SPY\, QQQ\, ES\, NQ\, 美债\, 美元指数\, 黄金\n时间状态：confirmed\n来源：BLS\n来源链接：https://www.bls.gov/schedule/news_release/empsit.htm\n\n为什么提醒：非农就业和失业率会影响美联储政策预期、收益率曲线和风险资产定价。数据公布前后 30 分钟波动通常放大。\n\n交易前检查：1. 是否有未保护仓位；2. 是否需要降低杠杆；3. 是否避免数据公布前追单；4. 止损是否过近
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:CRITICAL
+X-SOURCE-URL:https://www.bls.gov/schedule/news_release/empsit.htm
+BEGIN:VALARM
+TRIGGER;RELATED=START:-P1D
+ACTION:DISPLAY
+DESCRIPTION:🔴 [US] 非农就业：7月 Employment Situation
+END:VALARM
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:🔴 [US] 非农就业：7月 Employment Situation
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-US-2026-08-12-ddd98a2ad2@financial-calendar
+DTSTAMP:20260727T150700Z
+DTSTART;TZID=Asia/Shanghai:20260812T203000
+DTEND;TZID=Asia/Shanghai:20260812T210000
+LOCATION:美国
+SUMMARY:🔴 [US] CPI 发布：7月美国通胀数据
+DESCRIPTION:风险等级：CRITICAL\n市场：US\n事件类型：Macro / CPI\n影响资产：SPY\, QQQ\, ES\, NQ\, 美债\, 美元指数\, 黄金\n时间状态：confirmed\n来源：BLS\n来源链接：https://www.bls.gov/schedule/news_release/cpi.htm\n\n为什么提醒：CPI 会影响利率预期、美债收益率、美元指数和成长股估值。数据公布前后，指数和科技股波动通常放大。\n\n交易前检查：1. 是否有未保护仓位；2. 是否需要降低杠杆；3. 是否避免数据公布前追单；4. 止损是否过近
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:CRITICAL
+X-SOURCE-URL:https://www.bls.gov/schedule/news_release/cpi.htm
+BEGIN:VALARM
+TRIGGER;RELATED=START:-P1D
+ACTION:DISPLAY
+DESCRIPTION:🔴 [US] CPI 发布：7月美国通胀数据
+END:VALARM
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:🔴 [US] CPI 发布：7月美国通胀数据
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-US-2026-08-13-d91a904dea@financial-calendar
+DTSTAMP:20260727T150700Z
+DTSTART;TZID=Asia/Shanghai:20260813T203000
+DTEND;TZID=Asia/Shanghai:20260813T210000
+LOCATION:美国
+SUMMARY:🟠 [US] PPI 发布：7月生产者价格指数
+DESCRIPTION:风险等级：HIGH\n市场：US\n事件类型：Macro / PPI\n影响资产：SPY\, QQQ\, ES\, NQ\, 美债\, 美元指数\n时间状态：confirmed\n来源：BLS\n来源链接：https://www.bls.gov/schedule/news_release/ppi.htm\n\n为什么提醒：PPI 是通胀链条的重要输入，可能影响市场对后续 CPI、企业利润率和利率路径的预期。\n\n交易前检查：1. 数据公布前是否需要降低仓位；2. 是否避免在公布前追单；3. 高估值科技股仓位是否过重
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:HIGH
+X-SOURCE-URL:https://www.bls.gov/schedule/news_release/ppi.htm
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [US] PPI 发布：7月生产者价格指数
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-US-2026-08-19-0fa6ece2a0@financial-calendar
+DTSTAMP:20260727T150700Z
+DTSTART;TZID=Asia/Shanghai:20260819T213000
+DTEND;TZID=Asia/Shanghai:20260819T223000
+LOCATION:美国
+SUMMARY:🟠 [US] VIX 期权到期日
+DESCRIPTION:风险等级：HIGH\n市场：US\n事件类型：Derivatives / VIX Options Expiration\n影响资产：VIX\, SPX\, SPY\, QQQ\, ES\, NQ\n时间状态：confirmed\n来源：Cboe\n来源链接：https://www.cboe.com/tradable_products/vix/vix_options/specifications/\n\n为什么提醒：VIX 期权到期可能影响波动率产品、对冲需求和指数短期波动结构。当天及前后需关注波动率异常变化。\n\n交易前检查：1. 是否有波动率相关仓位；2. 指数对冲是否需要调整；3. 是否避免在流动性变化窗口追单
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:HIGH
+X-SOURCE-URL:https://www.cboe.com/tradable_products/vix/vix_options/specifications/
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [US] VIX 期权到期日
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-US-2026-08-20-d4ae50df3f@financial-calendar
+DTSTAMP:20260727T150700Z
+DTSTART;TZID=Asia/Shanghai:20260820T020000
+DTEND;TZID=Asia/Shanghai:20260820T023000
+LOCATION:美国
+SUMMARY:🟠 [US] FOMC 会议纪要发布
+DESCRIPTION:风险等级：HIGH\n市场：US\n事件类型：Macro / Fed Minutes\n影响资产：SPY\, QQQ\, ES\, NQ\, 美债\, 美元指数\n时间状态：confirmed\n来源：Federal Reserve\n来源链接：https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm\n\n为什么提醒：FOMC 纪要可能改变市场对未来利率路径和政策分歧的理解，影响美债收益率、美元和成长股估值。\n\n交易前检查：1. 是否持有对利率敏感的高估值资产；2. 是否需要避开纪要发布前后加仓；3. 是否需要检查隔夜风险
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:HIGH
+X-SOURCE-URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [US] FOMC 会议纪要发布
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-US-2026-08-21-61cd61631b@financial-calendar
+DTSTAMP:20260727T150700Z
+DTSTART;TZID=Asia/Shanghai:20260821T030000
+DTEND;TZID=Asia/Shanghai:20260821T040000
+LOCATION:美国
+SUMMARY:🟠 [US] 指数期权 AM-settled 最后交易日提醒
+DESCRIPTION:风险等级：HIGH\n市场：US\n事件类型：Derivatives / Index Options Last Trading Day\n影响资产：SPX\, SPY\, QQQ\, ES\, NQ\n时间状态：rule-based\n来源：Cboe\n来源链接：https://www.cboe.com/tradable_products/sp_500/spx_options/specifications/\n\n为什么提醒：月度 AM-settled 指数期权通常在到期日前一交易日结束交易，可能影响指数对冲、流动性和尾盘波动。\n\n交易前检查：1. 是否有指数期权或相关 ETF 仓位；2. 是否需要避免尾盘流动性冲击；3. 是否确认隔夜结算风险
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:HIGH
+X-SOURCE-URL:https://www.cboe.com/tradable_products/sp_500/spx_options/specifications/
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [US] 指数期权 AM-settled 最后交易日提醒
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-US-2026-08-22-8add174a96@financial-calendar
+DTSTAMP:20260727T150700Z
+DTSTART;TZID=Asia/Shanghai:20260822T030000
+DTEND;TZID=Asia/Shanghai:20260822T040000
+LOCATION:美国
+SUMMARY:🟠 [US] 月度期权到期日：OPEX 风险窗口
+DESCRIPTION:风险等级：HIGH\n市场：US\n事件类型：Derivatives / Monthly Options Expiration\n影响资产：SPX\, SPY\, QQQ\, ES\, NQ\n时间状态：rule-based\n来源：Cboe\n来源链接：https://www.cboe.com/tradable_products/sp_500/spx_options/specifications/\n\n为什么提醒：月度期权到期可能改变做市商对冲、指数流动性和盘中波动。临近收盘尤其需要关注 Gamma 暴露和尾盘异动。\n\n交易前检查：1. 是否有短期期权或指数 ETF 仓位；2. 是否需要避免尾盘追单；3. 是否需要减少隔夜暴露
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:HIGH
+X-SOURCE-URL:https://www.cboe.com/tradable_products/sp_500/spx_options/specifications/
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [US] 月度期权到期日：OPEX 风险窗口
+END:VALARM
+END:VEVENT
+END:VCALENDAR

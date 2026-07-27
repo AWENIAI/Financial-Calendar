@@ -1,0 +1,36 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//AWEN Financial Calendar//Stock Risk Radar//ZH-CN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Stock Risk Radar - HK High
+X-WR-CALDESC:港股高风险交易事件提醒
+X-WR-TIMEZONE:Asia/Shanghai
+BEGIN:VTIMEZONE
+TZID:Asia/Shanghai
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0800
+TZOFFSETTO:+0800
+TZNAME:CST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:risk-HK-2026-08-28-c2d165a2db@financial-calendar
+DTSTAMP:20260727T150700Z
+DTSTART;TZID=Asia/Shanghai:20260828T153000
+DTEND;TZID=Asia/Shanghai:20260828T160000
+LOCATION:香港
+SUMMARY:🟠 [HK] 港股指数期货/期权月度到期提醒
+DESCRIPTION:风险等级：HIGH\n市场：HK\n事件类型：Derivatives / HKEX Monthly Expiry\n影响资产：HSI\, HSCEI\, HSTECH\, 港股指数期货/期权\n时间状态：rule-based\n来源：HKEX\n来源链接：https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/Hang-Seng-Index-Futures-and-Options\n\n为什么提醒：港股指数期货/期权月度到期可能影响恒指、国企指数和恒生科技指数的对冲流与尾盘波动。港股流动性集中时段需要额外留意。\n\n交易前检查：1. 是否持有港股指数 ETF 或衍生品仓位；2. 是否需要关注尾盘流动性；3. 是否需要提前调整隔夜风险
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:HIGH
+X-SOURCE-URL:https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/Hang-Seng-Index-Futures-and-Options
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [HK] 港股指数期货/期权月度到期提醒
+END:VALARM
+END:VEVENT
+END:VCALENDAR
