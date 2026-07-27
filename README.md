@@ -6,13 +6,13 @@ A股、港股、美股交易风险事件的 ICS 订阅日历。
 
 ## 订阅链接
 
-如果仓库发布在 GitHub `main` 分支，可使用以下链接订阅：
+推荐使用 GitHub Pages 订阅链接：
 
 ```text
-https://raw.githubusercontent.com/AWENIAI/Financial-Calendar/main/public/calendar/CN_HIGH.ics
-https://raw.githubusercontent.com/AWENIAI/Financial-Calendar/main/public/calendar/HK_HIGH.ics
-https://raw.githubusercontent.com/AWENIAI/Financial-Calendar/main/public/calendar/US_HIGH.ics
-https://raw.githubusercontent.com/AWENIAI/Financial-Calendar/main/public/calendar/GLOBAL_KEY.ics
+https://aweniai.github.io/Financial-Calendar/calendar/CN_HIGH.ics
+https://aweniai.github.io/Financial-Calendar/calendar/HK_HIGH.ics
+https://aweniai.github.io/Financial-Calendar/calendar/US_HIGH.ics
+https://aweniai.github.io/Financial-Calendar/calendar/GLOBAL_KEY.ics
 ```
 
 | 文件 | 内容 |
@@ -108,7 +108,13 @@ public/calendar/GLOBAL_KEY.ics
 
 ### 自动更新
 
-GitHub Actions 已配置为每天北京时间 7:00 自动重新生成订阅文件，并在内容有变化时提交回 GitHub。这样 raw 订阅链接会保持最新。
+GitHub Actions 已配置为每天北京时间 7:00 自动重新生成订阅文件，并发布到 GitHub Pages。这样 Pages 订阅链接会保持最新。
+
+如果是第一次启用，需要在 GitHub 仓库设置里确认：
+
+```text
+Settings → Pages → Build and deployment → Source → GitHub Actions
+```
 
 ## 新增事件方法
 
