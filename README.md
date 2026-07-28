@@ -1,4 +1,4 @@
-# Financial Calendar｜交易风险提醒日历
+# Financial Calendar｜阿文风险提醒日历
 
 A股、港股、美股交易风险事件的 ICS 订阅日历。
 
@@ -23,21 +23,27 @@ https://aweniai.github.io/Financial-Calendar/
 
 | 文件 | 内容 |
 |---|---|
-| `CN_HIGH.ics` | A股高风险事件 |
-| `HK_HIGH.ics` | 港股高风险事件 |
-| `US_HIGH.ics` | 美股高风险事件 |
-| `GLOBAL_KEY.ics` | A股、港股、美股关键事件合集 |
+| `CN_HIGH.ics` | 阿文风险提醒日历 - A股高风险事件 |
+| `HK_HIGH.ics` | 阿文风险提醒日历 - 港股高风险事件 |
+| `US_HIGH.ics` | 阿文风险提醒日历 - 美股高风险事件 |
+| `GLOBAL_KEY.ics` | 阿文风险提醒日历 - A股、港股、美股关键事件合集 |
 
 ## 事件等级
 
-日历标题使用 emoji 表示风险等级：
+日历标题使用 emoji 表示风险等级，等级名称全部用中文：
 
 | 图标 | 等级 | 说明 |
 |---|---|---|
-| 🔴 | Critical | 必须重点关注 |
-| 🟠 | High | 高风险提醒 |
+| 🔴 | 极高 | 必须重点关注 |
+| 🟠 | 高 | 高风险提醒 |
 
 当前 `.ics` 只放入 🔴 和 🟠 事件，避免日历噪音过多。
+
+每条提醒会写入这 3 个核心部分：
+
+1. 市场反馈：当前市场已经怎么定价。
+2. 历史反应：类似周期里通常怎么走。
+3. 应对策略：我替你给出的具体处理方式。
 
 ## Apple Calendar 订阅方法
 
@@ -82,12 +88,14 @@ https://aweniai.github.io/Financial-Calendar/
 每条事件包含：
 
 - emoji 风险等级
+- 中文风险等级
 - 市场标签 `[CN] / [HK] / [US]`
 - 来源名称
 - 来源链接
 - 影响资产
-- 为什么提醒
-- 交易前检查清单
+- 市场反馈
+- 历史反应
+- 应对策略
 
 ## 开发与更新方法
 
@@ -185,7 +193,7 @@ npm run generate
 
 ## 更新日志
 
-### 2026-07-27
+### 2026-07-28
 
 - 初始化 `Financial-Calendar` 项目。
 - 新增交易风险事件数据文件 `data/risk-events.json`。
@@ -195,6 +203,7 @@ npm run generate
   - `HK_HIGH.ics`
   - `US_HIGH.ics`
   - `GLOBAL_KEY.ics`
-- 支持 🔴 Critical / 🟠 High 两级风险标题。
-- 每条事件写入来源链接、影响资产、提醒原因和交易前检查清单。
+- 订阅名称统一改为 `阿文风险提醒日历`。
+- 支持 🔴 极高 / 🟠 高 两级中文风险标题。
+- 每条事件写入来源链接、影响资产、市场反馈、历史反应和应对策略。
 - README 增加 Apple Calendar / Google Calendar 订阅方法。

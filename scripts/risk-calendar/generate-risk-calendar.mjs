@@ -12,42 +12,42 @@ const outputDir = path.join(rootDir, 'public/calendar');
 const LEVEL_META = {
   critical: {
     emoji: '🔴',
-    label: 'CRITICAL',
-    alarms: ['-P1D', '-PT30M']
+    label: '极高',
+    alarmTriggers: ['-P1D', '-PT30M']
   },
   high: {
     emoji: '🟠',
-    label: 'HIGH',
-    alarms: ['-PT1H']
+    label: '高',
+    alarmTriggers: ['-PT1H']
   }
 };
 
 const CALENDARS = [
   {
     file: 'CN_HIGH.ics',
-    name: 'Stock Risk Radar - CN High',
-    description: 'A股高风险交易事件提醒',
+    name: '阿文风险提醒日历 - A股高风险',
+    description: 'A股高风险交易提醒',
     filter: (event) => event.market === 'CN'
   },
   {
     file: 'HK_HIGH.ics',
-    name: 'Stock Risk Radar - HK High',
-    description: '港股高风险交易事件提醒',
+    name: '阿文风险提醒日历 - 港股高风险',
+    description: '港股高风险交易提醒',
     filter: (event) => event.market === 'HK'
   },
   {
     file: 'US_HIGH.ics',
-    name: 'Stock Risk Radar - US High',
-    description: '美股高风险交易事件提醒',
+    name: '阿文风险提醒日历 - 美股高风险',
+    description: '美股高风险交易提醒',
     filter: (event) => event.market === 'US'
   },
   {
     file: 'GLOBAL_KEY.ics',
-    name: 'Stock Risk Radar - Global Key',
+    name: '阿文风险提醒日历',
     description: 'A股、港股、美股关键交易风险事件合集',
-    filter: (event) => event.level === 'critical' || ['CN', 'HK', 'US'].includes(event.market)
+    filter: () => true
   }
-];
+]
 
 function readEvents() {
   const raw = fs.readFileSync(dataPath, 'utf8');
@@ -83,20 +83,21 @@ function summary(event) {
   return `${meta.emoji} [${event.market}] ${event.title}`;
 }
 
-function description(event) {
+function buildDescription(event) {
   const meta = LEVEL_META[event.level];
   return [
-    `风险等级：${meta.label}`,
+    `风险等级：${event.levelLabel || meta.label}`,
     `市场：${event.market}`,
     `事件类型：${event.category}`,
-    `影响资产：${event.assets.join(', ')}`,
+    `影响资产：${event.assets.join('、')}`,
     `时间状态：${event.timeStatus}`,
     `来源：${event.sourceName}`,
     `来源链接：${event.sourceUrl}`,
     '',
-    `为什么提醒：${event.reason}`,
+    `市场反馈：${event.marketExpectation}`,
+    `历史反应：${event.historicalReaction}`,
     '',
-    `交易前检查：${event.checklist.map((item, index) => `${index + 1}. ${item}`).join('；')}`
+    `应对策略：${event.actionPlan}`
   ].join('\n');
 }
 
@@ -120,12 +121,12 @@ function renderEvent(event) {
     `DTEND;TZID=${event.timezone}:${formatDateTime(event.end || event.start)}`,
     `LOCATION:${escapeText(event.location)}`,
     `SUMMARY:${escapeText(summary(event))}`,
-    `DESCRIPTION:${escapeText(description(event))}`,
+    `DESCRIPTION:${escapeText(buildDescription(event))}`,
     'CATEGORIES:交易风险',
     'TRANSP:TRANSPARENT',
-    `X-RISK-LEVEL:${meta.label}`,
+    `X-RISK-LEVEL:${event.levelLabel || meta.label}`,
     `X-SOURCE-URL:${escapeText(event.sourceUrl)}`,
-    ...meta.alarms.map((trigger) => renderAlarm(event, trigger)),
+    ...meta.alarmTriggers.map((trigger) => renderAlarm(event, trigger)),
     'END:VEVENT'
   ].join('\r\n');
 }
@@ -134,7 +135,7 @@ function renderCalendar(calendar, events) {
   return [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//AWEN Financial Calendar//Stock Risk Radar//ZH-CN',
+    'PRODID:-//AWEN Financial Calendar//阿文风险提醒日历//ZH-CN',
     'CALSCALE:GREGORIAN',
     'METHOD:PUBLISH',
     `X-WR-CALNAME:${escapeText(calendar.name)}`,

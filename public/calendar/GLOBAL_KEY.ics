@@ -1,9 +1,9 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//AWEN Financial Calendar//Stock Risk Radar//ZH-CN
+PRODID:-//AWEN Financial Calendar//阿文风险提醒日历//ZH-CN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Stock Risk Radar - Global Key
+X-WR-CALNAME:阿文风险提醒日历
 X-WR-CALDESC:A股、港股、美股关键交易风险事件合集
 X-WR-TIMEZONE:Asia/Shanghai
 BEGIN:VTIMEZONE
@@ -17,15 +17,15 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:risk-US-2026-07-30-43538b0112@financial-calendar
-DTSTAMP:20260727T233200Z
+DTSTAMP:20260728T000100Z
 DTSTART;TZID=Asia/Shanghai:20260730T020000
 DTEND;TZID=Asia/Shanghai:20260730T030000
 LOCATION:美国
 SUMMARY:🔴 [US] FOMC 利率决议：7月会议声明与发布会
-DESCRIPTION:风险等级：CRITICAL\n市场：US\n事件类型：Macro / Fed / FOMC\n影响资产：SPY\, QQQ\, ES\, NQ\, 美债\, 美元指数\, 黄金\n时间状态：confirmed\n来源：Federal Reserve\n来源链接：https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm\n\n为什么提醒：FOMC 利率决议会直接影响利率预期、美债收益率、美元指数和成长股估值。声明和发布会前后，指数期货与高估值科技股波动通常放大。\n\n交易前检查：1. 是否有未保护仓位；2. 是否需要降低杠杆；3. 是否避免声明发布前追单；4. 止损是否过近
+DESCRIPTION:风险等级：极高\n市场：US\n事件类型：Macro / Fed / FOMC\n影响资产：SPY、QQQ、ES、NQ、美债、美元指数、黄金\n时间状态：confirmed\n来源：Federal Reserve\n来源链接：https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm\n\n市场反馈：市场通常会先交易政策路径和措辞变化。若表态偏鹰，长端利率与成长股估值承压；若偏鸽，纳指和高估值板块往往先反应。\n历史反应：近几个周期里，FOMC 对指数期货、美元和美债的冲击通常比单一经济数据更持久，会议声明后 15–60 分钟最容易放大波动。\n\n应对策略：我建议会前把高杠杆、方向性很强的仓位降到可承受区间；如果你必须持仓，优先保留结构性对冲而不是裸多/裸空；发布后等第一次波动方向确认，再决定是否跟进。
 CATEGORIES:交易风险
 TRANSP:TRANSPARENT
-X-RISK-LEVEL:CRITICAL
+X-RISK-LEVEL:极高
 X-SOURCE-URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
 BEGIN:VALARM
 TRIGGER;RELATED=START:-P1D
@@ -40,15 +40,15 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:risk-US-2026-08-07-0e78b395df@financial-calendar
-DTSTAMP:20260727T233200Z
+DTSTAMP:20260728T000100Z
 DTSTART;TZID=Asia/Shanghai:20260807T203000
 DTEND;TZID=Asia/Shanghai:20260807T210000
 LOCATION:美国
 SUMMARY:🔴 [US] 非农就业：7月 Employment Situation
-DESCRIPTION:风险等级：CRITICAL\n市场：US\n事件类型：Macro / Employment / NFP\n影响资产：SPY\, QQQ\, ES\, NQ\, 美债\, 美元指数\, 黄金\n时间状态：confirmed\n来源：BLS\n来源链接：https://www.bls.gov/schedule/news_release/empsit.htm\n\n为什么提醒：非农就业和失业率会影响美联储政策预期、收益率曲线和风险资产定价。数据公布前后 30 分钟波动通常放大。\n\n交易前检查：1. 是否有未保护仓位；2. 是否需要降低杠杆；3. 是否避免数据公布前追单；4. 止损是否过近
+DESCRIPTION:风险等级：极高\n市场：US\n事件类型：Macro / Employment / NFP\n影响资产：SPY、QQQ、ES、NQ、美债、美元指数、黄金\n时间状态：confirmed\n来源：BLS\n来源链接：https://www.bls.gov/schedule/news_release/empsit.htm\n\n市场反馈：市场关注的不只是就业人数本身，而是失业率、薪资增速和前值修正。只要薪资和失业率组合偏热，利率预期就会迅速重定价。\n历史反应：非农通常是美股、美元和美债同步剧烈波动的高发时点，前 5 分钟常是假动作，真正方向往往在 10–30 分钟后才显现。\n\n应对策略：如果你做的是指数或高贝塔科技股，最稳的做法是把仓位拆成核心和战术两层，战术层在数据前尽量减掉；如果你看多，但又不想赌数据，等第一波冲击后回踩确认再进。
 CATEGORIES:交易风险
 TRANSP:TRANSPARENT
-X-RISK-LEVEL:CRITICAL
+X-RISK-LEVEL:极高
 X-SOURCE-URL:https://www.bls.gov/schedule/news_release/empsit.htm
 BEGIN:VALARM
 TRIGGER;RELATED=START:-P1D
@@ -63,15 +63,15 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:risk-US-2026-08-12-ddd98a2ad2@financial-calendar
-DTSTAMP:20260727T233200Z
+DTSTAMP:20260728T000100Z
 DTSTART;TZID=Asia/Shanghai:20260812T203000
 DTEND;TZID=Asia/Shanghai:20260812T210000
 LOCATION:美国
 SUMMARY:🔴 [US] CPI 发布：7月美国通胀数据
-DESCRIPTION:风险等级：CRITICAL\n市场：US\n事件类型：Macro / CPI\n影响资产：SPY\, QQQ\, ES\, NQ\, 美债\, 美元指数\, 黄金\n时间状态：confirmed\n来源：BLS\n来源链接：https://www.bls.gov/schedule/news_release/cpi.htm\n\n为什么提醒：CPI 会影响利率预期、美债收益率、美元指数和成长股估值。数据公布前后，指数和科技股波动通常放大。\n\n交易前检查：1. 是否有未保护仓位；2. 是否需要降低杠杆；3. 是否避免数据公布前追单；4. 止损是否过近
+DESCRIPTION:风险等级：极高\n市场：US\n事件类型：Macro / CPI\n影响资产：SPY、QQQ、ES、NQ、美债、美元指数、黄金\n时间状态：confirmed\n来源：BLS\n来源链接：https://www.bls.gov/schedule/news_release/cpi.htm\n\n市场反馈：CPI 交易的核心不是单月数字，而是核心通胀趋势是否继续黏性化。市场会先交易降息路径，再交易风险资产估值。\n历史反应：CPI 经常触发“先剧烈反向、再延续”的走势，尤其在前期市场已经单边押注降息/不降息时，反应会更极端。\n\n应对策略：如果你没有明显优势，最优解通常不是猜方向，而是降低事件前暴露；如果你必须参与，优先把交易计划写成两个版本：偏热和偏冷各一套，不要数据出来后临场拍脑袋。
 CATEGORIES:交易风险
 TRANSP:TRANSPARENT
-X-RISK-LEVEL:CRITICAL
+X-RISK-LEVEL:极高
 X-SOURCE-URL:https://www.bls.gov/schedule/news_release/cpi.htm
 BEGIN:VALARM
 TRIGGER;RELATED=START:-P1D
@@ -86,15 +86,15 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:risk-US-2026-08-13-d91a904dea@financial-calendar
-DTSTAMP:20260727T233200Z
+DTSTAMP:20260728T000100Z
 DTSTART;TZID=Asia/Shanghai:20260813T203000
 DTEND;TZID=Asia/Shanghai:20260813T210000
 LOCATION:美国
 SUMMARY:🟠 [US] PPI 发布：7月生产者价格指数
-DESCRIPTION:风险等级：HIGH\n市场：US\n事件类型：Macro / PPI\n影响资产：SPY\, QQQ\, ES\, NQ\, 美债\, 美元指数\n时间状态：confirmed\n来源：BLS\n来源链接：https://www.bls.gov/schedule/news_release/ppi.htm\n\n为什么提醒：PPI 是通胀链条的重要输入，可能影响市场对后续 CPI、企业利润率和利率路径的预期。\n\n交易前检查：1. 数据公布前是否需要降低仓位；2. 是否避免在公布前追单；3. 高估值科技股仓位是否过重
+DESCRIPTION:风险等级：高\n市场：US\n事件类型：Macro / PPI\n影响资产：SPY、QQQ、ES、NQ、美债、美元指数\n时间状态：confirmed\n来源：BLS\n来源链接：https://www.bls.gov/schedule/news_release/ppi.htm\n\n市场反馈：PPI 不是终局，但经常是 CPI 预期的前置信号。若 PPI 先走强，市场会提前把通胀压力映射到下一轮 CPI。\n历史反应：PPI 的冲击一般弱于 CPI，但在 CPI 前一日发布时，它常常会影响隔夜定价和第二天的风险偏好。\n\n应对策略：如果你已经有方向性仓位，PPI 这类前置数据更适合做减噪而不是加码；除非你做的是宏观策略，否则不要把它当成单独赌方向的理由。
 CATEGORIES:交易风险
 TRANSP:TRANSPARENT
-X-RISK-LEVEL:HIGH
+X-RISK-LEVEL:高
 X-SOURCE-URL:https://www.bls.gov/schedule/news_release/ppi.htm
 BEGIN:VALARM
 TRIGGER;RELATED=START:-PT1H
@@ -104,15 +104,15 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:risk-US-2026-08-19-0fa6ece2a0@financial-calendar
-DTSTAMP:20260727T233200Z
+DTSTAMP:20260728T000100Z
 DTSTART;TZID=Asia/Shanghai:20260819T213000
 DTEND;TZID=Asia/Shanghai:20260819T223000
 LOCATION:美国
 SUMMARY:🟠 [US] VIX 期权到期日
-DESCRIPTION:风险等级：HIGH\n市场：US\n事件类型：Derivatives / VIX Options Expiration\n影响资产：VIX\, SPX\, SPY\, QQQ\, ES\, NQ\n时间状态：confirmed\n来源：Cboe\n来源链接：https://www.cboe.com/tradable_products/vix/vix_options/specifications/\n\n为什么提醒：VIX 期权到期可能影响波动率产品、对冲需求和指数短期波动结构。当天及前后需关注波动率异常变化。\n\n交易前检查：1. 是否有波动率相关仓位；2. 指数对冲是否需要调整；3. 是否避免在流动性变化窗口追单
+DESCRIPTION:风险等级：高\n市场：US\n事件类型：Derivatives / VIX Options Expiration\n影响资产：VIX、SPX、SPY、QQQ、ES、NQ\n时间状态：confirmed\n来源：Cboe\n来源链接：https://www.cboe.com/tradable_products/vix/vix_options/specifications/\n\n市场反馈：波动率相关事件往往会把盘面从‘看方向’切换成‘看波动’。如果市场前期已经很平静，VIX 到期更容易把隐波结构拉开。\n历史反应：这类日子里，现货未必大跌大涨，但盘中来回和尾盘拉扯更明显；对短线和高频仓位比对中长线仓位更敏感。\n\n应对策略：如果你不是专门做波动率交易，最优策略通常是降低短线追单频率，保留更宽的止损和更小的仓位；如果你做对冲，可以提前检查对冲效率而不是等盘中被动补。
 CATEGORIES:交易风险
 TRANSP:TRANSPARENT
-X-RISK-LEVEL:HIGH
+X-RISK-LEVEL:高
 X-SOURCE-URL:https://www.cboe.com/tradable_products/vix/vix_options/specifications/
 BEGIN:VALARM
 TRIGGER;RELATED=START:-PT1H
@@ -122,15 +122,15 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:risk-US-2026-08-20-d4ae50df3f@financial-calendar
-DTSTAMP:20260727T233200Z
+DTSTAMP:20260728T000100Z
 DTSTART;TZID=Asia/Shanghai:20260820T020000
 DTEND;TZID=Asia/Shanghai:20260820T023000
 LOCATION:美国
 SUMMARY:🟠 [US] FOMC 会议纪要发布
-DESCRIPTION:风险等级：HIGH\n市场：US\n事件类型：Macro / Fed Minutes\n影响资产：SPY\, QQQ\, ES\, NQ\, 美债\, 美元指数\n时间状态：confirmed\n来源：Federal Reserve\n来源链接：https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm\n\n为什么提醒：FOMC 纪要可能改变市场对未来利率路径和政策分歧的理解，影响美债收益率、美元和成长股估值。\n\n交易前检查：1. 是否持有对利率敏感的高估值资产；2. 是否需要避开纪要发布前后加仓；3. 是否需要检查隔夜风险
+DESCRIPTION:风险等级：高\n市场：US\n事件类型：Macro / Fed Minutes\n影响资产：SPY、QQQ、ES、NQ、美债、美元指数\n时间状态：confirmed\n来源：Federal Reserve\n来源链接：https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm\n\n市场反馈：纪要的影响往往不如议息日尖锐，但它会重新定义市场对内部分歧、降息节奏和措辞细节的理解。\n历史反应：如果议息日后市场已经形成单边解读，纪要更容易把原来被忽略的分歧重新拿出来交易，尤其是利率敏感板块。\n\n应对策略：最优策略不是提前赌纪要，而是先看议息后的定价有没有过度；如果市场已经单边反应，纪要更适合用来减仓或确认，而不是重新冒进。
 CATEGORIES:交易风险
 TRANSP:TRANSPARENT
-X-RISK-LEVEL:HIGH
+X-RISK-LEVEL:高
 X-SOURCE-URL:https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
 BEGIN:VALARM
 TRIGGER;RELATED=START:-PT1H
@@ -140,15 +140,15 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:risk-US-2026-08-21-61cd61631b@financial-calendar
-DTSTAMP:20260727T233200Z
+DTSTAMP:20260728T000100Z
 DTSTART;TZID=Asia/Shanghai:20260821T030000
 DTEND;TZID=Asia/Shanghai:20260821T040000
 LOCATION:美国
 SUMMARY:🟠 [US] 指数期权 AM-settled 最后交易日提醒
-DESCRIPTION:风险等级：HIGH\n市场：US\n事件类型：Derivatives / Index Options Last Trading Day\n影响资产：SPX\, SPY\, QQQ\, ES\, NQ\n时间状态：rule-based\n来源：Cboe\n来源链接：https://www.cboe.com/tradable_products/sp_500/spx_options/specifications/\n\n为什么提醒：月度 AM-settled 指数期权通常在到期日前一交易日结束交易，可能影响指数对冲、流动性和尾盘波动。\n\n交易前检查：1. 是否有指数期权或相关 ETF 仓位；2. 是否需要避免尾盘流动性冲击；3. 是否确认隔夜结算风险
+DESCRIPTION:风险等级：高\n市场：US\n事件类型：Derivatives / Index Options Last Trading Day\n影响资产：SPX、SPY、QQQ、ES、NQ\n时间状态：rule-based\n来源：Cboe\n来源链接：https://www.cboe.com/tradable_products/sp_500/spx_options/specifications/\n\n市场反馈：到期前一交易日，流动性和对冲行为常会提前改变，盘尾更容易出现被动收口或异动。\n历史反应：这类事件对日内波动和盘尾影响更明显，若当天市场本来就有宏观催化，很容易叠加放大。\n\n应对策略：短线不要在尾盘硬追；如果你有相关仓位，提前一到两天处理掉最靠近到期的裸方向风险，比在当天临场被动处理更稳。
 CATEGORIES:交易风险
 TRANSP:TRANSPARENT
-X-RISK-LEVEL:HIGH
+X-RISK-LEVEL:高
 X-SOURCE-URL:https://www.cboe.com/tradable_products/sp_500/spx_options/specifications/
 BEGIN:VALARM
 TRIGGER;RELATED=START:-PT1H
@@ -158,15 +158,15 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:risk-CN-2026-08-21-051656967b@financial-calendar
-DTSTAMP:20260727T233200Z
+DTSTAMP:20260728T000100Z
 DTSTART;TZID=Asia/Shanghai:20260821T143000
 DTEND;TZID=Asia/Shanghai:20260821T150000
 LOCATION:中国
 SUMMARY:🟠 [CN] 股指期货/期权月度交割日提醒
-DESCRIPTION:风险等级：HIGH\n市场：CN\n事件类型：Derivatives / CFFEX Monthly Expiry\n影响资产：沪深300\, 中证500\, 中证1000\, 上证50\, A股指数期货/期权\n时间状态：rule-based\n来源：中国金融期货交易所\n来源链接：http://www.cffex.com.cn/\n\n为什么提醒：A股股指期货、期权月度交割日前后，指数成分、对冲需求和尾盘流动性可能变化。对指数 ETF、股指期货和高权重板块尤其重要。\n\n交易前检查：1. 是否持有指数 ETF 或股指期货相关仓位；2. 是否需要关注尾盘波动；3. 是否避免临近交割日过度加杠杆
+DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Derivatives / CFFEX Monthly Expiry\n影响资产：沪深300、中证500、中证1000、上证50、A股指数期货/期权\n时间状态：rule-based\n来源：中国金融期货交易所\n来源链接：http://www.cffex.com.cn/\n\n市场反馈：A股交割日更容易让尾盘资金行为集中，指数和高权重板块容易被动放大波动。\n历史反应：如果前一阶段已经有较强趋势，交割日常见的是尾盘加速、收盘前回补和隔日延续。\n\n应对策略：你如果做指数类产品，交割日前后更适合减仓而不是赌尾盘；如果你做的是个股，可以关注是否会被指数情绪外溢带偏。
 CATEGORIES:交易风险
 TRANSP:TRANSPARENT
-X-RISK-LEVEL:HIGH
+X-RISK-LEVEL:高
 X-SOURCE-URL:http://www.cffex.com.cn/
 BEGIN:VALARM
 TRIGGER;RELATED=START:-PT1H
@@ -176,15 +176,15 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:risk-US-2026-08-22-8add174a96@financial-calendar
-DTSTAMP:20260727T233200Z
+DTSTAMP:20260728T000100Z
 DTSTART;TZID=Asia/Shanghai:20260822T030000
 DTEND;TZID=Asia/Shanghai:20260822T040000
 LOCATION:美国
 SUMMARY:🟠 [US] 月度期权到期日：OPEX 风险窗口
-DESCRIPTION:风险等级：HIGH\n市场：US\n事件类型：Derivatives / Monthly Options Expiration\n影响资产：SPX\, SPY\, QQQ\, ES\, NQ\n时间状态：rule-based\n来源：Cboe\n来源链接：https://www.cboe.com/tradable_products/sp_500/spx_options/specifications/\n\n为什么提醒：月度期权到期可能改变做市商对冲、指数流动性和盘中波动。临近收盘尤其需要关注 Gamma 暴露和尾盘异动。\n\n交易前检查：1. 是否有短期期权或指数 ETF 仓位；2. 是否需要避免尾盘追单；3. 是否需要减少隔夜暴露
+DESCRIPTION:风险等级：高\n市场：US\n事件类型：Derivatives / Monthly Options Expiration\n影响资产：SPX、SPY、QQQ、ES、NQ\n时间状态：rule-based\n来源：Cboe\n来源链接：https://www.cboe.com/tradable_products/sp_500/spx_options/specifications/\n\n市场反馈：OPEX 常常带来的是“盘面被对冲机制牵着走”，而不是纯粹的基本面交易。\n历史反应：在 OPEX 附近，最容易看到的是指数尾盘拉扯、窄幅震荡后突然走单边，尤其在大资金集中平仓时。\n\n应对策略：如果你做趋势，OPEX 日更适合用来观察而不是加码；如果你做短线，缩小仓位、放大容错，等方向被确认后再出手。
 CATEGORIES:交易风险
 TRANSP:TRANSPARENT
-X-RISK-LEVEL:HIGH
+X-RISK-LEVEL:高
 X-SOURCE-URL:https://www.cboe.com/tradable_products/sp_500/spx_options/specifications/
 BEGIN:VALARM
 TRIGGER;RELATED=START:-PT1H
@@ -194,15 +194,15 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:risk-HK-2026-08-28-c2d165a2db@financial-calendar
-DTSTAMP:20260727T233200Z
+DTSTAMP:20260728T000100Z
 DTSTART;TZID=Asia/Shanghai:20260828T153000
 DTEND;TZID=Asia/Shanghai:20260828T160000
 LOCATION:香港
 SUMMARY:🟠 [HK] 港股指数期货/期权月度到期提醒
-DESCRIPTION:风险等级：HIGH\n市场：HK\n事件类型：Derivatives / HKEX Monthly Expiry\n影响资产：HSI\, HSCEI\, HSTECH\, 港股指数期货/期权\n时间状态：rule-based\n来源：HKEX\n来源链接：https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/Hang-Seng-Index-Futures-and-Options\n\n为什么提醒：港股指数期货/期权月度到期可能影响恒指、国企指数和恒生科技指数的对冲流与尾盘波动。港股流动性集中时段需要额外留意。\n\n交易前检查：1. 是否持有港股指数 ETF 或衍生品仓位；2. 是否需要关注尾盘流动性；3. 是否需要提前调整隔夜风险
+DESCRIPTION:风险等级：高\n市场：HK\n事件类型：Derivatives / HKEX Monthly Expiry\n影响资产：HSI、HSCEI、HSTECH、港股指数期货/期权\n时间状态：rule-based\n来源：HKEX\n来源链接：https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/Hang-Seng-Index-Futures-and-Options\n\n市场反馈：港股到期日常常把外盘情绪和本地流动性叠加在一起，尾盘容易出现放大。\n历史反应：恒指、恒科在衍生品到期附近经常会更受大盘对冲流影响，走势不完全按单一成分股逻辑走。\n\n应对策略：如果你做港股指数或科技权重，建议把重仓和追价动作避开到期日尾盘；如果你做单票，注意指数噪音不要误判成个股基本面。
 CATEGORIES:交易风险
 TRANSP:TRANSPARENT
-X-RISK-LEVEL:HIGH
+X-RISK-LEVEL:高
 X-SOURCE-URL:https://www.hkex.com.hk/Products/Listed-Derivatives/Equity-Index/Hang-Seng-Index-Futures-and-Options
 BEGIN:VALARM
 TRIGGER;RELATED=START:-PT1H
@@ -212,15 +212,15 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:risk-CN-2026-08-31-3de4986069@financial-calendar
-DTSTAMP:20260727T233200Z
+DTSTAMP:20260728T000100Z
 DTSTART;TZID=Asia/Shanghai:20260831T093000
 DTEND;TZID=Asia/Shanghai:20260831T100000
 LOCATION:中国
 SUMMARY:🟠 [CN] A股中报披露截止窗口：业绩与公告风险
-DESCRIPTION:风险等级：HIGH\n市场：CN\n事件类型：Earnings / Disclosure Deadline\n影响资产：A股上市公司\, 沪深300\, 中证500\, 中证1000\, 创业板\n时间状态：rule-based\n来源：中国证监会 / 沪深交易所信息披露规则\n来源链接：https://www.csrc.gov.cn/\n\n为什么提醒：8 月底通常是 A股半年报集中披露的最后窗口，业绩不及预期、减值、风险提示、监管问询等事件更容易集中出现。持有个股或行业 ETF 时需要检查披露风险。\n\n交易前检查：1. 持仓公司是否尚未披露中报；2. 是否有业绩预告与实际报告偏差风险；3. 是否需要避开财报前后追涨杀跌；4. 是否检查公告来源链接
+DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Earnings / Disclosure Deadline\n影响资产：A股上市公司、沪深300、中证500、中证1000、创业板\n时间状态：rule-based\n来源：中国证监会 / 沪深交易所信息披露规则\n来源链接：https://www.csrc.gov.cn/\n\n市场反馈：中报披露窗口里，市场通常先交易“预期差”而不是绝对数。高估值、低预期、盈利修复不稳的票最容易被放大。\n历史反应：A股半年报末期，盘面经常从指数行情切回个股分化，业绩不及预期的票容易出现连续反馈。\n\n应对策略：对单票来说，最稳的是提前识别自己持仓有没有披露风险；如果你拿的是行业 ETF，就检查成分股里是否有高权重公司在窗口期内可能踩雷。
 CATEGORIES:交易风险
 TRANSP:TRANSPARENT
-X-RISK-LEVEL:HIGH
+X-RISK-LEVEL:高
 X-SOURCE-URL:https://www.csrc.gov.cn/
 BEGIN:VALARM
 TRIGGER;RELATED=START:-PT1H

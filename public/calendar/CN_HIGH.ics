@@ -1,10 +1,10 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//AWEN Financial Calendar//Stock Risk Radar//ZH-CN
+PRODID:-//AWEN Financial Calendar//阿文风险提醒日历//ZH-CN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:Stock Risk Radar - CN High
-X-WR-CALDESC:A股高风险交易事件提醒
+X-WR-CALNAME:阿文风险提醒日历 - A股高风险
+X-WR-CALDESC:A股高风险交易提醒
 X-WR-TIMEZONE:Asia/Shanghai
 BEGIN:VTIMEZONE
 TZID:Asia/Shanghai
@@ -17,15 +17,15 @@ END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
 UID:risk-CN-2026-08-21-051656967b@financial-calendar
-DTSTAMP:20260727T233200Z
+DTSTAMP:20260728T000100Z
 DTSTART;TZID=Asia/Shanghai:20260821T143000
 DTEND;TZID=Asia/Shanghai:20260821T150000
 LOCATION:中国
 SUMMARY:🟠 [CN] 股指期货/期权月度交割日提醒
-DESCRIPTION:风险等级：HIGH\n市场：CN\n事件类型：Derivatives / CFFEX Monthly Expiry\n影响资产：沪深300\, 中证500\, 中证1000\, 上证50\, A股指数期货/期权\n时间状态：rule-based\n来源：中国金融期货交易所\n来源链接：http://www.cffex.com.cn/\n\n为什么提醒：A股股指期货、期权月度交割日前后，指数成分、对冲需求和尾盘流动性可能变化。对指数 ETF、股指期货和高权重板块尤其重要。\n\n交易前检查：1. 是否持有指数 ETF 或股指期货相关仓位；2. 是否需要关注尾盘波动；3. 是否避免临近交割日过度加杠杆
+DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Derivatives / CFFEX Monthly Expiry\n影响资产：沪深300、中证500、中证1000、上证50、A股指数期货/期权\n时间状态：rule-based\n来源：中国金融期货交易所\n来源链接：http://www.cffex.com.cn/\n\n市场反馈：A股交割日更容易让尾盘资金行为集中，指数和高权重板块容易被动放大波动。\n历史反应：如果前一阶段已经有较强趋势，交割日常见的是尾盘加速、收盘前回补和隔日延续。\n\n应对策略：你如果做指数类产品，交割日前后更适合减仓而不是赌尾盘；如果你做的是个股，可以关注是否会被指数情绪外溢带偏。
 CATEGORIES:交易风险
 TRANSP:TRANSPARENT
-X-RISK-LEVEL:HIGH
+X-RISK-LEVEL:高
 X-SOURCE-URL:http://www.cffex.com.cn/
 BEGIN:VALARM
 TRIGGER;RELATED=START:-PT1H
@@ -35,15 +35,15 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:risk-CN-2026-08-31-3de4986069@financial-calendar
-DTSTAMP:20260727T233200Z
+DTSTAMP:20260728T000100Z
 DTSTART;TZID=Asia/Shanghai:20260831T093000
 DTEND;TZID=Asia/Shanghai:20260831T100000
 LOCATION:中国
 SUMMARY:🟠 [CN] A股中报披露截止窗口：业绩与公告风险
-DESCRIPTION:风险等级：HIGH\n市场：CN\n事件类型：Earnings / Disclosure Deadline\n影响资产：A股上市公司\, 沪深300\, 中证500\, 中证1000\, 创业板\n时间状态：rule-based\n来源：中国证监会 / 沪深交易所信息披露规则\n来源链接：https://www.csrc.gov.cn/\n\n为什么提醒：8 月底通常是 A股半年报集中披露的最后窗口，业绩不及预期、减值、风险提示、监管问询等事件更容易集中出现。持有个股或行业 ETF 时需要检查披露风险。\n\n交易前检查：1. 持仓公司是否尚未披露中报；2. 是否有业绩预告与实际报告偏差风险；3. 是否需要避开财报前后追涨杀跌；4. 是否检查公告来源链接
+DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Earnings / Disclosure Deadline\n影响资产：A股上市公司、沪深300、中证500、中证1000、创业板\n时间状态：rule-based\n来源：中国证监会 / 沪深交易所信息披露规则\n来源链接：https://www.csrc.gov.cn/\n\n市场反馈：中报披露窗口里，市场通常先交易“预期差”而不是绝对数。高估值、低预期、盈利修复不稳的票最容易被放大。\n历史反应：A股半年报末期，盘面经常从指数行情切回个股分化，业绩不及预期的票容易出现连续反馈。\n\n应对策略：对单票来说，最稳的是提前识别自己持仓有没有披露风险；如果你拿的是行业 ETF，就检查成分股里是否有高权重公司在窗口期内可能踩雷。
 CATEGORIES:交易风险
 TRANSP:TRANSPARENT
-X-RISK-LEVEL:HIGH
+X-RISK-LEVEL:高
 X-SOURCE-URL:https://www.csrc.gov.cn/
 BEGIN:VALARM
 TRIGGER;RELATED=START:-PT1H
