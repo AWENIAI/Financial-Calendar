@@ -195,6 +195,13 @@ npm run generate
 
 ### 2026-07-28
 
+- 补齐 A股 `2026-07-17` 股指期货/期权月度交割日。
+- 将 `2026-07-17` 作为 `2026-08-21` A股交割日的上周期回测锚点。
+- `CN_HIGH.ics` 从 2 条事件更新为 3 条事件。
+- `GLOBAL_KEY.ics` 从 11 条事件更新为 12 条事件。
+
+### 2026-07-28 初始版本
+
 - 初始化 `Financial-Calendar` 项目。
 - 新增交易风险事件数据文件 `data/risk-events.json`。
 - 新增 ICS 生成脚本 `scripts/risk-calendar/generate-risk-calendar.mjs`。

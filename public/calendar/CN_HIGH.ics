@@ -16,13 +16,31 @@ TZNAME:CST
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
+UID:risk-CN-2026-07-17-687d865fca@financial-calendar
+DTSTAMP:20260728T001500Z
+DTSTART;TZID=Asia/Shanghai:20260717T143000
+DTEND;TZID=Asia/Shanghai:20260717T150000
+LOCATION:中国
+SUMMARY:🟠 [CN] 上周期回测：股指期货/期权月度交割日
+DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Derivatives / CFFEX Monthly Expiry\n影响资产：沪深300、中证500、中证1000、上证50、A股指数期货/期权\n时间状态：rule-based\n来源：中国金融期货交易所\n来源链接：http://www.cffex.com.cn/\n\n市场反馈：这是 8 月交割日前的上周期回测锚点。A股交割日的主要影响不是单独创造趋势，而是把指数权重、期现对冲和尾盘流动性集中到同一个窗口里。\n历史反应：上周期应重点复盘 7 月 17 日 14:30–15:00 的沪深300、中证500、中证1000、上证50尾盘表现：如果尾盘出现放量拉扯、权重股异动或指数与个股背离，说明交割因素正在影响短线资金行为。\n\n应对策略：这个历史事件不用于追单，而用于校准 8 月交割日策略：若上周期尾盘波动明显，8 月交割日前一日和当天 14:30 后应主动降低指数类仓位、减少杠杆、避免尾盘追涨杀跌；若上周期影响较弱，也只允许小仓位观察，不把交割日当作开新方向的理由。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:http://www.cffex.com.cn/
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [CN] 上周期回测：股指期货/期权月度交割日
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:risk-CN-2026-08-21-051656967b@financial-calendar
-DTSTAMP:20260728T000100Z
+DTSTAMP:20260728T001500Z
 DTSTART;TZID=Asia/Shanghai:20260821T143000
 DTEND;TZID=Asia/Shanghai:20260821T150000
 LOCATION:中国
 SUMMARY:🟠 [CN] 股指期货/期权月度交割日提醒
-DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Derivatives / CFFEX Monthly Expiry\n影响资产：沪深300、中证500、中证1000、上证50、A股指数期货/期权\n时间状态：rule-based\n来源：中国金融期货交易所\n来源链接：http://www.cffex.com.cn/\n\n市场反馈：A股交割日更容易让尾盘资金行为集中，指数和高权重板块容易被动放大波动。\n历史反应：如果前一阶段已经有较强趋势，交割日常见的是尾盘加速、收盘前回补和隔日延续。\n\n应对策略：你如果做指数类产品，交割日前后更适合减仓而不是赌尾盘；如果你做的是个股，可以关注是否会被指数情绪外溢带偏。
+DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Derivatives / CFFEX Monthly Expiry\n影响资产：沪深300、中证500、中证1000、上证50、A股指数期货/期权\n时间状态：rule-based\n来源：中国金融期货交易所\n来源链接：http://www.cffex.com.cn/\n\n市场反馈：A股交割日更容易让尾盘资金行为集中，指数和高权重板块容易被动放大波动。\n历史反应：先用 2026-07-17 上周期交割日做对照：如果上周期尾盘出现放量拉扯、指数权重异动或指数与个股背离，8 月同类窗口就要默认提高风险权重；如果上周期影响弱，也不能把它当作无风险窗口。\n\n应对策略：8 月交割日前一日开始，我建议把指数 ETF、股指期货、融资或高贝塔仓位降到不会被尾盘波动打乱的水平；当天 14:30 后不追涨杀跌，不用交割日尾盘作为新方向确认，等收盘后和次日开盘共同确认再决策。
 CATEGORIES:交易风险
 TRANSP:TRANSPARENT
 X-RISK-LEVEL:高
@@ -35,7 +53,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:risk-CN-2026-08-31-3de4986069@financial-calendar
-DTSTAMP:20260728T000100Z
+DTSTAMP:20260728T001500Z
 DTSTART;TZID=Asia/Shanghai:20260831T093000
 DTEND;TZID=Asia/Shanghai:20260831T100000
 LOCATION:中国
