@@ -24,24 +24,6 @@ const LEVEL_META = {
 
 const CALENDARS = [
   {
-    file: 'CN_HIGH.ics',
-    name: '阿文风险提醒日历 - A股高风险',
-    description: 'A股高风险交易提醒',
-    filter: (event) => event.market === 'CN'
-  },
-  {
-    file: 'HK_HIGH.ics',
-    name: '阿文风险提醒日历 - 港股高风险',
-    description: '港股高风险交易提醒',
-    filter: (event) => event.market === 'HK'
-  },
-  {
-    file: 'US_HIGH.ics',
-    name: '阿文风险提醒日历 - 美股高风险',
-    description: '美股高风险交易提醒',
-    filter: (event) => event.market === 'US'
-  },
-  {
     file: 'GLOBAL_KEY.ics',
     name: '阿文风险提醒日历',
     description: 'A股、港股、美股关键交易风险事件合集',
@@ -159,6 +141,9 @@ function renderCalendar(calendar, events) {
 function main() {
   const events = readEvents();
   fs.mkdirSync(outputDir, { recursive: true });
+  fs.rmSync(path.join(outputDir, 'CN_HIGH.ics'), { force: true });
+  fs.rmSync(path.join(outputDir, 'HK_HIGH.ics'), { force: true });
+  fs.rmSync(path.join(outputDir, 'US_HIGH.ics'), { force: true });
 
   for (const calendar of CALENDARS) {
     const selected = events.filter(calendar.filter);

@@ -2,16 +2,13 @@
 
 A股、港股、美股交易风险事件的 ICS 订阅日历。
 
-当前版本先采用“URL 订阅”方案：把风险事件生成 `.ics` 文件，用户在 Apple Calendar / Google Calendar / Outlook 中通过 URL 订阅。
+当前版本采用“单一 URL 订阅”方案：把 A股、港股、美股风险事件全部合成一个 `.ics` 文件，用户在 Apple Calendar / Google Calendar / Outlook 中通过一个 URL 订阅。
 
 ## 订阅链接
 
-推荐使用 GitHub Pages 订阅链接：
+只使用这一个 GitHub Pages 订阅链接：
 
 ```text
-https://aweniai.github.io/Financial-Calendar/calendar/CN_HIGH.ics
-https://aweniai.github.io/Financial-Calendar/calendar/HK_HIGH.ics
-https://aweniai.github.io/Financial-Calendar/calendar/US_HIGH.ics
 https://aweniai.github.io/Financial-Calendar/calendar/GLOBAL_KEY.ics
 ```
 
@@ -23,10 +20,7 @@ https://aweniai.github.io/Financial-Calendar/
 
 | 文件 | 内容 |
 |---|---|
-| `CN_HIGH.ics` | 阿文风险提醒日历 - A股高风险事件 |
-| `HK_HIGH.ics` | 阿文风险提醒日历 - 港股高风险事件 |
-| `US_HIGH.ics` | 阿文风险提醒日历 - 美股高风险事件 |
-| `GLOBAL_KEY.ics` | 阿文风险提醒日历 - A股、港股、美股关键事件合集 |
+| `GLOBAL_KEY.ics` | 阿文风险提醒日历：A股、港股、美股关键事件合集 |
 
 ## 事件等级
 
@@ -52,14 +46,14 @@ https://aweniai.github.io/Financial-Calendar/
 1. 打开“设置”。
 2. 进入“日历” → “账户”。
 3. 点击“添加账户” → “其他” → “添加已订阅的日历”。
-4. 粘贴上方任一 `.ics` 订阅链接。
+4. 粘贴上方唯一 `.ics` 订阅链接。
 5. 保存后，在 Apple Calendar 中勾选该订阅日历。
 
 在 macOS：
 
 1. 打开“日历”应用。
 2. 菜单栏选择“文件” → “新建日历订阅”。
-3. 粘贴上方任一 `.ics` 订阅链接。
+3. 粘贴上方唯一 `.ics` 订阅链接。
 4. 设置自动刷新频率。
 5. 点击“好”。
 
@@ -69,7 +63,7 @@ https://aweniai.github.io/Financial-Calendar/
 2. 左侧找到“其他日历”。
 3. 点击 “+”。
 4. 选择“通过网址”。
-5. 粘贴上方任一 `.ics` 订阅链接。
+5. 粘贴上方唯一 `.ics` 订阅链接。
 6. 点击“添加日历”。
 
 注意：Google Calendar 对 URL 订阅日历的刷新频率不可控，可能不是实时刷新。
@@ -111,12 +105,9 @@ npm run generate
 data/risk-events.json
 ```
 
-然后生成：
+然后生成唯一订阅文件：
 
 ```text
-public/calendar/CN_HIGH.ics
-public/calendar/HK_HIGH.ics
-public/calendar/US_HIGH.ics
 public/calendar/GLOBAL_KEY.ics
 ```
 
@@ -195,6 +186,12 @@ npm run generate
 
 ### 2026-07-28
 
+- 订阅文件改为单链接模式：只保留 `public/calendar/GLOBAL_KEY.ics`。
+- A股、港股、美股事件全部合并到 `GLOBAL_KEY.ics`。
+- 删除分市场订阅文件 `CN_HIGH.ics`、`HK_HIGH.ics`、`US_HIGH.ics`，避免误订多个日历。
+
+### 2026-07-28 A股交割日补齐
+
 - 补齐 A股 `2026-07-17` 股指期货/期权月度交割日。
 - 将 `2026-07-17` 作为 `2026-08-21` A股交割日的上周期回测锚点。
 - `CN_HIGH.ics` 从 2 条事件更新为 3 条事件。
@@ -205,11 +202,7 @@ npm run generate
 - 初始化 `Financial-Calendar` 项目。
 - 新增交易风险事件数据文件 `data/risk-events.json`。
 - 新增 ICS 生成脚本 `scripts/risk-calendar/generate-risk-calendar.mjs`。
-- 生成 4 个订阅文件：
-  - `CN_HIGH.ics`
-  - `HK_HIGH.ics`
-  - `US_HIGH.ics`
-  - `GLOBAL_KEY.ics`
+- 初始生成 4 个订阅文件，后续已收敛为单一 `GLOBAL_KEY.ics` 订阅文件。
 - 订阅名称统一改为 `阿文风险提醒日历`。
 - 支持 🔴 极高 / 🟠 高 两级中文风险标题。
 - 每条事件写入来源链接、影响资产、市场反馈、历史反应和应对策略。
