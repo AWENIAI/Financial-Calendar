@@ -77,7 +77,9 @@ https://aweniai.github.io/Financial-Calendar/
 1. 美股宏观与 Fed 事件：FOMC、非农、CPI、PPI、FOMC 纪要。
 2. 美股衍生品事件：VIX 期权到期、SPX / 月度 OPEX 风险窗口。
 3. A股制度性事件：股指期货/期权月度交割、定期报告披露截止窗口。
-4. 港股制度性事件：港股指数期货/期权月度到期。
+4. A股月末规则型事件：每月倒数第二个中国营业日。
+5. A50 期货制度性事件：最后交易日。
+6. 港股制度性事件：港股指数期货/期权月度到期。
 
 每条事件包含：
 
@@ -186,6 +188,25 @@ npm run generate
 3. 不能像 Google Calendar API 那样强制立即更新、删除或改期。
 
 ## 更新日志
+
+### 2026-07-31 04:12 自动更新记录
+
+- 触发来源：local
+- Action 记录：本地运行
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：126
+- 文件变化统计：4 files changed, 223 insertions(+), 1 deletion(-)
+- 变化文件：
+  - 修改：`README.md`
+  - 修改：`data/fixed-events-2026.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+  - 修改：`scripts/risk-calendar/generate-risk-calendar.mjs`
+- 最近未来事件：
+  - 2026-08-07 20:30：🔴 [US] 非农就业：2026年7月 Employment Situation
+  - 2026-08-12 20:30：🔴 [US] CPI 发布：2026年7月美国通胀数据
+  - 2026-08-13 20:30：🟠 [US] PPI 发布：2026年7月生产者价格指数
+  - 2026-08-19 21:30：🟠 [US] VIX 期权到期日：8月标准到期
+  - 2026-08-20 02:00：🟠 [US] FOMC 会议纪要发布：7月会议纪要
 
 ### 2026-07-28 全年固定事件补齐
 

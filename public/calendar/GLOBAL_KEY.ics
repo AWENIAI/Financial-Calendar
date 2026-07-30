@@ -1471,6 +1471,42 @@ DESCRIPTION:🟠 [US] 月度期权到期日：OPEX 风险窗口（8月月度期�
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:risk-CN-2026-08-28-4acf6d61bd@financial-calendar
+DTSTAMP:20260828T000000Z
+DTSTART;TZID=Asia/Shanghai:20260828T143000
+DTEND;TZID=Asia/Shanghai:20260828T150000
+LOCATION:中国
+SUMMARY:🟠 [CN] 每月倒数第二个中国营业日：8月
+DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Calendar / China Month-End Business Day\n影响资产：A股交易日历、月末调仓、资金安排\n时间状态：confirmed\n来源：中国交易日历\n来源链接：https://www.sse.com.cn/\n\n市场反馈：月末倒数第二个中国营业日通常会让调仓、结算、交割和资金安排更集中。\n历史反应：越接近月末，量化调仓、绩效窗口和资金安排越容易把波动压缩到最后几个交易时段。\n\n应对策略：月末前把该处理的仓位、计划和资金安排提前做完，不要把操作拖到最后一个交易日。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:https://www.sse.com.cn/
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [CN] 每月倒数第二个中国营业日：8月
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-CN-2026-08-28-0ac37b1393@financial-calendar
+DTSTAMP:20260828T000000Z
+DTSTART;TZID=Asia/Shanghai:20260828T143000
+DTEND;TZID=Asia/Shanghai:20260828T150000
+LOCATION:中国
+SUMMARY:🟠 [CN] A50 期货最后交易日：8月合约
+DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Derivatives / SGX A50 Futures Last Trading Day\n影响资产：A50期货、A股指数期货/相关对冲\n时间状态：confirmed\n来源：SGX\n来源链接：https://www.kgieworld.sg/futures/sgx-FTSE-China-A50-index-futures-contract-specifications\n\n市场反馈：A50 临近最后交易日时，期现和对冲行为通常会收敛，尾盘更容易受到平仓和移仓影响。\n历史反应：这类日子主要影响的是期货移仓、对冲和尾盘流动性，真正放大的往往是最后一两个交易时段。\n\n应对策略：临近到期前把裸方向仓位降下来，尽量提前处理需要移仓的合约，不要把最紧的风险留到尾盘。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:https://www.kgieworld.sg/futures/sgx-FTSE-China-A50-index-futures-contract-specifications
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [CN] A50 期货最后交易日：8月合约
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:risk-HK-2026-08-28-c74861250d@financial-calendar
 DTSTAMP:20260828T000000Z
 DTSTART;TZID=Asia/Shanghai:20260828T153000
@@ -1663,6 +1699,42 @@ BEGIN:VALARM
 TRIGGER;RELATED=START:-PT1H
 ACTION:DISPLAY
 DESCRIPTION:🟠 [US] 月度期权到期日：OPEX 风险窗口（9月月度期权）
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-CN-2026-09-29-25bc12575c@financial-calendar
+DTSTAMP:20260929T000000Z
+DTSTART;TZID=Asia/Shanghai:20260929T143000
+DTEND;TZID=Asia/Shanghai:20260929T150000
+LOCATION:中国
+SUMMARY:🟠 [CN] 每月倒数第二个中国营业日：9月
+DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Calendar / China Month-End Business Day\n影响资产：A股交易日历、月末调仓、资金安排\n时间状态：confirmed\n来源：中国交易日历\n来源链接：https://www.sse.com.cn/\n\n市场反馈：月末倒数第二个中国营业日通常会让调仓、结算、交割和资金安排更集中。\n历史反应：越接近月末，量化调仓、绩效窗口和资金安排越容易把波动压缩到最后几个交易时段。\n\n应对策略：月末前把该处理的仓位、计划和资金安排提前做完，不要把操作拖到最后一个交易日。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:https://www.sse.com.cn/
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [CN] 每月倒数第二个中国营业日：9月
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-CN-2026-09-29-2573e67cdd@financial-calendar
+DTSTAMP:20260929T000000Z
+DTSTART;TZID=Asia/Shanghai:20260929T143000
+DTEND;TZID=Asia/Shanghai:20260929T150000
+LOCATION:中国
+SUMMARY:🟠 [CN] A50 期货最后交易日：9月合约
+DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Derivatives / SGX A50 Futures Last Trading Day\n影响资产：A50期货、A股指数期货/相关对冲\n时间状态：confirmed\n来源：SGX\n来源链接：https://www.kgieworld.sg/futures/sgx-FTSE-China-A50-index-futures-contract-specifications\n\n市场反馈：A50 临近最后交易日时，期现和对冲行为通常会收敛，尾盘更容易受到平仓和移仓影响。\n历史反应：这类日子主要影响的是期货移仓、对冲和尾盘流动性，真正放大的往往是最后一两个交易时段。\n\n应对策略：临近到期前把裸方向仓位降下来，尽量提前处理需要移仓的合约，不要把最紧的风险留到尾盘。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:https://www.kgieworld.sg/futures/sgx-FTSE-China-A50-index-futures-contract-specifications
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [CN] A50 期货最后交易日：9月合约
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -1861,6 +1933,42 @@ DESCRIPTION:🔴 [US] FOMC 利率决议：10月会议声明与发布会
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:risk-CN-2026-10-29-d7b84c01b8@financial-calendar
+DTSTAMP:20261029T000000Z
+DTSTART;TZID=Asia/Shanghai:20261029T143000
+DTEND;TZID=Asia/Shanghai:20261029T150000
+LOCATION:中国
+SUMMARY:🟠 [CN] 每月倒数第二个中国营业日：10月
+DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Calendar / China Month-End Business Day\n影响资产：A股交易日历、月末调仓、资金安排\n时间状态：confirmed\n来源：中国交易日历\n来源链接：https://www.sse.com.cn/\n\n市场反馈：月末倒数第二个中国营业日通常会让调仓、结算、交割和资金安排更集中。\n历史反应：越接近月末，量化调仓、绩效窗口和资金安排越容易把波动压缩到最后几个交易时段。\n\n应对策略：月末前把该处理的仓位、计划和资金安排提前做完，不要把操作拖到最后一个交易日。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:https://www.sse.com.cn/
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [CN] 每月倒数第二个中国营业日：10月
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-CN-2026-10-29-96ca073e4a@financial-calendar
+DTSTAMP:20261029T000000Z
+DTSTART;TZID=Asia/Shanghai:20261029T143000
+DTEND;TZID=Asia/Shanghai:20261029T150000
+LOCATION:中国
+SUMMARY:🟠 [CN] A50 期货最后交易日：10月合约
+DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Derivatives / SGX A50 Futures Last Trading Day\n影响资产：A50期货、A股指数期货/相关对冲\n时间状态：confirmed\n来源：SGX\n来源链接：https://www.kgieworld.sg/futures/sgx-FTSE-China-A50-index-futures-contract-specifications\n\n市场反馈：A50 临近最后交易日时，期现和对冲行为通常会收敛，尾盘更容易受到平仓和移仓影响。\n历史反应：这类日子主要影响的是期货移仓、对冲和尾盘流动性，真正放大的往往是最后一两个交易时段。\n\n应对策略：临近到期前把裸方向仓位降下来，尽量提前处理需要移仓的合约，不要把最紧的风险留到尾盘。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:https://www.kgieworld.sg/futures/sgx-FTSE-China-A50-index-futures-contract-specifications
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [CN] A50 期货最后交易日：10月合约
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:risk-HK-2026-10-29-aea53c614b@financial-calendar
 DTSTAMP:20261029T000000Z
 DTSTART;TZID=Asia/Shanghai:20261029T153000
@@ -2051,6 +2159,42 @@ DESCRIPTION:🟠 [US] 月度期权到期日：OPEX 风险窗口（11月月度期
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:risk-CN-2026-11-27-d314bc1fef@financial-calendar
+DTSTAMP:20261127T000000Z
+DTSTART;TZID=Asia/Shanghai:20261127T143000
+DTEND;TZID=Asia/Shanghai:20261127T150000
+LOCATION:中国
+SUMMARY:🟠 [CN] 每月倒数第二个中国营业日：11月
+DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Calendar / China Month-End Business Day\n影响资产：A股交易日历、月末调仓、资金安排\n时间状态：confirmed\n来源：中国交易日历\n来源链接：https://www.sse.com.cn/\n\n市场反馈：月末倒数第二个中国营业日通常会让调仓、结算、交割和资金安排更集中。\n历史反应：越接近月末，量化调仓、绩效窗口和资金安排越容易把波动压缩到最后几个交易时段。\n\n应对策略：月末前把该处理的仓位、计划和资金安排提前做完，不要把操作拖到最后一个交易日。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:https://www.sse.com.cn/
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [CN] 每月倒数第二个中国营业日：11月
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-CN-2026-11-27-1ab4ef4fba@financial-calendar
+DTSTAMP:20261127T000000Z
+DTSTART;TZID=Asia/Shanghai:20261127T143000
+DTEND;TZID=Asia/Shanghai:20261127T150000
+LOCATION:中国
+SUMMARY:🟠 [CN] A50 期货最后交易日：11月合约
+DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Derivatives / SGX A50 Futures Last Trading Day\n影响资产：A50期货、A股指数期货/相关对冲\n时间状态：confirmed\n来源：SGX\n来源链接：https://www.kgieworld.sg/futures/sgx-FTSE-China-A50-index-futures-contract-specifications\n\n市场反馈：A50 临近最后交易日时，期现和对冲行为通常会收敛，尾盘更容易受到平仓和移仓影响。\n历史反应：这类日子主要影响的是期货移仓、对冲和尾盘流动性，真正放大的往往是最后一两个交易时段。\n\n应对策略：临近到期前把裸方向仓位降下来，尽量提前处理需要移仓的合约，不要把最紧的风险留到尾盘。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:https://www.kgieworld.sg/futures/sgx-FTSE-China-A50-index-futures-contract-specifications
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [CN] A50 期货最后交易日：11月合约
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:risk-HK-2026-11-27-f620d83015@financial-calendar
 DTSTAMP:20261127T000000Z
 DTSTART;TZID=Asia/Shanghai:20261127T153000
@@ -2225,6 +2369,42 @@ BEGIN:VALARM
 TRIGGER;RELATED=START:-PT1H
 ACTION:DISPLAY
 DESCRIPTION:🟠 [US] 月度期权到期日：OPEX 风险窗口（12月月度期权）
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-CN-2026-12-30-842351a03d@financial-calendar
+DTSTAMP:20261230T000000Z
+DTSTART;TZID=Asia/Shanghai:20261230T143000
+DTEND;TZID=Asia/Shanghai:20261230T150000
+LOCATION:中国
+SUMMARY:🟠 [CN] 每月倒数第二个中国营业日：12月
+DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Calendar / China Month-End Business Day\n影响资产：A股交易日历、月末调仓、资金安排\n时间状态：confirmed\n来源：中国交易日历\n来源链接：https://www.sse.com.cn/\n\n市场反馈：月末倒数第二个中国营业日通常会让调仓、结算、交割和资金安排更集中。\n历史反应：越接近月末，量化调仓、绩效窗口和资金安排越容易把波动压缩到最后几个交易时段。\n\n应对策略：月末前把该处理的仓位、计划和资金安排提前做完，不要把操作拖到最后一个交易日。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:https://www.sse.com.cn/
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [CN] 每月倒数第二个中国营业日：12月
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-CN-2026-12-30-d41c371a88@financial-calendar
+DTSTAMP:20261230T000000Z
+DTSTART;TZID=Asia/Shanghai:20261230T143000
+DTEND;TZID=Asia/Shanghai:20261230T150000
+LOCATION:中国
+SUMMARY:🟠 [CN] A50 期货最后交易日：12月合约
+DESCRIPTION:风险等级：高\n市场：CN\n事件类型：Derivatives / SGX A50 Futures Last Trading Day\n影响资产：A50期货、A股指数期货/相关对冲\n时间状态：confirmed\n来源：SGX\n来源链接：https://www.kgieworld.sg/futures/sgx-FTSE-China-A50-index-futures-contract-specifications\n\n市场反馈：A50 临近最后交易日时，期现和对冲行为通常会收敛，尾盘更容易受到平仓和移仓影响。\n历史反应：这类日子主要影响的是期货移仓、对冲和尾盘流动性，真正放大的往往是最后一两个交易时段。\n\n应对策略：临近到期前把裸方向仓位降下来，尽量提前处理需要移仓的合约，不要把最紧的风险留到尾盘。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:https://www.kgieworld.sg/futures/sgx-FTSE-China-A50-index-futures-contract-specifications
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [CN] A50 期货最后交易日：12月合约
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT

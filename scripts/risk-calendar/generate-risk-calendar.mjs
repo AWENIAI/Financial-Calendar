@@ -168,6 +168,36 @@ const EVENT_TEMPLATES = {
     reason: 'A股股指期货、期权月度交割日前后，指数成分、对冲需求和尾盘流动性可能变化。',
     checklist: ['是否持有指数 ETF 或股指期货相关仓位', '是否需要关注尾盘波动', '是否避免临近交割日过度加杠杆']
   },
+  'cn-penultimate-bizday': {
+    market: 'CN',
+    level: 'high',
+    category: 'Calendar / China Month-End Business Day',
+    title: ({ label }) => `每月倒数第二个中国营业日：${label}`,
+    location: '中国',
+    assets: ['A股交易日历', '月末调仓', '资金安排'],
+    sourceName: '中国交易日历',
+    sourceUrl: 'https://www.sse.com.cn/',
+    marketExpectation: '月末倒数第二个中国营业日通常会让调仓、结算、交割和资金安排更集中。',
+    historicalReaction: '越接近月末，量化调仓、绩效窗口和资金安排越容易把波动压缩到最后几个交易时段。',
+    actionPlan: '月末前把该处理的仓位、计划和资金安排提前做完，不要把操作拖到最后一个交易日。',
+    reason: '月末倒数第二个中国营业日常常是很多交易和运营动作的提前收口窗口。',
+    checklist: ['是否需要提前做月末调仓', '是否有资金或结算安排', '是否要避开尾盘临时决策']
+  },
+  'cn-a50-last-trade': {
+    market: 'CN',
+    level: 'high',
+    category: 'Derivatives / SGX A50 Futures Last Trading Day',
+    title: ({ label }) => `A50 期货最后交易日：${label}`,
+    location: '中国',
+    assets: ['A50期货', 'A股指数期货/相关对冲'],
+    sourceName: 'SGX',
+    sourceUrl: 'https://www.kgieworld.sg/futures/sgx-FTSE-China-A50-index-futures-contract-specifications',
+    marketExpectation: 'A50 临近最后交易日时，期现和对冲行为通常会收敛，尾盘更容易受到平仓和移仓影响。',
+    historicalReaction: '这类日子主要影响的是期货移仓、对冲和尾盘流动性，真正放大的往往是最后一两个交易时段。',
+    actionPlan: '临近到期前把裸方向仓位降下来，尽量提前处理需要移仓的合约，不要把最紧的风险留到尾盘。',
+    reason: 'A50 期货最后交易日通常是合约月的倒数第二个中国营业日，可能影响移仓和平仓节奏。',
+    checklist: ['是否持有 A50 期货相关仓位', '是否需要提前移仓', '是否避免最后交易日前后追单']
+  },
   'cn-earnings': {
     market: 'CN',
     level: 'high',

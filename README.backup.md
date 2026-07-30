@@ -77,7 +77,9 @@ https://aweniai.github.io/Financial-Calendar/
 1. 美股宏观与 Fed 事件：FOMC、非农、CPI、PPI、FOMC 纪要。
 2. 美股衍生品事件：VIX 期权到期、SPX / 月度 OPEX 风险窗口。
 3. A股制度性事件：股指期货/期权月度交割、定期报告披露截止窗口。
-4. 港股制度性事件：港股指数期货/期权月度到期。
+4. A股月末规则型事件：每月倒数第二个中国营业日。
+5. A50 期货制度性事件：最后交易日。
+6. 港股制度性事件：港股指数期货/期权月度到期。
 
 每条事件包含：
 
@@ -114,12 +116,14 @@ public/calendar/GLOBAL_KEY.ics
 
 ### 自动更新
 
-GitHub Actions 分成两条链路：
+GitHub Actions 每天北京时间 7:00 自动执行同一条链路：
 
-1. 每天北京时间 7:00 重新生成订阅文件并推送到 `main`。
-2. `main` 有新提交后，自动发布到 GitHub Pages。
+1. 重新生成订阅文件。
+2. 如果内容有变化，自动提交并 push 到 `main`。
+3. 在同一个 workflow 里直接部署 GitHub Pages。
+4. 同步把本次变化明细写入 README 更新日志，并把上一个 README 保存到 `README.backup.md`。
 
-这样 Pages 订阅链接会保持最新。
+这样 Pages 订阅链接和 GitHub README 会一起保持最新。
 
 如果是第一次启用，需要在 GitHub 仓库设置里确认：
 
