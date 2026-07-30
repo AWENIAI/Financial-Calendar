@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "generate": "node scripts/risk-calendar/generate-risk-calendar.mjs"
+    "generate": "node scripts/risk-calendar/generate-risk-calendar.mjs",
+    "log-update": "node scripts/risk-calendar/update-readme-changelog.mjs"
   },
   "engines": {
     "node": ">=20"

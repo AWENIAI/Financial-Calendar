@@ -260,6 +260,10 @@ function formatDateTime(value) {
   return `${match[1]}${match[2]}${match[3]}T${match[4]}${match[5]}00`;
 }
 
+function stableTimestamp(event) {
+  return `${event.start.slice(0, 10).replaceAll('-', '')}T000000Z`;
+}
+
 function stableUid(event) {
   const seed = [event.market, event.category, event.sourceName, event.title, event.start.slice(0, 10)].join('|');
   const digest = crypto.createHash('sha1').update(seed).digest('hex').slice(0, 10);
@@ -304,7 +308,7 @@ function renderEvent(event) {
   return [
     'BEGIN:VEVENT',
     `UID:${stableUid(event)}`,
-    `DTSTAMP:${formatDateTime(new Date().toISOString())}Z`,
+    `DTSTAMP:${stableTimestamp(event)}`,
     `DTSTART;TZID=${event.timezone}:${formatDateTime(event.start)}`,
     `DTEND;TZID=${event.timezone}:${formatDateTime(event.end || event.start)}`,
     `LOCATION:${escapeText(event.location)}`,
