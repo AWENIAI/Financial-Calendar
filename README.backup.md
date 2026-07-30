@@ -76,10 +76,11 @@ https://aweniai.github.io/Financial-Calendar/
 
 1. 美股宏观与 Fed 事件：FOMC、非农、CPI、PPI、FOMC 纪要。
 2. 美股衍生品事件：VIX 期权到期、SPX / 月度 OPEX 风险窗口。
-3. A股制度性事件：股指期货/期权月度交割、定期报告披露截止窗口。
-4. A股月末规则型事件：每月倒数第二个中国营业日。
-5. A50 期货制度性事件：最后交易日。
-6. 港股制度性事件：港股指数期货/期权月度到期。
+3. 美股个股财报事件：前 20 大公司未来 30 天内财报。
+4. A股制度性事件：股指期货/期权月度交割、定期报告披露截止窗口。
+5. A股月末规则型事件：每月倒数第二个中国营业日。
+6. A50 期货制度性事件：最后交易日。
+7. 港股制度性事件：港股指数期货/期权月度到期。
 
 每条事件包含：
 
@@ -106,6 +107,7 @@ npm run generate
 ```text
 data/risk-events.json
 data/fixed-events-2026.json
+data/us-megacap-earnings.json
 ```
 
 然后生成唯一订阅文件：
@@ -118,10 +120,11 @@ public/calendar/GLOBAL_KEY.ics
 
 GitHub Actions 每天北京时间 7:00 自动执行同一条链路：
 
-1. 重新生成订阅文件。
-2. 如果内容有变化，自动提交并 push 到 `main`。
-3. 在同一个 workflow 里直接部署 GitHub Pages。
-4. 同步把本次变化明细写入 README 更新日志，并把上一个 README 保存到 `README.backup.md`。
+1. 更新未来 30 天内的美股前 20 大公司财报数据。
+2. 重新生成订阅文件。
+3. 如果内容有变化，自动提交并 push 到 `main`。
+4. 在同一个 workflow 里直接部署 GitHub Pages。
+5. 同步把本次变化明细写入 README 更新日志，并把上一个 README 保存到 `README.backup.md`。
 
 这样 Pages 订阅链接和 GitHub README 会一起保持最新。
 
@@ -188,6 +191,25 @@ npm run generate
 3. 不能像 Google Calendar API 那样强制立即更新、删除或改期。
 
 ## 更新日志
+
+### 2026-07-31 04:12 自动更新记录
+
+- 触发来源：local
+- Action 记录：本地运行
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：126
+- 文件变化统计：4 files changed, 223 insertions(+), 1 deletion(-)
+- 变化文件：
+  - 修改：`README.md`
+  - 修改：`data/fixed-events-2026.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+  - 修改：`scripts/risk-calendar/generate-risk-calendar.mjs`
+- 最近未来事件：
+  - 2026-08-07 20:30：🔴 [US] 非农就业：2026年7月 Employment Situation
+  - 2026-08-12 20:30：🔴 [US] CPI 发布：2026年7月美国通胀数据
+  - 2026-08-13 20:30：🟠 [US] PPI 发布：2026年7月生产者价格指数
+  - 2026-08-19 21:30：🟠 [US] VIX 期权到期日：8月标准到期
+  - 2026-08-20 02:00：🟠 [US] FOMC 会议纪要发布：7月会议纪要
 
 ### 2026-07-28 全年固定事件补齐
 

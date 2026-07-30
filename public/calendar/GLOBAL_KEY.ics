@@ -1317,6 +1317,42 @@ DESCRIPTION:🟠 [HK] 港股指数期货/期权月度到期提醒：7月
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:risk-US-2026-07-31-8b2a1d3028@financial-calendar
+DTSTAMP:20260731T000000Z
+DTSTART;TZID=Asia/Shanghai:20260731T203000
+DTEND;TZID=Asia/Shanghai:20260731T210000
+LOCATION:美国
+SUMMARY:🟠 [US] Exxon Mobil（XOM）财报发布：Jun/2026
+DESCRIPTION:风险等级：高\n市场：US\n事件类型：Earnings / US Megacap\n影响资产：XOM、QQQ、SPY、纳斯达克100\n时间状态：confirmed\n来源：Nasdaq Earnings Calendar\n来源链接：https://www.nasdaq.com/market-activity/earnings\n\n市场反馈：市场会重点看营收、利润率、指引和管理层措辞。当前 Nasdaq 共识 EPS 为 $3.80，覆盖分析师数量为 5。\n历史反应：美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。\n\n应对策略：财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:https://www.nasdaq.com/market-activity/earnings
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [US] Exxon Mobil（XOM）财报发布：Jun/2026
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-US-2026-08-05-efe3faa8bc@financial-calendar
+DTSTAMP:20260805T000000Z
+DTSTART;TZID=Asia/Shanghai:20260805T203000
+DTEND;TZID=Asia/Shanghai:20260805T210000
+LOCATION:美国
+SUMMARY:🟠 [US] Eli Lilly（LLY）财报发布：Jun/2026
+DESCRIPTION:风险等级：高\n市场：US\n事件类型：Earnings / US Megacap\n影响资产：LLY、QQQ、SPY、纳斯达克100\n时间状态：confirmed\n来源：Nasdaq Earnings Calendar\n来源链接：https://www.nasdaq.com/market-activity/earnings\n\n市场反馈：市场会重点看营收、利润率、指引和管理层措辞。当前 Nasdaq 共识 EPS 为 $6.71，覆盖分析师数量为 4。\n历史反应：美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。\n\n应对策略：财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:https://www.nasdaq.com/market-activity/earnings
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [US] Eli Lilly（LLY）财报发布：Jun/2026
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:risk-US-2026-08-07-4f8e44f730@financial-calendar
 DTSTAMP:20260807T000000Z
 DTSTART;TZID=Asia/Shanghai:20260807T203000
@@ -1337,6 +1373,24 @@ BEGIN:VALARM
 TRIGGER;RELATED=START:-PT30M
 ACTION:DISPLAY
 DESCRIPTION:🔴 [US] 非农就业：2026年7月 Employment Situation
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-US-2026-08-07-6fdc7b4154@financial-calendar
+DTSTAMP:20260807T000000Z
+DTSTART;TZID=Asia/Shanghai:20260807T213000
+DTEND;TZID=Asia/Shanghai:20260807T220000
+LOCATION:美国
+SUMMARY:🟠 [US] Berkshire Hathaway（BRK.B）财报发布：Jun/2026
+DESCRIPTION:风险等级：高\n市场：US\n事件类型：Earnings / US Megacap\n影响资产：BRK.B、QQQ、SPY、纳斯达克100\n时间状态：estimated\n来源：Nasdaq Earnings Calendar\n来源链接：https://www.nasdaq.com/market-activity/earnings\n\n市场反馈：市场会重点看营收、利润率、指引和管理层措辞。当前 Nasdaq 共识 EPS 为 $5.24，覆盖分析师数量为 2。\n历史反应：美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。\n\n应对策略：财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:https://www.nasdaq.com/market-activity/earnings
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [US] Berkshire Hathaway（BRK.B）财报发布：Jun/2026
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -1381,6 +1435,24 @@ DESCRIPTION:🟠 [US] PPI 发布：2026年7月生产者价格指数
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:risk-US-2026-08-18-5d408b388d@financial-calendar
+DTSTAMP:20260818T000000Z
+DTSTART;TZID=Asia/Shanghai:20260818T203000
+DTEND;TZID=Asia/Shanghai:20260818T210000
+LOCATION:美国
+SUMMARY:🟠 [US] Home Depot（HD）财报发布：Jul/2026
+DESCRIPTION:风险等级：高\n市场：US\n事件类型：Earnings / US Megacap\n影响资产：HD、QQQ、SPY、纳斯达克100\n时间状态：confirmed\n来源：Nasdaq Earnings Calendar\n来源链接：https://www.nasdaq.com/market-activity/earnings\n\n市场反馈：市场会重点看营收、利润率、指引和管理层措辞。当前 Nasdaq 共识 EPS 为 $4.71，覆盖分析师数量为 12。\n历史反应：美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。\n\n应对策略：财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:https://www.nasdaq.com/market-activity/earnings
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [US] Home Depot（HD）财报发布：Jul/2026
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:risk-US-2026-08-19-59f34346a3@financial-calendar
 DTSTAMP:20260819T000000Z
 DTSTART;TZID=Asia/Shanghai:20260819T213000
@@ -1414,6 +1486,24 @@ BEGIN:VALARM
 TRIGGER;RELATED=START:-PT1H
 ACTION:DISPLAY
 DESCRIPTION:🟠 [US] FOMC 会议纪要发布：7月会议纪要
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-US-2026-08-20-57e37d3260@financial-calendar
+DTSTAMP:20260820T000000Z
+DTSTART;TZID=Asia/Shanghai:20260820T203000
+DTEND;TZID=Asia/Shanghai:20260820T210000
+LOCATION:美国
+SUMMARY:🟠 [US] Walmart（WMT）财报发布：Jul/2026
+DESCRIPTION:风险等级：高\n市场：US\n事件类型：Earnings / US Megacap\n影响资产：WMT、QQQ、SPY、纳斯达克100\n时间状态：confirmed\n来源：Nasdaq Earnings Calendar\n来源链接：https://www.nasdaq.com/market-activity/earnings\n\n市场反馈：市场会重点看营收、利润率、指引和管理层措辞。当前 Nasdaq 共识 EPS 为 $0.74，覆盖分析师数量为 13。\n历史反应：美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。\n\n应对策略：财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:https://www.nasdaq.com/market-activity/earnings
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [US] Walmart（WMT）财报发布：Jul/2026
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -1468,6 +1558,24 @@ BEGIN:VALARM
 TRIGGER;RELATED=START:-PT1H
 ACTION:DISPLAY
 DESCRIPTION:🟠 [US] 月度期权到期日：OPEX 风险窗口（8月月度期权）
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:risk-US-2026-08-27-51bab9fe1f@financial-calendar
+DTSTAMP:20260827T000000Z
+DTSTART;TZID=Asia/Shanghai:20260827T040500
+DTEND;TZID=Asia/Shanghai:20260827T043500
+LOCATION:美国
+SUMMARY:🟠 [US] NVIDIA（NVDA）财报发布：Jul/2026
+DESCRIPTION:风险等级：高\n市场：US\n事件类型：Earnings / US Megacap\n影响资产：NVDA、QQQ、SPY、纳斯达克100\n时间状态：confirmed\n来源：Nasdaq Earnings Calendar\n来源链接：https://www.nasdaq.com/market-activity/earnings\n\n市场反馈：市场会重点看营收、利润率、指引和管理层措辞。当前 Nasdaq 共识 EPS 为 $2.01，覆盖分析师数量为 11。\n历史反应：美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。\n\n应对策略：财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。
+CATEGORIES:交易风险
+TRANSP:TRANSPARENT
+X-RISK-LEVEL:高
+X-SOURCE-URL:https://www.nasdaq.com/market-activity/earnings
+BEGIN:VALARM
+TRIGGER;RELATED=START:-PT1H
+ACTION:DISPLAY
+DESCRIPTION:🟠 [US] NVIDIA（NVDA）财报发布：Jul/2026
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT

@@ -8,6 +8,7 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '../..');
 const dataPath = path.join(rootDir, 'data/risk-events.json');
 const fixedEventsPath = path.join(rootDir, 'data/fixed-events-2026.json');
+const usMegacapEarningsPath = path.join(rootDir, 'data/us-megacap-earnings.json');
 const outputDir = path.join(rootDir, 'public/calendar');
 
 const LEVEL_META = {
@@ -243,13 +244,16 @@ function eventFromFixedSpec(spec) {
   const template = EVENT_TEMPLATES[spec.kind];
   if (!template) throw new Error(`Unknown fixed event kind: ${spec.kind}`);
 
+  const { kind, date, startTime, endTime, label, ...overrides } = spec;
+
   return {
     ...template,
-    title: template.title(spec),
-    start: withChinaTimezone(spec.date, spec.startTime),
-    end: withChinaTimezone(spec.date, spec.endTime),
+    ...overrides,
+    title: template.title({ ...spec, label }),
+    start: withChinaTimezone(date, startTime),
+    end: withChinaTimezone(date, endTime),
     timezone: 'Asia/Shanghai',
-    timeStatus: spec.timeStatus || 'confirmed',
+    timeStatus: spec.timeStatus || template.timeStatus || 'confirmed',
     levelLabel: LEVEL_META[template.level].label
   };
 }
@@ -269,7 +273,7 @@ function dedupeEvents(events) {
 }
 
 function readEvents() {
-  const events = dedupeEvents([...readJson(dataPath, []), ...readFixedEvents()]);
+  const events = dedupeEvents([...readJson(dataPath, []), ...readFixedEvents(), ...readJson(usMegacapEarningsPath, [])]);
   return events
     .filter((event) => LEVEL_META[event.level])
     .sort((a, b) => a.start.localeCompare(b.start) || a.market.localeCompare(b.market));

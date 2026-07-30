@@ -1,0 +1,182 @@
+[
+  {
+    "market": "US",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Earnings / US Megacap",
+    "title": "Exxon Mobil（XOM）财报发布：Jun/2026",
+    "start": "2026-07-31T20:30:00+08:00",
+    "end": "2026-07-31T21:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "美国",
+    "assets": [
+      "XOM",
+      "QQQ",
+      "SPY",
+      "纳斯达克100"
+    ],
+    "timeStatus": "confirmed",
+    "sourceName": "Nasdaq Earnings Calendar",
+    "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前 Nasdaq 共识 EPS 为 $3.80，覆盖分析师数量为 5。",
+    "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
+    "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
+    "reason": "Exxon Mobil 是美股前 20 大市值公司之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "checklist": [
+      "是否持有该股或相关 ETF",
+      "是否能承受盘后跳空",
+      "是否需要提前降低仓位",
+      "是否关注财报后指引"
+    ]
+  },
+  {
+    "market": "US",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Earnings / US Megacap",
+    "title": "Eli Lilly（LLY）财报发布：Jun/2026",
+    "start": "2026-08-05T20:30:00+08:00",
+    "end": "2026-08-05T21:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "美国",
+    "assets": [
+      "LLY",
+      "QQQ",
+      "SPY",
+      "纳斯达克100"
+    ],
+    "timeStatus": "confirmed",
+    "sourceName": "Nasdaq Earnings Calendar",
+    "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前 Nasdaq 共识 EPS 为 $6.71，覆盖分析师数量为 4。",
+    "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
+    "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
+    "reason": "Eli Lilly 是美股前 20 大市值公司之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "checklist": [
+      "是否持有该股或相关 ETF",
+      "是否能承受盘后跳空",
+      "是否需要提前降低仓位",
+      "是否关注财报后指引"
+    ]
+  },
+  {
+    "market": "US",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Earnings / US Megacap",
+    "title": "Berkshire Hathaway（BRK.B）财报发布：Jun/2026",
+    "start": "2026-08-07T21:30:00+08:00",
+    "end": "2026-08-07T22:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "美国",
+    "assets": [
+      "BRK.B",
+      "QQQ",
+      "SPY",
+      "纳斯达克100"
+    ],
+    "timeStatus": "estimated",
+    "sourceName": "Nasdaq Earnings Calendar",
+    "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前 Nasdaq 共识 EPS 为 $5.24，覆盖分析师数量为 2。",
+    "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
+    "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
+    "reason": "Berkshire Hathaway 是美股前 20 大市值公司之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "checklist": [
+      "是否持有该股或相关 ETF",
+      "是否能承受盘后跳空",
+      "是否需要提前降低仓位",
+      "是否关注财报后指引"
+    ]
+  },
+  {
+    "market": "US",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Earnings / US Megacap",
+    "title": "Home Depot（HD）财报发布：Jul/2026",
+    "start": "2026-08-18T20:30:00+08:00",
+    "end": "2026-08-18T21:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "美国",
+    "assets": [
+      "HD",
+      "QQQ",
+      "SPY",
+      "纳斯达克100"
+    ],
+    "timeStatus": "confirmed",
+    "sourceName": "Nasdaq Earnings Calendar",
+    "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前 Nasdaq 共识 EPS 为 $4.71，覆盖分析师数量为 12。",
+    "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
+    "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
+    "reason": "Home Depot 是美股前 20 大市值公司之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "checklist": [
+      "是否持有该股或相关 ETF",
+      "是否能承受盘后跳空",
+      "是否需要提前降低仓位",
+      "是否关注财报后指引"
+    ]
+  },
+  {
+    "market": "US",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Earnings / US Megacap",
+    "title": "Walmart（WMT）财报发布：Jul/2026",
+    "start": "2026-08-20T20:30:00+08:00",
+    "end": "2026-08-20T21:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "美国",
+    "assets": [
+      "WMT",
+      "QQQ",
+      "SPY",
+      "纳斯达克100"
+    ],
+    "timeStatus": "confirmed",
+    "sourceName": "Nasdaq Earnings Calendar",
+    "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前 Nasdaq 共识 EPS 为 $0.74，覆盖分析师数量为 13。",
+    "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
+    "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
+    "reason": "Walmart 是美股前 20 大市值公司之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "checklist": [
+      "是否持有该股或相关 ETF",
+      "是否能承受盘后跳空",
+      "是否需要提前降低仓位",
+      "是否关注财报后指引"
+    ]
+  },
+  {
+    "market": "US",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Earnings / US Megacap",
+    "title": "NVIDIA（NVDA）财报发布：Jul/2026",
+    "start": "2026-08-27T04:05:00+08:00",
+    "end": "2026-08-27T04:35:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "美国",
+    "assets": [
+      "NVDA",
+      "QQQ",
+      "SPY",
+      "纳斯达克100"
+    ],
+    "timeStatus": "confirmed",
+    "sourceName": "Nasdaq Earnings Calendar",
+    "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前 Nasdaq 共识 EPS 为 $2.01，覆盖分析师数量为 11。",
+    "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
+    "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
+    "reason": "NVIDIA 是美股前 20 大市值公司之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "checklist": [
+      "是否持有该股或相关 ETF",
+      "是否能承受盘后跳空",
+      "是否需要提前降低仓位",
+      "是否关注财报后指引"
+    ]
+  }
+]

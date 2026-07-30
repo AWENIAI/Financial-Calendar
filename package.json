@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "update-earnings": "node scripts/risk-calendar/update-us-megacap-earnings.mjs",
     "generate": "node scripts/risk-calendar/generate-risk-calendar.mjs",
     "log-update": "node scripts/risk-calendar/update-readme-changelog.mjs"
   },
