@@ -306,9 +306,17 @@ function stableUid(event) {
   return `risk-${event.market}-${event.start.slice(0, 10)}-${digest}@financial-calendar`;
 }
 
+function marketTag(market) {
+  return {
+    US: '美股',
+    CN: 'A股',
+    HK: '港股'
+  }[market] || market;
+}
+
 function summary(event) {
   const meta = LEVEL_META[event.level];
-  return `${meta.emoji} [${event.market}] ${event.title}`;
+  return `${meta.emoji} [${marketTag(event.market)}] ${event.title}`;
 }
 
 function eventDateTimeLabel(event) {
@@ -325,23 +333,53 @@ function marketLabel(market) {
   }[market] || market;
 }
 
+function categoryLabel(category) {
+  return {
+    'Earnings / US Megacap': '美股前 20 大公司财报',
+    'Macro / Fed / FOMC': '美联储议息会议',
+    'Macro / Fed Minutes': '美联储会议纪要',
+    'Macro / Employment / NFP': '美国非农就业数据',
+    'Macro / CPI': '美国消费者价格指数',
+    'Macro / PPI': '美国生产者价格指数',
+    'Derivatives / VIX Options Expiration': 'VIX 期权到期',
+    'Derivatives / Index Options Last Trading Day': '美股指数期权最后交易日',
+    'Derivatives / Monthly Options Expiration': '美股月度期权到期',
+    'Derivatives / CFFEX Monthly Expiry': 'A股股指期货/期权月度交割',
+    'Calendar / China Month-End Business Day': '中国月末倒数第二个营业日',
+    'Derivatives / SGX A50 Futures Last Trading Day': 'A50 期货最后交易日',
+    'Earnings / Disclosure Deadline': 'A股定期报告披露截止窗口',
+    'Derivatives / HKEX Monthly Expiry': '港股指数期货/期权月度到期'
+  }[category] || category;
+}
+
+function timeStatusLabel(status) {
+  return {
+    confirmed: '已确认',
+    estimated: '预估',
+    'rule-based': '规则推算'
+  }[status] || status;
+}
+
 function timingLabel(event) {
   const hour = Number(String(event.start).slice(11, 13));
   if (event.timeStatus === 'estimated') return '时间状态为预估，适合先做风险准备，临近日期需要复核。';
   if (event.category === 'Earnings / US Megacap' && hour < 8) return '美股盘后财报，主要反应会先体现在盘后个股、纳指期货和第二天常规交易。';
   if (event.category === 'Earnings / US Megacap' && hour >= 19 && hour <= 21) return '美股盘前财报，常规开盘前会完成第一轮定价，开盘后容易出现二次确认或反向修正。';
-  return `时间状态为 ${event.timeStatus}。`;
+  return `时间状态为${timeStatusLabel(event.timeStatus)}。`;
 }
 
 function extractEarningsContext(event) {
-  const eps = event.marketExpectation?.match(/共识 EPS 为 ([^，。]+)/)?.[1];
+  const eps = event.consensusEps || event.marketExpectation?.match(/共识(?:每股收益| EPS)为 ([^，。]+)/)?.[1];
   const estimates = event.marketExpectation?.match(/覆盖分析师数量为 ([^，。]+)/)?.[1];
-  return { eps: eps || '未提供', estimates: estimates || '未提供' };
+  return { eps: eps || '未提供', estimates: event.analystCount || estimates || '未提供' };
 }
 
 function buildEarningsDescription(event, meta) {
   const { eps, estimates } = extractEarningsContext(event);
-  const mainTicker = event.assets[0];
+  const mainTicker = event.ticker || event.assets[0];
+  const companyLabel = event.companyChineseName && event.companyEnglishName
+    ? `${event.companyChineseName}（${event.companyEnglishName}，${mainTicker}）`
+    : mainTicker;
   const relatedAssets = event.assets.slice(1).join('、');
 
   return [
@@ -351,26 +389,26 @@ function buildEarningsDescription(event, meta) {
     `风险等级：${event.levelLabel || meta.label}`,
     `市场：${marketLabel(event.market)}`,
     `事件类型：美股前 20 大公司财报（仅滚动保留未来 30 天内数据）`,
-    `时间可信度：${event.timeStatus}`,
+    `时间可信度：${timeStatusLabel(event.timeStatus)}`,
     `数据来源：${event.sourceName}`,
     `来源链接：${event.sourceUrl}`,
     '',
     '当前真实数据：',
-    `- 标的：${mainTicker}`,
-    `- 财报季度：${event.title.split('：').at(-1)}`,
-    `- Nasdaq 共识 EPS：${eps}`,
+    `- 标的：${companyLabel}`,
+    `- 财报季度：${event.fiscalQuarter || event.title.split('：').at(-1)}`,
+    `- 纳斯达克共识每股收益：${eps}`,
     `- 覆盖分析师数量：${estimates}`,
     `- 财报发布时间特征：${timingLabel(event)}`,
     '',
     '影响范围：',
-    `- 直接影响：${mainTicker} 本身的盘前/盘后跳空、期权隐含波动率和成交量。`,
+    `- 直接影响：${companyLabel} 本身的盘前/盘后跳空、期权隐含波动率和成交量。`,
     `- 指数影响：${relatedAssets || '相关指数与 ETF'}，尤其是财报后第一个常规交易时段。`,
     '- 产业链影响：如果指引明显偏离预期，会外溢到同赛道公司、供应链、客户和竞争对手。',
     '- 情绪影响：超大市值公司财报容易改变市场对成长、消费、防御或周期板块的风险偏好。',
     '',
     '操作建议：',
     '- 财报前：不要在事件前临时加重仓；已有仓位先确认最大可承受跳空，不符合就提前降仓。',
-    '- 财报发布时：先看营收、利润率、EPS、下季度/全年指引和管理层措辞，不只看 headline EPS 是否 beat。',
+    '- 财报发布时：先看营收、利润率、每股收益、下季度/全年指引和管理层措辞，不只看表面每股收益是否高于预期。',
     '- 财报后：如果盘后/盘前大幅跳动，等常规交易前 15–30 分钟成交和期货反应稳定后再判断；不要用第一根波动直接追。',
     '- 组合层面：如果同时持有 QQQ/SPY 或同赛道股票，把它当成组合风险事件处理，而不是单一个股新闻。',
     '',
@@ -389,9 +427,9 @@ function buildDescription(event) {
     `事件时间：${eventDateTimeLabel(event)}`,
     `风险等级：${event.levelLabel || meta.label}`,
     `市场：${marketLabel(event.market)}`,
-    `事件类型：${event.category}`,
+    `事件类型：${categoryLabel(event.category)}`,
     `影响资产：${event.assets.join('、')}`,
-    `时间状态：${event.timeStatus}`,
+    `时间状态：${timeStatusLabel(event.timeStatus)}`,
     `来源：${event.sourceName}`,
     `来源链接：${event.sourceUrl}`,
     '',

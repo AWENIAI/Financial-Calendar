@@ -11,26 +11,26 @@ const LOOKAHEAD_DAYS = 30;
 const NASDAQ_EARNINGS_URL = 'https://api.nasdaq.com/api/calendar/earnings';
 
 const WATCHLIST = [
-  { symbol: 'NVDA', name: 'NVIDIA' },
-  { symbol: 'MSFT', name: 'Microsoft' },
-  { symbol: 'AAPL', name: 'Apple' },
-  { symbol: 'AMZN', name: 'Amazon' },
-  { symbol: 'GOOGL', name: 'Alphabet', aliases: ['GOOG'] },
-  { symbol: 'META', name: 'Meta Platforms' },
-  { symbol: 'AVGO', name: 'Broadcom' },
-  { symbol: 'TSLA', name: 'Tesla' },
-  { symbol: 'BRK.B', name: 'Berkshire Hathaway', aliases: ['BRK/B', 'BRK.B'] },
-  { symbol: 'LLY', name: 'Eli Lilly' },
-  { symbol: 'JPM', name: 'JPMorgan Chase' },
-  { symbol: 'WMT', name: 'Walmart' },
-  { symbol: 'V', name: 'Visa' },
-  { symbol: 'ORCL', name: 'Oracle' },
-  { symbol: 'MA', name: 'Mastercard' },
-  { symbol: 'NFLX', name: 'Netflix' },
-  { symbol: 'XOM', name: 'Exxon Mobil' },
-  { symbol: 'COST', name: 'Costco' },
-  { symbol: 'JNJ', name: 'Johnson & Johnson' },
-  { symbol: 'HD', name: 'Home Depot' }
+  { symbol: 'NVDA', chineseName: '英伟达', englishName: 'NVIDIA' },
+  { symbol: 'MSFT', chineseName: '微软', englishName: 'Microsoft' },
+  { symbol: 'AAPL', chineseName: '苹果', englishName: 'Apple' },
+  { symbol: 'AMZN', chineseName: '亚马逊', englishName: 'Amazon' },
+  { symbol: 'GOOGL', chineseName: '谷歌母公司 Alphabet', englishName: 'Alphabet', aliases: ['GOOG'] },
+  { symbol: 'META', chineseName: 'Meta 平台', englishName: 'Meta Platforms' },
+  { symbol: 'AVGO', chineseName: '博通', englishName: 'Broadcom' },
+  { symbol: 'TSLA', chineseName: '特斯拉', englishName: 'Tesla' },
+  { symbol: 'BRK.B', chineseName: '伯克希尔哈撒韦', englishName: 'Berkshire Hathaway', aliases: ['BRK/B', 'BRK.B'] },
+  { symbol: 'LLY', chineseName: '礼来', englishName: 'Eli Lilly' },
+  { symbol: 'JPM', chineseName: '摩根大通', englishName: 'JPMorgan Chase' },
+  { symbol: 'WMT', chineseName: '沃尔玛', englishName: 'Walmart' },
+  { symbol: 'V', chineseName: '维萨', englishName: 'Visa' },
+  { symbol: 'ORCL', chineseName: '甲骨文', englishName: 'Oracle' },
+  { symbol: 'MA', chineseName: '万事达卡', englishName: 'Mastercard' },
+  { symbol: 'NFLX', chineseName: '奈飞', englishName: 'Netflix' },
+  { symbol: 'XOM', chineseName: '埃克森美孚', englishName: 'Exxon Mobil' },
+  { symbol: 'COST', chineseName: '开市客', englishName: 'Costco' },
+  { symbol: 'JNJ', chineseName: '强生', englishName: 'Johnson & Johnson' },
+  { symbol: 'HD', chineseName: '家得宝', englishName: 'Home Depot' }
 ];
 
 const WATCHLIST_BY_SYMBOL = new Map();
@@ -72,6 +72,26 @@ function isoDate(date) {
 
 function withChinaTimezone(date, time) {
   return `${date}T${time}:00+08:00`;
+}
+
+function formatFiscalQuarter(value) {
+  const monthMap = {
+    Jan: '1月',
+    Feb: '2月',
+    Mar: '3月',
+    Apr: '4月',
+    May: '5月',
+    Jun: '6月',
+    Jul: '7月',
+    Aug: '8月',
+    Sep: '9月',
+    Oct: '10月',
+    Nov: '11月',
+    Dec: '12月'
+  };
+  const match = String(value || '').match(/^([A-Za-z]{3})\/(\d{4})$/);
+  if (!match) return value || '最近季度';
+  return `${match[2]}年${monthMap[match[1]] || match[1]}`;
 }
 
 function earningsWindow(rowDate, nasdaqTime) {
@@ -119,28 +139,35 @@ function normalizeSymbol(symbol) {
 
 function eventFromRow(row, rowDate, company) {
   const timing = earningsWindow(rowDate, row.time);
-  const quarter = row.fiscalQuarterEnding || '最近季度';
+  const quarter = formatFiscalQuarter(row.fiscalQuarterEnding);
   const eps = row.epsForecast && row.epsForecast !== 'N/A' ? row.epsForecast : '未提供';
   const estimates = row.noOfEsts && row.noOfEsts !== 'N/A' ? row.noOfEsts : '未提供';
+  const companyLabel = `${company.chineseName}（${company.englishName}，${company.symbol}）`;
 
   return {
     market: 'US',
     level: 'high',
     levelLabel: '高',
     category: 'Earnings / US Megacap',
-    title: `${company.name}（${company.symbol}）财报发布：${quarter}`,
+    title: `${companyLabel}财报发布：${quarter}`,
     start: timing.start,
     end: timing.end,
     timezone: 'Asia/Shanghai',
     location: '美国',
     assets: [company.symbol, 'QQQ', 'SPY', '纳斯达克100'],
+    companyChineseName: company.chineseName,
+    companyEnglishName: company.englishName,
+    ticker: company.symbol,
+    fiscalQuarter: quarter,
+    consensusEps: eps,
+    analystCount: estimates,
     timeStatus: timing.status,
-    sourceName: 'Nasdaq Earnings Calendar',
+    sourceName: '纳斯达克财报日历',
     sourceUrl: 'https://www.nasdaq.com/market-activity/earnings',
-    marketExpectation: `市场会重点看营收、利润率、指引和管理层措辞。当前 Nasdaq 共识 EPS 为 ${eps}，覆盖分析师数量为 ${estimates}。`,
+    marketExpectation: `市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 ${eps}，覆盖分析师数量为 ${estimates}。`,
     historicalReaction: '美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。',
     actionPlan: '财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。',
-    reason: `${company.name} 是美股前 20 大市值公司之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。`,
+    reason: `${companyLabel}是美股前 20 大市值公司之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。`,
     checklist: ['是否持有该股或相关 ETF', '是否能承受盘后跳空', '是否需要提前降低仓位', '是否关注财报后指引']
   };
 }
@@ -174,7 +201,7 @@ async function main() {
   const events = Array.from(eventsBySymbol.values()).sort((a, b) => a.start.localeCompare(b.start) || a.title.localeCompare(b.title));
   fs.writeFileSync(outputPath, `${JSON.stringify(events, null, 2)}\n`, 'utf8');
   console.log(`US megacap earnings: ${events.length} events in next ${LOOKAHEAD_DAYS} days`);
-  for (const event of events) console.log(`${event.start.slice(0, 10)} ${event.assets[0]} ${event.title}`);
+  for (const event of events) console.log(`${event.start.slice(0, 10)} ${event.ticker} ${event.title}`);
 }
 
 main().catch((error) => {
