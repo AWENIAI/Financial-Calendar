@@ -192,6 +192,23 @@ npm run generate
 
 ## 更新日志
 
+### 2026-08-01 07:58 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/30674286540
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：155
+- 文件变化统计：2 files changed, 206 insertions(+), 54 deletions(-)
+- 变化文件：
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-08-04 08:00：📊 [美股] 卡特彼勒（Caterpillar，CAT）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] AMD（AMD，AMD）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] SpaceX（SpaceX，SPCX）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] 礼来（Eli Lilly，LLY）财报发布：2026年6月
+  - 2026-08-07 08:00：🔴 [美股] 非农就业：2026年7月 Employment Situation
+
 ### 2026-07-31 11:05 自动更新记录
 
 - 触发来源：local

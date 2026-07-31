@@ -775,6 +775,116 @@
     "levelLabel": "高",
     "category": "Earnings / US Megacap",
     "title": "亚马逊（Amazon，AMZN）财报发布：2026年6月",
+    "start": "2026-07-30T21:30:00+08:00",
+    "end": "2026-07-30T22:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "美国",
+    "assets": [
+      "AMZN",
+      "QQQ",
+      "SPY",
+      "纳斯达克100"
+    ],
+    "companyChineseName": "亚马逊",
+    "companyEnglishName": "Amazon",
+    "ticker": "AMZN",
+    "fiscalQuarter": "2026年6月",
+    "consensusEps": "$1.83",
+    "analystCount": "13",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
+    "nasdaqCalendarFields": {
+      "time": "time-not-supplied",
+      "timeLabel": "未提供具体时间",
+      "symbol": "AMZN",
+      "companyName": "Amazon.com, Inc.",
+      "marketCap": "$2,533,299,272,178",
+      "fiscalQuarterEnding": "Jun/2026",
+      "fiscalQuarterEndingLabel": "2026年6月",
+      "epsForecast": "$1.83",
+      "noOfEsts": "13",
+      "lastYearRptDt": "未提供",
+      "lastYearEPS": "未提供"
+    },
+    "timeStatus": "estimated",
+    "sourceName": "纳斯达克财报日历",
+    "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $1.83，覆盖分析师数量为 13。",
+    "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
+    "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
+    "reason": "亚马逊（Amazon，AMZN）是订阅股票池 30 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "checklist": [
+      "是否持有该股或相关 ETF",
+      "是否能承受盘后跳空",
+      "是否需要提前降低仓位",
+      "是否关注财报后指引"
+    ],
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
+    "analysisUpdatedAt": "2026-08-01 07:58:07 北京时间",
+    "archivedAt": "2026-08-01 07:58:07 北京时间"
+  },
+  {
+    "market": "US",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Earnings / US Megacap",
+    "title": "苹果（Apple，AAPL）财报发布：2026年6月",
+    "start": "2026-07-30T21:30:00+08:00",
+    "end": "2026-07-30T22:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "美国",
+    "assets": [
+      "AAPL",
+      "QQQ",
+      "SPY",
+      "纳斯达克100"
+    ],
+    "companyChineseName": "苹果",
+    "companyEnglishName": "Apple",
+    "ticker": "AAPL",
+    "fiscalQuarter": "2026年6月",
+    "consensusEps": "$1.88",
+    "analystCount": "11",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
+    "nasdaqCalendarFields": {
+      "time": "time-not-supplied",
+      "timeLabel": "未提供具体时间",
+      "symbol": "AAPL",
+      "companyName": "Apple Inc.",
+      "marketCap": "$4,897,205,111,080",
+      "fiscalQuarterEnding": "Jun/2026",
+      "fiscalQuarterEndingLabel": "2026年6月",
+      "epsForecast": "$1.88",
+      "noOfEsts": "11",
+      "lastYearRptDt": "未提供",
+      "lastYearEPS": "未提供"
+    },
+    "timeStatus": "estimated",
+    "sourceName": "纳斯达克财报日历",
+    "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $1.88，覆盖分析师数量为 11。",
+    "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
+    "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
+    "reason": "苹果（Apple，AAPL）是订阅股票池 30 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "checklist": [
+      "是否持有该股或相关 ETF",
+      "是否能承受盘后跳空",
+      "是否需要提前降低仓位",
+      "是否关注财报后指引"
+    ],
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
+    "analysisUpdatedAt": "2026-08-01 07:58:07 北京时间",
+    "archivedAt": "2026-08-01 07:58:07 北京时间"
+  },
+  {
+    "market": "US",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Earnings / US Megacap",
+    "title": "亚马逊（Amazon，AMZN）财报发布：2026年6月",
     "start": "2026-07-31T04:05:00+08:00",
     "end": "2026-07-31T04:35:00+08:00",
     "timezone": "Asia/Shanghai",
@@ -957,19 +1067,19 @@
     "companyEnglishName": "Exxon Mobil",
     "ticker": "XOM",
     "fiscalQuarter": "2026年6月",
-    "consensusEps": "$3.80",
+    "consensusEps": "$3.68",
     "analystCount": "5",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-pre-market",
       "timeLabel": "美股盘前",
       "symbol": "XOM",
       "companyName": "ExxonMobil Holdings Corporation",
-      "marketCap": "$649,720,467,644",
+      "marketCap": "$650,632,356,019",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
-      "epsForecast": "$3.80",
+      "epsForecast": "$3.68",
       "noOfEsts": "5",
       "lastYearRptDt": "8/01/2025",
       "lastYearEPS": "$1.64"
@@ -977,7 +1087,7 @@
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
     "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
-    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $3.80，覆盖分析师数量为 5。",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $3.68，覆盖分析师数量为 5。",
     "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
     "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
     "reason": "埃克森美孚（Exxon Mobil，XOM）是订阅股票池 30 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
@@ -987,9 +1097,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
-    "analysisLocked": false,
-    "lastFetchedAt": "2026-07-31 10:35:35 北京时间"
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
+    "lastFetchedAt": "2026-07-31 10:35:35 北京时间",
+    "analysisUpdatedAt": "2026-08-01 07:58:07 北京时间",
+    "archivedAt": "2026-08-01 07:58:07 北京时间"
   },
   {
     "market": "US",
@@ -1013,14 +1125,14 @@
     "fiscalQuarter": "2026年6月",
     "consensusEps": "$3.64",
     "analystCount": "5",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-pre-market",
       "timeLabel": "美股盘前",
       "symbol": "ABBV",
       "companyName": "AbbVie Inc.",
-      "marketCap": "$465,196,549,769",
+      "marketCap": "$454,790,140,054",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$3.64",
@@ -1041,9 +1153,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
-    "analysisLocked": false,
-    "lastFetchedAt": "2026-07-31 10:35:35 北京时间"
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
+    "lastFetchedAt": "2026-07-31 10:35:35 北京时间",
+    "analysisUpdatedAt": "2026-08-01 07:58:07 北京时间",
+    "archivedAt": "2026-08-01 07:58:07 北京时间"
   },
   {
     "market": "US",
@@ -1067,14 +1181,14 @@
     "fiscalQuarter": "2026年6月",
     "consensusEps": "$5.80",
     "analystCount": "5",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-pre-market",
       "timeLabel": "美股盘前",
       "symbol": "CVX",
       "companyName": "Chevron Corporation",
-      "marketCap": "$382,107,940,862",
+      "marketCap": "$383,004,159,841",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$5.80",
@@ -1095,9 +1209,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
-    "analysisLocked": false,
-    "lastFetchedAt": "2026-07-31 10:35:35 北京时间"
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
+    "lastFetchedAt": "2026-07-31 10:35:35 北京时间",
+    "analysisUpdatedAt": "2026-08-01 07:58:07 北京时间",
+    "archivedAt": "2026-08-01 07:58:07 北京时间"
   },
   {
     "market": "US",
@@ -1128,7 +1244,7 @@
       "timeLabel": "美股盘前",
       "symbol": "CAT",
       "companyName": "Caterpillar, Inc.",
-      "marketCap": "$360,545,206,620",
+      "marketCap": "$372,719,843,218",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$6.25",
@@ -1151,7 +1267,7 @@
     ],
     "recordStatus": "跟踪中：阶段A财报发布前",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-07-31 10:35:35 北京时间"
+    "lastFetchedAt": "2026-08-01 07:58:07 北京时间"
   },
   {
     "market": "US",
@@ -1182,7 +1298,7 @@
       "timeLabel": "美股盘后",
       "symbol": "AMD",
       "companyName": "Advanced Micro Devices, Inc.",
-      "marketCap": "$700,440,810,489",
+      "marketCap": "$791,477,244,164",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$1.35",
@@ -1205,7 +1321,7 @@
     ],
     "recordStatus": "跟踪中：阶段A财报发布前",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-07-31 10:35:35 北京时间"
+    "lastFetchedAt": "2026-08-01 07:58:07 北京时间"
   },
   {
     "market": "US",
@@ -1228,7 +1344,7 @@
     "ticker": "SPCX",
     "fiscalQuarter": "2026年6月",
     "consensusEps": "($0.26)",
-    "analystCount": "7",
+    "analystCount": "5",
     "analysisPhase": "A",
     "analysisPhaseLabel": "阶段A：财报发布前",
     "nasdaqCalendarFields": {
@@ -1236,18 +1352,18 @@
       "timeLabel": "美股盘后",
       "symbol": "SPCX",
       "companyName": "Space Exploration Technologies Corp.",
-      "marketCap": "$1,473,375,613,761",
+      "marketCap": "$1,468,793,814,873",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "($0.26)",
-      "noOfEsts": "7",
+      "noOfEsts": "5",
       "lastYearRptDt": "未提供",
       "lastYearEPS": "未提供"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
     "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
-    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 ($0.26)，覆盖分析师数量为 7。",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 ($0.26)，覆盖分析师数量为 5。",
     "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
     "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
     "reason": "SpaceX（SpaceX，SPCX）是订阅股票池 30 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
@@ -1259,7 +1375,7 @@
     ],
     "recordStatus": "跟踪中：阶段A财报发布前",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-07-31 10:35:35 北京时间"
+    "lastFetchedAt": "2026-08-01 07:58:07 北京时间"
   },
   {
     "market": "US",
@@ -1290,7 +1406,7 @@
       "timeLabel": "美股盘前",
       "symbol": "LLY",
       "companyName": "Eli Lilly and Company",
-      "marketCap": "$1,139,525,936,088",
+      "marketCap": "$1,087,683,071,688",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$6.71",
@@ -1313,7 +1429,7 @@
     ],
     "recordStatus": "跟踪中：阶段A财报发布前",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-07-31 10:35:35 北京时间"
+    "lastFetchedAt": "2026-08-01 07:58:07 北京时间"
   },
   {
     "market": "US",
@@ -1344,7 +1460,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "BRK.B",
       "companyName": "Berkshire Hathaway Inc.",
-      "marketCap": "$1,097,528,778,708",
+      "marketCap": "$1,100,150,493,141",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$5.24",
@@ -1367,7 +1483,7 @@
     ],
     "recordStatus": "跟踪中：阶段A财报发布前",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-07-31 10:35:35 北京时间"
+    "lastFetchedAt": "2026-08-01 07:58:07 北京时间"
   },
   {
     "market": "US",
@@ -1398,7 +1514,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "CSCO",
       "companyName": "Cisco Systems, Inc.",
-      "marketCap": "$443,332,571,119",
+      "marketCap": "$447,589,320,557",
       "fiscalQuarterEnding": "Jul/2026",
       "fiscalQuarterEndingLabel": "2026年7月",
       "epsForecast": "$0.99",
@@ -1421,7 +1537,7 @@
     ],
     "recordStatus": "跟踪中：阶段A财报发布前",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-07-31 10:35:35 北京时间"
+    "lastFetchedAt": "2026-08-01 07:58:07 北京时间"
   },
   {
     "market": "US",
@@ -1452,7 +1568,7 @@
       "timeLabel": "美股盘后",
       "symbol": "AMAT",
       "companyName": "Applied Materials, Inc.",
-      "marketCap": "$346,523,593,224",
+      "marketCap": "$398,385,023,191",
       "fiscalQuarterEnding": "Jul/2026",
       "fiscalQuarterEndingLabel": "2026年7月",
       "epsForecast": "$3.36",
@@ -1475,7 +1591,7 @@
     ],
     "recordStatus": "跟踪中：阶段A财报发布前",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-07-31 10:35:35 北京时间"
+    "lastFetchedAt": "2026-08-01 07:58:07 北京时间"
   },
   {
     "market": "US",
@@ -1506,7 +1622,7 @@
       "timeLabel": "美股盘前",
       "symbol": "WMT",
       "companyName": "Walmart Inc.",
-      "marketCap": "$908,971,801,084",
+      "marketCap": "$884,142,594,121",
       "fiscalQuarterEnding": "Jul/2026",
       "fiscalQuarterEndingLabel": "2026年7月",
       "epsForecast": "$0.74",
@@ -1529,7 +1645,7 @@
     ],
     "recordStatus": "跟踪中：阶段A财报发布前",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-07-31 10:35:35 北京时间"
+    "lastFetchedAt": "2026-08-01 07:58:07 北京时间"
   },
   {
     "market": "US",
@@ -1560,7 +1676,7 @@
       "timeLabel": "美股盘后",
       "symbol": "NVDA",
       "companyName": "NVIDIA Corporation",
-      "marketCap": "$4,598,242,000,000",
+      "marketCap": "$4,719,968,000,000",
       "fiscalQuarterEnding": "Jul/2026",
       "fiscalQuarterEndingLabel": "2026年7月",
       "epsForecast": "$2.01",
@@ -1583,6 +1699,6 @@
     ],
     "recordStatus": "跟踪中：阶段A财报发布前",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-07-31 10:35:35 北京时间"
+    "lastFetchedAt": "2026-08-01 07:58:07 北京时间"
   }
 ]
