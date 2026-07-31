@@ -417,7 +417,61 @@ function buildStageAAnalysis(event, companyLabel, relatedAssets, eps, estimates)
   ];
 }
 
-function buildStageBAnalysis(companyLabel) {
+function bulletLines(items) {
+  return (items || []).map((item) => `  - ${item}`);
+}
+
+function buildStageBAnalysis(event, companyLabel) {
+  const actual = event.reportedFinancials;
+  const analysis = event.stageBAnalysis;
+
+  if (actual && analysis) {
+    return [
+      '阶段B：财报发布后复盘结果',
+      `- 数据来源：${actual.sourceName}`,
+      `- 来源链接：${actual.sourceUrl}`,
+      `- 财报期结束日：${actual.periodEnded}`,
+      '',
+      '真实财报数据：',
+      `- 营收：${actual.revenue}，同比 ${actual.revenueYoY}`,
+      `- 毛利率：${actual.grossMargin}；说明：${actual.grossMarginNote}`,
+      `- 摊薄每股收益：${actual.dilutedEps}，同比 ${actual.dilutedEpsYoY}；说明：${actual.dilutedEpsNote}`,
+      `- 股息：${actual.dividend}；股权登记日 ${actual.dividendRecordDate}，派息日 ${actual.dividendPayableDate}`,
+      `- 经营现金流：${actual.operatingCashFlowComment}`,
+      `- 管理层摘要：${actual.managementQuoteSummary}`,
+      '',
+      `预期差结论：${analysis.expectationGapConclusion}`,
+      `- 判定理由：${analysis.expectationGapReason}`,
+      '',
+      '利润表拆解：',
+      `- ${analysis.incomeStatementAnalysis}`,
+      '',
+      '资产负债表拆解：',
+      `- ${analysis.balanceSheetAnalysis}`,
+      '',
+      '现金流量表拆解：',
+      `- ${analysis.cashFlowAnalysis}`,
+      '',
+      '管理层展望判断：',
+      `- ${analysis.managementOutlookAnalysis}`,
+      '',
+      '股价与资金博弈判断：',
+      `- ${analysis.priceActionAnalysis}`,
+      '',
+      '财报亮点：',
+      ...bulletLines(analysis.highlights),
+      '',
+      '风险清单：',
+      ...bulletLines(analysis.risks),
+      '',
+      `短期交易判断：${analysis.shortTermTradingView}`,
+      `中长期基本面判断：${analysis.longTermFundamentalView}`,
+      '',
+      '仍需补充的数据：',
+      ...bulletLines(analysis.missingData)
+    ];
+  }
+
   return [
     '阶段B：财报发布后复盘',
     '- 当前状态：日历已经进入财报发布后阶段，但尚未接入公司正式财报、利润表、资产负债表、现金流量表、管理层展望和股价反应数据。',
@@ -436,6 +490,15 @@ function buildStageBAnalysis(companyLabel) {
 
 function buildEarningsActionLines(event) {
   if (event.analysisPhase === 'B') {
+    if (event.stageBAnalysis) {
+      return [
+        `- 预期差已经完成初步判定：${event.stageBAnalysis.expectationGapConclusion}。`,
+        '- 短线不要只看财报标题，优先观察常规交易时段成交量、缺口是否守住、相关 ETF 和同赛道股票是否确认方向。',
+        '- 若后续补齐 10-Q、现金流和电话会指引，需要复核本次结论是否维持。',
+        '- 已归档记录不再由自动任务覆盖或删除，后续只在你提供新资料时人工追加复盘。'
+      ];
+    }
+
     return [
       '- 财报发布后：先补齐正式财报、三张表、管理层展望和股价反应数据，再做预期差判断。',
       '- 交易层面：在真实数据未补齐前，不把盘前/盘后第一波涨跌当作最终结论；先观察常规交易成交量、缺口是否回补、相关 ETF 和同赛道股票是否确认方向。',
@@ -487,7 +550,7 @@ function buildEarningsDescription(event, meta) {
     `- 财报发布时间特征：${timingLabel(event)}`,
     '',
     ...(phase === 'B'
-      ? buildStageBAnalysis(companyLabel)
+      ? buildStageBAnalysis(event, companyLabel)
       : buildStageAAnalysis(event, companyLabel, relatedAssets, eps, estimates)),
     '',
     '影响范围：',

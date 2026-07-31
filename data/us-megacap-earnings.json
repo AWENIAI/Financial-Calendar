@@ -586,6 +586,53 @@
       "lastYearRptDt": "7/31/2025",
       "lastYearEPS": "$1.57"
     },
+    "reportedFinancials": {
+      "sourceName": "Apple Newsroom 官方财报新闻稿",
+      "sourceUrl": "https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/",
+      "periodEnded": "2026-06-27",
+      "revenue": "$109.4 billion",
+      "revenueYoY": "+16%",
+      "grossMargin": "50.1%",
+      "grossMarginNote": "包含约 2 个百分点关税退款正面影响",
+      "dilutedEps": "$2.02",
+      "dilutedEpsYoY": "+29%",
+      "dilutedEpsNote": "包含 $0.11 关税退款正面影响",
+      "dividend": "$0.27 per share",
+      "dividendPayableDate": "2026-08-13",
+      "dividendRecordDate": "2026-08-10",
+      "operatingCashFlowComment": "经营现金流创六月季度纪录；新闻稿未披露具体金额",
+      "managementQuoteSummary": "CEO 表示 iPhone、Mac、服务业务以及所有地理区域均实现两位数收入增长；CFO 表示 EPS 和经营现金流创六月季度纪录，活跃设备安装基数在所有主要产品类别和地区创历史新高。"
+    },
+    "stageBAnalysis": {
+      "expectationGapConclusion": "大幅超预期",
+      "expectationGapReason": "实际摊薄 EPS 为 $2.02，高于纳斯达克共识 $1.88，约高出 7.4%；营收 $1094 亿美元，同比增长 16%；毛利率 50.1%。但需要扣除关税退款一次性影响后再看持续性：EPS 中约 $0.11 来自关税退款，剔除后约 $1.91，仍略高于共识 $1.88。",
+      "incomeStatementAnalysis": "利润表层面，营收同比 +16%，EPS 同比 +29%，说明收入增长和利润弹性同时改善。毛利率 50.1% 很高，但其中约 2 个百分点来自关税退款，因此不能把全部毛利率提升视作主营经营效率永久改善。",
+      "balanceSheetAnalysis": "新闻稿没有披露完整资产负债表，无法验证现金、债务、应收、库存、商誉或减值等关键项。该部分需要 10-Q 或完整财报补充后再判断。",
+      "cashFlowAnalysis": "CFO 表示经营现金流创六月季度纪录，但新闻稿没有披露具体经营现金流、资本开支和自由现金流金额。方向上现金流质量偏正面，但还不能做定量验证。",
+      "managementOutlookAnalysis": "管理层强调 iPhone、Mac、服务业务以及所有地区均实现两位数增长，同时活跃设备安装基数创新高。短期是强劲增长确认；中长期关键在于服务业务延续性、硬件换机周期和 AI 功能对用户留存/换机的实际拉动。",
+      "priceActionAnalysis": "当前记录没有接入财报前 1 个月股价走势、财报后盘前/盘后涨跌幅、成交量和期权隐含波动率变化，因此不能完整推演资金博弈方向。需要补充价格数据后再确认是否利好兑现或继续重估。",
+      "highlights": [
+        "营收 $1094 亿美元，同比增长 16%。",
+        "摊薄 EPS $2.02，同比增长 29%，高于纳斯达克共识 $1.88。",
+        "iPhone、Mac、服务业务和所有地理区域均实现两位数收入增长。",
+        "活跃设备安装基数在所有主要产品类别和地理区域创历史新高。",
+        "宣布每股 $0.27 现金股息。"
+      ],
+      "risks": [
+        "毛利率和 EPS 受到关税退款一次性正面影响，需剔除后观察持续盈利能力。",
+        "新闻稿未提供完整三张表，暂不能验证资产负债质量和自由现金流金额。",
+        "若股价前期已充分计入强财报，短期可能出现利好兑现。",
+        "AI 功能和硬件换机周期仍需要后续季度验证。"
+      ],
+      "shortTermTradingView": "短期偏多但不适合无脑追高。若财报后股价高开，先观察开盘后 15-30 分钟成交量、缺口是否守住、QQQ 和大型科技股是否同步确认。若高开低走，说明市场可能更关注一次性退款影响和利好兑现。",
+      "longTermFundamentalView": "中长期基本面偏正面。营收和 EPS 同步高增长、服务业务和安装基数创新高，说明生态韧性仍强。但长期逻辑是否上修，需要看剔除一次性关税退款后的毛利率、服务业务增速、AI 功能转化和后续现金流数据。",
+      "missingData": [
+        "完整 10-Q 或三张表明细。",
+        "经营现金流、资本开支、自由现金流具体金额。",
+        "财报前 1 个月股价走势、财报后盘前/盘后涨跌幅、成交量和期权隐含波动率。",
+        "管理层电话会中对下一季度和全年收入、毛利率、资本开支的具体指引。"
+      ]
+    },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
     "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",

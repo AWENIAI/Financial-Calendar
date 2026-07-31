@@ -192,6 +192,26 @@ npm run generate
 
 ## 更新日志
 
+### 2026-07-31 08:33 自动更新记录
+
+- 触发来源：local
+- Action 记录：本地运行
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：140
+- 文件变化统计：5 files changed, 184 insertions(+), 39 deletions(-)
+- 变化文件：
+  - 修改：`README.md`
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+  - 修改：`scripts/risk-calendar/generate-risk-calendar.mjs`
+  - 修改：`scripts/risk-calendar/update-us-megacap-earnings.mjs`
+- 最近未来事件：
+  - 2026-07-31 20:30：📊 [美股] 埃克森美孚（Exxon Mobil，XOM）财报发布：2026年6月
+  - 2026-08-05 20:30：📊 [美股] 礼来（Eli Lilly，LLY）财报发布：2026年6月
+  - 2026-08-07 20:30：🔴 [美股] 非农就业：2026年7月 Employment Situation
+  - 2026-08-07 21:30：📊 [美股] 伯克希尔哈撒韦（Berkshire Hathaway，BRK.B）财报发布：2026年6月
+  - 2026-08-12 20:30：🔴 [美股] CPI 发布：2026年7月美国通胀数据
+
 ### 2026-07-31 08:23 自动更新记录
 
 - 触发来源：local
