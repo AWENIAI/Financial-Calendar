@@ -15,14 +15,17 @@ const LEVEL_META = {
   critical: {
     emoji: '🔴',
     label: '极高',
-    alarmTriggers: ['-P1D', '-PT30M']
+    alarmTriggers: ['-PT10M']
   },
   high: {
     emoji: '🟠',
     label: '高',
-    alarmTriggers: ['-PT1H']
+    alarmTriggers: ['-PT10M']
   }
 };
+
+const CALENDAR_DISPLAY_START_TIME = '08:00';
+const CALENDAR_DISPLAY_END_TIME = '09:00';
 
 const CALENDARS = [
   {
@@ -344,6 +347,11 @@ function eventDateTimeLabel(event) {
   return `${match[1]}-${match[2]}-${match[3]} ${match[4]}:${match[5]} 北京时间`;
 }
 
+function eventDisplayDateTime(event, time) {
+  const date = String(event.start).slice(0, 10);
+  return `${date}T${time}:00+08:00`;
+}
+
 function marketLabel(market) {
   return {
     US: '美股',
@@ -652,12 +660,14 @@ function renderAlarm(event, trigger) {
 
 function renderEvent(event) {
   const meta = LEVEL_META[event.level];
+  const displayStart = eventDisplayDateTime(event, CALENDAR_DISPLAY_START_TIME);
+  const displayEnd = eventDisplayDateTime(event, CALENDAR_DISPLAY_END_TIME);
   return [
     'BEGIN:VEVENT',
     `UID:${stableUid(event)}`,
     `DTSTAMP:${stableTimestamp(event)}`,
-    `DTSTART;TZID=${event.timezone}:${formatDateTime(event.start)}`,
-    `DTEND;TZID=${event.timezone}:${formatDateTime(event.end || event.start)}`,
+    `DTSTART;TZID=Asia/Shanghai:${formatDateTime(displayStart)}`,
+    `DTEND;TZID=Asia/Shanghai:${formatDateTime(displayEnd)}`,
     `LOCATION:${escapeText(event.location)}`,
     `SUMMARY:${escapeText(summary(event))}`,
     `DESCRIPTION:${escapeText(buildDescription(event))}`,

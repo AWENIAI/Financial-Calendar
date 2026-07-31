@@ -192,6 +192,23 @@ npm run generate
 
 ## 更新日志
 
+### 2026-07-31 11:05 自动更新记录
+
+- 触发来源：local
+- Action 记录：本地运行
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：153
+- 文件变化统计：2 files changed, 473 insertions(+), 623 deletions(-)
+- 变化文件：
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+  - 修改：`scripts/risk-calendar/generate-risk-calendar.mjs`
+- 最近未来事件：
+  - 2026-08-04 08:00：📊 [美股] 卡特彼勒（Caterpillar，CAT）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] AMD（AMD，AMD）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] SpaceX（SpaceX，SPCX）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] 礼来（Eli Lilly，LLY）财报发布：2026年6月
+  - 2026-08-07 08:00：🔴 [美股] 非农就业：2026年7月 Employment Situation
+
 ### 2026-07-31 10:36 自动更新记录
 
 - 触发来源：local
