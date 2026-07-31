@@ -605,6 +605,17 @@
     },
     "stageBAnalysis": {
       "expectationGapConclusion": "大幅超预期",
+      "expectationSummary": {
+        "metric": "摊薄每股收益（EPS）",
+        "marketExpectation": "$1.88",
+        "actualResult": "$2.02",
+        "absoluteDifference": "+$0.14",
+        "percentageDifference": "+7.4%",
+        "adjustedActualResult": "约 $1.91",
+        "adjustedDifference": "+$0.03",
+        "adjustmentNote": "实际 EPS 包含 $0.11 关税退款一次性正面影响；剔除后约 $1.91，仍略高于纳斯达克共识 $1.88。",
+        "verdict": "高于预期；按表观 EPS 属于大幅超预期，按剔除一次性影响后的 EPS 属于小幅超预期。"
+      },
       "expectationGapReason": "实际摊薄 EPS 为 $2.02，高于纳斯达克共识 $1.88，约高出 7.4%；营收 $1094 亿美元，同比增长 16%；毛利率 50.1%。但需要扣除关税退款一次性影响后再看持续性：EPS 中约 $0.11 来自关税退款，剔除后约 $1.91，仍略高于共识 $1.88。",
       "incomeStatementAnalysis": "利润表层面，营收同比 +16%，EPS 同比 +29%，说明收入增长和利润弹性同时改善。毛利率 50.1% 很高，但其中约 2 个百分点来自关税退款，因此不能把全部毛利率提升视作主营经营效率永久改善。",
       "balanceSheetAnalysis": "新闻稿没有披露完整资产负债表，无法验证现金、债务、应收、库存、商誉或减值等关键项。该部分需要 10-Q 或完整财报补充后再判断。",

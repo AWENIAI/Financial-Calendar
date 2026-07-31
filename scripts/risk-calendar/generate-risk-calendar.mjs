@@ -426,8 +426,20 @@ function buildStageBAnalysis(event, companyLabel) {
   const analysis = event.stageBAnalysis;
 
   if (actual && analysis) {
+    const expectation = analysis.expectationSummary;
     return [
       '阶段B：财报发布后复盘结果',
+      '',
+      '总判断：',
+      `- 是否符合预期：${expectation?.verdict || analysis.expectationGapConclusion}`,
+      `- 核心对比指标：${expectation?.metric || '每股收益'}`,
+      `- 市场预期：${expectation?.marketExpectation || '未提供'}`,
+      `- 实际结果：${expectation?.actualResult || '未提供'}`,
+      `- 预期差：${expectation?.absoluteDifference || '未提供'}（${expectation?.percentageDifference || '未提供'}）`,
+      `- 调整后结果：${expectation?.adjustedActualResult || '未提供'}`,
+      `- 调整后预期差：${expectation?.adjustedDifference || '未提供'}`,
+      `- 调整说明：${expectation?.adjustmentNote || '无额外调整说明'}`,
+      '',
       `- 数据来源：${actual.sourceName}`,
       `- 来源链接：${actual.sourceUrl}`,
       `- 财报期结束日：${actual.periodEnded}`,
@@ -539,6 +551,10 @@ function buildEarningsDescription(event, meta) {
     `数据来源：${event.sourceName}`,
     `来源链接：${event.sourceUrl}`,
     '',
+    ...(phase === 'B' ? [
+      ...buildStageBAnalysis(event, companyLabel),
+      ''
+    ] : []),
     '纳斯达克财报日历字段：',
     ...buildNasdaqFieldLines(event),
     '',
@@ -549,9 +565,7 @@ function buildEarningsDescription(event, meta) {
     `- 覆盖分析师数量：${estimates}`,
     `- 财报发布时间特征：${timingLabel(event)}`,
     '',
-    ...(phase === 'B'
-      ? buildStageBAnalysis(event, companyLabel)
-      : buildStageAAnalysis(event, companyLabel, relatedAssets, eps, estimates)),
+    ...(phase === 'A' ? buildStageAAnalysis(event, companyLabel, relatedAssets, eps, estimates) : []),
     '',
     '影响范围：',
     `- 直接影响：${companyLabel} 本身的盘前/盘后跳空、期权隐含波动率和成交量。`,
