@@ -192,6 +192,26 @@ npm run generate
 
 ## 更新日志
 
+### 2026-07-31 07:08 自动更新记录
+
+- 触发来源：local
+- Action 记录：本地运行
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：132
+- 文件变化统计：5 files changed, 133 insertions(+), 14 deletions(-)
+- 变化文件：
+  - 修改：`.github/workflows/update-calendar-feed.yml`
+  - 修改：`README.md`
+  - 修改：`package.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+  - 修改：`scripts/risk-calendar/generate-risk-calendar.mjs`
+- 最近未来事件：
+  - 2026-07-31 20:30：🟠 [US] Exxon Mobil（XOM）财报发布：Jun/2026
+  - 2026-08-05 20:30：🟠 [US] Eli Lilly（LLY）财报发布：Jun/2026
+  - 2026-08-07 20:30：🔴 [US] 非农就业：2026年7月 Employment Situation
+  - 2026-08-07 21:30：🟠 [US] Berkshire Hathaway（BRK.B）财报发布：Jun/2026
+  - 2026-08-12 20:30：🔴 [US] CPI 发布：2026年7月美国通胀数据
+
 ### 2026-07-31 04:12 自动更新记录
 
 - 触发来源：local

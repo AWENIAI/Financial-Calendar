@@ -33,6 +33,8 @@ const CALENDARS = [
   }
 ]
 
+const DEFAULT_CALENDAR_NAME = CALENDARS[0].name;
+
 const EVENT_TEMPLATES = {
   'us-fomc': {
     market: 'US',
@@ -309,21 +311,106 @@ function summary(event) {
   return `${meta.emoji} [${event.market}] ${event.title}`;
 }
 
+function eventDateTimeLabel(event) {
+  const match = String(event.start).match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+  if (!match) return event.start;
+  return `${match[1]}-${match[2]}-${match[3]} ${match[4]}:${match[5]} 北京时间`;
+}
+
+function marketLabel(market) {
+  return {
+    US: '美股',
+    CN: 'A股/中国市场',
+    HK: '港股'
+  }[market] || market;
+}
+
+function timingLabel(event) {
+  const hour = Number(String(event.start).slice(11, 13));
+  if (event.timeStatus === 'estimated') return '时间状态为预估，适合先做风险准备，临近日期需要复核。';
+  if (event.category === 'Earnings / US Megacap' && hour < 8) return '美股盘后财报，主要反应会先体现在盘后个股、纳指期货和第二天常规交易。';
+  if (event.category === 'Earnings / US Megacap' && hour >= 19 && hour <= 21) return '美股盘前财报，常规开盘前会完成第一轮定价，开盘后容易出现二次确认或反向修正。';
+  return `时间状态为 ${event.timeStatus}。`;
+}
+
+function extractEarningsContext(event) {
+  const eps = event.marketExpectation?.match(/共识 EPS 为 ([^，。]+)/)?.[1];
+  const estimates = event.marketExpectation?.match(/覆盖分析师数量为 ([^，。]+)/)?.[1];
+  return { eps: eps || '未提供', estimates: estimates || '未提供' };
+}
+
+function buildEarningsDescription(event, meta) {
+  const { eps, estimates } = extractEarningsContext(event);
+  const mainTicker = event.assets[0];
+  const relatedAssets = event.assets.slice(1).join('、');
+
+  return [
+    `日历名称：${DEFAULT_CALENDAR_NAME}`,
+    `事件标题：${summary(event)}`,
+    `事件时间：${eventDateTimeLabel(event)}`,
+    `风险等级：${event.levelLabel || meta.label}`,
+    `市场：${marketLabel(event.market)}`,
+    `事件类型：美股前 20 大公司财报（仅滚动保留未来 30 天内数据）`,
+    `时间可信度：${event.timeStatus}`,
+    `数据来源：${event.sourceName}`,
+    `来源链接：${event.sourceUrl}`,
+    '',
+    '当前真实数据：',
+    `- 标的：${mainTicker}`,
+    `- 财报季度：${event.title.split('：').at(-1)}`,
+    `- Nasdaq 共识 EPS：${eps}`,
+    `- 覆盖分析师数量：${estimates}`,
+    `- 财报发布时间特征：${timingLabel(event)}`,
+    '',
+    '影响范围：',
+    `- 直接影响：${mainTicker} 本身的盘前/盘后跳空、期权隐含波动率和成交量。`,
+    `- 指数影响：${relatedAssets || '相关指数与 ETF'}，尤其是财报后第一个常规交易时段。`,
+    '- 产业链影响：如果指引明显偏离预期，会外溢到同赛道公司、供应链、客户和竞争对手。',
+    '- 情绪影响：超大市值公司财报容易改变市场对成长、消费、防御或周期板块的风险偏好。',
+    '',
+    '操作建议：',
+    '- 财报前：不要在事件前临时加重仓；已有仓位先确认最大可承受跳空，不符合就提前降仓。',
+    '- 财报发布时：先看营收、利润率、EPS、下季度/全年指引和管理层措辞，不只看 headline EPS 是否 beat。',
+    '- 财报后：如果盘后/盘前大幅跳动，等常规交易前 15–30 分钟成交和期货反应稳定后再判断；不要用第一根波动直接追。',
+    '- 组合层面：如果同时持有 QQQ/SPY 或同赛道股票，把它当成组合风险事件处理，而不是单一个股新闻。',
+    '',
+    '检查清单：',
+    ...event.checklist.map((item) => `- ${item}`)
+  ].join('\n');
+}
+
 function buildDescription(event) {
   const meta = LEVEL_META[event.level];
+  if (event.category === 'Earnings / US Megacap') return buildEarningsDescription(event, meta);
+
   return [
+    `日历名称：${DEFAULT_CALENDAR_NAME}`,
+    `事件标题：${summary(event)}`,
+    `事件时间：${eventDateTimeLabel(event)}`,
     `风险等级：${event.levelLabel || meta.label}`,
-    `市场：${event.market}`,
+    `市场：${marketLabel(event.market)}`,
     `事件类型：${event.category}`,
     `影响资产：${event.assets.join('、')}`,
     `时间状态：${event.timeStatus}`,
     `来源：${event.sourceName}`,
     `来源链接：${event.sourceUrl}`,
     '',
-    `市场反馈：${event.marketExpectation}`,
-    `历史反应：${event.historicalReaction}`,
+    '当前真实数据与市场含义：',
+    `- ${event.marketExpectation}`,
+    `- ${event.reason}`,
     '',
-    `应对策略：${event.actionPlan}`
+    '影响范围：',
+    `- 主要影响资产：${event.assets.join('、')}`,
+    `- 市场层级：${marketLabel(event.market)}，并可能通过相关 ETF、指数期货、期权和跨市场情绪外溢。`,
+    `- 历史反应：${event.historicalReaction}`,
+    '',
+    '操作建议：',
+    `- ${event.actionPlan}`,
+    '- 事件前先处理仓位和止损，不把方向判断留到波动最大的时段。',
+    '- 事件后等第一轮价格反应、成交量和相关资产联动确认，再决定是否跟进。',
+    '',
+    '检查清单：',
+    ...event.checklist.map((item) => `- ${item}`)
   ].join('\n');
 }
 

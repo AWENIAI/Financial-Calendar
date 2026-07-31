@@ -54,6 +54,12 @@ function startDate() {
   return new Date(`${parts.year}-${parts.month}-${parts.day}T00:00:00Z`);
 }
 
+function compactDateTime(value) {
+  const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+  if (!match) throw new Error(`Invalid datetime: ${value}`);
+  return `${match[1]}${match[2]}${match[3]}T${match[4]}${match[5]}00`;
+}
+
 function addDays(date, days) {
   const next = new Date(date);
   next.setUTCDate(next.getUTCDate() + days);
@@ -141,6 +147,8 @@ function eventFromRow(row, rowDate, company) {
 
 async function main() {
   const from = startDate();
+  const windowStart = compactDateTime(withChinaTimezone(isoDate(from), '00:00'));
+  const windowEnd = compactDateTime(withChinaTimezone(isoDate(addDays(from, LOOKAHEAD_DAYS)), '23:59'));
   const eventsBySymbol = new Map();
 
   for (let offset = 0; offset <= LOOKAHEAD_DAYS; offset += 1) {
@@ -153,6 +161,9 @@ async function main() {
       if (!company) continue;
 
       const event = eventFromRow(row, date, company);
+      const eventStart = compactDateTime(event.start);
+      if (eventStart < windowStart || eventStart > windowEnd) continue;
+
       const previous = eventsBySymbol.get(company.symbol);
       if (!previous || event.start.localeCompare(previous.start) < 0) {
         eventsBySymbol.set(company.symbol, event);
