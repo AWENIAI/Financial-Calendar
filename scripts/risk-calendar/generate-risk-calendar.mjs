@@ -421,17 +421,26 @@ function bulletLines(items) {
   return (items || []).map((item) => `  - ${item}`);
 }
 
+function expectationVerdictIcon(verdict = '') {
+  const text = String(verdict);
+  if (/不及|低于|不符合|未达|下修|转弱/.test(text)) return '❌';
+  if (/符合|高于|超预期|优于|略高|大幅超/.test(text)) return '✅';
+  return '⚠️';
+}
+
 function buildStageBAnalysis(event, companyLabel) {
   const actual = event.reportedFinancials;
   const analysis = event.stageBAnalysis;
 
   if (actual && analysis) {
     const expectation = analysis.expectationSummary;
+    const verdict = expectation?.verdict || analysis.expectationGapConclusion;
+    const verdictIcon = expectationVerdictIcon(verdict);
     return [
-      '阶段B：财报发布后复盘结果',
+      '📊 阶段B：财报发布后复盘结果',
       '',
-      '总判断：',
-      `- 是否符合预期：${expectation?.verdict || analysis.expectationGapConclusion}`,
+      '🎯 总判断：',
+      `- 是否符合预期：${verdictIcon} ${verdict}`,
       `- 核心对比指标：${expectation?.metric || '每股收益'}`,
       `- 市场预期：${expectation?.marketExpectation || '未提供'}`,
       `- 实际结果：${expectation?.actualResult || '未提供'}`,
@@ -444,7 +453,7 @@ function buildStageBAnalysis(event, companyLabel) {
       `- 来源链接：${actual.sourceUrl}`,
       `- 财报期结束日：${actual.periodEnded}`,
       '',
-      '真实财报数据：',
+      '📌 真实财报数据：',
       `- 营收：${actual.revenue}，同比 ${actual.revenueYoY}`,
       `- 毛利率：${actual.grossMargin}；说明：${actual.grossMarginNote}`,
       `- 摊薄每股收益：${actual.dilutedEps}，同比 ${actual.dilutedEpsYoY}；说明：${actual.dilutedEpsNote}`,
@@ -452,44 +461,45 @@ function buildStageBAnalysis(event, companyLabel) {
       `- 经营现金流：${actual.operatingCashFlowComment}`,
       `- 管理层摘要：${actual.managementQuoteSummary}`,
       '',
-      `预期差结论：${analysis.expectationGapConclusion}`,
+      `🎯 预期差结论：${verdictIcon} ${analysis.expectationGapConclusion}`,
       `- 判定理由：${analysis.expectationGapReason}`,
       '',
-      '利润表拆解：',
+      '📈 利润表拆解：',
       `- ${analysis.incomeStatementAnalysis}`,
       '',
-      '资产负债表拆解：',
+      '🧾 资产负债表拆解：',
       `- ${analysis.balanceSheetAnalysis}`,
       '',
-      '现金流量表拆解：',
+      '💵 现金流量表拆解：',
       `- ${analysis.cashFlowAnalysis}`,
       '',
-      '管理层展望判断：',
+      '🧭 管理层展望判断：',
       `- ${analysis.managementOutlookAnalysis}`,
       '',
-      '股价与资金博弈判断：',
+      '💹 股价与资金博弈判断：',
       `- ${analysis.priceActionAnalysis}`,
       '',
-      '财报亮点：',
+      '✨ 财报亮点：',
       ...bulletLines(analysis.highlights),
       '',
-      '风险清单：',
+      '⚠️ 风险清单：',
       ...bulletLines(analysis.risks),
       '',
-      `短期交易判断：${analysis.shortTermTradingView}`,
-      `中长期基本面判断：${analysis.longTermFundamentalView}`,
+      `⏱️ 短期交易判断：${analysis.shortTermTradingView}`,
+      `🧱 中长期基本面判断：${analysis.longTermFundamentalView}`,
       '',
-      '仍需补充的数据：',
+      '🔍 仍需补充的数据：',
       ...bulletLines(analysis.missingData)
     ];
   }
 
   return [
-    '阶段B：财报发布后复盘',
+    '📊 阶段B：财报发布后复盘',
     '- 当前状态：日历已经进入财报发布后阶段，但尚未接入公司正式财报、利润表、资产负债表、现金流量表、管理层展望和股价反应数据。',
-    '- 预期差结论：信息不足，暂不能判定为大幅超预期、符合预期、小幅不及预期或大幅不及预期。',
+    '- 是否符合预期：⚠️ 信息不足，暂不能判定。',
+    '- 🎯 预期差结论：信息不足，暂不能判定为大幅超预期、符合预期、小幅不及预期或大幅不及预期。',
     '- 严格约束：不编造收入、利润、扣非净利润、现金流、资产负债或管理层展望数据。',
-    '- 需要补充的信息：',
+    '- 🔍 需要补充的信息：',
     `  - ${companyLabel} 正式财报全文或新闻稿。`,
     '  - 实际收入、每股收益、扣非/非 GAAP 利润口径、毛利率、营业利润率。',
     '  - 资产负债表关键项：现金、债务、应收、库存、商誉或减值。',
