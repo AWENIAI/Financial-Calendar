@@ -265,10 +265,18 @@ function readFixedEvents() {
   return fixed.events.map(eventFromFixedSpec);
 }
 
+function dedupeKey(event) {
+  if (event.category === 'Earnings / US Megacap') {
+    return [event.market, event.category, event.ticker || event.assets?.[0] || event.title, event.start].join('|');
+  }
+
+  return [event.market, event.category, event.start].join('|');
+}
+
 function dedupeEvents(events) {
   const byKey = new Map();
   for (const event of events) {
-    const key = [event.market, event.category, event.start].join('|');
+    const key = dedupeKey(event);
     byKey.set(key, event);
   }
   return Array.from(byKey.values());
