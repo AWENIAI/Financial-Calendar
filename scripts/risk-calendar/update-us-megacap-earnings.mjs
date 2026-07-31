@@ -70,6 +70,21 @@ function nowChinaCompactDateTime() {
   return `${values.year}${values.month}${values.day}T${values.hour}${values.minute}${values.second}`;
 }
 
+function nowChinaLabel() {
+  const parts = new Intl.DateTimeFormat('zh-CN', {
+    timeZone: 'Asia/Shanghai',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false
+  }).formatToParts(new Date());
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${values.year}-${values.month}-${values.day} ${values.hour}:${values.minute}:${values.second} 北京时间`;
+}
+
 function compactDateTime(value) {
   const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
   if (!match) throw new Error(`Invalid datetime: ${value}`);
@@ -166,6 +181,66 @@ function normalizeSymbol(symbol) {
   return String(symbol || '').trim().toUpperCase();
 }
 
+function eventKey(event) {
+  return [event.ticker || event.assets?.[0], event.fiscalQuarter || '', event.start?.slice(0, 10)].join('|');
+}
+
+function readExistingEvents() {
+  if (!fs.existsSync(outputPath)) return [];
+  return JSON.parse(fs.readFileSync(outputPath, 'utf8'));
+}
+
+function finalizeRecord(event, runLabel) {
+  if (event.analysisPhase === 'B') {
+    return {
+      ...event,
+      recordStatus: '已归档：阶段B分析已生成',
+      analysisLocked: true,
+      analysisUpdatedAt: event.analysisUpdatedAt || runLabel,
+      archivedAt: event.archivedAt || runLabel
+    };
+  }
+
+  return {
+    ...event,
+    recordStatus: '跟踪中：阶段A财报发布前',
+    analysisLocked: false,
+    lastFetchedAt: runLabel
+  };
+}
+
+function mergeEvents(existingEvents, fetchedEvents, runLabel) {
+  const merged = new Map();
+
+  for (const existing of existingEvents) {
+    merged.set(eventKey(existing), existing);
+  }
+
+  for (const fetched of fetchedEvents) {
+    const key = eventKey(fetched);
+    const existing = merged.get(key);
+
+    if (existing?.analysisLocked) continue;
+
+    merged.set(key, finalizeRecord({ ...existing, ...fetched }, runLabel));
+  }
+
+  for (const [key, event] of merged) {
+    if (event.analysisLocked) continue;
+
+    const phase = compactDateTime(event.start) < nowChinaCompactDateTime() ? 'B' : 'A';
+    if (phase === 'B') {
+      merged.set(key, finalizeRecord({
+        ...event,
+        analysisPhase: 'B',
+        analysisPhaseLabel: '阶段B：财报发布后'
+      }, runLabel));
+    }
+  }
+
+  return Array.from(merged.values()).sort((a, b) => a.start.localeCompare(b.start) || a.title.localeCompare(b.title));
+}
+
 function eventFromRow(row, rowDate, company) {
   const timing = earningsWindow(rowDate, row.time);
   const quarter = formatFiscalQuarter(row.fiscalQuarterEnding);
@@ -218,11 +293,13 @@ function eventFromRow(row, rowDate, company) {
 }
 
 async function main() {
+  const runLabel = nowChinaLabel();
+  const existingEvents = readExistingEvents();
   const from = startDate();
   const windowStartDate = addDays(from, -LOOKBACK_DAYS);
   const windowStart = compactDateTime(withChinaTimezone(isoDate(windowStartDate), '00:00'));
   const windowEnd = compactDateTime(withChinaTimezone(isoDate(addDays(from, LOOKAHEAD_DAYS)), '23:59'));
-  const eventsBySymbol = new Map();
+  const fetchedByKey = new Map();
 
   for (let offset = -LOOKBACK_DAYS; offset <= LOOKAHEAD_DAYS; offset += 1) {
     const date = isoDate(addDays(from, offset));
@@ -237,16 +314,19 @@ async function main() {
       const eventStart = compactDateTime(event.start);
       if (eventStart < windowStart || eventStart > windowEnd) continue;
 
-      const previous = eventsBySymbol.get(company.symbol);
+      const key = eventKey(event);
+      const previous = fetchedByKey.get(key);
       if (!previous || event.start.localeCompare(previous.start) < 0) {
-        eventsBySymbol.set(company.symbol, event);
+        fetchedByKey.set(key, event);
       }
     }
   }
 
-  const events = Array.from(eventsBySymbol.values()).sort((a, b) => a.start.localeCompare(b.start) || a.title.localeCompare(b.title));
+  const fetchedEvents = Array.from(fetchedByKey.values());
+  const events = mergeEvents(existingEvents, fetchedEvents, runLabel);
+  const lockedCount = events.filter((event) => event.analysisLocked).length;
   fs.writeFileSync(outputPath, `${JSON.stringify(events, null, 2)}\n`, 'utf8');
-  console.log(`US megacap earnings: ${events.length} events from last ${LOOKBACK_DAYS} days to next ${LOOKAHEAD_DAYS} days`);
+  console.log(`US megacap earnings: ${events.length} retained events; ${fetchedEvents.length} fetched from last ${LOOKBACK_DAYS} days to next ${LOOKAHEAD_DAYS} days; ${lockedCount} locked archive records`);
   for (const event of events) console.log(`${event.start.slice(0, 10)} ${event.ticker} ${event.title}`);
 }
 

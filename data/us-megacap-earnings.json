@@ -48,7 +48,11 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
+    "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
+    "archivedAt": "2026-07-31 08:33:12 北京时间"
   },
   {
     "market": "US",
@@ -99,7 +103,11 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
+    "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
+    "archivedAt": "2026-07-31 08:33:12 北京时间"
   },
   {
     "market": "US",
@@ -150,7 +158,11 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
+    "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
+    "archivedAt": "2026-07-31 08:33:12 北京时间"
   },
   {
     "market": "US",
@@ -201,7 +213,11 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
+    "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
+    "archivedAt": "2026-07-31 08:33:12 北京时间"
   },
   {
     "market": "US",
@@ -252,7 +268,11 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
+    "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
+    "archivedAt": "2026-07-31 08:33:12 北京时间"
   },
   {
     "market": "US",
@@ -303,7 +323,11 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
+    "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
+    "archivedAt": "2026-07-31 08:33:12 北京时间"
   },
   {
     "market": "US",
@@ -354,7 +378,11 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
+    "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
+    "archivedAt": "2026-07-31 08:33:12 北京时间"
   },
   {
     "market": "US",
@@ -405,7 +433,11 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
+    "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
+    "archivedAt": "2026-07-31 08:33:12 北京时间"
   },
   {
     "market": "US",
@@ -456,7 +488,11 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
+    "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
+    "archivedAt": "2026-07-31 08:33:12 北京时间"
   },
   {
     "market": "US",
@@ -507,7 +543,11 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
+    "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
+    "archivedAt": "2026-07-31 08:33:12 北京时间"
   },
   {
     "market": "US",
@@ -558,7 +598,11 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
+    "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
+    "archivedAt": "2026-07-31 08:33:12 北京时间"
   },
   {
     "market": "US",
@@ -609,7 +653,10 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "跟踪中：阶段A财报发布前",
+    "analysisLocked": false,
+    "lastFetchedAt": "2026-07-31 08:33:12 北京时间"
   },
   {
     "market": "US",
@@ -660,7 +707,10 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "跟踪中：阶段A财报发布前",
+    "analysisLocked": false,
+    "lastFetchedAt": "2026-07-31 08:33:12 北京时间"
   },
   {
     "market": "US",
@@ -711,7 +761,10 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "跟踪中：阶段A财报发布前",
+    "analysisLocked": false,
+    "lastFetchedAt": "2026-07-31 08:33:12 北京时间"
   },
   {
     "market": "US",
@@ -762,7 +815,10 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "跟踪中：阶段A财报发布前",
+    "analysisLocked": false,
+    "lastFetchedAt": "2026-07-31 08:33:12 北京时间"
   },
   {
     "market": "US",
@@ -813,7 +869,10 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "跟踪中：阶段A财报发布前",
+    "analysisLocked": false,
+    "lastFetchedAt": "2026-07-31 08:33:12 北京时间"
   },
   {
     "market": "US",
@@ -864,6 +923,9 @@
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
-    ]
+    ],
+    "recordStatus": "跟踪中：阶段A财报发布前",
+    "analysisLocked": false,
+    "lastFetchedAt": "2026-07-31 08:33:12 北京时间"
   }
 ]
