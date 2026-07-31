@@ -8,6 +8,7 @@ const rootDir = path.resolve(__dirname, '../..');
 const outputPath = path.join(rootDir, 'data/us-megacap-earnings.json');
 
 const LOOKAHEAD_DAYS = 30;
+const LOOKBACK_DAYS = 30;
 const NASDAQ_EARNINGS_URL = 'https://api.nasdaq.com/api/calendar/earnings';
 
 const WATCHLIST = [
@@ -54,6 +55,21 @@ function startDate() {
   return new Date(`${parts.year}-${parts.month}-${parts.day}T00:00:00Z`);
 }
 
+function nowChinaCompactDateTime() {
+  const parts = new Intl.DateTimeFormat('zh-CN', {
+    timeZone: 'Asia/Shanghai',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false
+  }).formatToParts(new Date());
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${values.year}${values.month}${values.day}T${values.hour}${values.minute}${values.second}`;
+}
+
 function compactDateTime(value) {
   const match = String(value).match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
   if (!match) throw new Error(`Invalid datetime: ${value}`);
@@ -92,6 +108,19 @@ function formatFiscalQuarter(value) {
   const match = String(value || '').match(/^([A-Za-z]{3})\/(\d{4})$/);
   if (!match) return value || '最近季度';
   return `${match[2]}年${monthMap[match[1]] || match[1]}`;
+}
+
+function normalizeField(value) {
+  if (value === undefined || value === null || value === '' || value === 'N/A') return '未提供';
+  return String(value);
+}
+
+function timeLabel(nasdaqTime) {
+  return {
+    'time-pre-market': '美股盘前',
+    'time-after-hours': '美股盘后',
+    'time-not-supplied': '未提供具体时间'
+  }[nasdaqTime] || normalizeField(nasdaqTime);
 }
 
 function earningsWindow(rowDate, nasdaqTime) {
@@ -140,9 +169,10 @@ function normalizeSymbol(symbol) {
 function eventFromRow(row, rowDate, company) {
   const timing = earningsWindow(rowDate, row.time);
   const quarter = formatFiscalQuarter(row.fiscalQuarterEnding);
-  const eps = row.epsForecast && row.epsForecast !== 'N/A' ? row.epsForecast : '未提供';
-  const estimates = row.noOfEsts && row.noOfEsts !== 'N/A' ? row.noOfEsts : '未提供';
+  const eps = normalizeField(row.epsForecast);
+  const estimates = normalizeField(row.noOfEsts);
   const companyLabel = `${company.chineseName}（${company.englishName}，${company.symbol}）`;
+  const phase = compactDateTime(timing.start) < nowChinaCompactDateTime() ? 'B' : 'A';
 
   return {
     market: 'US',
@@ -161,6 +191,21 @@ function eventFromRow(row, rowDate, company) {
     fiscalQuarter: quarter,
     consensusEps: eps,
     analystCount: estimates,
+    analysisPhase: phase,
+    analysisPhaseLabel: phase === 'A' ? '阶段A：财报发布前' : '阶段B：财报发布后',
+    nasdaqCalendarFields: {
+      time: normalizeField(row.time),
+      timeLabel: timeLabel(row.time),
+      symbol: normalizeField(row.symbol),
+      companyName: normalizeField(row.name),
+      marketCap: normalizeField(row.marketCap),
+      fiscalQuarterEnding: normalizeField(row.fiscalQuarterEnding),
+      fiscalQuarterEndingLabel: quarter,
+      epsForecast: eps,
+      noOfEsts: estimates,
+      lastYearRptDt: normalizeField(row.lastYearRptDt),
+      lastYearEPS: normalizeField(row.lastYearEPS)
+    },
     timeStatus: timing.status,
     sourceName: '纳斯达克财报日历',
     sourceUrl: 'https://www.nasdaq.com/market-activity/earnings',
@@ -174,11 +219,12 @@ function eventFromRow(row, rowDate, company) {
 
 async function main() {
   const from = startDate();
-  const windowStart = compactDateTime(withChinaTimezone(isoDate(from), '00:00'));
+  const windowStartDate = addDays(from, -LOOKBACK_DAYS);
+  const windowStart = compactDateTime(withChinaTimezone(isoDate(windowStartDate), '00:00'));
   const windowEnd = compactDateTime(withChinaTimezone(isoDate(addDays(from, LOOKAHEAD_DAYS)), '23:59'));
   const eventsBySymbol = new Map();
 
-  for (let offset = 0; offset <= LOOKAHEAD_DAYS; offset += 1) {
+  for (let offset = -LOOKBACK_DAYS; offset <= LOOKAHEAD_DAYS; offset += 1) {
     const date = isoDate(addDays(from, offset));
     const rows = await fetchEarningsRows(date);
 
@@ -200,7 +246,7 @@ async function main() {
 
   const events = Array.from(eventsBySymbol.values()).sort((a, b) => a.start.localeCompare(b.start) || a.title.localeCompare(b.title));
   fs.writeFileSync(outputPath, `${JSON.stringify(events, null, 2)}\n`, 'utf8');
-  console.log(`US megacap earnings: ${events.length} events in next ${LOOKAHEAD_DAYS} days`);
+  console.log(`US megacap earnings: ${events.length} events from last ${LOOKBACK_DAYS} days to next ${LOOKAHEAD_DAYS} days`);
   for (const event of events) console.log(`${event.start.slice(0, 10)} ${event.ticker} ${event.title}`);
 }
 

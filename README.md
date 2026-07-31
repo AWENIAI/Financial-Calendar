@@ -76,7 +76,7 @@ https://aweniai.github.io/Financial-Calendar/
 
 1. 美股宏观与 Fed 事件：FOMC、非农、CPI、PPI、FOMC 纪要。
 2. 美股衍生品事件：VIX 期权到期、SPX / 月度 OPEX 风险窗口。
-3. 美股个股财报事件：前 20 大公司未来 30 天内财报。
+3. 美股个股财报事件：前 20 大公司未来 30 天内财报，以及最近 30 天内已发布财报复盘。
 4. A股制度性事件：股指期货/期权月度交割、定期报告披露截止窗口。
 5. A股月末规则型事件：每月倒数第二个中国营业日。
 6. A50 期货制度性事件：最后交易日。
@@ -120,7 +120,7 @@ public/calendar/GLOBAL_KEY.ics
 
 GitHub Actions 每天北京时间 7:00 自动执行同一条链路：
 
-1. 更新未来 30 天内的美股前 20 大公司财报数据。
+1. 更新美股前 20 大公司财报数据：未来 30 天用于阶段A预判，最近已发布 30 天用于阶段B复盘。
 2. 重新生成订阅文件。
 3. 如果内容有变化，自动提交并 push 到 `main`。
 4. 在同一个 workflow 里直接部署 GitHub Pages。
@@ -191,6 +191,25 @@ npm run generate
 3. 不能像 Google Calendar API 那样强制立即更新、删除或改期。
 
 ## 更新日志
+
+### 2026-07-31 08:23 自动更新记录
+
+- 触发来源：local
+- Action 记录：本地运行
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：140
+- 文件变化统计：4 files changed, 936 insertions(+), 16 deletions(-)
+- 变化文件：
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+  - 修改：`scripts/risk-calendar/generate-risk-calendar.mjs`
+  - 修改：`scripts/risk-calendar/update-us-megacap-earnings.mjs`
+- 最近未来事件：
+  - 2026-07-31 20:30：📊 [美股] 埃克森美孚（Exxon Mobil，XOM）财报发布：2026年6月
+  - 2026-08-05 20:30：📊 [美股] 礼来（Eli Lilly，LLY）财报发布：2026年6月
+  - 2026-08-07 20:30：🔴 [美股] 非农就业：2026年7月 Employment Situation
+  - 2026-08-07 21:30：📊 [美股] 伯克希尔哈撒韦（Berkshire Hathaway，BRK.B）财报发布：2026年6月
+  - 2026-08-12 20:30：🔴 [美股] CPI 发布：2026年7月美国通胀数据
 
 ### 2026-07-31 08:12 自动更新记录
 

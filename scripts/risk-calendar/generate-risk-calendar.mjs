@@ -379,6 +379,79 @@ function extractEarningsContext(event) {
   return { eps: eps || '未提供', estimates: event.analystCount || estimates || '未提供' };
 }
 
+function valueOrMissing(value) {
+  return value || '未提供';
+}
+
+function buildNasdaqFieldLines(event) {
+  const fields = event.nasdaqCalendarFields || {};
+  return [
+    `- 公布时段：${valueOrMissing(fields.timeLabel)}（原始字段 time：${valueOrMissing(fields.time)}）`,
+    `- 股票代码：${valueOrMissing(fields.symbol)}`,
+    `- Nasdaq 公司名称：${valueOrMissing(fields.companyName)}`,
+    `- 市值：${valueOrMissing(fields.marketCap)}`,
+    `- 财报周期：${valueOrMissing(fields.fiscalQuarterEndingLabel)}（原始字段 fiscalQuarterEnding：${valueOrMissing(fields.fiscalQuarterEnding)}）`,
+    `- 共识每股收益预测：${valueOrMissing(fields.epsForecast)}`,
+    `- 覆盖分析师数量：${valueOrMissing(fields.noOfEsts)}`,
+    `- 去年同期发布日期：${valueOrMissing(fields.lastYearRptDt)}`,
+    `- 去年同期每股收益：${valueOrMissing(fields.lastYearEPS)}`
+  ];
+}
+
+function buildStageAAnalysis(event, companyLabel, relatedAssets, eps, estimates) {
+  const fields = event.nasdaqCalendarFields || {};
+  return [
+    '阶段A：财报发布前预判',
+    `- 标的与周期：${companyLabel}，财报周期为${event.fiscalQuarter || valueOrMissing(fields.fiscalQuarterEndingLabel)}。`,
+    `- 市场一致预期：当前纳斯达克共识每股收益为 ${eps}，覆盖分析师数量为 ${estimates}。这是本次预判的公开基准。`,
+    `- 行业与影响范围：直接影响 ${companyLabel}，并通过 ${relatedAssets || '相关指数与 ETF'} 传导到指数权重、同赛道公司、供应链和市场风险偏好。`,
+    '- 股价预期判断：当前日历没有接入财报前股价涨跌幅、估值分位、期权隐含波动率和卖方预期变化，因此不能断言市场已经计入多少好消息或坏消息。',
+    '- 三套判定标准：',
+    `  - 大幅超预期：实际每股收益明显高于 ${eps}，同时收入、利润率和下一期指引同步改善。`,
+    `  - 符合预期：实际每股收益接近 ${eps}，收入和指引没有明显反向变化。`,
+    `  - 不及预期：实际每股收益低于 ${eps}，或即使每股收益达标但收入、利润率、现金流或指引转弱。`,
+    '- 本次重点观察指标：收入增速、毛利率/营业利润率、每股收益、自由现金流、库存或订单趋势、管理层对下一季度和全年指引的措辞。',
+    '- 潜在催化：业绩高于共识、指引上调、利润率改善、回购或分红强化、核心业务增速重新加速。',
+    '- 主要风险：收入低于预期、利润率下滑、现金流质量转弱、指引保守、管理层对需求或成本表达谨慎。',
+    '- 操作建议：财报前不追高加仓；已有仓位先按最大跳空风险做压力测试。若组合里已有 QQQ/SPY 或同赛道股票，需要把这次财报当作组合风险事件处理。'
+  ];
+}
+
+function buildStageBAnalysis(companyLabel) {
+  return [
+    '阶段B：财报发布后复盘',
+    '- 当前状态：日历已经进入财报发布后阶段，但尚未接入公司正式财报、利润表、资产负债表、现金流量表、管理层展望和股价反应数据。',
+    '- 预期差结论：信息不足，暂不能判定为大幅超预期、符合预期、小幅不及预期或大幅不及预期。',
+    '- 严格约束：不编造收入、利润、扣非净利润、现金流、资产负债或管理层展望数据。',
+    '- 需要补充的信息：',
+    `  - ${companyLabel} 正式财报全文或新闻稿。`,
+    '  - 实际收入、每股收益、扣非/非 GAAP 利润口径、毛利率、营业利润率。',
+    '  - 资产负债表关键项：现金、债务、应收、库存、商誉或减值。',
+    '  - 现金流量表关键项：经营现金流、资本开支、自由现金流。',
+    '  - 管理层展望：下一季度和全年收入、利润率、资本开支、需求趋势。',
+    '  - 财报发布前 1 个月股价走势、财报后盘前/盘后涨跌幅、成交量和期权隐含波动率变化。',
+    '- 待补充资料后输出：预期差结论、财报亮点、风险清单、短期交易判断、中长期基本面判断。'
+  ];
+}
+
+function buildEarningsActionLines(event) {
+  if (event.analysisPhase === 'B') {
+    return [
+      '- 财报发布后：先补齐正式财报、三张表、管理层展望和股价反应数据，再做预期差判断。',
+      '- 交易层面：在真实数据未补齐前，不把盘前/盘后第一波涨跌当作最终结论；先观察常规交易成交量、缺口是否回补、相关 ETF 和同赛道股票是否确认方向。',
+      '- 复盘层面：用阶段A留存的共识每股收益、分析师覆盖数量、财报周期和事前风险清单，和实际财报逐项对比。',
+      '- 结论层面：资料不足时只输出待补充清单，不给“大幅超预期/不及预期”这类伪结论。'
+    ];
+  }
+
+  return [
+    '- 财报前：不要在事件前临时加重仓；已有仓位先确认最大可承受跳空，不符合就提前降仓。',
+    '- 财报发布时：先看营收、利润率、每股收益、下季度/全年指引和管理层措辞，不只看表面每股收益是否高于预期。',
+    '- 财报后：如果盘后/盘前大幅跳动，等常规交易前 15–30 分钟成交和期货反应稳定后再判断；不要用第一根波动直接追。',
+    '- 组合层面：如果同时持有 QQQ/SPY 或同赛道股票，把它当成组合风险事件处理，而不是单一个股新闻。'
+  ];
+}
+
 function buildEarningsDescription(event, meta) {
   const { eps, estimates } = extractEarningsContext(event);
   const mainTicker = event.ticker || event.assets[0];
@@ -386,6 +459,7 @@ function buildEarningsDescription(event, meta) {
     ? `${event.companyChineseName}（${event.companyEnglishName}，${mainTicker}）`
     : mainTicker;
   const relatedAssets = event.assets.slice(1).join('、');
+  const phase = event.analysisPhase || 'A';
 
   return [
     `日历名称：${DEFAULT_CALENDAR_NAME}`,
@@ -394,16 +468,24 @@ function buildEarningsDescription(event, meta) {
     `风险等级：${event.levelLabel || meta.label}`,
     `市场：${marketLabel(event.market)}`,
     `事件类型：美股前 20 大公司财报（仅滚动保留未来 30 天内数据）`,
+    `分析阶段：${event.analysisPhaseLabel || (phase === 'B' ? '阶段B：财报发布后' : '阶段A：财报发布前')}`,
     `时间可信度：${timeStatusLabel(event.timeStatus)}`,
     `数据来源：${event.sourceName}`,
     `来源链接：${event.sourceUrl}`,
     '',
-    '当前真实数据：',
+    '纳斯达克财报日历字段：',
+    ...buildNasdaqFieldLines(event),
+    '',
+    '当前真实数据摘要：',
     `- 标的：${companyLabel}`,
     `- 财报季度：${event.fiscalQuarter || event.title.split('：').at(-1)}`,
     `- 纳斯达克共识每股收益：${eps}`,
     `- 覆盖分析师数量：${estimates}`,
     `- 财报发布时间特征：${timingLabel(event)}`,
+    '',
+    ...(phase === 'B'
+      ? buildStageBAnalysis(companyLabel)
+      : buildStageAAnalysis(event, companyLabel, relatedAssets, eps, estimates)),
     '',
     '影响范围：',
     `- 直接影响：${companyLabel} 本身的盘前/盘后跳空、期权隐含波动率和成交量。`,
@@ -412,10 +494,7 @@ function buildEarningsDescription(event, meta) {
     '- 情绪影响：超大市值公司财报容易改变市场对成长、消费、防御或周期板块的风险偏好。',
     '',
     '操作建议：',
-    '- 财报前：不要在事件前临时加重仓；已有仓位先确认最大可承受跳空，不符合就提前降仓。',
-    '- 财报发布时：先看营收、利润率、每股收益、下季度/全年指引和管理层措辞，不只看表面每股收益是否高于预期。',
-    '- 财报后：如果盘后/盘前大幅跳动，等常规交易前 15–30 分钟成交和期货反应稳定后再判断；不要用第一根波动直接追。',
-    '- 组合层面：如果同时持有 QQQ/SPY 或同赛道股票，把它当成组合风险事件处理，而不是单一个股新闻。',
+    ...buildEarningsActionLines(event),
     '',
     '检查清单：',
     ...event.checklist.map((item) => `- ${item}`)
