@@ -76,7 +76,7 @@ https://aweniai.github.io/Financial-Calendar/
 
 1. 美股宏观与 Fed 事件：FOMC、非农、CPI、PPI、FOMC 纪要。
 2. 美股衍生品事件：VIX 期权到期、SPX / 月度 OPEX 风险窗口。
-3. 美股个股财报事件：前 20 大公司最新窗口财报；发布前进入阶段A预判，发布后进入阶段B复盘并归档留存。
+3. 美股个股财报事件：30 个重点美股标的最新窗口财报；发布前进入阶段A预判，发布后进入阶段B复盘并归档留存。
 4. A股制度性事件：股指期货/期权月度交割、定期报告披露截止窗口。
 5. A股月末规则型事件：每月倒数第二个中国营业日。
 6. A50 期货制度性事件：最后交易日。
@@ -120,7 +120,7 @@ public/calendar/GLOBAL_KEY.ics
 
 GitHub Actions 每天北京时间 7:00 自动执行同一条链路：
 
-1. 更新美股前 20 大公司财报数据：每天只抓最近 30 天窗口内的新数据；已进入阶段B并生成分析的财报记录会归档锁定，后续自动更新不再覆盖或删除。
+1. 更新 30 个重点美股标的财报数据：每天只抓最近 30 天窗口内的新数据；已进入阶段B并生成分析的财报记录会归档锁定，后续自动更新不再覆盖或删除。
 2. 重新生成订阅文件。
 3. 如果内容有变化，自动提交并 push 到 `main`。
 4. 在同一个 workflow 里直接部署 GitHub Pages。
@@ -191,6 +191,26 @@ npm run generate
 3. 不能像 Google Calendar API 那样强制立即更新、删除或改期。
 
 ## 更新日志
+
+### 2026-07-31 10:36 自动更新记录
+
+- 触发来源：local
+- Action 记录：本地运行
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：153
+- 文件变化统计：5 files changed, 866 insertions(+), 70 deletions(-)
+- 变化文件：
+  - 修改：`README.md`
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+  - 修改：`scripts/risk-calendar/generate-risk-calendar.mjs`
+  - 修改：`scripts/risk-calendar/update-us-megacap-earnings.mjs`
+- 最近未来事件：
+  - 2026-07-31 20:30：📊 [美股] 埃克森美孚（Exxon Mobil，XOM）财报发布：2026年6月
+  - 2026-07-31 20:30：📊 [美股] 艾伯维（AbbVie，ABBV）财报发布：2026年6月
+  - 2026-07-31 20:30：📊 [美股] 雪佛龙（Chevron，CVX）财报发布：2026年6月
+  - 2026-08-04 20:30：📊 [美股] 卡特彼勒（Caterpillar，CAT）财报发布：2026年6月
+  - 2026-08-05 04:05：📊 [美股] AMD（AMD，AMD）财报发布：2026年6月
 
 ### 2026-07-31 09:55 自动更新记录
 

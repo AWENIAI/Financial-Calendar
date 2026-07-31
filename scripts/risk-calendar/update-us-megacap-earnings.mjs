@@ -12,26 +12,36 @@ const LOOKBACK_DAYS = 30;
 const NASDAQ_EARNINGS_URL = 'https://api.nasdaq.com/api/calendar/earnings';
 
 const WATCHLIST = [
-  { symbol: 'NVDA', chineseName: '英伟达', englishName: 'NVIDIA' },
-  { symbol: 'MSFT', chineseName: '微软', englishName: 'Microsoft' },
   { symbol: 'AAPL', chineseName: '苹果', englishName: 'Apple' },
-  { symbol: 'AMZN', chineseName: '亚马逊', englishName: 'Amazon' },
+  { symbol: 'NVDA', chineseName: '英伟达', englishName: 'NVIDIA' },
   { symbol: 'GOOGL', chineseName: '谷歌母公司 Alphabet', englishName: 'Alphabet', aliases: ['GOOG'] },
-  { symbol: 'META', chineseName: 'Meta 平台', englishName: 'Meta Platforms' },
+  { symbol: 'MSFT', chineseName: '微软', englishName: 'Microsoft' },
+  { symbol: 'AMZN', chineseName: '亚马逊', englishName: 'Amazon' },
   { symbol: 'AVGO', chineseName: '博通', englishName: 'Broadcom' },
+  { symbol: 'SPCX', chineseName: 'SpaceX', englishName: 'SpaceX' },
+  { symbol: 'META', chineseName: 'Meta 平台', englishName: 'Meta Platforms' },
   { symbol: 'TSLA', chineseName: '特斯拉', englishName: 'Tesla' },
   { symbol: 'BRK.B', chineseName: '伯克希尔哈撒韦', englishName: 'Berkshire Hathaway', aliases: ['BRK/B', 'BRK.B'] },
   { symbol: 'LLY', chineseName: '礼来', englishName: 'Eli Lilly' },
+  { symbol: 'MU', chineseName: '美光科技', englishName: 'Micron' },
   { symbol: 'JPM', chineseName: '摩根大通', englishName: 'JPMorgan Chase' },
   { symbol: 'WMT', chineseName: '沃尔玛', englishName: 'Walmart' },
+  { symbol: 'AMD', chineseName: 'AMD', englishName: 'AMD' },
   { symbol: 'V', chineseName: '维萨', englishName: 'Visa' },
-  { symbol: 'ORCL', chineseName: '甲骨文', englishName: 'Oracle' },
-  { symbol: 'MA', chineseName: '万事达卡', englishName: 'Mastercard' },
-  { symbol: 'NFLX', chineseName: '奈飞', englishName: 'Netflix' },
   { symbol: 'XOM', chineseName: '埃克森美孚', englishName: 'Exxon Mobil' },
-  { symbol: 'COST', chineseName: '开市客', englishName: 'Costco' },
   { symbol: 'JNJ', chineseName: '强生', englishName: 'Johnson & Johnson' },
-  { symbol: 'HD', chineseName: '家得宝', englishName: 'Home Depot' }
+  { symbol: 'MA', chineseName: '万事达卡', englishName: 'Mastercard' },
+  { symbol: 'INTC', chineseName: '英特尔', englishName: 'Intel' },
+  { symbol: 'ABBV', chineseName: '艾伯维', englishName: 'AbbVie' },
+  { symbol: 'CSCO', chineseName: '思科', englishName: 'Cisco' },
+  { symbol: 'BAC', chineseName: '美国银行', englishName: 'Bank of America' },
+  { symbol: 'COST', chineseName: '好市多', englishName: 'Costco' },
+  { symbol: 'AMAT', chineseName: '应用材料', englishName: 'Applied Materials' },
+  { symbol: 'CVX', chineseName: '雪佛龙', englishName: 'Chevron' },
+  { symbol: 'UNH', chineseName: '联合健康', englishName: 'UnitedHealth' },
+  { symbol: 'KO', chineseName: '可口可乐', englishName: 'Coca-Cola' },
+  { symbol: 'CAT', chineseName: '卡特彼勒', englishName: 'Caterpillar' },
+  { symbol: 'LRCX', chineseName: '泛林集团', englishName: 'Lam Research' }
 ];
 
 const WATCHLIST_BY_SYMBOL = new Map();
@@ -213,6 +223,7 @@ function mergeEvents(existingEvents, fetchedEvents, runLabel) {
   const merged = new Map();
 
   for (const existing of existingEvents) {
+    if (!existing.analysisLocked && !WATCHLIST_BY_SYMBOL.has(normalizeSymbol(existing.ticker || existing.assets?.[0]))) continue;
     merged.set(eventKey(existing), existing);
   }
 
@@ -287,7 +298,7 @@ function eventFromRow(row, rowDate, company) {
     marketExpectation: `市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 ${eps}，覆盖分析师数量为 ${estimates}。`,
     historicalReaction: '美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。',
     actionPlan: '财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。',
-    reason: `${companyLabel}是美股前 20 大市值公司之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。`,
+    reason: `${companyLabel}是订阅股票池 30 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。`,
     checklist: ['是否持有该股或相关 ETF', '是否能承受盘后跳空', '是否需要提前降低仓位', '是否关注财报后指引']
   };
 }
