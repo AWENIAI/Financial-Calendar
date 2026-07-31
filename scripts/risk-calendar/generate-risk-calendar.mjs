@@ -314,9 +314,14 @@ function marketTag(market) {
   }[market] || market;
 }
 
+function eventEmoji(event, meta) {
+  if (event.category === 'Earnings / US Megacap') return '📊';
+  return meta.emoji;
+}
+
 function summary(event) {
   const meta = LEVEL_META[event.level];
-  return `${meta.emoji} [${marketTag(event.market)}] ${event.title}`;
+  return `${eventEmoji(event, meta)} [${marketTag(event.market)}] ${event.title}`;
 }
 
 function eventDateTimeLabel(event) {
