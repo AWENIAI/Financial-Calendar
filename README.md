@@ -118,7 +118,7 @@ public/calendar/GLOBAL_KEY.ics
 
 ### 自动更新
 
-GitHub Actions 每天北京时间 7:00 自动执行同一条链路：
+GitHub Actions 每天北京时间 6:00 自动执行同一条链路：
 
 1. 更新 30 个重点美股标的财报数据：每天只抓最近 30 天窗口内的新数据；已进入阶段B并生成分析的财报记录会归档锁定，后续自动更新不再覆盖或删除。
 2. 重新生成订阅文件。
@@ -191,6 +191,23 @@ npm run generate
 3. 不能像 Google Calendar API 那样强制立即更新、删除或改期。
 
 ## 更新日志
+
+### 2026-08-01 12:16 自动更新记录
+
+- 触发来源：local
+- Action 记录：本地运行
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：155
+- 文件变化统计：2 files changed, 3 insertions(+), 6 deletions(-)
+- 变化文件：
+  - 修改：`.github/workflows/update-calendar-feed.yml`
+  - 修改：`README.md`
+- 最近未来事件：
+  - 2026-08-04 08:00：📊 [美股] 卡特彼勒（Caterpillar，CAT）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] AMD（AMD，AMD）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] SpaceX（SpaceX，SPCX）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] 礼来（Eli Lilly，LLY）财报发布：2026年6月
+  - 2026-08-07 08:00：🔴 [美股] 非农就业：2026年7月 Employment Situation
 
 ### 2026-08-01 11:50 自动更新记录
 

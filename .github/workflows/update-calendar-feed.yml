@@ -3,12 +3,9 @@ name: Update Risk Calendar Feed
 on:
   schedule:
     # GitHub Actions schedule is not guaranteed to start exactly on time.
-    # Run before the 08:00 Apple Calendar display slot so new subscribed events
-    # are published before the 07:50 reminder window.
+    # Run well before the 08:00 Apple Calendar display slot so new subscribed
+    # events are published before the 07:50 reminder window.
     - cron: '0 22 * * *'
-    - cron: '30 22 * * *'
-    - cron: '0 23 * * *'
-    - cron: '30 23 * * *'
   workflow_dispatch:
 
 permissions:
