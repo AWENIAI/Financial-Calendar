@@ -45,6 +45,9 @@ jobs:
       - name: Update US megacap earnings
         run: npm run update-earnings
 
+      - name: Enrich released earnings analyses
+        run: npm run update-released-earnings-analysis
+
       - name: Regenerate ICS files
         run: npm run generate
 

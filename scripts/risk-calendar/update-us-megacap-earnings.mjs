@@ -210,8 +210,21 @@ function stableEventChanged(existing, fetched) {
   return JSON.stringify(withoutVolatileMetadata(existing)) !== JSON.stringify(withoutVolatileMetadata({ ...existing, ...fetched }));
 }
 
+function hasCompletedStageBAnalysis(event) {
+  return Boolean(event?.reportedFinancials && event?.stageBAnalysis);
+}
+
 function finalizeRecord(event, runLabel) {
   if (event.analysisPhase === 'B') {
+    if (!hasCompletedStageBAnalysis(event)) {
+      return {
+        ...event,
+        recordStatus: '待补充：阶段B财报正文与复盘分析',
+        analysisLocked: false,
+        lastFetchedAt: event.lastFetchedAt || runLabel
+      };
+    }
+
     return {
       ...event,
       recordStatus: '已归档：阶段B分析已生成',
@@ -241,7 +254,7 @@ function mergeEvents(existingEvents, fetchedEvents, runLabel) {
     const key = eventKey(fetched);
     const existing = merged.get(key);
 
-    if (existing?.analysisLocked) continue;
+    if (existing?.analysisLocked && hasCompletedStageBAnalysis(existing)) continue;
 
     if (!stableEventChanged(existing, fetched)) continue;
 
@@ -249,7 +262,7 @@ function mergeEvents(existingEvents, fetchedEvents, runLabel) {
   }
 
   for (const [key, event] of merged) {
-    if (event.analysisLocked) continue;
+    if (event.analysisLocked && hasCompletedStageBAnalysis(event)) continue;
 
     const phase = compactDateTime(event.start) < nowChinaCompactDateTime() ? 'B' : 'A';
     if (phase === 'B') {

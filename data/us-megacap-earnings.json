@@ -766,8 +766,66 @@
     ],
     "recordStatus": "已归档：阶段B分析已生成",
     "analysisLocked": true,
-    "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
-    "archivedAt": "2026-07-31 08:33:12 北京时间"
+    "analysisUpdatedAt": "2026-08-01 12:42:59 北京时间",
+    "archivedAt": "2026-07-31 08:33:12 北京时间",
+    "reportedFinancials": {
+      "sourceName": "公司官方财报新闻稿 / 投资者关系页面",
+      "sourceUrl": "https://www.marketbeat.com/stocks/NYSE/MA/earnings/",
+      "periodEnded": "2026年6月",
+      "revenue": "$32.79 billion",
+      "revenueYoY": "未提供",
+      "grossMargin": "未提供",
+      "grossMarginNote": "自动抓取正文未提取到可验证毛利率字段，需阅读完整财报表格补充。",
+      "dilutedEps": "$5.04",
+      "dilutedEpsYoY": "未提供",
+      "dilutedEpsNote": "来自自动抓取的官方财报正文；如公司同时披露 GAAP/Non-GAAP EPS，需要人工复核口径。",
+      "dividend": "未提供",
+      "dividendRecordDate": "未提供",
+      "dividendPayableDate": "未提供",
+      "operatingCashFlowComment": "自动抓取正文未提取到可验证经营现金流金额，需阅读完整现金流量表补充。",
+      "managementQuoteSummary": "\r\n\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head><script>(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)})\n(window,'GT-WF7TFFD','google_tags_first_party');</script><script async src=\"/k4bp/\"></script>\n\t\t\t<script>\n\t\t\t\twindow.dataLayer = window.dataLayer || [];\n\t\t\t\tfunction gtag(){dataLayer.push(arguments);}\n\t\t\t\tgtag('js', new Date());\n\t\t\t\tgtag('set', 'developer_id.dY2E1Nz', true);\n\t\t\t\t\n\t\t\t</s"
+    },
+    "stageBAnalysis": {
+      "expectationGapConclusion": "大幅超预期",
+      "expectationSummary": {
+        "metric": "摊薄每股收益（EPS）",
+        "marketExpectation": "$4.77",
+        "actualResult": "$5.04",
+        "absoluteDifference": "+$0.27",
+        "percentageDifference": "+5.7%",
+        "adjustedActualResult": "未提供",
+        "adjustedDifference": "未提供",
+        "adjustmentNote": "自动抓取未识别一次性调整项目；需要电话会、10-Q 或完整财报表格进一步复核。",
+        "verdict": "高于预期；大幅超预期。"
+      },
+      "expectationGapReason": "实际 EPS 为 $5.04，纳斯达克共识 EPS 为 $4.77，预期差为 +$0.27（+5.7%）。营收披露为 $32.79 billion，同比为 未提供。",
+      "incomeStatementAnalysis": "利润表初步看，万事达卡（Mastercard，MA） 本次披露营收为 $32.79 billion，EPS 为 $5.04。当前自动化能验证 EPS 预期差，但收入结构、成本项和利润率仍需完整报表补充。",
+      "balanceSheetAnalysis": "自动抓取正文未提取到现金、债务、应收、库存等资产负债表关键项，暂不能判断资产质量变化。",
+      "cashFlowAnalysis": "自动抓取正文未提取到经营现金流、资本开支和自由现金流金额，暂不能定量验证盈利质量。",
+      "managementOutlookAnalysis": "自动抓取正文未稳定识别管理层完整指引，需补充电话会或公司指引段落后确认短期波动还是长期逻辑变化。",
+      "priceActionAnalysis": "当前自动化未接入财报前后股价、成交量和期权隐含波动率，暂不能完整推演资金博弈方向。",
+      "highlights": [
+        "实际 EPS $5.04，对比纳斯达克共识 $4.77。",
+        "营收 $32.79 billion，同比 未提供。",
+        "已定位到公司官方财报正文来源，阶段B记录可留存追踪。"
+      ],
+      "risks": [
+        "自动提取字段有限，完整三张表仍需补充。",
+        "如公司披露 GAAP 与 Non-GAAP 两套 EPS，需要人工确认比较口径。",
+        "未接入盘后/盘前价格反应，短线判断仍需结合市场成交验证。"
+      ],
+      "shortTermTradingView": "大幅超预期。短线优先观察常规交易时段缺口、成交量和相关 ETF 是否确认方向，不用单一 EPS 结论追单。",
+      "longTermFundamentalView": "当前只完成官方正文初步抽取和 EPS 预期差判断；中长期判断需要补充收入结构、利润率、现金流、资产负债表和管理层指引。",
+      "missingData": [
+        "完整利润表",
+        "完整资产负债表",
+        "完整现金流量表",
+        "管理层电话会指引",
+        "财报前后股价与成交量反应"
+      ]
+    },
+    "stageBFetchStatus": "已自动抓取官方财报正文并生成阶段B复盘",
+    "stageBFetchCheckedAt": "2026-08-01 12:42:59 北京时间"
   },
   {
     "market": "US",
@@ -821,8 +879,66 @@
     ],
     "recordStatus": "已归档：阶段B分析已生成",
     "analysisLocked": true,
-    "analysisUpdatedAt": "2026-08-01 07:58:07 北京时间",
-    "archivedAt": "2026-08-01 07:58:07 北京时间"
+    "analysisUpdatedAt": "2026-08-01 12:43:06 北京时间",
+    "archivedAt": "2026-08-01 07:58:07 北京时间",
+    "reportedFinancials": {
+      "sourceName": "公司官方财报新闻稿 / 投资者关系页面",
+      "sourceUrl": "https://www.marketbeat.com/stocks/NASDAQ/AMZN/earnings/",
+      "periodEnded": "2026年6月",
+      "revenue": "$197.0 billion",
+      "revenueYoY": "未提供",
+      "grossMargin": "未提供",
+      "grossMarginNote": "自动抓取正文未提取到可验证毛利率字段，需阅读完整财报表格补充。",
+      "dilutedEps": "$5.75",
+      "dilutedEpsYoY": "未提供",
+      "dilutedEpsNote": "来自自动抓取的官方财报正文；如公司同时披露 GAAP/Non-GAAP EPS，需要人工复核口径。",
+      "dividend": "未提供",
+      "dividendRecordDate": "未提供",
+      "dividendPayableDate": "未提供",
+      "operatingCashFlowComment": "自动抓取正文未提取到可验证经营现金流金额，需阅读完整现金流量表补充。",
+      "managementQuoteSummary": "\r\n\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head><script>(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)})\n(window,'GT-WF7TFFD','google_tags_first_party');</script><script async src=\"/k4bp/\"></script>\n\t\t\t<script>\n\t\t\t\twindow.dataLayer = window.dataLayer || [];\n\t\t\t\tfunction gtag(){dataLayer.push(arguments);}\n\t\t\t\tgtag('js', new Date());\n\t\t\t\tgtag('set', 'developer_id.dY2E1Nz', true);\n\t\t\t\t\n\t\t\t</s"
+    },
+    "stageBAnalysis": {
+      "expectationGapConclusion": "大幅超预期",
+      "expectationSummary": {
+        "metric": "摊薄每股收益（EPS）",
+        "marketExpectation": "$1.83",
+        "actualResult": "$5.75",
+        "absoluteDifference": "+$3.92",
+        "percentageDifference": "+214.2%",
+        "adjustedActualResult": "未提供",
+        "adjustedDifference": "未提供",
+        "adjustmentNote": "自动抓取未识别一次性调整项目；需要电话会、10-Q 或完整财报表格进一步复核。",
+        "verdict": "高于预期；大幅超预期。"
+      },
+      "expectationGapReason": "实际 EPS 为 $5.75，纳斯达克共识 EPS 为 $1.83，预期差为 +$3.92（+214.2%）。营收披露为 $197.0 billion，同比为 未提供。",
+      "incomeStatementAnalysis": "利润表初步看，亚马逊（Amazon，AMZN） 本次披露营收为 $197.0 billion，EPS 为 $5.75。当前自动化能验证 EPS 预期差，但收入结构、成本项和利润率仍需完整报表补充。",
+      "balanceSheetAnalysis": "自动抓取正文未提取到现金、债务、应收、库存等资产负债表关键项，暂不能判断资产质量变化。",
+      "cashFlowAnalysis": "自动抓取正文未提取到经营现金流、资本开支和自由现金流金额，暂不能定量验证盈利质量。",
+      "managementOutlookAnalysis": "自动抓取正文未稳定识别管理层完整指引，需补充电话会或公司指引段落后确认短期波动还是长期逻辑变化。",
+      "priceActionAnalysis": "当前自动化未接入财报前后股价、成交量和期权隐含波动率，暂不能完整推演资金博弈方向。",
+      "highlights": [
+        "实际 EPS $5.75，对比纳斯达克共识 $1.83。",
+        "营收 $197.0 billion，同比 未提供。",
+        "已定位到公司官方财报正文来源，阶段B记录可留存追踪。"
+      ],
+      "risks": [
+        "自动提取字段有限，完整三张表仍需补充。",
+        "如公司披露 GAAP 与 Non-GAAP 两套 EPS，需要人工确认比较口径。",
+        "未接入盘后/盘前价格反应，短线判断仍需结合市场成交验证。"
+      ],
+      "shortTermTradingView": "大幅超预期。短线优先观察常规交易时段缺口、成交量和相关 ETF 是否确认方向，不用单一 EPS 结论追单。",
+      "longTermFundamentalView": "当前只完成官方正文初步抽取和 EPS 预期差判断；中长期判断需要补充收入结构、利润率、现金流、资产负债表和管理层指引。",
+      "missingData": [
+        "完整利润表",
+        "完整资产负债表",
+        "完整现金流量表",
+        "管理层电话会指引",
+        "财报前后股价与成交量反应"
+      ]
+    },
+    "stageBFetchStatus": "已自动抓取官方财报正文并生成阶段B复盘",
+    "stageBFetchCheckedAt": "2026-08-01 12:43:06 北京时间"
   },
   {
     "market": "US",
@@ -876,8 +992,66 @@
     ],
     "recordStatus": "已归档：阶段B分析已生成",
     "analysisLocked": true,
-    "analysisUpdatedAt": "2026-08-01 07:58:07 北京时间",
-    "archivedAt": "2026-08-01 07:58:07 北京时间"
+    "analysisUpdatedAt": "2026-08-01 12:43:11 北京时间",
+    "archivedAt": "2026-08-01 07:58:07 北京时间",
+    "reportedFinancials": {
+      "sourceName": "公司官方财报新闻稿 / 投资者关系页面",
+      "sourceUrl": "https://www.apple.com/newsroom/2025/10/apple-reports-fourth-quarter-results/",
+      "periodEnded": "2026年6月",
+      "revenue": "$102.5 billion",
+      "revenueYoY": "未提供",
+      "grossMargin": "未提供",
+      "grossMarginNote": "自动抓取正文未提取到可验证毛利率字段，需阅读完整财报表格补充。",
+      "dilutedEps": "$1.85",
+      "dilutedEpsYoY": "未提供",
+      "dilutedEpsNote": "来自自动抓取的官方财报正文；如公司同时披露 GAAP/Non-GAAP EPS，需要人工复核口径。",
+      "dividend": "未提供",
+      "dividendRecordDate": "未提供",
+      "dividendPayableDate": "未提供",
+      "operatingCashFlowComment": "自动抓取正文未提取到可验证经营现金流金额，需阅读完整现金流量表补充。",
+      "managementQuoteSummary": "<!DOCTYPE html>\n\n\n\n\n\t<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en-US\" lang=\"en-US\" dir=\"ltr\" prefix=\"og: http://ogp.me/ns#\" class=\"no-js globalheader-dark\">\n\n\n\n\n<head>\n\t\n\t\n\t\n\t\n\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<meta charset=\"utf-8\" />\n\n\t\n    \t <link rel=\"canonical\" href=\"https://www.apple.com/newsroom/2025/10/apple-reports-fourth-quarter-results/\"/>\n    \t \n    \t \n\t\n<meta name=\"viewport\" content=\"width=device"
+    },
+    "stageBAnalysis": {
+      "expectationGapConclusion": "小幅不及预期",
+      "expectationSummary": {
+        "metric": "摊薄每股收益（EPS）",
+        "marketExpectation": "$1.88",
+        "actualResult": "$1.85",
+        "absoluteDifference": "-$0.03",
+        "percentageDifference": "-1.6%",
+        "adjustedActualResult": "未提供",
+        "adjustedDifference": "未提供",
+        "adjustmentNote": "自动抓取未识别一次性调整项目；需要电话会、10-Q 或完整财报表格进一步复核。",
+        "verdict": "低于预期；小幅不及预期。"
+      },
+      "expectationGapReason": "实际 EPS 为 $1.85，纳斯达克共识 EPS 为 $1.88，预期差为 -$0.03（-1.6%）。营收披露为 $102.5 billion，同比为 未提供。",
+      "incomeStatementAnalysis": "利润表初步看，苹果（Apple，AAPL） 本次披露营收为 $102.5 billion，EPS 为 $1.85。当前自动化能验证 EPS 预期差，但收入结构、成本项和利润率仍需完整报表补充。",
+      "balanceSheetAnalysis": "自动抓取正文未提取到现金、债务、应收、库存等资产负债表关键项，暂不能判断资产质量变化。",
+      "cashFlowAnalysis": "自动抓取正文未提取到经营现金流、资本开支和自由现金流金额，暂不能定量验证盈利质量。",
+      "managementOutlookAnalysis": "自动抓取正文未稳定识别管理层完整指引，需补充电话会或公司指引段落后确认短期波动还是长期逻辑变化。",
+      "priceActionAnalysis": "当前自动化未接入财报前后股价、成交量和期权隐含波动率，暂不能完整推演资金博弈方向。",
+      "highlights": [
+        "实际 EPS $1.85，对比纳斯达克共识 $1.88。",
+        "营收 $102.5 billion，同比 未提供。",
+        "已定位到公司官方财报正文来源，阶段B记录可留存追踪。"
+      ],
+      "risks": [
+        "自动提取字段有限，完整三张表仍需补充。",
+        "如公司披露 GAAP 与 Non-GAAP 两套 EPS，需要人工确认比较口径。",
+        "未接入盘后/盘前价格反应，短线判断仍需结合市场成交验证。"
+      ],
+      "shortTermTradingView": "小幅不及预期。短线优先观察常规交易时段缺口、成交量和相关 ETF 是否确认方向，不用单一 EPS 结论追单。",
+      "longTermFundamentalView": "当前只完成官方正文初步抽取和 EPS 预期差判断；中长期判断需要补充收入结构、利润率、现金流、资产负债表和管理层指引。",
+      "missingData": [
+        "完整利润表",
+        "完整资产负债表",
+        "完整现金流量表",
+        "管理层电话会指引",
+        "财报前后股价与成交量反应"
+      ]
+    },
+    "stageBFetchStatus": "已自动抓取官方财报正文并生成阶段B复盘",
+    "stageBFetchCheckedAt": "2026-08-01 12:43:11 北京时间"
   },
   {
     "market": "US",
@@ -931,8 +1105,66 @@
     ],
     "recordStatus": "已归档：阶段B分析已生成",
     "analysisLocked": true,
-    "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
-    "archivedAt": "2026-07-31 08:33:12 北京时间"
+    "analysisUpdatedAt": "2026-08-01 12:43:15 北京时间",
+    "archivedAt": "2026-07-31 08:33:12 北京时间",
+    "reportedFinancials": {
+      "sourceName": "公司官方财报新闻稿 / 投资者关系页面",
+      "sourceUrl": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Fourth-Quarter-Results/",
+      "periodEnded": "2026年6月",
+      "revenue": "$10 billion",
+      "revenueYoY": "+14%",
+      "grossMargin": "未提供",
+      "grossMarginNote": "自动抓取正文未提取到可验证毛利率字段，需阅读完整财报表格补充。",
+      "dilutedEps": "$0",
+      "dilutedEpsYoY": "未提供",
+      "dilutedEpsNote": "来自自动抓取的官方财报正文；如公司同时披露 GAAP/Non-GAAP EPS，需要人工复核口径。",
+      "dividend": "未提供",
+      "dividendRecordDate": "未提供",
+      "dividendPayableDate": "未提供",
+      "operatingCashFlowComment": "自动抓取正文未提取到可验证经营现金流金额，需阅读完整现金流量表补充。",
+      "managementQuoteSummary": "<!DOCTYPE HTML>\r\n<html id=\"cdc2984f0f6a017f26f4afc83900b9e502f10703\" class=\"StudioLegacy Legacy\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en-US\" xml:lang=\"en-US\">\r\n<head><title>\r\n\tAmazon.com, Inc. - Amazon.com Announces Fourth Quarter Results\r\n</title><meta content=\"text/html; charset=UTF-8\" http-equiv=\"Content-type\" /><meta content=\"RevealTrans(Duration=0,Transition=0)\" http-equiv=\"Page-Enter\" /><meta content=\"IE="
+    },
+    "stageBAnalysis": {
+      "expectationGapConclusion": "大幅不及预期",
+      "expectationSummary": {
+        "metric": "摊薄每股收益（EPS）",
+        "marketExpectation": "$1.83",
+        "actualResult": "$0",
+        "absoluteDifference": "-$1.83",
+        "percentageDifference": "-100.0%",
+        "adjustedActualResult": "未提供",
+        "adjustedDifference": "未提供",
+        "adjustmentNote": "自动抓取未识别一次性调整项目；需要电话会、10-Q 或完整财报表格进一步复核。",
+        "verdict": "低于预期；大幅不及预期。"
+      },
+      "expectationGapReason": "实际 EPS 为 $0，纳斯达克共识 EPS 为 $1.83，预期差为 -$1.83（-100.0%）。营收披露为 $10 billion，同比为 +14%。",
+      "incomeStatementAnalysis": "利润表初步看，亚马逊（Amazon，AMZN） 本次披露营收为 $10 billion，EPS 为 $0。当前自动化能验证 EPS 预期差，但收入结构、成本项和利润率仍需完整报表补充。",
+      "balanceSheetAnalysis": "自动抓取正文未提取到现金、债务、应收、库存等资产负债表关键项，暂不能判断资产质量变化。",
+      "cashFlowAnalysis": "自动抓取正文未提取到经营现金流、资本开支和自由现金流金额，暂不能定量验证盈利质量。",
+      "managementOutlookAnalysis": "自动抓取正文未稳定识别管理层完整指引，需补充电话会或公司指引段落后确认短期波动还是长期逻辑变化。",
+      "priceActionAnalysis": "当前自动化未接入财报前后股价、成交量和期权隐含波动率，暂不能完整推演资金博弈方向。",
+      "highlights": [
+        "实际 EPS $0，对比纳斯达克共识 $1.83。",
+        "营收 $10 billion，同比 +14%。",
+        "已定位到公司官方财报正文来源，阶段B记录可留存追踪。"
+      ],
+      "risks": [
+        "自动提取字段有限，完整三张表仍需补充。",
+        "如公司披露 GAAP 与 Non-GAAP 两套 EPS，需要人工确认比较口径。",
+        "未接入盘后/盘前价格反应，短线判断仍需结合市场成交验证。"
+      ],
+      "shortTermTradingView": "大幅不及预期。短线优先观察常规交易时段缺口、成交量和相关 ETF 是否确认方向，不用单一 EPS 结论追单。",
+      "longTermFundamentalView": "当前只完成官方正文初步抽取和 EPS 预期差判断；中长期判断需要补充收入结构、利润率、现金流、资产负债表和管理层指引。",
+      "missingData": [
+        "完整利润表",
+        "完整资产负债表",
+        "完整现金流量表",
+        "管理层电话会指引",
+        "财报前后股价与成交量反应"
+      ]
+    },
+    "stageBFetchStatus": "已自动抓取官方财报正文并生成阶段B复盘",
+    "stageBFetchCheckedAt": "2026-08-01 12:43:15 北京时间"
   },
   {
     "market": "US",
@@ -1100,8 +1332,66 @@
     "recordStatus": "已归档：阶段B分析已生成",
     "analysisLocked": true,
     "lastFetchedAt": "2026-07-31 10:35:35 北京时间",
-    "analysisUpdatedAt": "2026-08-01 07:58:07 北京时间",
-    "archivedAt": "2026-08-01 07:58:07 北京时间"
+    "analysisUpdatedAt": "2026-08-01 12:44:38 北京时间",
+    "archivedAt": "2026-08-01 07:58:07 北京时间",
+    "stageBFetchStatus": "已自动抓取官方财报正文并生成阶段B复盘",
+    "stageBFetchCheckedAt": "2026-08-01 12:44:38 北京时间",
+    "reportedFinancials": {
+      "sourceName": "公司官方财报新闻稿 / 投资者关系页面",
+      "sourceUrl": "https://www.marketbeat.com/stocks/NYSE/XOM/earnings/",
+      "periodEnded": "2026年6月",
+      "revenue": "$114.53 billion",
+      "revenueYoY": "未提供",
+      "grossMargin": "未提供",
+      "grossMarginNote": "自动抓取正文未提取到可验证毛利率字段，需阅读完整财报表格补充。",
+      "dilutedEps": "$3.52",
+      "dilutedEpsYoY": "未提供",
+      "dilutedEpsNote": "来自自动抓取的官方财报正文；如公司同时披露 GAAP/Non-GAAP EPS，需要人工复核口径。",
+      "dividend": "未提供",
+      "dividendRecordDate": "未提供",
+      "dividendPayableDate": "未提供",
+      "operatingCashFlowComment": "自动抓取正文未提取到可验证经营现金流金额，需阅读完整现金流量表补充。",
+      "managementQuoteSummary": "\r\n\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head><script>(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)})\n(window,'GT-WF7TFFD','google_tags_first_party');</script><script async src=\"/k4bp/\"></script>\n\t\t\t<script>\n\t\t\t\twindow.dataLayer = window.dataLayer || [];\n\t\t\t\tfunction gtag(){dataLayer.push(arguments);}\n\t\t\t\tgtag('js', new Date());\n\t\t\t\tgtag('set', 'developer_id.dY2E1Nz', true);\n\t\t\t\t\n\t\t\t</s"
+    },
+    "stageBAnalysis": {
+      "expectationGapConclusion": "小幅不及预期",
+      "expectationSummary": {
+        "metric": "摊薄每股收益（EPS）",
+        "marketExpectation": "$3.68",
+        "actualResult": "$3.52",
+        "absoluteDifference": "-$0.16",
+        "percentageDifference": "-4.3%",
+        "adjustedActualResult": "未提供",
+        "adjustedDifference": "未提供",
+        "adjustmentNote": "自动抓取未识别一次性调整项目；需要电话会、10-Q 或完整财报表格进一步复核。",
+        "verdict": "低于预期；小幅不及预期。"
+      },
+      "expectationGapReason": "实际 EPS 为 $3.52，纳斯达克共识 EPS 为 $3.68，预期差为 -$0.16（-4.3%）。营收披露为 $114.53 billion，同比为 未提供。",
+      "incomeStatementAnalysis": "利润表初步看，埃克森美孚（Exxon Mobil，XOM） 本次披露营收为 $114.53 billion，EPS 为 $3.52。当前自动化能验证 EPS 预期差，但收入结构、成本项和利润率仍需完整报表补充。",
+      "balanceSheetAnalysis": "自动抓取正文未提取到现金、债务、应收、库存等资产负债表关键项，暂不能判断资产质量变化。",
+      "cashFlowAnalysis": "自动抓取正文未提取到经营现金流、资本开支和自由现金流金额，暂不能定量验证盈利质量。",
+      "managementOutlookAnalysis": "自动抓取正文未稳定识别管理层完整指引，需补充电话会或公司指引段落后确认短期波动还是长期逻辑变化。",
+      "priceActionAnalysis": "当前自动化未接入财报前后股价、成交量和期权隐含波动率，暂不能完整推演资金博弈方向。",
+      "highlights": [
+        "实际 EPS $3.52，对比纳斯达克共识 $3.68。",
+        "营收 $114.53 billion，同比 未提供。",
+        "已定位到公司官方财报正文来源，阶段B记录可留存追踪。"
+      ],
+      "risks": [
+        "自动提取字段有限，完整三张表仍需补充。",
+        "如公司披露 GAAP 与 Non-GAAP 两套 EPS，需要人工确认比较口径。",
+        "未接入盘后/盘前价格反应，短线判断仍需结合市场成交验证。"
+      ],
+      "shortTermTradingView": "小幅不及预期。短线优先观察常规交易时段缺口、成交量和相关 ETF 是否确认方向，不用单一 EPS 结论追单。",
+      "longTermFundamentalView": "当前只完成官方正文初步抽取和 EPS 预期差判断；中长期判断需要补充收入结构、利润率、现金流、资产负债表和管理层指引。",
+      "missingData": [
+        "完整利润表",
+        "完整资产负债表",
+        "完整现金流量表",
+        "管理层电话会指引",
+        "财报前后股价与成交量反应"
+      ]
+    }
   },
   {
     "market": "US",
@@ -1156,8 +1446,66 @@
     "recordStatus": "已归档：阶段B分析已生成",
     "analysisLocked": true,
     "lastFetchedAt": "2026-07-31 10:35:35 北京时间",
-    "analysisUpdatedAt": "2026-08-01 07:58:07 北京时间",
-    "archivedAt": "2026-08-01 07:58:07 北京时间"
+    "analysisUpdatedAt": "2026-08-01 12:43:31 北京时间",
+    "archivedAt": "2026-08-01 07:58:07 北京时间",
+    "reportedFinancials": {
+      "sourceName": "公司官方财报新闻稿 / 投资者关系页面",
+      "sourceUrl": "https://investors.abbvie.com/news-releases/news-release-details/abbvie-reports-full-year-and-fourth-quarter-2025-financial",
+      "periodEnded": "2026年6月",
+      "revenue": "$61.160 billion",
+      "revenueYoY": "未提供",
+      "grossMargin": "未提供",
+      "grossMarginNote": "自动抓取正文未提取到可验证毛利率字段，需阅读完整财报表格补充。",
+      "dilutedEps": "$2.36",
+      "dilutedEpsYoY": "未提供",
+      "dilutedEpsNote": "来自自动抓取的官方财报正文；如公司同时披露 GAAP/Non-GAAP EPS，需要人工复核口径。",
+      "dividend": "未提供",
+      "dividendRecordDate": "未提供",
+      "dividendPayableDate": "未提供",
+      "operatingCashFlowComment": "自动抓取正文未提取到可验证经营现金流金额，需阅读完整现金流量表补充。",
+      "managementQuoteSummary": "<!DOCTYPE html>\n<html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\">\n  <head>\n    <meta charset=\"utf-8\" />\n<meta property=\"og:site_name\" content=\"AbbVie\" />\n<meta property=\"og:type\" content=\"website\" />\n<meta property=\"og:url\" content=\"https://investors.abbvie.com/news-releases/news-release-details/abbvie-reports-full-year-and-fourth-quarter-2025-financial\" />\n<meta property=\"og:title\" content=\"AbbVie Reports F"
+    },
+    "stageBAnalysis": {
+      "expectationGapConclusion": "大幅不及预期",
+      "expectationSummary": {
+        "metric": "摊薄每股收益（EPS）",
+        "marketExpectation": "$3.64",
+        "actualResult": "$2.36",
+        "absoluteDifference": "-$1.28",
+        "percentageDifference": "-35.2%",
+        "adjustedActualResult": "未提供",
+        "adjustedDifference": "未提供",
+        "adjustmentNote": "自动抓取未识别一次性调整项目；需要电话会、10-Q 或完整财报表格进一步复核。",
+        "verdict": "低于预期；大幅不及预期。"
+      },
+      "expectationGapReason": "实际 EPS 为 $2.36，纳斯达克共识 EPS 为 $3.64，预期差为 -$1.28（-35.2%）。营收披露为 $61.160 billion，同比为 未提供。",
+      "incomeStatementAnalysis": "利润表初步看，艾伯维（AbbVie，ABBV） 本次披露营收为 $61.160 billion，EPS 为 $2.36。当前自动化能验证 EPS 预期差，但收入结构、成本项和利润率仍需完整报表补充。",
+      "balanceSheetAnalysis": "自动抓取正文未提取到现金、债务、应收、库存等资产负债表关键项，暂不能判断资产质量变化。",
+      "cashFlowAnalysis": "自动抓取正文未提取到经营现金流、资本开支和自由现金流金额，暂不能定量验证盈利质量。",
+      "managementOutlookAnalysis": "自动抓取正文未稳定识别管理层完整指引，需补充电话会或公司指引段落后确认短期波动还是长期逻辑变化。",
+      "priceActionAnalysis": "当前自动化未接入财报前后股价、成交量和期权隐含波动率，暂不能完整推演资金博弈方向。",
+      "highlights": [
+        "实际 EPS $2.36，对比纳斯达克共识 $3.64。",
+        "营收 $61.160 billion，同比 未提供。",
+        "已定位到公司官方财报正文来源，阶段B记录可留存追踪。"
+      ],
+      "risks": [
+        "自动提取字段有限，完整三张表仍需补充。",
+        "如公司披露 GAAP 与 Non-GAAP 两套 EPS，需要人工确认比较口径。",
+        "未接入盘后/盘前价格反应，短线判断仍需结合市场成交验证。"
+      ],
+      "shortTermTradingView": "大幅不及预期。短线优先观察常规交易时段缺口、成交量和相关 ETF 是否确认方向，不用单一 EPS 结论追单。",
+      "longTermFundamentalView": "当前只完成官方正文初步抽取和 EPS 预期差判断；中长期判断需要补充收入结构、利润率、现金流、资产负债表和管理层指引。",
+      "missingData": [
+        "完整利润表",
+        "完整资产负债表",
+        "完整现金流量表",
+        "管理层电话会指引",
+        "财报前后股价与成交量反应"
+      ]
+    },
+    "stageBFetchStatus": "已自动抓取官方财报正文并生成阶段B复盘",
+    "stageBFetchCheckedAt": "2026-08-01 12:43:31 北京时间"
   },
   {
     "market": "US",
@@ -1212,8 +1560,66 @@
     "recordStatus": "已归档：阶段B分析已生成",
     "analysisLocked": true,
     "lastFetchedAt": "2026-07-31 10:35:35 北京时间",
-    "analysisUpdatedAt": "2026-08-01 07:58:07 北京时间",
-    "archivedAt": "2026-08-01 07:58:07 北京时间"
+    "analysisUpdatedAt": "2026-08-01 12:43:39 北京时间",
+    "archivedAt": "2026-08-01 07:58:07 北京时间",
+    "reportedFinancials": {
+      "sourceName": "公司官方财报新闻稿 / 投资者关系页面",
+      "sourceUrl": "https://www.marketbeat.com/stocks/NYSE/CVX/earnings/",
+      "periodEnded": "2026年6月",
+      "revenue": "$185.89 billion",
+      "revenueYoY": "未提供",
+      "grossMargin": "未提供",
+      "grossMarginNote": "自动抓取正文未提取到可验证毛利率字段，需阅读完整财报表格补充。",
+      "dilutedEps": "$6.06",
+      "dilutedEpsYoY": "未提供",
+      "dilutedEpsNote": "来自自动抓取的官方财报正文；如公司同时披露 GAAP/Non-GAAP EPS，需要人工复核口径。",
+      "dividend": "未提供",
+      "dividendRecordDate": "未提供",
+      "dividendPayableDate": "未提供",
+      "operatingCashFlowComment": "自动抓取正文未提取到可验证经营现金流金额，需阅读完整现金流量表补充。",
+      "managementQuoteSummary": "\r\n\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head><script>(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)})\n(window,'GT-WF7TFFD','google_tags_first_party');</script><script async src=\"/k4bp/\"></script>\n\t\t\t<script>\n\t\t\t\twindow.dataLayer = window.dataLayer || [];\n\t\t\t\tfunction gtag(){dataLayer.push(arguments);}\n\t\t\t\tgtag('js', new Date());\n\t\t\t\tgtag('set', 'developer_id.dY2E1Nz', true);\n\t\t\t\t\n\t\t\t</s"
+    },
+    "stageBAnalysis": {
+      "expectationGapConclusion": "小幅超预期",
+      "expectationSummary": {
+        "metric": "摊薄每股收益（EPS）",
+        "marketExpectation": "$5.80",
+        "actualResult": "$6.06",
+        "absoluteDifference": "+$0.26",
+        "percentageDifference": "+4.5%",
+        "adjustedActualResult": "未提供",
+        "adjustedDifference": "未提供",
+        "adjustmentNote": "自动抓取未识别一次性调整项目；需要电话会、10-Q 或完整财报表格进一步复核。",
+        "verdict": "高于预期；小幅超预期。"
+      },
+      "expectationGapReason": "实际 EPS 为 $6.06，纳斯达克共识 EPS 为 $5.80，预期差为 +$0.26（+4.5%）。营收披露为 $185.89 billion，同比为 未提供。",
+      "incomeStatementAnalysis": "利润表初步看，雪佛龙（Chevron，CVX） 本次披露营收为 $185.89 billion，EPS 为 $6.06。当前自动化能验证 EPS 预期差，但收入结构、成本项和利润率仍需完整报表补充。",
+      "balanceSheetAnalysis": "自动抓取正文未提取到现金、债务、应收、库存等资产负债表关键项，暂不能判断资产质量变化。",
+      "cashFlowAnalysis": "自动抓取正文未提取到经营现金流、资本开支和自由现金流金额，暂不能定量验证盈利质量。",
+      "managementOutlookAnalysis": "自动抓取正文未稳定识别管理层完整指引，需补充电话会或公司指引段落后确认短期波动还是长期逻辑变化。",
+      "priceActionAnalysis": "当前自动化未接入财报前后股价、成交量和期权隐含波动率，暂不能完整推演资金博弈方向。",
+      "highlights": [
+        "实际 EPS $6.06，对比纳斯达克共识 $5.80。",
+        "营收 $185.89 billion，同比 未提供。",
+        "已定位到公司官方财报正文来源，阶段B记录可留存追踪。"
+      ],
+      "risks": [
+        "自动提取字段有限，完整三张表仍需补充。",
+        "如公司披露 GAAP 与 Non-GAAP 两套 EPS，需要人工确认比较口径。",
+        "未接入盘后/盘前价格反应，短线判断仍需结合市场成交验证。"
+      ],
+      "shortTermTradingView": "小幅超预期。短线优先观察常规交易时段缺口、成交量和相关 ETF 是否确认方向，不用单一 EPS 结论追单。",
+      "longTermFundamentalView": "当前只完成官方正文初步抽取和 EPS 预期差判断；中长期判断需要补充收入结构、利润率、现金流、资产负债表和管理层指引。",
+      "missingData": [
+        "完整利润表",
+        "完整资产负债表",
+        "完整现金流量表",
+        "管理层电话会指引",
+        "财报前后股价与成交量反应"
+      ]
+    },
+    "stageBFetchStatus": "已自动抓取官方财报正文并生成阶段B复盘",
+    "stageBFetchCheckedAt": "2026-08-01 12:43:39 北京时间"
   },
   {
     "market": "US",

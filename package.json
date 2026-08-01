@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "update-earnings": "node scripts/risk-calendar/update-us-megacap-earnings.mjs",
+    "update-released-earnings-analysis": "node scripts/risk-calendar/update-released-earnings-analysis.mjs",
     "generate": "node scripts/risk-calendar/generate-risk-calendar.mjs",
     "log-update": "node scripts/risk-calendar/update-readme-changelog.mjs"
   },
