@@ -2,7 +2,13 @@ name: Update Risk Calendar Feed
 
 on:
   schedule:
+    # GitHub Actions schedule is not guaranteed to start exactly on time.
+    # Run before the 08:00 Apple Calendar display slot so new subscribed events
+    # are published before the 07:50 reminder window.
+    - cron: '0 22 * * *'
+    - cron: '30 22 * * *'
     - cron: '0 23 * * *'
+    - cron: '30 23 * * *'
   workflow_dispatch:
 
 permissions:
@@ -33,6 +39,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Show trigger time
+        run: |
+          echo "UTC now: $(date -u '+%Y-%m-%d %H:%M:%S %Z')"
+          echo "Beijing now: $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S %Z')"
 
       - name: Update US megacap earnings
         run: npm run update-earnings

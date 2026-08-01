@@ -200,6 +200,16 @@ function readExistingEvents() {
   return JSON.parse(fs.readFileSync(outputPath, 'utf8'));
 }
 
+function withoutVolatileMetadata(event) {
+  const { lastFetchedAt, ...stableEvent } = event || {};
+  return stableEvent;
+}
+
+function stableEventChanged(existing, fetched) {
+  if (!existing) return true;
+  return JSON.stringify(withoutVolatileMetadata(existing)) !== JSON.stringify(withoutVolatileMetadata({ ...existing, ...fetched }));
+}
+
 function finalizeRecord(event, runLabel) {
   if (event.analysisPhase === 'B') {
     return {
@@ -215,7 +225,7 @@ function finalizeRecord(event, runLabel) {
     ...event,
     recordStatus: '跟踪中：阶段A财报发布前',
     analysisLocked: false,
-    lastFetchedAt: runLabel
+    lastFetchedAt: event.lastFetchedAt || runLabel
   };
 }
 
@@ -232,6 +242,8 @@ function mergeEvents(existingEvents, fetchedEvents, runLabel) {
     const existing = merged.get(key);
 
     if (existing?.analysisLocked) continue;
+
+    if (!stableEventChanged(existing, fetched)) continue;
 
     merged.set(key, finalizeRecord({ ...existing, ...fetched }, runLabel));
   }
