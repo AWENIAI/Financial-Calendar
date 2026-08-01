@@ -192,6 +192,28 @@ npm run generate
 
 ## 更新日志
 
+### 2026-08-01 12:51 自动更新记录
+
+- 触发来源：local
+- Action 记录：本地运行
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：155
+- 文件变化统计：7 files changed, 529 insertions(+), 25 deletions(-)
+- 变化文件：
+  - 修改：`.github/workflows/update-calendar-feed.yml`
+  - 修改：`README.backup.md`
+  - 修改：`README.md`
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`package.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+  - 修改：`scripts/risk-calendar/update-us-megacap-earnings.mjs`
+- 最近未来事件：
+  - 2026-08-04 08:00：📊 [美股] 卡特彼勒（Caterpillar，CAT）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] AMD（AMD，AMD）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] SpaceX（SpaceX，SPCX）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] 礼来（Eli Lilly，LLY）财报发布：2026年6月
+  - 2026-08-07 08:00：🔴 [美股] 非农就业：2026年7月 Employment Situation
+
 ### 2026-08-01 12:47 自动更新记录
 
 - 触发来源：local

@@ -28,7 +28,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "JPM",
       "companyName": "J P Morgan Chase & Co",
-      "marketCap": "$923,654,380,899",
+      "marketCap": "$940,106,581,005",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$5.59",
@@ -42,17 +42,18 @@
     "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $5.59，覆盖分析师数量为 5。",
     "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
     "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
-    "reason": "摩根大通（JPMorgan Chase，JPM）是美股前 20 大市值公司之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "reason": "摩根大通（JPMorgan Chase，JPM）是订阅股票池 30 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
     "checklist": [
       "是否持有该股或相关 ETF",
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "已归档：阶段B分析已生成",
-    "analysisLocked": true,
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
+    "analysisLocked": false,
     "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
-    "archivedAt": "2026-07-31 08:33:12 北京时间"
+    "archivedAt": "2026-07-31 08:33:12 北京时间",
+    "lastFetchedAt": "2026-08-02 06:59:49 北京时间"
   },
   {
     "market": "US",
@@ -83,7 +84,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "BAC",
       "companyName": "Bank of America Corporation",
-      "marketCap": "$433,388,791,057",
+      "marketCap": "$438,072,540,886",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$1.13",
@@ -104,10 +105,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "已归档：阶段B分析已生成",
-    "analysisLocked": true,
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
+    "analysisLocked": false,
     "analysisUpdatedAt": "2026-07-31 10:34:27 北京时间",
-    "archivedAt": "2026-07-31 10:34:27 北京时间"
+    "archivedAt": "2026-07-31 10:34:27 北京时间",
+    "lastFetchedAt": "2026-08-02 06:59:49 北京时间"
   },
   {
     "market": "US",
@@ -138,7 +140,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "JNJ",
       "companyName": "Johnson & Johnson",
-      "marketCap": "$639,900,374,461",
+      "marketCap": "$616,500,259,085",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$2.84",
@@ -152,17 +154,18 @@
     "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $2.84，覆盖分析师数量为 6。",
     "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
     "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
-    "reason": "强生（Johnson & Johnson，JNJ）是美股前 20 大市值公司之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "reason": "强生（Johnson & Johnson，JNJ）是订阅股票池 30 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
     "checklist": [
       "是否持有该股或相关 ETF",
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "已归档：阶段B分析已生成",
-    "analysisLocked": true,
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
+    "analysisLocked": false,
     "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
-    "archivedAt": "2026-07-31 08:33:12 北京时间"
+    "archivedAt": "2026-07-31 08:33:12 北京时间",
+    "lastFetchedAt": "2026-08-02 06:59:49 北京时间"
   },
   {
     "market": "US",
@@ -214,10 +217,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "已归档：阶段B分析已生成",
-    "analysisLocked": true,
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
+    "analysisLocked": false,
     "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
-    "archivedAt": "2026-07-31 08:33:12 北京时间"
+    "archivedAt": "2026-07-31 08:33:12 北京时间",
+    "lastFetchedAt": "2026-08-02 06:59:49 北京时间"
   },
   {
     "market": "US",
@@ -248,7 +252,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "UNH",
       "companyName": "UnitedHealth Group Incorporated",
-      "marketCap": "$381,938,291,990",
+      "marketCap": "$382,755,621,954",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$4.94",
@@ -269,10 +273,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "已归档：阶段B分析已生成",
-    "analysisLocked": true,
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
+    "analysisLocked": false,
     "analysisUpdatedAt": "2026-07-31 10:34:27 北京时间",
-    "archivedAt": "2026-07-31 10:34:27 北京时间"
+    "archivedAt": "2026-07-31 10:34:27 北京时间",
+    "lastFetchedAt": "2026-08-02 06:59:49 北京时间"
   },
   {
     "market": "US",
@@ -303,7 +308,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "TSLA",
       "companyName": "Tesla, Inc. ",
-      "marketCap": "$1,178,228,978,578",
+      "marketCap": "$1,219,817,712,637",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$0.32",
@@ -317,17 +322,18 @@
     "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $0.32，覆盖分析师数量为 10。",
     "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
     "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
-    "reason": "特斯拉（Tesla，TSLA）是美股前 20 大市值公司之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "reason": "特斯拉（Tesla，TSLA）是订阅股票池 30 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
     "checklist": [
       "是否持有该股或相关 ETF",
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "已归档：阶段B分析已生成",
-    "analysisLocked": true,
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
+    "analysisLocked": false,
     "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
-    "archivedAt": "2026-07-31 08:33:12 北京时间"
+    "archivedAt": "2026-07-31 08:33:12 北京时间",
+    "lastFetchedAt": "2026-08-02 06:59:49 北京时间"
   },
   {
     "market": "US",
@@ -358,7 +364,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "GOOG",
       "companyName": "Alphabet Inc.",
-      "marketCap": "$4,117,963,300,000",
+      "marketCap": "$4,080,661,800,000",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$2.88",
@@ -372,17 +378,18 @@
     "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $2.88，覆盖分析师数量为 12。",
     "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
     "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
-    "reason": "谷歌母公司 Alphabet（Alphabet，GOOGL）是美股前 20 大市值公司之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "reason": "谷歌母公司 Alphabet（Alphabet，GOOGL）是订阅股票池 30 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
     "checklist": [
       "是否持有该股或相关 ETF",
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "已归档：阶段B分析已生成",
-    "analysisLocked": true,
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
+    "analysisLocked": false,
     "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
-    "archivedAt": "2026-07-31 08:33:12 北京时间"
+    "archivedAt": "2026-07-31 08:33:12 北京时间",
+    "lastFetchedAt": "2026-08-02 06:59:49 北京时间"
   },
   {
     "market": "US",
@@ -413,7 +420,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "INTC",
       "companyName": "Intel Corporation",
-      "marketCap": "$413,002,720,000",
+      "marketCap": "$459,659,720,000",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$0.10",
@@ -434,10 +441,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "已归档：阶段B分析已生成",
-    "analysisLocked": true,
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
+    "analysisLocked": false,
     "analysisUpdatedAt": "2026-07-31 10:34:27 北京时间",
-    "archivedAt": "2026-07-31 10:34:27 北京时间"
+    "archivedAt": "2026-07-31 10:34:27 北京时间",
+    "lastFetchedAt": "2026-08-02 06:59:49 北京时间"
   },
   {
     "market": "US",
@@ -468,7 +476,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "KO",
       "companyName": "Coca-Cola Company (The)",
-      "marketCap": "$383,413,938,283",
+      "marketCap": "$380,732,582,513",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$0.92",
@@ -489,10 +497,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "已归档：阶段B分析已生成",
-    "analysisLocked": true,
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
+    "analysisLocked": false,
     "analysisUpdatedAt": "2026-07-31 10:34:27 北京时间",
-    "archivedAt": "2026-07-31 10:34:27 北京时间"
+    "archivedAt": "2026-07-31 10:34:27 北京时间",
+    "lastFetchedAt": "2026-08-02 06:59:49 北京时间"
   },
   {
     "market": "US",
@@ -523,7 +532,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "V",
       "companyName": "Visa Inc.",
-      "marketCap": "$698,547,169,785",
+      "marketCap": "$654,434,836,261",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$3.23",
@@ -537,17 +546,18 @@
     "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $3.23，覆盖分析师数量为 11。",
     "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
     "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
-    "reason": "维萨（Visa，V）是美股前 20 大市值公司之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "reason": "维萨（Visa，V）是订阅股票池 30 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
     "checklist": [
       "是否持有该股或相关 ETF",
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "已归档：阶段B分析已生成",
-    "analysisLocked": true,
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
+    "analysisLocked": false,
     "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
-    "archivedAt": "2026-07-31 08:33:12 北京时间"
+    "archivedAt": "2026-07-31 08:33:12 北京时间",
+    "lastFetchedAt": "2026-08-02 06:59:49 北京时间"
   },
   {
     "market": "US",
@@ -578,7 +588,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "META",
       "companyName": "Meta Platforms, Inc.",
-      "marketCap": "$1,486,526,071,055",
+      "marketCap": "$1,368,286,313,555",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$7.10",
@@ -592,17 +602,18 @@
     "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $7.10，覆盖分析师数量为 13。",
     "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
     "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
-    "reason": "Meta 平台（Meta Platforms，META）是美股前 20 大市值公司之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "reason": "Meta 平台（Meta Platforms，META）是订阅股票池 30 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
     "checklist": [
       "是否持有该股或相关 ETF",
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "已归档：阶段B分析已生成",
-    "analysisLocked": true,
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
+    "analysisLocked": false,
     "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
-    "archivedAt": "2026-07-31 08:33:12 北京时间"
+    "archivedAt": "2026-07-31 08:33:12 北京时间",
+    "lastFetchedAt": "2026-08-02 06:59:49 北京时间"
   },
   {
     "market": "US",
@@ -633,7 +644,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "MSFT",
       "companyName": "Microsoft Corporation",
-      "marketCap": "$2,901,100,889,300",
+      "marketCap": "$3,349,663,570,990",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$4.21",
@@ -647,17 +658,18 @@
     "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $4.21，覆盖分析师数量为 15。",
     "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
     "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
-    "reason": "微软（Microsoft，MSFT）是美股前 20 大市值公司之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "reason": "微软（Microsoft，MSFT）是订阅股票池 30 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
     "checklist": [
       "是否持有该股或相关 ETF",
       "是否能承受盘后跳空",
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "已归档：阶段B分析已生成",
-    "analysisLocked": true,
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
+    "analysisLocked": false,
     "analysisUpdatedAt": "2026-07-31 08:33:12 北京时间",
-    "archivedAt": "2026-07-31 08:33:12 北京时间"
+    "archivedAt": "2026-07-31 08:33:12 北京时间",
+    "lastFetchedAt": "2026-08-02 06:59:49 北京时间"
   },
   {
     "market": "US",
@@ -688,7 +700,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "LRCX",
       "companyName": "Lam Research Corporation",
-      "marketCap": "$315,581,591,850",
+      "marketCap": "$372,319,998,120",
       "fiscalQuarterEnding": "Jun/2026",
       "fiscalQuarterEndingLabel": "2026年6月",
       "epsForecast": "$1.69",
@@ -709,10 +721,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "已归档：阶段B分析已生成",
-    "analysisLocked": true,
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
+    "analysisLocked": false,
     "analysisUpdatedAt": "2026-07-31 10:34:27 北京时间",
-    "archivedAt": "2026-07-31 10:34:27 北京时间"
+    "archivedAt": "2026-07-31 10:34:27 北京时间",
+    "lastFetchedAt": "2026-08-02 06:59:49 北京时间"
   },
   {
     "market": "US",
