@@ -8,7 +8,6 @@ const rootDir = path.resolve(__dirname, '../..');
 const outputPath = path.join(rootDir, 'data/cffex-position-watch.json');
 
 const CFFEX_BASE_URL = 'http://www.cffex.com.cn/fzjy/ccpm';
-const LOOKBACK_DAYS = 10;
 const isDryRun = process.argv.includes('--dry-run');
 
 const PRODUCTS = [
@@ -278,9 +277,13 @@ async function fetchCompleteDate(dateText) {
 async function main() {
   const hasExplicitDate = Boolean(argValue('--date'));
   const requestedDate = argValue('--date') || beijingToday();
+  const lookbackDays = Number(argValue('--lookback') || 0);
+  if (!Number.isInteger(lookbackDays) || lookbackDays < 0 || lookbackDays > 10) {
+    throw new Error('--lookback must be an integer from 0 to 10');
+  }
   const fetchedAt = beijingNowLabel();
 
-  for (let offset = 0; offset >= -LOOKBACK_DAYS; offset -= 1) {
+  for (let offset = 0; offset >= -lookbackDays; offset -= 1) {
     const dateText = addDays(requestedDate, offset);
     const results = await fetchCompleteDate(dateText);
     if (!results) continue;
@@ -296,7 +299,9 @@ async function main() {
   }
 
   if (!isDryRun && !fs.existsSync(outputPath)) fs.writeFileSync(outputPath, '[]\n', 'utf8');
-  console.log(`CFFEX position watch: no complete IH/IF/IC/IM data found from ${addDays(requestedDate, -LOOKBACK_DAYS)} to ${requestedDate}; ${isDryRun || hasExplicitDate ? 'no production data changed' : 'existing data preserved'}`);
+  const startDate = addDays(requestedDate, -lookbackDays);
+  const range = lookbackDays ? `from ${startDate} to ${requestedDate}` : `for ${requestedDate}`;
+  console.log(`CFFEX position watch: no complete IH/IF/IC/IM data found ${range}; ${isDryRun || hasExplicitDate ? 'no production data changed' : 'existing data preserved'}`);
 }
 
 main().catch((error) => {

@@ -3,9 +3,10 @@ name: Update Risk Calendar Feed
 on:
   schedule:
     # GitHub Actions schedule is not guaranteed to start exactly on time.
-    # Run at Beijing 17:00 after the China futures market has closed so the
-    # CFFEX same-day position ranking can be published before the evening review.
-    - cron: '0 9 * * *'
+    # Run on weekdays at Beijing 17:00 after the China futures market has closed.
+    # China public holidays are handled by the CFFEX script: if same-day IH/IF/IC/IM
+    # data is unavailable, it leaves the position-watch file unchanged.
+    - cron: '0 9 * * 1-5'
   workflow_dispatch:
 
 permissions:
