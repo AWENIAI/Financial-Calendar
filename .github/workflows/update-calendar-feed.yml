@@ -3,9 +3,9 @@ name: Update Risk Calendar Feed
 on:
   schedule:
     # GitHub Actions schedule is not guaranteed to start exactly on time.
-    # Run well before the 08:00 Apple Calendar display slot so new subscribed
-    # events are published before the 07:50 reminder window.
-    - cron: '0 22 * * *'
+    # Run at Beijing 17:00 after the China futures market has closed so the
+    # CFFEX same-day position ranking can be published before the evening review.
+    - cron: '0 9 * * *'
   workflow_dispatch:
 
 permissions:
@@ -42,6 +42,9 @@ jobs:
           echo "UTC now: $(date -u '+%Y-%m-%d %H:%M:%S %Z')"
           echo "Beijing now: $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S %Z')"
 
+      - name: Update CFFEX index futures position watch
+        run: npm run update-cffex-position
+
       - name: Update US megacap earnings
         run: npm run update-earnings
 
@@ -69,7 +72,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A public/calendar data/risk-events.json data/fixed-events-2026.json data/us-megacap-earnings.json README.md README.backup.md package.json scripts/risk-calendar
+          git add -A public/calendar data/risk-events.json data/fixed-events-2026.json data/us-megacap-earnings.json data/cffex-position-watch.json README.md README.backup.md package.json scripts/risk-calendar
           git commit -m "chore: update risk calendar feed"
           git push
 

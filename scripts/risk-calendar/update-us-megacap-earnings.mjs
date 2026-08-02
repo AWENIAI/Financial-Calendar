@@ -192,7 +192,29 @@ function normalizeSymbol(symbol) {
 }
 
 function eventKey(event) {
-  return [event.ticker || event.assets?.[0], event.fiscalQuarter || '', event.start?.slice(0, 10)].join('|');
+  return [normalizeSymbol(event.ticker || event.assets?.[0]), event.fiscalQuarter || event.start?.slice(0, 10) || ''].join('|');
+}
+
+function recordPreferenceScore(event) {
+  const time = event?.nasdaqCalendarFields?.time;
+  const timeStatus = event?.timeStatus;
+  return [
+    timeStatus === 'confirmed' ? 100 : 0,
+    time && time !== 'time-not-supplied' ? 50 : 0,
+    time === 'time-after-hours' || time === 'time-pre-market' ? 20 : 0,
+    hasCompletedStageBAnalysis(event) ? 10 : 0,
+    event?.reportedFinancials?.sourceUrl ? 5 : 0
+  ].reduce((total, score) => total + score, 0);
+}
+
+function preferEarningsRecord(current, candidate) {
+  if (!current) return candidate;
+
+  const currentScore = recordPreferenceScore(current);
+  const candidateScore = recordPreferenceScore(candidate);
+  if (candidateScore !== currentScore) return candidateScore > currentScore ? candidate : current;
+
+  return String(candidate.start || '').localeCompare(String(current.start || '')) > 0 ? candidate : current;
 }
 
 function readExistingEvents() {
@@ -247,18 +269,20 @@ function mergeEvents(existingEvents, fetchedEvents, runLabel) {
 
   for (const existing of existingEvents) {
     if (!existing.analysisLocked && !WATCHLIST_BY_SYMBOL.has(normalizeSymbol(existing.ticker || existing.assets?.[0]))) continue;
-    merged.set(eventKey(existing), existing);
+    const key = eventKey(existing);
+    merged.set(key, preferEarningsRecord(merged.get(key), existing));
   }
 
   for (const fetched of fetchedEvents) {
     const key = eventKey(fetched);
     const existing = merged.get(key);
 
-    if (existing?.analysisLocked && hasCompletedStageBAnalysis(existing)) continue;
+    const preferred = preferEarningsRecord(existing, fetched);
+    if (existing?.analysisLocked && hasCompletedStageBAnalysis(existing) && preferred === existing) continue;
 
     if (!stableEventChanged(existing, fetched)) continue;
 
-    merged.set(key, finalizeRecord({ ...existing, ...fetched }, runLabel));
+    merged.set(key, finalizeRecord({ ...existing, ...preferred }, runLabel));
   }
 
   for (const [key, event] of merged) {
@@ -352,9 +376,7 @@ async function main() {
 
       const key = eventKey(event);
       const previous = fetchedByKey.get(key);
-      if (!previous || event.start.localeCompare(previous.start) < 0) {
-        fetchedByKey.set(key, event);
-      }
+      fetchedByKey.set(key, preferEarningsRecord(previous, event));
     }
   }
 

@@ -9,6 +9,7 @@ const rootDir = path.resolve(__dirname, '../..');
 const dataPath = path.join(rootDir, 'data/risk-events.json');
 const fixedEventsPath = path.join(rootDir, 'data/fixed-events-2026.json');
 const usMegacapEarningsPath = path.join(rootDir, 'data/us-megacap-earnings.json');
+const cffexPositionWatchPath = path.join(rootDir, 'data/cffex-position-watch.json');
 const outputDir = path.join(rootDir, 'public/calendar');
 
 const LEVEL_META = {
@@ -275,23 +276,51 @@ function readFixedEvents() {
 
 function dedupeKey(event) {
   if (event.category === 'Earnings / US Megacap') {
-    return [event.market, event.category, event.ticker || event.assets?.[0] || event.title, event.start].join('|');
+    return [event.market, event.category, event.ticker || event.assets?.[0] || event.title, event.fiscalQuarter || event.start].join('|');
   }
 
   return [event.market, event.category, event.start].join('|');
+}
+
+function earningsRecordPreferenceScore(event) {
+  const time = event?.nasdaqCalendarFields?.time;
+  const timeStatus = event?.timeStatus;
+  return [
+    timeStatus === 'confirmed' ? 100 : 0,
+    time && time !== 'time-not-supplied' ? 50 : 0,
+    time === 'time-after-hours' || time === 'time-pre-market' ? 20 : 0,
+    event?.reportedFinancials && event?.stageBAnalysis ? 10 : 0,
+    event?.reportedFinancials?.sourceUrl ? 5 : 0
+  ].reduce((total, score) => total + score, 0);
+}
+
+function preferDedupeEvent(current, candidate) {
+  if (!current) return candidate;
+  if (candidate.category !== 'Earnings / US Megacap') return candidate;
+
+  const currentScore = earningsRecordPreferenceScore(current);
+  const candidateScore = earningsRecordPreferenceScore(candidate);
+  if (candidateScore !== currentScore) return candidateScore > currentScore ? candidate : current;
+
+  return String(candidate.start || '').localeCompare(String(current.start || '')) > 0 ? candidate : current;
 }
 
 function dedupeEvents(events) {
   const byKey = new Map();
   for (const event of events) {
     const key = dedupeKey(event);
-    byKey.set(key, event);
+    byKey.set(key, preferDedupeEvent(byKey.get(key), event));
   }
   return Array.from(byKey.values());
 }
 
 function readEvents() {
-  const events = dedupeEvents([...readJson(dataPath, []), ...readFixedEvents(), ...readJson(usMegacapEarningsPath, [])]);
+  const events = dedupeEvents([
+    ...readJson(dataPath, []),
+    ...readFixedEvents(),
+    ...readJson(usMegacapEarningsPath, []),
+    ...readJson(cffexPositionWatchPath, [])
+  ]);
   return events
     .filter((event) => LEVEL_META[event.level])
     .filter((event) => event.category !== 'Earnings / US Megacap' || SUBSCRIBED_EARNINGS_SYMBOLS.has(event.ticker || event.assets?.[0]))
@@ -372,6 +401,7 @@ function categoryLabel(category) {
     'Derivatives / Index Options Last Trading Day': '美股指数期权最后交易日',
     'Derivatives / Monthly Options Expiration': '美股月度期权到期',
     'Derivatives / CFFEX Monthly Expiry': 'A股股指期货/期权月度交割',
+    'Derivatives / CFFEX Position Watch': '中金所股指期货成交持仓排名跟踪',
     'Calendar / China Month-End Business Day': '中国月末倒数第二个营业日',
     'Derivatives / SGX A50 Futures Last Trading Day': 'A50 期货最后交易日',
     'Earnings / Disclosure Deadline': 'A股定期报告披露截止窗口',
@@ -616,6 +646,47 @@ function buildEarningsDescription(event, meta) {
 function buildDescription(event) {
   const meta = LEVEL_META[event.level];
   if (event.category === 'Earnings / US Megacap') return buildEarningsDescription(event, meta);
+  if (event.category === 'Derivatives / CFFEX Position Watch' && event.cffexPositionAnalysis) {
+    const analysis = event.cffexPositionAnalysis;
+    return [
+      `日历名称：${DEFAULT_CALENDAR_NAME}`,
+      `事件标题：${summary(event)}`,
+      `事件时间：${eventDateTimeLabel(event)}`,
+      `风险等级：${event.levelLabel || meta.label}`,
+      `市场：${marketLabel(event.market)}`,
+      `事件类型：${categoryLabel(event.category)}`,
+      `影响资产：${event.assets.join('、')}`,
+      `时间状态：${timeStatusLabel(event.timeStatus)}`,
+      `来源：${event.sourceName}`,
+      `来源链接：${event.sourceUrl}`,
+      '',
+      '📌 中金所成交持仓排名数据：',
+      `- 🗓️ 数据交易日：${analysis.tradeDate}`,
+      `- 🕔 抓取时间：${analysis.fetchedAt}`,
+      `- 🧮 计算口径：${analysis.methodology}`,
+      '',
+      '🏦 中信期货分品种净变化：',
+      ...analysis.citic.details.map((item) => `- ${item.product}（${item.name}）：${item.directionEmoji} ${item.directionLabel}${Math.abs(item.netChange)}手；持买增减 ${item.longChange}手，持卖增减 ${item.shortChange}手。`),
+      `- 📊 中信整体：${analysis.citic.overall.directionEmoji} ${analysis.citic.overall.directionLabel}${Math.abs(analysis.citic.overall.netChange)}手。`,
+      '',
+      '🏛️ 前20机构合计：',
+      ...analysis.top20.details.map((item) => `- ${item.product}（${item.name}）：持买 ${item.longPosition}手，持卖 ${item.shortPosition}手，${item.directionEmoji} 净${item.directionLabel}${Math.abs(item.netPosition)}手。`),
+      `- 📊 前20机构整体：持买 ${analysis.top20.overall.longPosition}手，持卖 ${analysis.top20.overall.shortPosition}手，${analysis.top20.overall.directionEmoji} 净${analysis.top20.overall.directionLabel}${Math.abs(analysis.top20.overall.netPosition)}手。`,
+      '',
+      '🌐 影响范围：',
+      '- 🎯 直接影响：IH、IF、IC、IM 对应指数期货合约，以及上证50、沪深300、中证500、中证1000。',
+      '- 📈 指数影响：如果净空单扩张，优先关注权重指数和高贝塔小盘指数是否出现尾盘承压；如果净多单扩张，观察是否能在现货成交量中得到确认。',
+      '- 🔗 资金行为：这类数据反映期货端对冲和方向暴露变化，不等于现货一定同步，但对隔日开盘情绪有参考价值。',
+      '',
+      '🧭 操作建议：',
+      `- 🛡️ ${event.actionPlan}`,
+      '- 🔎 不用单一席位数据直接做多空决策，必须同时看指数价格、成交量、北向/ETF资金和现货强弱。',
+      '- ⏳ 如果中信和前20机构方向相反，优先降低仓位判断强度，等第二天价格确认。',
+      '',
+      '✅ 检查清单：',
+      ...event.checklist.map((item) => `- 🔎 ${item}`)
+    ].join('\n');
+  }
 
   return [
     `日历名称：${DEFAULT_CALENDAR_NAME}`,

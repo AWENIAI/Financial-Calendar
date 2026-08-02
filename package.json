@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "update-cffex-position": "node scripts/risk-calendar/update-cffex-position-watch.mjs",
     "update-earnings": "node scripts/risk-calendar/update-us-megacap-earnings.mjs",
     "update-released-earnings-analysis": "node scripts/risk-calendar/update-released-earnings-analysis.mjs",
     "generate": "node scripts/risk-calendar/generate-risk-calendar.mjs",
