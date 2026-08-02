@@ -173,14 +173,14 @@ function summarizeProduct(productResult) {
       shortChange: citicShortChange,
       netChange: citicNetChange,
       directionLabel: citicNetChange >= 0 ? '净加多单' : '净加空单',
-      directionEmoji: citicNetChange >= 0 ? '🟢' : '🔴'
+      directionEmoji: citicNetChange >= 0 ? '🔴' : '🟢'
     },
     top20: {
       longPosition: top20LongPosition,
       shortPosition: top20ShortPosition,
       netPosition: top20NetPosition,
       directionLabel: top20NetPosition >= 0 ? '多单' : '空单',
-      directionEmoji: top20NetPosition >= 0 ? '🟢' : '🔴'
+      directionEmoji: top20NetPosition >= 0 ? '🔴' : '🟢'
     }
   };
 }
@@ -197,8 +197,8 @@ function buildEvent(tradeDateText, results, fetchedAt) {
   const top20NetPosition = top20LongPosition - top20ShortPosition;
   const citicDirection = directionPhrase(citicNetChange, '净加多单', '净加空单');
   const top20Direction = directionPhrase(top20NetPosition, '多单', '空单');
-  const citicEmoji = citicNetChange >= 0 ? '🟢' : '🔴';
-  const top20Emoji = top20NetPosition >= 0 ? '🟢' : '🔴';
+  const citicEmoji = citicNetChange >= 0 ? '🔴' : '🟢';
+  const top20Emoji = top20NetPosition >= 0 ? '🔴' : '🟢';
 
   return {
     market: 'CN',

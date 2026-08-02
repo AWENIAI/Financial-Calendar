@@ -31,7 +31,7 @@
     ],
     "cffexPositionAnalysis": {
       "tradeDate": "2026-07-31",
-      "fetchedAt": "2026-08-02 23:19:05 北京时间",
+      "fetchedAt": "2026-08-03 06:17:30 北京时间",
       "methodology": "中信期货净变化 = 中信期货持买单量增减合计 - 中信期货持卖单量增减合计；前20机构净持仓 = 前20持买单量合计 - 前20持卖单量合计。四个品种均汇总所有合约。",
       "sourceFiles": [
         {
@@ -57,7 +57,7 @@
           "shortChange": -7129,
           "netChange": -4760,
           "directionLabel": "净加空单",
-          "directionEmoji": "🔴"
+          "directionEmoji": "🟢"
         },
         "details": [
           {
@@ -67,7 +67,7 @@
             "shortChange": -2073,
             "netChange": -389,
             "directionLabel": "净加空单",
-            "directionEmoji": "🔴"
+            "directionEmoji": "🟢"
           },
           {
             "product": "IF",
@@ -76,7 +76,7 @@
             "shortChange": -2640,
             "netChange": -1880,
             "directionLabel": "净加空单",
-            "directionEmoji": "🔴"
+            "directionEmoji": "🟢"
           },
           {
             "product": "IC",
@@ -85,7 +85,7 @@
             "shortChange": -3732,
             "netChange": -3565,
             "directionLabel": "净加空单",
-            "directionEmoji": "🔴"
+            "directionEmoji": "🟢"
           },
           {
             "product": "IM",
@@ -94,7 +94,7 @@
             "shortChange": 1316,
             "netChange": 1074,
             "directionLabel": "净加多单",
-            "directionEmoji": "🟢"
+            "directionEmoji": "🔴"
           }
         ]
       },
@@ -104,7 +104,7 @@
           "shortPosition": 1062041,
           "netPosition": -145320,
           "directionLabel": "空单",
-          "directionEmoji": "🔴"
+          "directionEmoji": "🟢"
         },
         "details": [
           {
@@ -114,7 +114,7 @@
             "shortPosition": 108443,
             "netPosition": -20273,
             "directionLabel": "空单",
-            "directionEmoji": "🔴"
+            "directionEmoji": "🟢"
           },
           {
             "product": "IF",
@@ -123,7 +123,7 @@
             "shortPosition": 231860,
             "netPosition": -27257,
             "directionLabel": "空单",
-            "directionEmoji": "🔴"
+            "directionEmoji": "🟢"
           },
           {
             "product": "IC",
@@ -132,7 +132,7 @@
             "shortPosition": 280350,
             "netPosition": -32691,
             "directionLabel": "空单",
-            "directionEmoji": "🔴"
+            "directionEmoji": "🟢"
           },
           {
             "product": "IM",
@@ -141,7 +141,7 @@
             "shortPosition": 441388,
             "netPosition": -65099,
             "directionLabel": "空单",
-            "directionEmoji": "🔴"
+            "directionEmoji": "🟢"
           }
         ]
       }
