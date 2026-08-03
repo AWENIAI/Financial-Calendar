@@ -3,10 +3,11 @@ name: Update Risk Calendar Feed
 on:
   schedule:
     # GitHub Actions schedule is not guaranteed to start exactly on time.
-    # Run on weekdays at Beijing 17:00 after the China futures market has closed.
+    # Run on weekdays at Beijing 17:20 after the China futures market has closed.
+    # Avoid the top of the UTC hour, when scheduled runs are more likely to be delayed or dropped.
     # China public holidays are handled by the CFFEX script: if same-day IH/IF/IC/IM
     # data is unavailable, it leaves the position-watch file unchanged.
-    - cron: '0 9 * * 1-5'
+    - cron: '20 9 * * 1-5'
   workflow_dispatch:
 
 permissions:
@@ -78,16 +79,16 @@ jobs:
           git push
 
       - name: Setup Pages
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         uses: actions/upload-pages-artifact@v3
         with:
           path: public
 
       - name: Deploy to GitHub Pages
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
         id: deployment
         uses: actions/deploy-pages@v4

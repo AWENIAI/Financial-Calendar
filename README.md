@@ -118,7 +118,7 @@ public/calendar/GLOBAL_KEY.ics
 
 ### 自动更新
 
-GitHub Actions 每个交易日北京时间 17:00 自动执行同一条链路：
+GitHub Actions 每个交易日北京时间 17:20 自动执行同一条链路：
 
 1. 抓取中金所 IH / IF / IC / IM 当日成交持仓排名，生成中信期货和前20机构净多/净空跟踪事件；如果当天不是交易日、节假日或数据尚未发布，则不回填旧交易日、不改写持仓跟踪文件，避免重复推送旧数据。
 2. 更新 30 个重点美股标的财报数据，并补抓当前时间前已经发布、但阶段B尚未完成的财报正文与复盘：先更新最近 30 天窗口内的新数据，再按官方来源搜索并抽取昨天及更早已发布财报的正文内容；已进入阶段B并生成分析的财报记录会归档锁定，后续自动更新不再覆盖或删除。
@@ -127,7 +127,7 @@ GitHub Actions 每个交易日北京时间 17:00 自动执行同一条链路：
 5. 在同一个 workflow 里直接部署 GitHub Pages。
 6. 同步把本次变化明细写入 README 更新日志，并把上一个 README 保存到 `README.backup.md`。
 
-说明：中金所成交持仓排名属于收盘后数据。北京时间 5:00 只能拿到最近已发布交易日，不能代表当天收盘后的“本日数据”；因此自动任务放在交易日 17:00 执行。GitHub cron 只能先限制为周一到周五，中国节假日由脚本通过“当天 IH/IF/IC/IM 数据是否完整发布”判断。
+说明：中金所成交持仓排名属于收盘后数据。北京时间 5:00 只能拿到最近已发布交易日，不能代表当天收盘后的“本日数据”；因此自动任务放在交易日 17:20 执行。17:20 同时避开 GitHub Actions 整点高负载时段，并为中金所发布当日完整数据留出缓冲。GitHub cron 只能先限制为周一到周五，中国节假日由脚本通过“当天 IH/IF/IC/IM 数据是否完整发布”判断。
 
 这样 Pages 订阅链接和 GitHub README 会一起保持最新。
 
@@ -194,6 +194,26 @@ npm run generate
 3. 不能像 Google Calendar API 那样强制立即更新、删除或改期。
 
 ## 更新日志
+
+### 2026-08-03 17:21 自动更新记录
+
+- 触发来源：local
+- Action 记录：本地运行
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：154
+- 文件变化统计：5 files changed, 73 insertions(+), 72 deletions(-)
+- 变化文件：
+  - 修改：`.github/workflows/update-calendar-feed.yml`
+  - 修改：`README.backup.md`
+  - 修改：`README.md`
+  - 修改：`data/cffex-position-watch.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-08-04 08:00：📊 [美股] 卡特彼勒（Caterpillar，CAT）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] AMD（AMD，AMD）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] SpaceX（SpaceX，SPCX）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] 礼来（Eli Lilly，LLY）财报发布：2026年6月
+  - 2026-08-07 08:00：🔴 [美股] 非农就业：2026年7月 Employment Situation
 
 ### 2026-08-03 06:18 自动更新记录
 

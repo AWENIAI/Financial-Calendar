@@ -4,9 +4,9 @@
     "level": "high",
     "levelLabel": "高",
     "category": "Derivatives / CFFEX Position Watch",
-    "title": "中金所股指期货持仓跟踪：2026-07-31 中信净加空单4760手，前20净空单145320手",
-    "start": "2026-07-31T17:00:00+08:00",
-    "end": "2026-07-31T17:30:00+08:00",
+    "title": "中金所股指期货持仓跟踪：2026-08-03 中信净加空单676手，前20净空单144404手",
+    "start": "2026-08-03T17:00:00+08:00",
+    "end": "2026-08-03T17:30:00+08:00",
     "timezone": "Asia/Shanghai",
     "location": "中国",
     "assets": [
@@ -19,9 +19,9 @@
     "timeStatus": "confirmed",
     "sourceName": "中国金融期货交易所",
     "sourceUrl": "http://www.cffex.com.cn/",
-    "marketExpectation": "中信期货当日净加空单4760手，前20机构合计净空单145320手。需要结合指数价格确认期货端变化是否被现货承接。",
+    "marketExpectation": "中信期货当日净加空单676手，前20机构合计净空单144404手。需要结合指数价格确认期货端变化是否被现货承接。",
     "historicalReaction": "成交持仓排名更适合看资金暴露变化，不适合单独当作方向信号。连续多日同向变化，比单日跳变更有参考价值。",
-    "actionPlan": "如果中信期货和前20机构同时偏空，指数类仓位需要降低隔夜暴露；如果同时偏多，可以观察是否有现货成交量配合，但不直接追高。当前读数：中信净加空单4760手，前20净空单145320手。",
+    "actionPlan": "如果中信期货和前20机构同时偏空，指数类仓位需要降低隔夜暴露；如果同时偏多，可以观察是否有现货成交量配合，但不直接追高。当前读数：中信净加空单676手，前20净空单144404手。",
     "reason": "中金所 IH、IF、IC、IM 持仓排名反映股指期货端主力席位的多空暴露和变化，对 A股指数、ETF、期权和隔日风险偏好有参考价值。",
     "checklist": [
       "是否持有指数 ETF 或股指期货相关仓位",
@@ -30,32 +30,32 @@
       "是否避免只看单日席位数据追单"
     ],
     "cffexPositionAnalysis": {
-      "tradeDate": "2026-07-31",
-      "fetchedAt": "2026-08-03 06:17:30 北京时间",
+      "tradeDate": "2026-08-03",
+      "fetchedAt": "2026-08-03 17:19:43 北京时间",
       "methodology": "中信期货净变化 = 中信期货持买单量增减合计 - 中信期货持卖单量增减合计；前20机构净持仓 = 前20持买单量合计 - 前20持卖单量合计。四个品种均汇总所有合约。",
       "sourceFiles": [
         {
           "product": "IH",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202607/31/IH_1.csv"
+          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/03/IH_1.csv"
         },
         {
           "product": "IF",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202607/31/IF_1.csv"
+          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/03/IF_1.csv"
         },
         {
           "product": "IC",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202607/31/IC_1.csv"
+          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/03/IC_1.csv"
         },
         {
           "product": "IM",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202607/31/IM_1.csv"
+          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/03/IM_1.csv"
         }
       ],
       "citic": {
         "overall": {
-          "longChange": -11889,
-          "shortChange": -7129,
-          "netChange": -4760,
+          "longChange": -13568,
+          "shortChange": -12892,
+          "netChange": -676,
           "directionLabel": "净加空单",
           "directionEmoji": "🟢"
         },
@@ -63,46 +63,46 @@
           {
             "product": "IH",
             "name": "上证50",
-            "longChange": -2462,
-            "shortChange": -2073,
-            "netChange": -389,
+            "longChange": 322,
+            "shortChange": 347,
+            "netChange": -25,
             "directionLabel": "净加空单",
             "directionEmoji": "🟢"
           },
           {
             "product": "IF",
             "name": "沪深300",
-            "longChange": -4520,
-            "shortChange": -2640,
-            "netChange": -1880,
-            "directionLabel": "净加空单",
-            "directionEmoji": "🟢"
+            "longChange": -703,
+            "shortChange": -823,
+            "netChange": 120,
+            "directionLabel": "净加多单",
+            "directionEmoji": "🔴"
           },
           {
             "product": "IC",
             "name": "中证500",
-            "longChange": -7297,
-            "shortChange": -3732,
-            "netChange": -3565,
+            "longChange": -4358,
+            "shortChange": -3896,
+            "netChange": -462,
             "directionLabel": "净加空单",
             "directionEmoji": "🟢"
           },
           {
             "product": "IM",
             "name": "中证1000",
-            "longChange": 2390,
-            "shortChange": 1316,
-            "netChange": 1074,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
+            "longChange": -8829,
+            "shortChange": -8520,
+            "netChange": -309,
+            "directionLabel": "净加空单",
+            "directionEmoji": "🟢"
           }
         ]
       },
       "top20": {
         "overall": {
-          "longPosition": 916721,
-          "shortPosition": 1062041,
-          "netPosition": -145320,
+          "longPosition": 873737,
+          "shortPosition": 1018141,
+          "netPosition": -144404,
           "directionLabel": "空单",
           "directionEmoji": "🟢"
         },
@@ -110,36 +110,36 @@
           {
             "product": "IH",
             "name": "上证50",
-            "longPosition": 88170,
-            "shortPosition": 108443,
-            "netPosition": -20273,
+            "longPosition": 87147,
+            "shortPosition": 107405,
+            "netPosition": -20258,
             "directionLabel": "空单",
             "directionEmoji": "🟢"
           },
           {
             "product": "IF",
             "name": "沪深300",
-            "longPosition": 204603,
-            "shortPosition": 231860,
-            "netPosition": -27257,
+            "longPosition": 201211,
+            "shortPosition": 229648,
+            "netPosition": -28437,
             "directionLabel": "空单",
             "directionEmoji": "🟢"
           },
           {
             "product": "IC",
             "name": "中证500",
-            "longPosition": 247659,
-            "shortPosition": 280350,
-            "netPosition": -32691,
+            "longPosition": 233976,
+            "shortPosition": 266209,
+            "netPosition": -32233,
             "directionLabel": "空单",
             "directionEmoji": "🟢"
           },
           {
             "product": "IM",
             "name": "中证1000",
-            "longPosition": 376289,
-            "shortPosition": 441388,
-            "netPosition": -65099,
+            "longPosition": 351403,
+            "shortPosition": 414879,
+            "netPosition": -63476,
             "directionLabel": "空单",
             "directionEmoji": "🟢"
           }
