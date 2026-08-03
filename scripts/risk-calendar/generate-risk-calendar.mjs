@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
+import { buildCffexMarketImpact } from './cffex-market-impact.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -648,6 +649,9 @@ function buildDescription(event) {
   if (event.category === 'Earnings / US Megacap') return buildEarningsDescription(event, meta);
   if (event.category === 'Derivatives / CFFEX Position Watch' && event.cffexPositionAnalysis) {
     const analysis = event.cffexPositionAnalysis;
+    const citic = analysis.citic.overall;
+    const top20 = analysis.top20.overall;
+    const impact = buildCffexMarketImpact(analysis);
     return [
       `日历名称：${DEFAULT_CALENDAR_NAME}`,
       `事件标题：${summary(event)}`,
@@ -659,6 +663,20 @@ function buildDescription(event) {
       `时间状态：${timeStatusLabel(event.timeStatus)}`,
       `来源：${event.sourceName}`,
       `来源链接：${event.sourceUrl}`,
+      '',
+      '🧭 市场影响总结：',
+      `- 🎯 总判断：${impact.directionalConclusion}。这是风险偏好线索，不是确定的涨跌信号。`,
+      `- 🔮 明日涨跌预判：${impact.forecastEmoji} ${impact.forecastDirection}。`,
+      `- 🎚️ 确定度：${impact.forecastScore}/100（${impact.forecastConfidence}）。`,
+      `- 🧠 预判依据：${impact.forecastBasis}`,
+      `- ⚠️ 分数说明：${impact.forecastDisclaimer}`,
+      `- 🧩 仓位性质：${impact.positionNature}。${impact.positionExplanation}`,
+      `- ⚖️ 信号强度：中信净差占当日多空调整绝对值的 ${impact.adjustmentRatioText}；前20席位净${top20.directionLabel}${Math.abs(top20.netPosition)}手，占多空持仓合计的 ${impact.top20ImbalanceRatioText}。`,
+      '- ❓ 明日会大涨吗：不等于明日大涨或大跌。空单可能是方向押注，也可能是套期保值；只有价格拒绝下跌并触发空头回补时，净空才可能成为上涨燃料。',
+      `- 📉 偏空确认条件：${impact.bearishConfirmation}`,
+      `- 📈 逼空转强条件：${impact.squeezeConfirmation}`,
+      '- ⏸️ 当前动作：没有价格、成交量和连续持仓确认前，以观望或控制隔夜仓位为主，不根据单日席位数据追空或抄底。',
+      '- ⚠️ 数据边界：中金所披露的是期货公司结算会员经纪业务持仓，不能据此确认具体客户身份、对冲目的或单一机构观点。',
       '',
       '📌 中金所成交持仓排名数据：',
       `- 🗓️ 数据交易日：${analysis.tradeDate}`,
