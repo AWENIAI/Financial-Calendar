@@ -195,6 +195,25 @@ npm run generate
 
 ## 更新日志
 
+### 2026-08-04 21:35 自动更新记录
+
+- 触发来源：local
+- Action 记录：本地运行
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：156
+- 文件变化统计：4 files changed, 176 insertions(+), 2 deletions(-)
+- 变化文件：
+  - 修改：`README.md`
+  - 修改：`data/cffex-position-watch.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+  - 修改：`scripts/risk-calendar/update-cffex-position-watch.mjs`
+- 最近未来事件：
+  - 2026-08-05 08:00：📊 [美股] AMD（AMD，AMD）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] SpaceX（SpaceX，SPCX）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] 礼来（Eli Lilly，LLY）财报发布：2026年6月
+  - 2026-08-07 08:00：🔴 [美股] 非农就业：2026年7月 Employment Situation
+  - 2026-08-07 08:00：📊 [美股] 伯克希尔哈撒韦（Berkshire Hathaway，BRK.B）财报发布：2026年6月
+
 ### 2026-08-04 19:35 自动更新记录
 
 - 触发来源：schedule
