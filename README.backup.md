@@ -195,6 +195,23 @@ npm run generate
 
 ## 更新日志
 
+### 2026-08-03 18:20 自动更新记录
+
+- 触发来源：workflow_dispatch
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/30805131287
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：154
+- 文件变化统计：2 files changed, 2 insertions(+), 2 deletions(-)
+- 变化文件：
+  - 修改：`data/cffex-position-watch.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-08-04 08:00：📊 [美股] 卡特彼勒（Caterpillar，CAT）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] AMD（AMD，AMD）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] SpaceX（SpaceX，SPCX）财报发布：2026年6月
+  - 2026-08-05 08:00：📊 [美股] 礼来（Eli Lilly，LLY）财报发布：2026年6月
+  - 2026-08-07 08:00：🔴 [美股] 非农就业：2026年7月 Employment Situation
+
 ### 2026-08-03 18:18 自动更新记录
 
 - 触发来源：local

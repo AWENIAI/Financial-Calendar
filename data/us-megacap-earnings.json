@@ -1837,5 +1837,59 @@
     "recordStatus": "跟踪中：阶段A财报发布前",
     "analysisLocked": false,
     "lastFetchedAt": "2026-08-01 07:58:07 北京时间"
+  },
+  {
+    "market": "US",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Earnings / US Megacap",
+    "title": "博通（Broadcom，AVGO）财报发布：2026年7月",
+    "start": "2026-09-03T21:30:00+08:00",
+    "end": "2026-09-03T22:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "美国",
+    "assets": [
+      "AVGO",
+      "QQQ",
+      "SPY",
+      "纳斯达克100"
+    ],
+    "companyChineseName": "博通",
+    "companyEnglishName": "Broadcom",
+    "ticker": "AVGO",
+    "fiscalQuarter": "2026年7月",
+    "consensusEps": "$2.83",
+    "analystCount": "9",
+    "analysisPhase": "A",
+    "analysisPhaseLabel": "阶段A：财报发布前",
+    "nasdaqCalendarFields": {
+      "time": "time-not-supplied",
+      "timeLabel": "未提供具体时间",
+      "symbol": "AVGO",
+      "companyName": "Broadcom Inc.",
+      "marketCap": "$1,866,065,681,062",
+      "fiscalQuarterEnding": "Jul/2026",
+      "fiscalQuarterEndingLabel": "2026年7月",
+      "epsForecast": "$2.83",
+      "noOfEsts": "9",
+      "lastYearRptDt": "9/04/2025",
+      "lastYearEPS": "$1.26"
+    },
+    "timeStatus": "estimated",
+    "sourceName": "纳斯达克财报日历",
+    "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $2.83，覆盖分析师数量为 9。",
+    "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
+    "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
+    "reason": "博通（Broadcom，AVGO）是订阅股票池 30 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "checklist": [
+      "是否持有该股或相关 ETF",
+      "是否能承受盘后跳空",
+      "是否需要提前降低仓位",
+      "是否关注财报后指引"
+    ],
+    "recordStatus": "跟踪中：阶段A财报发布前",
+    "analysisLocked": false,
+    "lastFetchedAt": "2026-08-04 19:35:35 北京时间"
   }
 ]
