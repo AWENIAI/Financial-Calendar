@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { mergeCffexPositionEvents } from './cffex-position-history.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -189,6 +190,12 @@ function directionPhrase(value, positiveLabel, negativeLabel) {
   return value >= 0 ? positiveLabel : negativeLabel;
 }
 
+function readExistingEvents() {
+  if (!fs.existsSync(outputPath)) return [];
+  const parsed = JSON.parse(fs.readFileSync(outputPath, 'utf8'));
+  return Array.isArray(parsed) ? parsed : [];
+}
+
 function buildEvent(tradeDateText, results, fetchedAt) {
   const summaries = results.map(summarizeProduct);
   const citicNetChange = summaries.reduce((total, item) => total + item.citic.netChange, 0);
@@ -292,7 +299,8 @@ async function main() {
     if (isDryRun) {
       console.log(JSON.stringify([event], null, 2));
     } else {
-      fs.writeFileSync(outputPath, `${JSON.stringify([event], null, 2)}\n`, 'utf8');
+      const events = mergeCffexPositionEvents(readExistingEvents(), event);
+      fs.writeFileSync(outputPath, `${JSON.stringify(events, null, 2)}\n`, 'utf8');
     }
     console.log(`CFFEX position watch: ${dateText} ${event.title}`);
     return;
