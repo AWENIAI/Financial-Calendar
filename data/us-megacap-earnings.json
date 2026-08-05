@@ -1406,7 +1406,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-08-01 07:58:07 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-08-04 21:45:34 北京时间"
+    "stageBFetchCheckedAt": "2026-08-05 19:32:19 北京时间"
   },
   {
     "market": "US",
@@ -1430,8 +1430,8 @@
     "fiscalQuarter": "2026年6月",
     "consensusEps": "$1.35",
     "analystCount": "13",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-after-hours",
       "timeLabel": "美股盘后",
@@ -1458,9 +1458,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-08-01 07:58:07 北京时间"
+    "lastFetchedAt": "2026-08-01 07:58:07 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
+    "stageBFetchCheckedAt": "2026-08-05 19:32:22 北京时间"
   },
   {
     "market": "US",
@@ -1484,8 +1486,8 @@
     "fiscalQuarter": "2026年6月",
     "consensusEps": "($0.26)",
     "analystCount": "5",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-after-hours",
       "timeLabel": "美股盘后",
@@ -1512,9 +1514,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-08-01 07:58:07 北京时间"
+    "lastFetchedAt": "2026-08-01 07:58:07 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
+    "stageBFetchCheckedAt": "2026-08-05 19:32:22 北京时间"
   },
   {
     "market": "US",
