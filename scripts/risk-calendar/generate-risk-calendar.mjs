@@ -1,8 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { buildCffexMarketImpact } from './cffex-market-impact.mjs';
+import { WATCHLIST as US_EARNINGS_WATCHLIST } from './update-us-megacap-earnings.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,6 +29,7 @@ const LEVEL_META = {
 
 const CALENDAR_DISPLAY_START_TIME = '08:00';
 const CALENDAR_DISPLAY_END_TIME = '09:00';
+const US_EARNINGS_WATCHLIST_SIZE = US_EARNINGS_WATCHLIST.length;
 
 const CALENDARS = [
   {
@@ -39,11 +41,7 @@ const CALENDARS = [
 ]
 
 const DEFAULT_CALENDAR_NAME = CALENDARS[0].name;
-const SUBSCRIBED_EARNINGS_SYMBOLS = new Set([
-  'AAPL', 'NVDA', 'GOOGL', 'MSFT', 'AMZN', 'AVGO', 'SPCX', 'META', 'TSLA', 'BRK.B',
-  'LLY', 'MU', 'JPM', 'WMT', 'AMD', 'V', 'XOM', 'JNJ', 'MA', 'INTC',
-  'ABBV', 'CSCO', 'BAC', 'COST', 'AMAT', 'CVX', 'UNH', 'KO', 'CAT', 'LRCX'
-]);
+export const SUBSCRIBED_EARNINGS_SYMBOLS = new Set(US_EARNINGS_WATCHLIST.map((company) => company.symbol));
 
 const EVENT_TEMPLATES = {
   'us-fomc': {
@@ -392,7 +390,7 @@ function marketLabel(market) {
 
 function categoryLabel(category) {
   return {
-    'Earnings / US Megacap': '30 个重点美股标的财报',
+    'Earnings / US Megacap': `${US_EARNINGS_WATCHLIST_SIZE} 个重点美股标的财报`,
     'Macro / Fed / FOMC': '美联储议息会议',
     'Macro / Fed Minutes': '美联储会议纪要',
     'Macro / Employment / NFP': '美国非农就业数据',
@@ -605,7 +603,7 @@ function buildEarningsDescription(event, meta) {
     `事件时间：${eventDateTimeLabel(event)}`,
     `风险等级：${event.levelLabel || meta.label}`,
     `市场：${marketLabel(event.market)}`,
-    `事件类型：30 个重点美股标的财报（仅滚动保留未来 30 天内数据）`,
+    `事件类型：${US_EARNINGS_WATCHLIST_SIZE} 个重点美股标的财报（仅滚动保留未来 30 天内数据）`,
     `分析阶段：${event.analysisPhaseLabel || (phase === 'B' ? '阶段B：财报发布后' : '阶段A：财报发布前')}`,
     `记录状态：${event.recordStatus || '跟踪中'}`,
     `分析锁定：${event.analysisLocked ? '是，已留存归档，后续自动更新不再覆盖或删除' : '否，仍在自动更新窗口内'}`,
@@ -810,4 +808,6 @@ function main() {
   }
 }
 
-main();
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main();
+}

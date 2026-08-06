@@ -1,0 +1,47 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import { SUBSCRIBED_EARNINGS_SYMBOLS } from '../scripts/risk-calendar/generate-risk-calendar.mjs';
+import { WATCHLIST } from '../scripts/risk-calendar/update-us-megacap-earnings.mjs';
+
+const REQUIRED_COMPANIES = [
+  { symbol: 'NVDA', chineseName: '英伟达', englishName: 'NVIDIA' },
+  { symbol: 'MSFT', chineseName: '微软', englishName: 'Microsoft' },
+  { symbol: 'AMZN', chineseName: '亚马逊', englishName: 'Amazon' },
+  { symbol: 'GOOGL', chineseName: '谷歌母公司 Alphabet', englishName: 'Alphabet', aliases: ['GOOG'] },
+  { symbol: 'META', chineseName: 'Meta 平台', englishName: 'Meta Platforms' },
+  { symbol: 'AAPL', chineseName: '苹果', englishName: 'Apple' },
+  { symbol: 'TSLA', chineseName: '特斯拉', englishName: 'Tesla' },
+  { symbol: 'AVGO', chineseName: '博通', englishName: 'Broadcom' },
+  { symbol: 'PLTR', chineseName: '帕兰提尔', englishName: 'Palantir Technologies' },
+  { symbol: 'ORCL', chineseName: '甲骨文', englishName: 'Oracle' },
+  { symbol: 'MU', chineseName: '美光科技', englishName: 'Micron' },
+  { symbol: 'WDC', chineseName: '西部数据', englishName: 'Western Digital' },
+  { symbol: 'STX', chineseName: '希捷科技', englishName: 'Seagate Technology' },
+  { symbol: 'SNDK', chineseName: '闪迪', englishName: 'SanDisk' }
+];
+
+test('美股财报订阅池覆盖用户指定的 14 家公司', () => {
+  const bySymbol = new Map(WATCHLIST.map((company) => [company.symbol, company]));
+
+  for (const required of REQUIRED_COMPANIES) {
+    const company = bySymbol.get(required.symbol);
+    assert.ok(company, `${required.symbol} should be subscribed`);
+    assert.equal(company.chineseName, required.chineseName);
+    assert.equal(company.englishName, required.englishName);
+
+    for (const alias of required.aliases || []) {
+      assert.ok(company.aliases?.includes(alias), `${required.symbol} should include alias ${alias}`);
+    }
+  }
+});
+
+test('美股财报订阅池没有重复 ticker', () => {
+  const symbols = WATCHLIST.map((company) => company.symbol);
+  assert.equal(new Set(symbols).size, symbols.length);
+});
+
+test('日历生成器不会过滤掉用户指定的 14 家公司', () => {
+  for (const required of REQUIRED_COMPANIES) {
+    assert.ok(SUBSCRIBED_EARNINGS_SYMBOLS.has(required.symbol), `${required.symbol} should be allowed into ICS`);
+  }
+});

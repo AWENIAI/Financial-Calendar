@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,7 +11,7 @@ const LOOKAHEAD_DAYS = 30;
 const LOOKBACK_DAYS = 30;
 const NASDAQ_EARNINGS_URL = 'https://api.nasdaq.com/api/calendar/earnings';
 
-const WATCHLIST = [
+export const WATCHLIST = [
   { symbol: 'AAPL', chineseName: '苹果', englishName: 'Apple' },
   { symbol: 'NVDA', chineseName: '英伟达', englishName: 'NVIDIA' },
   { symbol: 'GOOGL', chineseName: '谷歌母公司 Alphabet', englishName: 'Alphabet', aliases: ['GOOG'] },
@@ -21,9 +21,14 @@ const WATCHLIST = [
   { symbol: 'SPCX', chineseName: 'SpaceX', englishName: 'SpaceX' },
   { symbol: 'META', chineseName: 'Meta 平台', englishName: 'Meta Platforms' },
   { symbol: 'TSLA', chineseName: '特斯拉', englishName: 'Tesla' },
+  { symbol: 'PLTR', chineseName: '帕兰提尔', englishName: 'Palantir Technologies' },
+  { symbol: 'ORCL', chineseName: '甲骨文', englishName: 'Oracle' },
   { symbol: 'BRK.B', chineseName: '伯克希尔哈撒韦', englishName: 'Berkshire Hathaway', aliases: ['BRK/B', 'BRK.B'] },
   { symbol: 'LLY', chineseName: '礼来', englishName: 'Eli Lilly' },
   { symbol: 'MU', chineseName: '美光科技', englishName: 'Micron' },
+  { symbol: 'WDC', chineseName: '西部数据', englishName: 'Western Digital' },
+  { symbol: 'STX', chineseName: '希捷科技', englishName: 'Seagate Technology' },
+  { symbol: 'SNDK', chineseName: '闪迪', englishName: 'SanDisk' },
   { symbol: 'JPM', chineseName: '摩根大通', englishName: 'JPMorgan Chase' },
   { symbol: 'WMT', chineseName: '沃尔玛', englishName: 'Walmart' },
   { symbol: 'AMD', chineseName: 'AMD', englishName: 'AMD' },
@@ -276,13 +281,16 @@ function mergeEvents(existingEvents, fetchedEvents, runLabel) {
   for (const fetched of fetchedEvents) {
     const key = eventKey(fetched);
     const existing = merged.get(key);
+    const existingScore = existing ? recordPreferenceScore(existing) : -1;
+    const fetchedScore = recordPreferenceScore(fetched);
 
-    const preferred = preferEarningsRecord(existing, fetched);
-    if (existing?.analysisLocked && hasCompletedStageBAnalysis(existing) && preferred === existing) continue;
+    if (existing?.analysisLocked && hasCompletedStageBAnalysis(existing) && fetchedScore <= existingScore) continue;
+    if (existing && fetchedScore < existingScore) continue;
 
-    if (!stableEventChanged(existing, fetched)) continue;
+    const nextRecord = { ...existing, ...fetched };
+    if (!stableEventChanged(existing, nextRecord)) continue;
 
-    merged.set(key, finalizeRecord({ ...existing, ...preferred }, runLabel));
+    merged.set(key, finalizeRecord(nextRecord, runLabel));
   }
 
   for (const [key, event] of merged) {
@@ -347,7 +355,7 @@ function eventFromRow(row, rowDate, company) {
     marketExpectation: `市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 ${eps}，覆盖分析师数量为 ${estimates}。`,
     historicalReaction: '美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。',
     actionPlan: '财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。',
-    reason: `${companyLabel}是订阅股票池 30 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。`,
+    reason: `${companyLabel}是订阅股票池 ${WATCHLIST.length} 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。`,
     checklist: ['是否持有该股或相关 ETF', '是否能承受盘后跳空', '是否需要提前降低仓位', '是否关注财报后指引']
   };
 }
@@ -388,7 +396,9 @@ async function main() {
   for (const event of events) console.log(`${event.start.slice(0, 10)} ${event.ticker} ${event.title}`);
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}
