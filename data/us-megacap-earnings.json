@@ -1570,7 +1570,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-08-01 07:58:07 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-08-07 06:26:25 北京时间"
+    "stageBFetchCheckedAt": "2026-08-07 18:13:55 北京时间"
   },
   {
     "market": "US",
@@ -1736,11 +1736,69 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "待补充：阶段B财报正文与复盘分析",
-    "analysisLocked": false,
+    "recordStatus": "已归档：阶段B分析已生成",
+    "analysisLocked": true,
     "lastFetchedAt": "2026-08-01 07:58:07 北京时间",
-    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-08-07 06:26:41 北京时间"
+    "stageBFetchStatus": "已自动抓取官方财报正文并生成阶段B复盘",
+    "stageBFetchCheckedAt": "2026-08-07 18:13:59 北京时间",
+    "reportedFinancials": {
+      "sourceName": "公司官方财报新闻稿 / 投资者关系页面",
+      "sourceUrl": "https://www.cnbc.com/2026/08/05/eli-lilly-lly-earnings-q2-2026.html",
+      "periodEnded": "2026年6月",
+      "revenue": "$85 billion",
+      "revenueYoY": "+91%",
+      "grossMargin": "未提供",
+      "grossMarginNote": "自动抓取正文未提取到可验证毛利率字段，需阅读完整财报表格补充。",
+      "dilutedEps": "$8.38",
+      "dilutedEpsYoY": "未提供",
+      "dilutedEpsNote": "来自自动抓取的官方财报正文；如公司同时披露 GAAP/Non-GAAP EPS，需要人工复核口径。",
+      "dividend": "未提供",
+      "dividendRecordDate": "未提供",
+      "dividendPayableDate": "未提供",
+      "operatingCashFlowComment": "自动抓取正文未提取到可验证经营现金流金额，需阅读完整现金流量表补充。",
+      "managementQuoteSummary": "Eli Lilly (LLY) earnings Q2 2026 Skip Navigation Markets Pre-Markets U.S. Markets Currencies Prediction Markets Cryptocurrency Futures & Commodities Bonds Funds & ETFs Business Economy Finance Health & Science Media Real Estate Energy Climate Transportation Investigations Industrials Retail Wealth Sports Life Small Business Investing Personal Finance Fintech Financial Advisors Options Action ETF Street Buffett Archiv"
+    },
+    "stageBAnalysis": {
+      "expectationGapConclusion": "大幅超预期",
+      "expectationSummary": {
+        "metric": "摊薄每股收益（EPS）",
+        "marketExpectation": "$6.71",
+        "actualResult": "$8.38",
+        "absoluteDifference": "+$1.67",
+        "percentageDifference": "+24.9%",
+        "adjustedActualResult": "未提供",
+        "adjustedDifference": "未提供",
+        "adjustmentNote": "自动抓取未识别一次性调整项目；需要电话会、10-Q 或完整财报表格进一步复核。",
+        "verdict": "高于预期；大幅超预期。"
+      },
+      "expectationGapReason": "实际 EPS 为 $8.38，纳斯达克共识 EPS 为 $6.71，预期差为 +$1.67（+24.9%）。营收披露为 $85 billion，同比为 +91%。",
+      "incomeStatementAnalysis": "利润表初步看，礼来（Eli Lilly，LLY） 本次披露营收为 $85 billion，EPS 为 $8.38。当前自动化能验证 EPS 预期差，但收入结构、成本项和利润率仍需完整报表补充。",
+      "balanceSheetAnalysis": "自动抓取正文未提取到现金、债务、应收、库存等资产负债表关键项，暂不能判断资产质量变化。",
+      "cashFlowAnalysis": "自动抓取正文未提取到经营现金流、资本开支和自由现金流金额，暂不能定量验证盈利质量。",
+      "managementOutlookAnalysis": "自动抓取正文未稳定识别管理层完整指引，需补充电话会或公司指引段落后确认短期波动还是长期逻辑变化。",
+      "priceActionAnalysis": "当前自动化未接入财报前后股价、成交量和期权隐含波动率，暂不能完整推演资金博弈方向。",
+      "highlights": [
+        "实际 EPS $8.38，对比纳斯达克共识 $6.71。",
+        "营收 $85 billion，同比 +91%。",
+        "已定位到公司官方财报正文来源，阶段B记录可留存追踪。"
+      ],
+      "risks": [
+        "自动提取字段有限，完整三张表仍需补充。",
+        "如公司披露 GAAP 与 Non-GAAP 两套 EPS，需要人工确认比较口径。",
+        "未接入盘后/盘前价格反应，短线判断仍需结合市场成交验证。"
+      ],
+      "shortTermTradingView": "大幅超预期。短线优先观察常规交易时段缺口、成交量和相关 ETF 是否确认方向，不用单一 EPS 结论追单。",
+      "longTermFundamentalView": "当前只完成官方正文初步抽取和 EPS 预期差判断；中长期判断需要补充收入结构、利润率、现金流、资产负债表和管理层指引。",
+      "missingData": [
+        "完整利润表",
+        "完整资产负债表",
+        "完整现金流量表",
+        "管理层电话会指引",
+        "财报前后股价与成交量反应"
+      ]
+    },
+    "analysisUpdatedAt": "2026-08-07 18:13:59 北京时间",
+    "archivedAt": "2026-08-07 18:13:59 北京时间"
   },
   {
     "market": "US",
@@ -1795,8 +1853,8 @@
     "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
     "lastFetchedAt": "2026-08-07 06:22:19 北京时间",
-    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-08-07 06:26:51 北京时间"
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
+    "stageBFetchCheckedAt": "2026-08-07 18:13:59 北京时间"
   },
   {
     "market": "US",
@@ -1851,8 +1909,8 @@
     "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
     "lastFetchedAt": "2026-08-07 06:22:19 北京时间",
-    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-08-07 06:27:01 北京时间"
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
+    "stageBFetchCheckedAt": "2026-08-07 18:13:59 北京时间"
   },
   {
     "market": "US",
