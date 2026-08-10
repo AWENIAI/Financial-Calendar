@@ -195,6 +195,25 @@ npm run generate
 
 ## 更新日志
 
+### 2026-08-10 09:43 自动更新记录
+
+- 触发来源：local
+- Action 记录：本地运行
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：163
+- 文件变化统计：4 files changed, 180 insertions(+), 68 deletions(-)
+- 变化文件：
+  - 修改：`README.backup.md`
+  - 修改：`README.md`
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-08-12 08:00：🔴 [美股] CPI 发布：2026年7月美国通胀数据
+  - 2026-08-13 08:00：📊 [美股] 思科（Cisco，CSCO）财报发布：2026年7月
+  - 2026-08-13 08:00：🟠 [美股] PPI 发布：2026年7月生产者价格指数
+  - 2026-08-14 08:00：📊 [美股] 应用材料（Applied Materials，AMAT）财报发布：2026年7月
+  - 2026-08-19 08:00：🟠 [美股] VIX 期权到期日：8月标准到期
+
 ### 2026-08-07 18:13 自动更新记录
 
 - 触发来源：schedule
