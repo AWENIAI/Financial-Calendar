@@ -1,0 +1,69 @@
+name: Update Weekend Earnings Analysis
+
+on:
+  schedule:
+    # 北京时间周六、周日 08:00，补抓周末发布的美股财报并更新订阅。
+    - cron: '0 0 * * 5,6'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  weekend-earnings:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Run regression tests
+        run: npm test
+      - name: Enrich released earnings analyses
+        run: npm run update-released-earnings-analysis
+      - name: Regenerate ICS files
+        run: npm run generate
+      - name: Detect changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Update README change log
+        if: steps.changes.outputs.changed == 'true'
+        run: npm run log-update
+      - name: Commit and push changes
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A public/calendar data/us-megacap-earnings.json README.md README.backup.md package.json package-lock.json scripts/risk-calendar
+          git commit -m "chore: update weekend earnings analysis"
+          git push
+      - name: Setup Pages
+        if: steps.changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        uses: actions/configure-pages@v5
+      - name: Upload Pages artifact
+        if: steps.changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - name: Deploy to GitHub Pages
+        if: steps.changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -160,6 +161,21 @@ function searchUrl(query) {
   return `https://duckduckgo.com/html/?q=${encodeURIComponent(query)}`;
 }
 
+function brkOfficialReportUrls(event) {
+  if (event.ticker !== 'BRK.B') return [];
+  const date = String(event.start).slice(0, 10).replaceAll('-', '');
+  const month = date.slice(4, 6);
+  const day = date.slice(6, 8);
+  const year = date.slice(2, 4);
+  const monthNames = ['', 'jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+  const prefix = `${monthNames[Number(month)]}${day}${year}`;
+  return [
+    `https://www.berkshirehathaway.com/news/${prefix}.pdf`,
+    `https://www.berkshirehathaway.com/news/${prefix}.html`,
+    'https://www.berkshirehathaway.com/reports.html'
+  ];
+}
+
 function extractSearchLinks(htmlText) {
   const urls = new Set();
   const hrefMatches = String(htmlText).match(/href="([^"]+)"/g) || [];
@@ -196,6 +212,9 @@ function officialSiteQueries(event) {
 }
 
 async function findCandidatePages(event) {
+  const direct = brkOfficialReportUrls(event);
+  if (direct.length) return direct;
+
   const queries = [
     ...officialSiteQueries(event),
     `${event.companyEnglishName} ${event.ticker} earnings release`,
@@ -217,9 +236,62 @@ async function findCandidatePages(event) {
     .map((item) => item.url);
 }
 
+async function extractPdfText(buffer) {
+  try {
+    const document = await pdfjsLib.getDocument({
+      data: new Uint8Array(buffer),
+      useWorkerFetch: false,
+      isEvalSupported: false
+    }).promise;
+    let text = '';
+    for (let pageNumber = 1; pageNumber <= document.numPages; pageNumber += 1) {
+      const page = await document.getPage(pageNumber);
+      const content = await page.getTextContent();
+      text += `${content.items.map((item) => item.str).join(' ')}\n`;
+    }
+    return text.replace(/\s+/g, ' ').trim();
+  } catch {
+    return '';
+  }
+}
+
+async function fetchDocument(url) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), SEARCH_TIMEOUT_MS);
+  try {
+    const response = await fetch(url, {
+      signal: controller.signal,
+      headers: {
+        Accept: url.toLowerCase().endsWith('.pdf') ? 'application/pdf,*/*' : 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'User-Agent': 'Mozilla/5.0 Financial-Calendar/1.0'
+      }
+    });
+    if (!response.ok) return { text: '', publishedAt: null };
+    if (url.toLowerCase().endsWith('.pdf')) {
+      const text = await extractPdfText(await response.arrayBuffer());
+      const dateMatch = text.match(/(?:FOR IMMEDIATE RELEASE|released)\s+([A-Z][a-z]+ \d{1,2}, \d{4})/i);
+      return { text, publishedAt: dateMatch ? new Date(dateMatch[1]) : null };
+    }
+    const html = await response.text();
+    return { text: stripHtml(html), publishedAt: extractPublishedDate(html), html };
+  } catch {
+    return { text: '', publishedAt: null };
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 function parseDollarNumber(value) {
   const match = String(value || '').replace(/,/g, '').match(/\$?(-?\d+(?:\.\d+)?)/);
   return match ? Number(match[1]) : null;
+}
+
+function firstNumberAfterLabel(text, label) {
+  const index = String(text || '').toLowerCase().indexOf(label.toLowerCase());
+  if (index === -1) return null;
+  const tail = String(text).slice(index + label.length, index + label.length + 220);
+  const match = tail.match(/\$?\s*([\d]+(?:,[\d]{3})*(?:\.\d+)?)/);
+  return match ? match[1] : null;
 }
 
 function formatMoney(value) {
@@ -233,11 +305,16 @@ function extractActuals(text) {
   const revenueMatch = normalized.match(/(?:revenue|net sales|revenues)[^$\d]{0,80}\$([\d,.]+)\s*(billion|million)/i)
     || normalized.match(/\$([\d,.]+)\s*(billion|million)[^\.]{0,80}(?:revenue|net sales|revenues)/i);
   const yoyMatch = normalized.match(/(?:revenue|net sales|revenues)[^\.]{0,140}(?:up|increased|grew|rose)\s+([\d.]+)%/i);
+  const brkClassBEps = firstNumberAfterLabel(normalized, 'Net earnings per average equivalent Class B Share');
+  const brkOperating = firstNumberAfterLabel(normalized, 'Operating earnings');
+  const brkNetEarnings = firstNumberAfterLabel(normalized, 'Net earnings attributable to Berkshire shareholders');
 
   return {
-    dilutedEps: epsMatch ? formatMoney(Number(epsMatch[1])) : '未提供',
+    dilutedEps: brkClassBEps ? formatMoney(Number(brkClassBEps)) : epsMatch ? formatMoney(Number(epsMatch[1])) : '未提供',
     revenue: revenueMatch ? `$${revenueMatch[1]} ${revenueMatch[2].toLowerCase()}` : '未提供',
-    revenueYoY: yoyMatch ? `+${yoyMatch[1]}%` : '未提供'
+    revenueYoY: yoyMatch ? `+${yoyMatch[1]}%` : '未提供',
+    operatingEarnings: brkOperating ? `$${brkOperating} million` : '未提供',
+    netEarnings: brkNetEarnings ? `$${brkNetEarnings} million` : '未提供'
   };
 }
 
@@ -274,7 +351,7 @@ function buildStageB(event, sourceUrl, sourceText, actuals) {
   if (!expectation) return null;
 
   const companyLabel = `${event.companyChineseName}（${event.companyEnglishName}，${event.ticker}）`;
-  const reason = `实际 EPS 为 ${actuals.dilutedEps}，纳斯达克共识 EPS 为 ${event.consensusEps}，预期差为 ${expectation.absoluteDifference}（${expectation.percentageDifference}）。营收披露为 ${actuals.revenue}，同比为 ${actuals.revenueYoY}。`;
+  const reason = `实际 EPS 为 ${actuals.dilutedEps}，纳斯达克共识 EPS 为 ${event.consensusEps}，预期差为 ${expectation.absoluteDifference}（${expectation.percentageDifference}）。营收披露为 ${actuals.revenue}，同比为 ${actuals.revenueYoY}；经营收益为 ${actuals.operatingEarnings}，归属于股东净利润为 ${actuals.netEarnings}。`;
 
   return {
     reportedFinancials: {
@@ -283,6 +360,8 @@ function buildStageB(event, sourceUrl, sourceText, actuals) {
       periodEnded: event.nasdaqCalendarFields?.fiscalQuarterEndingLabel || event.fiscalQuarter || '未提供',
       revenue: actuals.revenue,
       revenueYoY: actuals.revenueYoY,
+      operatingEarnings: actuals.operatingEarnings,
+      netEarnings: actuals.netEarnings,
       grossMargin: '未提供',
       grossMarginNote: '自动抓取正文未提取到可验证毛利率字段，需阅读完整财报表格补充。',
       dilutedEps: actuals.dilutedEps,
@@ -308,7 +387,7 @@ function buildStageB(event, sourceUrl, sourceText, actuals) {
         verdict: expectation.verdict
       },
       expectationGapReason: reason,
-      incomeStatementAnalysis: `利润表初步看，${companyLabel} 本次披露营收为 ${actuals.revenue}，EPS 为 ${actuals.dilutedEps}。当前自动化能验证 EPS 预期差，但收入结构、成本项和利润率仍需完整报表补充。`,
+      incomeStatementAnalysis: `利润表初步看，${companyLabel} 本次披露营收为 ${actuals.revenue}，EPS 为 ${actuals.dilutedEps}，经营收益为 ${actuals.operatingEarnings}，归属于股东净利润为 ${actuals.netEarnings}。伯克希尔需特别区分经营收益与投资收益：本期净利润包含投资收益波动，不能把净利润单独当作经营趋势。收入结构、成本项和利润率仍需完整 10-Q 补充。`,
       balanceSheetAnalysis: '自动抓取正文未提取到现金、债务、应收、库存等资产负债表关键项，暂不能判断资产质量变化。',
       cashFlowAnalysis: '自动抓取正文未提取到经营现金流、资本开支和自由现金流金额，暂不能定量验证盈利质量。',
       managementOutlookAnalysis: '自动抓取正文未稳定识别管理层完整指引，需补充电话会或公司指引段落后确认短期波动还是长期逻辑变化。',
@@ -349,13 +428,15 @@ async function isStaleCompletedEvent(event) {
 async function enrichEvent(event) {
   const pages = await findCandidatePages(event);
   for (const url of pages) {
-    const html = await fetchHtml(url);
-    const publishedAt = extractPublishedDate(html);
+    const document = await fetchDocument(url);
+    const publishedAt = document.publishedAt;
     if (!publishedAt || !withinDays(publishedAt, eventDateUtc(event), 45)) continue;
-    const text = stripHtml(html);
+    const text = document.text;
     if (!/earnings|results|revenue|net sales|eps|earnings per share/i.test(text)) continue;
     const actuals = extractActuals(text);
-    if (actuals.dilutedEps === '未提供' || actuals.revenue === '未提供') continue;
+    const hasCoreActuals = actuals.dilutedEps !== '未提供'
+      && (actuals.revenue !== '未提供' || actuals.operatingEarnings !== '未提供' || actuals.netEarnings !== '未提供');
+    if (!hasCoreActuals) continue;
     const stageB = buildStageB(event, url, text, actuals);
     if (!stageB) continue;
 

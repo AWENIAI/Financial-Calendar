@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { SUBSCRIBED_EARNINGS_SYMBOLS } from '../scripts/risk-calendar/generate-risk-calendar.mjs';
 import { WATCHLIST } from '../scripts/risk-calendar/update-us-megacap-earnings.mjs';
+import fs from 'node:fs';
+import path from 'node:path';
 
 const REQUIRED_COMPANIES = [
   { symbol: 'NVDA', chineseName: '英伟达', englishName: 'NVIDIA' },
@@ -44,4 +46,16 @@ test('日历生成器不会过滤掉用户指定的 14 家公司', () => {
   for (const required of REQUIRED_COMPANIES) {
     assert.ok(SUBSCRIBED_EARNINGS_SYMBOLS.has(required.symbol), `${required.symbol} should be allowed into ICS`);
   }
+});
+
+test('伯克希尔阶段B已留存官方财报真实数据', () => {
+  const dataPath = path.join(process.cwd(), 'data/us-megacap-earnings.json');
+  const events = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+  const berkshire = events.find((event) => event.ticker === 'BRK.B');
+  assert.ok(berkshire, 'BRK.B should exist in earnings data');
+  assert.equal(berkshire.analysisPhase, 'B');
+  assert.equal(berkshire.reportedFinancials?.dilutedEps, '$11.91');
+  assert.equal(berkshire.reportedFinancials?.operatingEarnings, '$12,983 million');
+  assert.equal(berkshire.reportedFinancials?.netEarnings, '$25,667 million');
+  assert.match(berkshire.reportedFinancials?.sourceUrl || '', /berkshirehathaway\.com\/news\/aug0826\.pdf/);
 });
