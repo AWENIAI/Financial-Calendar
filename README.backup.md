@@ -195,6 +195,24 @@ npm run generate
 
 ## 更新日志
 
+### 2026-08-13 18:31 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/31691397371
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：168
+- 文件变化统计：3 files changed, 221 insertions(+), 53 deletions(-)
+- 变化文件：
+  - 修改：`data/cffex-position-watch.json`
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-08-14 08:00：📊 [美股] 应用材料（Applied Materials，AMAT）财报发布：2026年7月
+  - 2026-08-19 08:00：🟠 [美股] VIX 期权到期日：8月标准到期
+  - 2026-08-20 08:00：🟠 [美股] FOMC 会议纪要发布：7月会议纪要
+  - 2026-08-20 08:00：📊 [美股] 沃尔玛（Walmart，WMT）财报发布：2026年7月
+  - 2026-08-21 08:00：🟠 [美股] 指数期权 AM-settled 最后交易日提醒：8月 AM-settled 指数期权
+
 ### 2026-08-12 18:29 自动更新记录
 
 - 触发来源：schedule
