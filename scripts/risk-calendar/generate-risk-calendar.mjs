@@ -12,6 +12,7 @@ const dataPath = path.join(rootDir, 'data/risk-events.json');
 const fixedEventsPath = path.join(rootDir, 'data/fixed-events-2026.json');
 const usMegacapEarningsPath = path.join(rootDir, 'data/us-megacap-earnings.json');
 const cffexPositionWatchPath = path.join(rootDir, 'data/cffex-position-watch.json');
+const cffexFollowupReviewPath = path.join(rootDir, 'data/cffex-followup-review.json');
 const outputDir = path.join(rootDir, 'public/calendar');
 
 const LEVEL_META = {
@@ -318,7 +319,8 @@ function readEvents() {
     ...readJson(dataPath, []),
     ...readFixedEvents(),
     ...readJson(usMegacapEarningsPath, []),
-    ...readJson(cffexPositionWatchPath, [])
+    ...readJson(cffexPositionWatchPath, []),
+    ...readJson(cffexFollowupReviewPath, [])
   ]);
   return events
     .filter((event) => LEVEL_META[event.level])
@@ -361,6 +363,7 @@ function marketTag(market) {
 
 function eventEmoji(event, meta) {
   if (event.category === 'Earnings / US Megacap') return '📊';
+  if (event.category === 'Derivatives / CFFEX Follow-up Review') return '🧪';
   return meta.emoji;
 }
 
@@ -401,6 +404,7 @@ function categoryLabel(category) {
     'Derivatives / Monthly Options Expiration': '美股月度期权到期',
     'Derivatives / CFFEX Monthly Expiry': 'A股股指期货/期权月度交割',
     'Derivatives / CFFEX Position Watch': '中金所股指期货成交持仓排名跟踪',
+    'Derivatives / CFFEX Follow-up Review': '中金所次日收盘复盘',
     'Calendar / China Month-End Business Day': '中国月末倒数第二个营业日',
     'Derivatives / SGX A50 Futures Last Trading Day': 'A50 期货最后交易日',
     'Earnings / Disclosure Deadline': 'A股定期报告披露截止窗口',
@@ -645,6 +649,36 @@ function buildEarningsDescription(event, meta) {
 function buildDescription(event) {
   const meta = LEVEL_META[event.level];
   if (event.category === 'Earnings / US Megacap') return buildEarningsDescription(event, meta);
+  if (event.category === 'Derivatives / CFFEX Follow-up Review' && event.cffexFollowupReview) {
+    const review = event.cffexFollowupReview;
+    return [
+      `日历名称：${DEFAULT_CALENDAR_NAME}`,
+      `事件标题：${summary(event)}`,
+      `事件时间：${eventDateTimeLabel(event)}`,
+      `风险等级：${event.levelLabel || meta.label}`,
+      `市场：${marketLabel(event.market)}`,
+      `事件类型：${categoryLabel(event.category)}`,
+      `影响资产：${event.assets.join('、')}`,
+      `时间状态：${timeStatusLabel(event.timeStatus)}`,
+      `来源：${event.sourceName}`,
+      `来源链接：${event.sourceUrl}`,
+      '',
+      '🧭 次日收盘复盘：',
+      `- 前一交易日：${review.tradeDate}`,
+      `- 复盘日期：${review.reviewDate}`,
+      `- 信号方向：${review.signal.directionalConclusion}`,
+      `- 仓位性质：${review.signal.positionNature}`,
+      `- 仓位解释：${review.signal.positionExplanation}`,
+      `- 预判依据：${review.signal.forecastBasis}`,
+      `- 市场快照：${review.marketDetail ? `${review.marketDetail.label} 收盘 ${review.marketDetail.close}，开盘 ${review.marketDetail.open}，最高 ${review.marketDetail.high}，最低 ${review.marketDetail.low}，成交量 ${review.marketDetail.volume}` : '未提供'}`,
+      `- 验证摘要：${review.validationSummary}`,
+      `- 总结判断：${review.validationConclusion}`,
+      '- 说明：这是用次日收盘验证前一交易日中金所席位信号是否被价格确认，不是单日席位即刻等同方向。',
+      '',
+      '✅ 检查清单：',
+      ...event.checklist.map((item) => `- 🔎 ${item}`)
+    ].join('\n');
+  }
   if (event.category === 'Derivatives / CFFEX Position Watch' && event.cffexPositionAnalysis) {
     const analysis = event.cffexPositionAnalysis;
     const citic = analysis.citic.overall;

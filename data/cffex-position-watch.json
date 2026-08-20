@@ -744,9 +744,9 @@
     "level": "high",
     "levelLabel": "高",
     "category": "Derivatives / CFFEX Position Watch",
-    "title": "中金所股指期货持仓跟踪：2026-08-10 中信净加多单6068手，前20净空单129522手",
-    "start": "2026-08-10T17:00:00+08:00",
-    "end": "2026-08-10T17:30:00+08:00",
+    "title": "中金所股指期货持仓跟踪：2026-08-19 中信净加空单3130手，前20净空单119202手",
+    "start": "2026-08-19T17:00:00+08:00",
+    "end": "2026-08-19T17:30:00+08:00",
     "timezone": "Asia/Shanghai",
     "location": "中国",
     "assets": [
@@ -759,9 +759,9 @@
     "timeStatus": "confirmed",
     "sourceName": "中国金融期货交易所",
     "sourceUrl": "http://www.cffex.com.cn/",
-    "marketExpectation": "中信期货当日净加多单6068手，前20机构合计净空单129522手。需要结合指数价格确认期货端变化是否被现货承接。",
+    "marketExpectation": "中信期货当日净加空单3130手，前20机构合计净空单119202手。需要结合指数价格确认期货端变化是否被现货承接。",
     "historicalReaction": "成交持仓排名更适合看资金暴露变化，不适合单独当作方向信号。连续多日同向变化，比单日跳变更有参考价值。",
-    "actionPlan": "如果中信期货和前20机构同时偏空，指数类仓位需要降低隔夜暴露；如果同时偏多，可以观察是否有现货成交量配合，但不直接追高。当前读数：中信净加多单6068手，前20净空单129522手。",
+    "actionPlan": "如果中信期货和前20机构同时偏空，指数类仓位需要降低隔夜暴露；如果同时偏多，可以观察是否有现货成交量配合，但不直接追高。当前读数：中信净加空单3130手，前20净空单119202手。",
     "reason": "中金所 IH、IF、IC、IM 持仓排名反映股指期货端主力席位的多空暴露和变化，对 A股指数、ETF、期权和隔日风险偏好有参考价值。",
     "checklist": [
       "是否持有指数 ETF 或股指期货相关仓位",
@@ -770,624 +770,32 @@
       "是否避免只看单日席位数据追单"
     ],
     "cffexPositionAnalysis": {
-      "tradeDate": "2026-08-10",
-      "fetchedAt": "2026-08-10 18:38:43 北京时间",
+      "tradeDate": "2026-08-19",
+      "fetchedAt": "2026-08-20 08:44:13 北京时间",
       "methodology": "中信期货净变化 = 中信期货持买单量增减合计 - 中信期货持卖单量增减合计；前20机构净持仓 = 前20持买单量合计 - 前20持卖单量合计。四个品种均汇总所有合约。",
       "sourceFiles": [
         {
           "product": "IH",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/10/IH_1.csv"
+          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/19/IH_1.csv"
         },
         {
           "product": "IF",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/10/IF_1.csv"
+          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/19/IF_1.csv"
         },
         {
           "product": "IC",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/10/IC_1.csv"
+          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/19/IC_1.csv"
         },
         {
           "product": "IM",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/10/IM_1.csv"
+          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/19/IM_1.csv"
         }
       ],
       "citic": {
         "overall": {
-          "longChange": -9594,
-          "shortChange": -15662,
-          "netChange": 6068,
-          "directionLabel": "净加多单",
-          "directionEmoji": "🔴"
-        },
-        "details": [
-          {
-            "product": "IH",
-            "name": "上证50",
-            "longChange": -508,
-            "shortChange": -1853,
-            "netChange": 1345,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          },
-          {
-            "product": "IF",
-            "name": "沪深300",
-            "longChange": -3063,
-            "shortChange": -3473,
-            "netChange": 410,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          },
-          {
-            "product": "IC",
-            "name": "中证500",
-            "longChange": -2932,
-            "shortChange": -3984,
-            "netChange": 1052,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          },
-          {
-            "product": "IM",
-            "name": "中证1000",
-            "longChange": -3091,
-            "shortChange": -6352,
-            "netChange": 3261,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          }
-        ]
-      },
-      "top20": {
-        "overall": {
-          "longPosition": 823177,
-          "shortPosition": 952699,
-          "netPosition": -129522,
-          "directionLabel": "空单",
-          "directionEmoji": "🟢"
-        },
-        "details": [
-          {
-            "product": "IH",
-            "name": "上证50",
-            "longPosition": 84397,
-            "shortPosition": 103045,
-            "netPosition": -18648,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IF",
-            "name": "沪深300",
-            "longPosition": 192479,
-            "shortPosition": 218861,
-            "netPosition": -26382,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IC",
-            "name": "中证500",
-            "longPosition": 217230,
-            "shortPosition": 245772,
-            "netPosition": -28542,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IM",
-            "name": "中证1000",
-            "longPosition": 329071,
-            "shortPosition": 385021,
-            "netPosition": -55950,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "market": "CN",
-    "level": "high",
-    "levelLabel": "高",
-    "category": "Derivatives / CFFEX Position Watch",
-    "title": "中金所股指期货持仓跟踪：2026-08-11 中信净加多单757手，前20净空单127882手",
-    "start": "2026-08-11T17:00:00+08:00",
-    "end": "2026-08-11T17:30:00+08:00",
-    "timezone": "Asia/Shanghai",
-    "location": "中国",
-    "assets": [
-      "IH上证50",
-      "IF沪深300",
-      "IC中证500",
-      "IM中证1000",
-      "A股指数期货"
-    ],
-    "timeStatus": "confirmed",
-    "sourceName": "中国金融期货交易所",
-    "sourceUrl": "http://www.cffex.com.cn/",
-    "marketExpectation": "中信期货当日净加多单757手，前20机构合计净空单127882手。需要结合指数价格确认期货端变化是否被现货承接。",
-    "historicalReaction": "成交持仓排名更适合看资金暴露变化，不适合单独当作方向信号。连续多日同向变化，比单日跳变更有参考价值。",
-    "actionPlan": "如果中信期货和前20机构同时偏空，指数类仓位需要降低隔夜暴露；如果同时偏多，可以观察是否有现货成交量配合，但不直接追高。当前读数：中信净加多单757手，前20净空单127882手。",
-    "reason": "中金所 IH、IF、IC、IM 持仓排名反映股指期货端主力席位的多空暴露和变化，对 A股指数、ETF、期权和隔日风险偏好有参考价值。",
-    "checklist": [
-      "是否持有指数 ETF 或股指期货相关仓位",
-      "是否观察期货净空是否连续扩大",
-      "是否结合现货成交量和指数强弱确认",
-      "是否避免只看单日席位数据追单"
-    ],
-    "cffexPositionAnalysis": {
-      "tradeDate": "2026-08-11",
-      "fetchedAt": "2026-08-11 18:14:00 北京时间",
-      "methodology": "中信期货净变化 = 中信期货持买单量增减合计 - 中信期货持卖单量增减合计；前20机构净持仓 = 前20持买单量合计 - 前20持卖单量合计。四个品种均汇总所有合约。",
-      "sourceFiles": [
-        {
-          "product": "IH",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/11/IH_1.csv"
-        },
-        {
-          "product": "IF",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/11/IF_1.csv"
-        },
-        {
-          "product": "IC",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/11/IC_1.csv"
-        },
-        {
-          "product": "IM",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/11/IM_1.csv"
-        }
-      ],
-      "citic": {
-        "overall": {
-          "longChange": 3953,
-          "shortChange": 3196,
-          "netChange": 757,
-          "directionLabel": "净加多单",
-          "directionEmoji": "🔴"
-        },
-        "details": [
-          {
-            "product": "IH",
-            "name": "上证50",
-            "longChange": 1146,
-            "shortChange": 906,
-            "netChange": 240,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          },
-          {
-            "product": "IF",
-            "name": "沪深300",
-            "longChange": 949,
-            "shortChange": 788,
-            "netChange": 161,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          },
-          {
-            "product": "IC",
-            "name": "中证500",
-            "longChange": 1137,
-            "shortChange": 918,
-            "netChange": 219,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          },
-          {
-            "product": "IM",
-            "name": "中证1000",
-            "longChange": 721,
-            "shortChange": 584,
-            "netChange": 137,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          }
-        ]
-      },
-      "top20": {
-        "overall": {
-          "longPosition": 837099,
-          "shortPosition": 964981,
-          "netPosition": -127882,
-          "directionLabel": "空单",
-          "directionEmoji": "🟢"
-        },
-        "details": [
-          {
-            "product": "IH",
-            "name": "上证50",
-            "longPosition": 86185,
-            "shortPosition": 104991,
-            "netPosition": -18806,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IF",
-            "name": "沪深300",
-            "longPosition": 198554,
-            "shortPosition": 225003,
-            "netPosition": -26449,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IC",
-            "name": "中证500",
-            "longPosition": 220305,
-            "shortPosition": 247485,
-            "netPosition": -27180,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IM",
-            "name": "中证1000",
-            "longPosition": 332055,
-            "shortPosition": 387502,
-            "netPosition": -55447,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "market": "CN",
-    "level": "high",
-    "levelLabel": "高",
-    "category": "Derivatives / CFFEX Position Watch",
-    "title": "中金所股指期货持仓跟踪：2026-08-12 中信净加多单2185手，前20净空单126122手",
-    "start": "2026-08-12T17:00:00+08:00",
-    "end": "2026-08-12T17:30:00+08:00",
-    "timezone": "Asia/Shanghai",
-    "location": "中国",
-    "assets": [
-      "IH上证50",
-      "IF沪深300",
-      "IC中证500",
-      "IM中证1000",
-      "A股指数期货"
-    ],
-    "timeStatus": "confirmed",
-    "sourceName": "中国金融期货交易所",
-    "sourceUrl": "http://www.cffex.com.cn/",
-    "marketExpectation": "中信期货当日净加多单2185手，前20机构合计净空单126122手。需要结合指数价格确认期货端变化是否被现货承接。",
-    "historicalReaction": "成交持仓排名更适合看资金暴露变化，不适合单独当作方向信号。连续多日同向变化，比单日跳变更有参考价值。",
-    "actionPlan": "如果中信期货和前20机构同时偏空，指数类仓位需要降低隔夜暴露；如果同时偏多，可以观察是否有现货成交量配合，但不直接追高。当前读数：中信净加多单2185手，前20净空单126122手。",
-    "reason": "中金所 IH、IF、IC、IM 持仓排名反映股指期货端主力席位的多空暴露和变化，对 A股指数、ETF、期权和隔日风险偏好有参考价值。",
-    "checklist": [
-      "是否持有指数 ETF 或股指期货相关仓位",
-      "是否观察期货净空是否连续扩大",
-      "是否结合现货成交量和指数强弱确认",
-      "是否避免只看单日席位数据追单"
-    ],
-    "cffexPositionAnalysis": {
-      "tradeDate": "2026-08-12",
-      "fetchedAt": "2026-08-12 18:29:26 北京时间",
-      "methodology": "中信期货净变化 = 中信期货持买单量增减合计 - 中信期货持卖单量增减合计；前20机构净持仓 = 前20持买单量合计 - 前20持卖单量合计。四个品种均汇总所有合约。",
-      "sourceFiles": [
-        {
-          "product": "IH",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/12/IH_1.csv"
-        },
-        {
-          "product": "IF",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/12/IF_1.csv"
-        },
-        {
-          "product": "IC",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/12/IC_1.csv"
-        },
-        {
-          "product": "IM",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/12/IM_1.csv"
-        }
-      ],
-      "citic": {
-        "overall": {
-          "longChange": -9330,
-          "shortChange": -11515,
-          "netChange": 2185,
-          "directionLabel": "净加多单",
-          "directionEmoji": "🔴"
-        },
-        "details": [
-          {
-            "product": "IH",
-            "name": "上证50",
-            "longChange": -1497,
-            "shortChange": -1442,
-            "netChange": -55,
-            "directionLabel": "净加空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IF",
-            "name": "沪深300",
-            "longChange": -1441,
-            "shortChange": -1638,
-            "netChange": 197,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          },
-          {
-            "product": "IC",
-            "name": "中证500",
-            "longChange": -2101,
-            "shortChange": -3167,
-            "netChange": 1066,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          },
-          {
-            "product": "IM",
-            "name": "中证1000",
-            "longChange": -4291,
-            "shortChange": -5268,
-            "netChange": 977,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          }
-        ]
-      },
-      "top20": {
-        "overall": {
-          "longPosition": 802603,
-          "shortPosition": 928725,
-          "netPosition": -126122,
-          "directionLabel": "空单",
-          "directionEmoji": "🟢"
-        },
-        "details": [
-          {
-            "product": "IH",
-            "name": "上证50",
-            "longPosition": 80720,
-            "shortPosition": 99740,
-            "netPosition": -19020,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IF",
-            "name": "沪深300",
-            "longPosition": 192220,
-            "shortPosition": 218681,
-            "netPosition": -26461,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IC",
-            "name": "中证500",
-            "longPosition": 212040,
-            "shortPosition": 238543,
-            "netPosition": -26503,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IM",
-            "name": "中证1000",
-            "longPosition": 317623,
-            "shortPosition": 371761,
-            "netPosition": -54138,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "market": "CN",
-    "level": "high",
-    "levelLabel": "高",
-    "category": "Derivatives / CFFEX Position Watch",
-    "title": "中金所股指期货持仓跟踪：2026-08-13 中信净加多单33手，前20净空单122157手",
-    "start": "2026-08-13T17:00:00+08:00",
-    "end": "2026-08-13T17:30:00+08:00",
-    "timezone": "Asia/Shanghai",
-    "location": "中国",
-    "assets": [
-      "IH上证50",
-      "IF沪深300",
-      "IC中证500",
-      "IM中证1000",
-      "A股指数期货"
-    ],
-    "timeStatus": "confirmed",
-    "sourceName": "中国金融期货交易所",
-    "sourceUrl": "http://www.cffex.com.cn/",
-    "marketExpectation": "中信期货当日净加多单33手，前20机构合计净空单122157手。需要结合指数价格确认期货端变化是否被现货承接。",
-    "historicalReaction": "成交持仓排名更适合看资金暴露变化，不适合单独当作方向信号。连续多日同向变化，比单日跳变更有参考价值。",
-    "actionPlan": "如果中信期货和前20机构同时偏空，指数类仓位需要降低隔夜暴露；如果同时偏多，可以观察是否有现货成交量配合，但不直接追高。当前读数：中信净加多单33手，前20净空单122157手。",
-    "reason": "中金所 IH、IF、IC、IM 持仓排名反映股指期货端主力席位的多空暴露和变化，对 A股指数、ETF、期权和隔日风险偏好有参考价值。",
-    "checklist": [
-      "是否持有指数 ETF 或股指期货相关仓位",
-      "是否观察期货净空是否连续扩大",
-      "是否结合现货成交量和指数强弱确认",
-      "是否避免只看单日席位数据追单"
-    ],
-    "cffexPositionAnalysis": {
-      "tradeDate": "2026-08-13",
-      "fetchedAt": "2026-08-13 18:30:50 北京时间",
-      "methodology": "中信期货净变化 = 中信期货持买单量增减合计 - 中信期货持卖单量增减合计；前20机构净持仓 = 前20持买单量合计 - 前20持卖单量合计。四个品种均汇总所有合约。",
-      "sourceFiles": [
-        {
-          "product": "IH",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/13/IH_1.csv"
-        },
-        {
-          "product": "IF",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/13/IF_1.csv"
-        },
-        {
-          "product": "IC",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/13/IC_1.csv"
-        },
-        {
-          "product": "IM",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/13/IM_1.csv"
-        }
-      ],
-      "citic": {
-        "overall": {
-          "longChange": 13697,
-          "shortChange": 13664,
-          "netChange": 33,
-          "directionLabel": "净加多单",
-          "directionEmoji": "🔴"
-        },
-        "details": [
-          {
-            "product": "IH",
-            "name": "上证50",
-            "longChange": 899,
-            "shortChange": 1068,
-            "netChange": -169,
-            "directionLabel": "净加空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IF",
-            "name": "沪深300",
-            "longChange": 2611,
-            "shortChange": 3593,
-            "netChange": -982,
-            "directionLabel": "净加空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IC",
-            "name": "中证500",
-            "longChange": 5056,
-            "shortChange": 4820,
-            "netChange": 236,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          },
-          {
-            "product": "IM",
-            "name": "中证1000",
-            "longChange": 5131,
-            "shortChange": 4183,
-            "netChange": 948,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          }
-        ]
-      },
-      "top20": {
-        "overall": {
-          "longPosition": 842726,
-          "shortPosition": 964883,
-          "netPosition": -122157,
-          "directionLabel": "空单",
-          "directionEmoji": "🟢"
-        },
-        "details": [
-          {
-            "product": "IH",
-            "name": "上证50",
-            "longPosition": 84943,
-            "shortPosition": 103123,
-            "netPosition": -18180,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IF",
-            "name": "沪深300",
-            "longPosition": 201490,
-            "shortPosition": 227989,
-            "netPosition": -26499,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IC",
-            "name": "中证500",
-            "longPosition": 225056,
-            "shortPosition": 250527,
-            "netPosition": -25471,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IM",
-            "name": "中证1000",
-            "longPosition": 331237,
-            "shortPosition": 383244,
-            "netPosition": -52007,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "market": "CN",
-    "level": "high",
-    "levelLabel": "高",
-    "category": "Derivatives / CFFEX Position Watch",
-    "title": "中金所股指期货持仓跟踪：2026-08-14 中信净加空单213手，前20净空单124009手",
-    "start": "2026-08-14T17:00:00+08:00",
-    "end": "2026-08-14T17:30:00+08:00",
-    "timezone": "Asia/Shanghai",
-    "location": "中国",
-    "assets": [
-      "IH上证50",
-      "IF沪深300",
-      "IC中证500",
-      "IM中证1000",
-      "A股指数期货"
-    ],
-    "timeStatus": "confirmed",
-    "sourceName": "中国金融期货交易所",
-    "sourceUrl": "http://www.cffex.com.cn/",
-    "marketExpectation": "中信期货当日净加空单213手，前20机构合计净空单124009手。需要结合指数价格确认期货端变化是否被现货承接。",
-    "historicalReaction": "成交持仓排名更适合看资金暴露变化，不适合单独当作方向信号。连续多日同向变化，比单日跳变更有参考价值。",
-    "actionPlan": "如果中信期货和前20机构同时偏空，指数类仓位需要降低隔夜暴露；如果同时偏多，可以观察是否有现货成交量配合，但不直接追高。当前读数：中信净加空单213手，前20净空单124009手。",
-    "reason": "中金所 IH、IF、IC、IM 持仓排名反映股指期货端主力席位的多空暴露和变化，对 A股指数、ETF、期权和隔日风险偏好有参考价值。",
-    "checklist": [
-      "是否持有指数 ETF 或股指期货相关仓位",
-      "是否观察期货净空是否连续扩大",
-      "是否结合现货成交量和指数强弱确认",
-      "是否避免只看单日席位数据追单"
-    ],
-    "cffexPositionAnalysis": {
-      "tradeDate": "2026-08-14",
-      "fetchedAt": "2026-08-14 18:26:29 北京时间",
-      "methodology": "中信期货净变化 = 中信期货持买单量增减合计 - 中信期货持卖单量增减合计；前20机构净持仓 = 前20持买单量合计 - 前20持卖单量合计。四个品种均汇总所有合约。",
-      "sourceFiles": [
-        {
-          "product": "IH",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/14/IH_1.csv"
-        },
-        {
-          "product": "IF",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/14/IF_1.csv"
-        },
-        {
-          "product": "IC",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/14/IC_1.csv"
-        },
-        {
-          "product": "IM",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/14/IM_1.csv"
-        }
-      ],
-      "citic": {
-        "overall": {
-          "longChange": -8838,
-          "shortChange": -8625,
-          "netChange": -213,
+          "longChange": 15161,
+          "shortChange": 18291,
+          "netChange": -3130,
           "directionLabel": "净加空单",
           "directionEmoji": "🟢"
         },
@@ -1395,36 +803,36 @@
           {
             "product": "IH",
             "name": "上证50",
-            "longChange": -1184,
-            "shortChange": -1479,
-            "netChange": 295,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
+            "longChange": 965,
+            "shortChange": 1449,
+            "netChange": -484,
+            "directionLabel": "净加空单",
+            "directionEmoji": "🟢"
           },
           {
             "product": "IF",
             "name": "沪深300",
-            "longChange": -1924,
-            "shortChange": -2041,
-            "netChange": 117,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
+            "longChange": 3126,
+            "shortChange": 3636,
+            "netChange": -510,
+            "directionLabel": "净加空单",
+            "directionEmoji": "🟢"
           },
           {
             "product": "IC",
             "name": "中证500",
-            "longChange": -2008,
-            "shortChange": -1464,
-            "netChange": -544,
+            "longChange": 3332,
+            "shortChange": 3546,
+            "netChange": -214,
             "directionLabel": "净加空单",
             "directionEmoji": "🟢"
           },
           {
             "product": "IM",
             "name": "中证1000",
-            "longChange": -3722,
-            "shortChange": -3641,
-            "netChange": -81,
+            "longChange": 7738,
+            "shortChange": 9660,
+            "netChange": -1922,
             "directionLabel": "净加空单",
             "directionEmoji": "🟢"
           }
@@ -1432,9 +840,9 @@
       },
       "top20": {
         "overall": {
-          "longPosition": 818034,
-          "shortPosition": 942043,
-          "netPosition": -124009,
+          "longPosition": 884722,
+          "shortPosition": 1003924,
+          "netPosition": -119202,
           "directionLabel": "空单",
           "directionEmoji": "🟢"
         },
@@ -1442,332 +850,36 @@
           {
             "product": "IH",
             "name": "上证50",
-            "longPosition": 81158,
-            "shortPosition": 99199,
-            "netPosition": -18041,
+            "longPosition": 89614,
+            "shortPosition": 107703,
+            "netPosition": -18089,
             "directionLabel": "空单",
             "directionEmoji": "🟢"
           },
           {
             "product": "IF",
             "name": "沪深300",
-            "longPosition": 195820,
-            "shortPosition": 223254,
-            "netPosition": -27434,
+            "longPosition": 212087,
+            "shortPosition": 239093,
+            "netPosition": -27006,
             "directionLabel": "空单",
             "directionEmoji": "🟢"
           },
           {
             "product": "IC",
             "name": "中证500",
-            "longPosition": 219294,
-            "shortPosition": 245818,
-            "netPosition": -26524,
+            "longPosition": 236933,
+            "shortPosition": 260657,
+            "netPosition": -23724,
             "directionLabel": "空单",
             "directionEmoji": "🟢"
           },
           {
             "product": "IM",
             "name": "中证1000",
-            "longPosition": 321762,
-            "shortPosition": 373772,
-            "netPosition": -52010,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "market": "CN",
-    "level": "high",
-    "levelLabel": "高",
-    "category": "Derivatives / CFFEX Position Watch",
-    "title": "中金所股指期货持仓跟踪：2026-08-17 中信净加空单564手，前20净空单123234手",
-    "start": "2026-08-17T17:00:00+08:00",
-    "end": "2026-08-17T17:30:00+08:00",
-    "timezone": "Asia/Shanghai",
-    "location": "中国",
-    "assets": [
-      "IH上证50",
-      "IF沪深300",
-      "IC中证500",
-      "IM中证1000",
-      "A股指数期货"
-    ],
-    "timeStatus": "confirmed",
-    "sourceName": "中国金融期货交易所",
-    "sourceUrl": "http://www.cffex.com.cn/",
-    "marketExpectation": "中信期货当日净加空单564手，前20机构合计净空单123234手。需要结合指数价格确认期货端变化是否被现货承接。",
-    "historicalReaction": "成交持仓排名更适合看资金暴露变化，不适合单独当作方向信号。连续多日同向变化，比单日跳变更有参考价值。",
-    "actionPlan": "如果中信期货和前20机构同时偏空，指数类仓位需要降低隔夜暴露；如果同时偏多，可以观察是否有现货成交量配合，但不直接追高。当前读数：中信净加空单564手，前20净空单123234手。",
-    "reason": "中金所 IH、IF、IC、IM 持仓排名反映股指期货端主力席位的多空暴露和变化，对 A股指数、ETF、期权和隔日风险偏好有参考价值。",
-    "checklist": [
-      "是否持有指数 ETF 或股指期货相关仓位",
-      "是否观察期货净空是否连续扩大",
-      "是否结合现货成交量和指数强弱确认",
-      "是否避免只看单日席位数据追单"
-    ],
-    "cffexPositionAnalysis": {
-      "tradeDate": "2026-08-17",
-      "fetchedAt": "2026-08-17 18:00:32 北京时间",
-      "methodology": "中信期货净变化 = 中信期货持买单量增减合计 - 中信期货持卖单量增减合计；前20机构净持仓 = 前20持买单量合计 - 前20持卖单量合计。四个品种均汇总所有合约。",
-      "sourceFiles": [
-        {
-          "product": "IH",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/17/IH_1.csv"
-        },
-        {
-          "product": "IF",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/17/IF_1.csv"
-        },
-        {
-          "product": "IC",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/17/IC_1.csv"
-        },
-        {
-          "product": "IM",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/17/IM_1.csv"
-        }
-      ],
-      "citic": {
-        "overall": {
-          "longChange": 2576,
-          "shortChange": 3140,
-          "netChange": -564,
-          "directionLabel": "净加空单",
-          "directionEmoji": "🟢"
-        },
-        "details": [
-          {
-            "product": "IH",
-            "name": "上证50",
-            "longChange": -615,
-            "shortChange": 67,
-            "netChange": -682,
-            "directionLabel": "净加空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IF",
-            "name": "沪深300",
-            "longChange": 1854,
-            "shortChange": 2008,
-            "netChange": -154,
-            "directionLabel": "净加空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IC",
-            "name": "中证500",
-            "longChange": -379,
-            "shortChange": 346,
-            "netChange": -725,
-            "directionLabel": "净加空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IM",
-            "name": "中证1000",
-            "longChange": 1716,
-            "shortChange": 719,
-            "netChange": 997,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          }
-        ]
-      },
-      "top20": {
-        "overall": {
-          "longPosition": 820017,
-          "shortPosition": 943251,
-          "netPosition": -123234,
-          "directionLabel": "空单",
-          "directionEmoji": "🟢"
-        },
-        "details": [
-          {
-            "product": "IH",
-            "name": "上证50",
-            "longPosition": 80773,
-            "shortPosition": 98923,
-            "netPosition": -18150,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IF",
-            "name": "沪深300",
-            "longPosition": 200855,
-            "shortPosition": 225524,
-            "netPosition": -24669,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IC",
-            "name": "中证500",
-            "longPosition": 217319,
-            "shortPosition": 244003,
-            "netPosition": -26684,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IM",
-            "name": "中证1000",
-            "longPosition": 321070,
-            "shortPosition": 374801,
-            "netPosition": -53731,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          }
-        ]
-      }
-    }
-  },
-  {
-    "market": "CN",
-    "level": "high",
-    "levelLabel": "高",
-    "category": "Derivatives / CFFEX Position Watch",
-    "title": "中金所股指期货持仓跟踪：2026-08-18 中信净加多单4858手，前20净空单114622手",
-    "start": "2026-08-18T17:00:00+08:00",
-    "end": "2026-08-18T17:30:00+08:00",
-    "timezone": "Asia/Shanghai",
-    "location": "中国",
-    "assets": [
-      "IH上证50",
-      "IF沪深300",
-      "IC中证500",
-      "IM中证1000",
-      "A股指数期货"
-    ],
-    "timeStatus": "confirmed",
-    "sourceName": "中国金融期货交易所",
-    "sourceUrl": "http://www.cffex.com.cn/",
-    "marketExpectation": "中信期货当日净加多单4858手，前20机构合计净空单114622手。需要结合指数价格确认期货端变化是否被现货承接。",
-    "historicalReaction": "成交持仓排名更适合看资金暴露变化，不适合单独当作方向信号。连续多日同向变化，比单日跳变更有参考价值。",
-    "actionPlan": "如果中信期货和前20机构同时偏空，指数类仓位需要降低隔夜暴露；如果同时偏多，可以观察是否有现货成交量配合，但不直接追高。当前读数：中信净加多单4858手，前20净空单114622手。",
-    "reason": "中金所 IH、IF、IC、IM 持仓排名反映股指期货端主力席位的多空暴露和变化，对 A股指数、ETF、期权和隔日风险偏好有参考价值。",
-    "checklist": [
-      "是否持有指数 ETF 或股指期货相关仓位",
-      "是否观察期货净空是否连续扩大",
-      "是否结合现货成交量和指数强弱确认",
-      "是否避免只看单日席位数据追单"
-    ],
-    "cffexPositionAnalysis": {
-      "tradeDate": "2026-08-18",
-      "fetchedAt": "2026-08-18 17:51:44 北京时间",
-      "methodology": "中信期货净变化 = 中信期货持买单量增减合计 - 中信期货持卖单量增减合计；前20机构净持仓 = 前20持买单量合计 - 前20持卖单量合计。四个品种均汇总所有合约。",
-      "sourceFiles": [
-        {
-          "product": "IH",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/18/IH_1.csv"
-        },
-        {
-          "product": "IF",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/18/IF_1.csv"
-        },
-        {
-          "product": "IC",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/18/IC_1.csv"
-        },
-        {
-          "product": "IM",
-          "url": "http://www.cffex.com.cn/fzjy/ccpm/202608/18/IM_1.csv"
-        }
-      ],
-      "citic": {
-        "overall": {
-          "longChange": 1499,
-          "shortChange": -3359,
-          "netChange": 4858,
-          "directionLabel": "净加多单",
-          "directionEmoji": "🔴"
-        },
-        "details": [
-          {
-            "product": "IH",
-            "name": "上证50",
-            "longChange": 275,
-            "shortChange": 196,
-            "netChange": 79,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          },
-          {
-            "product": "IF",
-            "name": "沪深300",
-            "longChange": -369,
-            "shortChange": -599,
-            "netChange": 230,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          },
-          {
-            "product": "IC",
-            "name": "中证500",
-            "longChange": 3395,
-            "shortChange": 12,
-            "netChange": 3383,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          },
-          {
-            "product": "IM",
-            "name": "中证1000",
-            "longChange": -1802,
-            "shortChange": -2968,
-            "netChange": 1166,
-            "directionLabel": "净加多单",
-            "directionEmoji": "🔴"
-          }
-        ]
-      },
-      "top20": {
-        "overall": {
-          "longPosition": 818024,
-          "shortPosition": 932646,
-          "netPosition": -114622,
-          "directionLabel": "空单",
-          "directionEmoji": "🟢"
-        },
-        "details": [
-          {
-            "product": "IH",
-            "name": "上证50",
-            "longPosition": 81165,
-            "shortPosition": 98310,
-            "netPosition": -17145,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IF",
-            "name": "沪深300",
-            "longPosition": 198108,
-            "shortPosition": 222107,
-            "netPosition": -23999,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IC",
-            "name": "中证500",
-            "longPosition": 222272,
-            "shortPosition": 246084,
-            "netPosition": -23812,
-            "directionLabel": "空单",
-            "directionEmoji": "🟢"
-          },
-          {
-            "product": "IM",
-            "name": "中证1000",
-            "longPosition": 316479,
-            "shortPosition": 366145,
-            "netPosition": -49666,
+            "longPosition": 346088,
+            "shortPosition": 396471,
+            "netPosition": -50383,
             "directionLabel": "空单",
             "directionEmoji": "🟢"
           }

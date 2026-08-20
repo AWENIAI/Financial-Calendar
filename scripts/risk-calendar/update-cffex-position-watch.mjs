@@ -284,7 +284,7 @@ async function fetchCompleteDate(dateText) {
 async function main() {
   const hasExplicitDate = Boolean(argValue('--date'));
   const requestedDate = argValue('--date') || beijingToday();
-  const lookbackDays = Number(argValue('--lookback') || 0);
+  const lookbackDays = Number(argValue('--lookback') || 10);
   if (!Number.isInteger(lookbackDays) || lookbackDays < 0 || lookbackDays > 10) {
     throw new Error('--lookback must be an integer from 0 to 10');
   }

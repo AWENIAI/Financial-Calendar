@@ -4,6 +4,21 @@ import { SUBSCRIBED_EARNINGS_SYMBOLS } from '../scripts/risk-calendar/generate-r
 import { WATCHLIST } from '../scripts/risk-calendar/update-us-megacap-earnings.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
+import { buildCffexMarketImpact } from '../scripts/risk-calendar/cffex-market-impact.mjs';
+
+test('中金所次日复盘用收盘结果验证前一交易日席位信号', () => {
+  const impact = buildCffexMarketImpact({
+    citic: {
+      overall: { longChange: 100, shortChange: 40, netChange: 60 }
+    },
+    top20: {
+      overall: { longPosition: 1000, shortPosition: 940, netPosition: 60, directionLabel: '多单' }
+    }
+  });
+
+  assert.equal(impact.forecastDirection, '偏涨');
+  assert.match(impact.squeezeConfirmation, /不是看到空单就预判大涨/);
+});
 
 const REQUIRED_COMPANIES = [
   { symbol: 'NVDA', chineseName: '英伟达', englishName: 'NVIDIA' },

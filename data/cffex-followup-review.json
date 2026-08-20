@@ -1,0 +1,302 @@
+[
+  {
+    "market": "CN",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Derivatives / CFFEX Follow-up Review",
+    "title": "中金所次日收盘复盘：2026-08-03 -> 2026-08-04",
+    "start": "2026-08-04T15:30:00+08:00",
+    "end": "2026-08-04T16:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "中国",
+    "assets": [
+      "沪深300",
+      "上证指数",
+      "深证成指",
+      "中金所股指期货"
+    ],
+    "timeStatus": "confirmed",
+    "sourceName": "Yahoo Finance + 中国金融期货交易所",
+    "sourceUrl": "https://query1.finance.yahoo.com/",
+    "marketExpectation": "前一交易日中金所信号：🟢 轻度偏空（低置信度）。",
+    "historicalReaction": "次日收盘复盘用于验证席位信号是否被价格确认，避免把单日净多净空直接等同于确定方向。",
+    "actionPlan": "先看次日收盘是否与席位方向一致，再决定是否提高信号权重；如果价格与席位相反，说明前一交易日的席位变化更像噪音或对冲而不是方向押注。",
+    "reason": "把前一交易日中金所持仓与次日收盘表现放在一起，才能验证席位信号是否真的得到价格确认。",
+    "checklist": [
+      "是否对照了前一交易日中金所席位",
+      "是否查看了次日收盘而不是盘中噪音",
+      "是否重新校准对净多/净空的信号权重"
+    ],
+    "cffexFollowupReview": {
+      "tradeDate": "2026-08-03",
+      "reviewDate": "2026-08-04",
+      "createdAt": "2026-08-20 08:41:01 北京时间",
+      "signal": {
+        "forecastDirection": "偏跌",
+        "forecastScore": 40,
+        "forecastConfidence": "低",
+        "directionalConclusion": "🟢 轻度偏空（低置信度）",
+        "positionNature": "减仓型净偏空",
+        "positionExplanation": "中信多单减少13568手、空单减少12892手；这不是主动新增676手空单，而是多单减得更多。",
+        "forecastBasis": "中信与前20方向同为偏空；中信净差强度为2.55%，前20净头寸占比为7.63%；当前没有纳入次日价格、成交量和外部资金确认。"
+      },
+      "marketDetail": null,
+      "validationSummary": "数据不足，无法严格验证。",
+      "validationConclusion": "基于前一交易日中金所席位与次日大盘收盘对比，数据不足，无法严格验证。"
+    }
+  },
+  {
+    "market": "CN",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Derivatives / CFFEX Follow-up Review",
+    "title": "中金所次日收盘复盘：2026-08-04 -> 2026-08-05",
+    "start": "2026-08-05T15:30:00+08:00",
+    "end": "2026-08-05T16:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "中国",
+    "assets": [
+      "沪深300",
+      "上证指数",
+      "深证成指",
+      "中金所股指期货"
+    ],
+    "timeStatus": "confirmed",
+    "sourceName": "Yahoo Finance + 中国金融期货交易所",
+    "sourceUrl": "https://query1.finance.yahoo.com/",
+    "marketExpectation": "前一交易日中金所信号：🟢 明显偏空（中等置信度）。",
+    "historicalReaction": "次日收盘复盘用于验证席位信号是否被价格确认，避免把单日净多净空直接等同于确定方向。",
+    "actionPlan": "先看次日收盘是否与席位方向一致，再决定是否提高信号权重；如果价格与席位相反，说明前一交易日的席位变化更像噪音或对冲而不是方向押注。",
+    "reason": "把前一交易日中金所持仓与次日收盘表现放在一起，才能验证席位信号是否真的得到价格确认。",
+    "checklist": [
+      "是否对照了前一交易日中金所席位",
+      "是否查看了次日收盘而不是盘中噪音",
+      "是否重新校准对净多/净空的信号权重"
+    ],
+    "cffexFollowupReview": {
+      "tradeDate": "2026-08-04",
+      "reviewDate": "2026-08-05",
+      "createdAt": "2026-08-20 08:41:02 北京时间",
+      "signal": {
+        "forecastDirection": "偏跌",
+        "forecastScore": 60,
+        "forecastConfidence": "中",
+        "directionalConclusion": "🟢 明显偏空（中等置信度）",
+        "positionNature": "增仓型净偏空",
+        "positionExplanation": "中信多单增加4804手、空单增加6778手，双方都在增仓，但空单增加得更多。",
+        "forecastBasis": "中信与前20方向同为偏空；中信净差强度为17.04%，前20净头寸占比为7.70%；当前没有纳入次日价格、成交量和外部资金确认。"
+      },
+      "marketDetail": null,
+      "validationSummary": "数据不足，无法严格验证。",
+      "validationConclusion": "基于前一交易日中金所席位与次日大盘收盘对比，数据不足，无法严格验证。"
+    }
+  },
+  {
+    "market": "CN",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Derivatives / CFFEX Follow-up Review",
+    "title": "中金所次日收盘复盘：2026-08-05 -> 2026-08-06",
+    "start": "2026-08-06T15:30:00+08:00",
+    "end": "2026-08-06T16:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "中国",
+    "assets": [
+      "沪深300",
+      "上证指数",
+      "深证成指",
+      "中金所股指期货"
+    ],
+    "timeStatus": "confirmed",
+    "sourceName": "Yahoo Finance + 中国金融期货交易所",
+    "sourceUrl": "https://query1.finance.yahoo.com/",
+    "marketExpectation": "前一交易日中金所信号：🟢 明显偏空（中等置信度）。",
+    "historicalReaction": "次日收盘复盘用于验证席位信号是否被价格确认，避免把单日净多净空直接等同于确定方向。",
+    "actionPlan": "先看次日收盘是否与席位方向一致，再决定是否提高信号权重；如果价格与席位相反，说明前一交易日的席位变化更像噪音或对冲而不是方向押注。",
+    "reason": "把前一交易日中金所持仓与次日收盘表现放在一起，才能验证席位信号是否真的得到价格确认。",
+    "checklist": [
+      "是否对照了前一交易日中金所席位",
+      "是否查看了次日收盘而不是盘中噪音",
+      "是否重新校准对净多/净空的信号权重"
+    ],
+    "cffexFollowupReview": {
+      "tradeDate": "2026-08-05",
+      "reviewDate": "2026-08-06",
+      "createdAt": "2026-08-20 08:41:02 北京时间",
+      "signal": {
+        "forecastDirection": "偏跌",
+        "forecastScore": 60,
+        "forecastConfidence": "中",
+        "directionalConclusion": "🟢 明显偏空（中等置信度）",
+        "positionNature": "增仓型净偏空",
+        "positionExplanation": "中信多单增加1102手、空单增加3072手，双方都在增仓，但空单增加得更多。",
+        "forecastBasis": "中信与前20方向同为偏空；中信净差强度为47.20%，前20净头寸占比为7.62%；当前没有纳入次日价格、成交量和外部资金确认。"
+      },
+      "marketDetail": null,
+      "validationSummary": "数据不足，无法严格验证。",
+      "validationConclusion": "基于前一交易日中金所席位与次日大盘收盘对比，数据不足，无法严格验证。"
+    }
+  },
+  {
+    "market": "CN",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Derivatives / CFFEX Follow-up Review",
+    "title": "中金所次日收盘复盘：2026-08-06 -> 2026-08-07",
+    "start": "2026-08-07T15:30:00+08:00",
+    "end": "2026-08-07T16:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "中国",
+    "assets": [
+      "沪深300",
+      "上证指数",
+      "深证成指",
+      "中金所股指期货"
+    ],
+    "timeStatus": "confirmed",
+    "sourceName": "Yahoo Finance + 中国金融期货交易所",
+    "sourceUrl": "https://query1.finance.yahoo.com/",
+    "marketExpectation": "前一交易日中金所信号：🟢 中度偏空（中置信度）。",
+    "historicalReaction": "次日收盘复盘用于验证席位信号是否被价格确认，避免把单日净多净空直接等同于确定方向。",
+    "actionPlan": "先看次日收盘是否与席位方向一致，再决定是否提高信号权重；如果价格与席位相反，说明前一交易日的席位变化更像噪音或对冲而不是方向押注。",
+    "reason": "把前一交易日中金所持仓与次日收盘表现放在一起，才能验证席位信号是否真的得到价格确认。",
+    "checklist": [
+      "是否对照了前一交易日中金所席位",
+      "是否查看了次日收盘而不是盘中噪音",
+      "是否重新校准对净多/净空的信号权重"
+    ],
+    "cffexFollowupReview": {
+      "tradeDate": "2026-08-06",
+      "reviewDate": "2026-08-07",
+      "createdAt": "2026-08-20 08:27:33 北京时间",
+      "signal": {
+        "forecastDirection": "偏跌",
+        "forecastScore": 50,
+        "forecastConfidence": "中",
+        "directionalConclusion": "🟢 中度偏空（中置信度）",
+        "positionNature": "减仓型净偏空",
+        "positionExplanation": "中信多单减少10108手、空单减少8553手；这不是主动新增1555手空单，而是多单减得更多。",
+        "forecastBasis": "中信与前20方向同为偏空；中信净差强度为8.33%，前20净头寸占比为7.64%；当前没有纳入次日价格、成交量和外部资金确认。"
+      },
+      "marketDetail": {
+        "label": "沪深300",
+        "symbol": "000300.SS",
+        "close": 4588.6953125,
+        "open": 4660.05517578125,
+        "high": 4674.375,
+        "low": 4568.06591796875,
+        "volume": 2932172520
+      },
+      "validationSummary": "复盘结果：一致。席位信号偏向偏跌，次日收盘呈偏跌，开收变化为 -71.36。",
+      "validationConclusion": "基于前一交易日中金所席位与次日大盘收盘对比，复盘结果：一致。席位信号偏向偏跌，次日收盘呈偏跌，开收变化为 -71.36。"
+    }
+  },
+  {
+    "market": "CN",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Derivatives / CFFEX Follow-up Review",
+    "title": "中金所次日收盘复盘：2026-08-07 -> 2026-08-10",
+    "start": "2026-08-10T15:30:00+08:00",
+    "end": "2026-08-10T16:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "中国",
+    "assets": [
+      "沪深300",
+      "上证指数",
+      "深证成指",
+      "中金所股指期货"
+    ],
+    "timeStatus": "confirmed",
+    "sourceName": "Yahoo Finance + 中国金融期货交易所",
+    "sourceUrl": "https://query1.finance.yahoo.com/",
+    "marketExpectation": "前一交易日中金所信号：🔴 明显偏多（中等置信度）。",
+    "historicalReaction": "次日收盘复盘用于验证席位信号是否被价格确认，避免把单日净多净空直接等同于确定方向。",
+    "actionPlan": "先看次日收盘是否与席位方向一致，再决定是否提高信号权重；如果价格与席位相反，说明前一交易日的席位变化更像噪音或对冲而不是方向押注。",
+    "reason": "把前一交易日中金所持仓与次日收盘表现放在一起，才能验证席位信号是否真的得到价格确认。",
+    "checklist": [
+      "是否对照了前一交易日中金所席位",
+      "是否查看了次日收盘而不是盘中噪音",
+      "是否重新校准对净多/净空的信号权重"
+    ],
+    "cffexFollowupReview": {
+      "tradeDate": "2026-08-07",
+      "reviewDate": "2026-08-10",
+      "createdAt": "2026-08-20 08:27:33 北京时间",
+      "signal": {
+        "forecastDirection": "偏涨",
+        "forecastScore": 65,
+        "forecastConfidence": "较高",
+        "directionalConclusion": "🔴 明显偏多（中等置信度）",
+        "positionNature": "多头强化型净偏多",
+        "positionExplanation": "中信多单增加2556手，同时空单减少167手，多空两端共同形成净偏多。",
+        "forecastBasis": "中信变化与前20净持仓方向不一致；中信净差强度为100.00%，前20净头寸占比为7.24%；当前没有纳入次日价格、成交量和外部资金确认。"
+      },
+      "marketDetail": {
+        "label": "沪深300",
+        "symbol": "000300.SS",
+        "close": 4588.6953125,
+        "open": 4660.05517578125,
+        "high": 4674.375,
+        "low": 4568.06591796875,
+        "volume": 2932172520
+      },
+      "validationSummary": "复盘结果：相反。席位信号偏向偏涨，次日收盘呈偏跌，开收变化为 -71.36。",
+      "validationConclusion": "基于前一交易日中金所席位与次日大盘收盘对比，复盘结果：相反。席位信号偏向偏涨，次日收盘呈偏跌，开收变化为 -71.36。"
+    }
+  },
+  {
+    "market": "CN",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Derivatives / CFFEX Follow-up Review",
+    "title": "中金所次日收盘复盘：2026-08-19 -> 2026-08-20",
+    "start": "2026-08-20T15:30:00+08:00",
+    "end": "2026-08-20T16:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "中国",
+    "assets": [
+      "沪深300",
+      "上证指数",
+      "深证成指",
+      "中金所股指期货"
+    ],
+    "timeStatus": "confirmed",
+    "sourceName": "Yahoo Finance + 中国金融期货交易所",
+    "sourceUrl": "https://query1.finance.yahoo.com/",
+    "marketExpectation": "前一交易日中金所信号：🟢 中度偏空（中置信度）。",
+    "historicalReaction": "次日收盘复盘用于验证席位信号是否被价格确认，避免把单日净多净空直接等同于确定方向。",
+    "actionPlan": "先看次日收盘是否与席位方向一致，再决定是否提高信号权重；如果价格与席位相反，说明前一交易日的席位变化更像噪音或对冲而不是方向押注。",
+    "reason": "把前一交易日中金所持仓与次日收盘表现放在一起，才能验证席位信号是否真的得到价格确认。",
+    "checklist": [
+      "是否对照了前一交易日中金所席位",
+      "是否查看了次日收盘而不是盘中噪音",
+      "是否重新校准对净多/净空的信号权重"
+    ],
+    "cffexFollowupReview": {
+      "tradeDate": "2026-08-19",
+      "reviewDate": "2026-08-20",
+      "createdAt": "2026-08-20 08:27:33 北京时间",
+      "signal": {
+        "forecastDirection": "偏跌",
+        "forecastScore": 50,
+        "forecastConfidence": "中",
+        "directionalConclusion": "🟢 中度偏空（中置信度）",
+        "positionNature": "增仓型净偏空",
+        "positionExplanation": "中信多单增加15161手、空单增加18291手，双方都在增仓，但空单增加得更多。",
+        "forecastBasis": "中信与前20方向同为偏空；中信净差强度为9.36%，前20净头寸占比为6.31%；当前没有纳入次日价格、成交量和外部资金确认。"
+      },
+      "marketDetail": {
+        "label": "沪深300",
+        "symbol": "000300.SS",
+        "close": 4588.6953125,
+        "open": 4660.05517578125,
+        "high": 4674.375,
+        "low": 4568.06591796875,
+        "volume": 2932172520
+      },
+      "validationSummary": "复盘结果：一致。席位信号偏向偏跌，次日收盘呈偏跌，开收变化为 -71.36。",
+      "validationConclusion": "基于前一交易日中金所席位与次日大盘收盘对比，复盘结果：一致。席位信号偏向偏跌，次日收盘呈偏跌，开收变化为 -71.36。"
+    }
+  }
+]
