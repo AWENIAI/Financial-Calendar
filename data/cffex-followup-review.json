@@ -298,5 +298,51 @@
       "validationSummary": "复盘结果：一致。席位信号偏向偏跌，次日收盘呈偏跌，开收变化为 -71.36。",
       "validationConclusion": "基于前一交易日中金所席位与次日大盘收盘对比，复盘结果：一致。席位信号偏向偏跌，次日收盘呈偏跌，开收变化为 -71.36。"
     }
+  },
+  {
+    "market": "CN",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Derivatives / CFFEX Follow-up Review",
+    "title": "中金所次日收盘复盘：2026-08-20 -> 2026-08-21",
+    "start": "2026-08-21T15:30:00+08:00",
+    "end": "2026-08-21T16:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "中国",
+    "assets": [
+      "沪深300",
+      "上证指数",
+      "深证成指",
+      "中金所股指期货"
+    ],
+    "timeStatus": "confirmed",
+    "sourceName": "Yahoo Finance + 中国金融期货交易所",
+    "sourceUrl": "https://query1.finance.yahoo.com/",
+    "marketExpectation": "前一交易日中金所信号：🟢 中度偏空（中置信度）。",
+    "historicalReaction": "次日收盘复盘用于验证席位信号是否被价格确认，避免把单日净多净空直接等同于确定方向。",
+    "actionPlan": "先看次日收盘是否与席位方向一致，再决定是否提高信号权重；如果价格与席位相反，说明前一交易日的席位变化更像噪音或对冲而不是方向押注。",
+    "reason": "把前一交易日中金所持仓与次日收盘表现放在一起，才能验证席位信号是否真的得到价格确认。",
+    "checklist": [
+      "是否对照了前一交易日中金所席位",
+      "是否查看了次日收盘而不是盘中噪音",
+      "是否重新校准对净多/净空的信号权重"
+    ],
+    "cffexFollowupReview": {
+      "tradeDate": "2026-08-20",
+      "reviewDate": "2026-08-21",
+      "createdAt": "2026-08-20 17:52:42 北京时间",
+      "signal": {
+        "forecastDirection": "偏跌",
+        "forecastScore": 50,
+        "forecastConfidence": "中",
+        "directionalConclusion": "🟢 中度偏空（中置信度）",
+        "positionNature": "减仓型净偏空",
+        "positionExplanation": "中信多单减少19541手、空单减少17484手；这不是主动新增2057手空单，而是多单减得更多。",
+        "forecastBasis": "中信与前20方向同为偏空；中信净差强度为5.56%，前20净头寸占比为6.83%；当前没有纳入次日价格、成交量和外部资金确认。"
+      },
+      "marketDetail": null,
+      "validationSummary": "数据不足，无法严格验证。",
+      "validationConclusion": "基于前一交易日中金所席位与次日大盘收盘对比，数据不足，无法严格验证。"
+    }
   }
 ]

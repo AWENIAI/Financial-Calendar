@@ -195,6 +195,29 @@ npm run generate
 
 ## 更新日志
 
+### 2026-08-20 08:44 自动更新记录
+
+- 触发来源：local
+- Action 记录：本地运行
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：171
+- 文件变化统计：4 files changed, 156 insertions(+), 1320 deletions(-)
+- 变化文件：
+  - U：`README.backup.md`
+  - 修改：`README.backup.md`
+  - U：`README.md`
+  - 修改：`README.md`
+  - U：`data/cffex-position-watch.json`
+  - 修改：`data/cffex-position-watch.json`
+  - U：`public/calendar/GLOBAL_KEY.ics`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-08-21 08:00：🟠 [美股] 指数期权 AM-settled 最后交易日提醒：8月 AM-settled 指数期权
+  - 2026-08-21 08:00：🟠 [A股] 股指期货/期权月度交割日提醒：8月
+  - 2026-08-22 08:00：🟠 [美股] 月度期权到期日：OPEX 风险窗口（8月月度期权）
+  - 2026-08-27 08:00：📊 [美股] 英伟达（NVIDIA，NVDA）财报发布：2026年7月
+  - 2026-08-28 08:00：🟠 [A股] 每月倒数第二个中国营业日：8月
+
 ### 2026-08-20 08:42 自动更新记录
 
 - 触发来源：local
