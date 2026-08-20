@@ -12,7 +12,6 @@ const dataPath = path.join(rootDir, 'data/risk-events.json');
 const fixedEventsPath = path.join(rootDir, 'data/fixed-events-2026.json');
 const usMegacapEarningsPath = path.join(rootDir, 'data/us-megacap-earnings.json');
 const cffexPositionWatchPath = path.join(rootDir, 'data/cffex-position-watch.json');
-const cffexFollowupReviewPath = path.join(rootDir, 'data/cffex-followup-review.json');
 const outputDir = path.join(rootDir, 'public/calendar');
 
 const LEVEL_META = {
@@ -319,8 +318,7 @@ function readEvents() {
     ...readJson(dataPath, []),
     ...readFixedEvents(),
     ...readJson(usMegacapEarningsPath, []),
-    ...readJson(cffexPositionWatchPath, []),
-    ...readJson(cffexFollowupReviewPath, [])
+    ...readJson(cffexPositionWatchPath, [])
   ]);
   return events
     .filter((event) => LEVEL_META[event.level])
@@ -649,36 +647,6 @@ function buildEarningsDescription(event, meta) {
 function buildDescription(event) {
   const meta = LEVEL_META[event.level];
   if (event.category === 'Earnings / US Megacap') return buildEarningsDescription(event, meta);
-  if (event.category === 'Derivatives / CFFEX Follow-up Review' && event.cffexFollowupReview) {
-    const review = event.cffexFollowupReview;
-    return [
-      `日历名称：${DEFAULT_CALENDAR_NAME}`,
-      `事件标题：${summary(event)}`,
-      `事件时间：${eventDateTimeLabel(event)}`,
-      `风险等级：${event.levelLabel || meta.label}`,
-      `市场：${marketLabel(event.market)}`,
-      `事件类型：${categoryLabel(event.category)}`,
-      `影响资产：${event.assets.join('、')}`,
-      `时间状态：${timeStatusLabel(event.timeStatus)}`,
-      `来源：${event.sourceName}`,
-      `来源链接：${event.sourceUrl}`,
-      '',
-      '🧭 次日收盘复盘：',
-      `- 前一交易日：${review.tradeDate}`,
-      `- 复盘日期：${review.reviewDate}`,
-      `- 信号方向：${review.signal.directionalConclusion}`,
-      `- 仓位性质：${review.signal.positionNature}`,
-      `- 仓位解释：${review.signal.positionExplanation}`,
-      `- 预判依据：${review.signal.forecastBasis}`,
-      `- 市场快照：${review.marketDetail ? `${review.marketDetail.label} 收盘 ${review.marketDetail.close}，开盘 ${review.marketDetail.open}，最高 ${review.marketDetail.high}，最低 ${review.marketDetail.low}，成交量 ${review.marketDetail.volume}` : '未提供'}`,
-      `- 验证摘要：${review.validationSummary}`,
-      `- 总结判断：${review.validationConclusion}`,
-      '- 说明：这是用次日收盘验证前一交易日中金所席位信号是否被价格确认，不是单日席位即刻等同方向。',
-      '',
-      '✅ 检查清单：',
-      ...event.checklist.map((item) => `- 🔎 ${item}`)
-    ].join('\n');
-  }
   if (event.category === 'Derivatives / CFFEX Position Watch' && event.cffexPositionAnalysis) {
     const analysis = event.cffexPositionAnalysis;
     const citic = analysis.citic.overall;
@@ -700,6 +668,10 @@ function buildDescription(event) {
       `- 🎯 总判断：${impact.directionalConclusion}。这是风险偏好线索，不是确定的涨跌信号。`,
       `- 🔮 明日涨跌预判：${impact.forecastEmoji} ${impact.forecastDirection}。`,
       `- 🎚️ 确定度：${impact.forecastScore}/100（${impact.forecastConfidence}）。`,
+      ...(analysis.followupReview ? [
+        `- 🧪 预测准确度：${analysis.followupReview.accuracy}，实际下一交易日为${analysis.followupReview.actualDirection}。`,
+        `- 📊 验证口径：${analysis.followupReview.tradeDate} 收盘后信号，对比 ${analysis.followupReview.reviewDate} 沪深300收盘；收盘变动 ${analysis.followupReview.closeChangeText}。`
+      ] : []),
       `- 🧠 预判依据：${impact.forecastBasis}`,
       `- ⚠️ 分数说明：${impact.forecastDisclaimer}`,
       `- 🧩 仓位性质：${impact.positionNature}。${impact.positionExplanation}`,
@@ -709,6 +681,17 @@ function buildDescription(event) {
       `- 📈 逼空转强条件：${impact.squeezeConfirmation}`,
       '- ⏸️ 当前动作：没有价格、成交量和连续持仓确认前，以观望或控制隔夜仓位为主，不根据单日席位数据追空或抄底。',
       '- ⚠️ 数据边界：中金所披露的是期货公司结算会员经纪业务持仓，不能据此确认具体客户身份、对冲目的或单一机构观点。',
+      ...(analysis.followupReview ? [
+        '',
+        '🧭 次日收盘复盘：',
+        `- 前一交易日：${analysis.followupReview.tradeDate}`,
+        `- 复盘日期：${analysis.followupReview.reviewDate}`,
+        `- 原始判断：${impact.forecastEmoji} ${impact.forecastDirection}，确定度 ${impact.forecastScore}/100（${impact.forecastConfidence}）`,
+        `- 预测准确度：${analysis.followupReview.accuracy}，实际下一交易日为${analysis.followupReview.actualDirection}。`,
+        `- 市场快照：${analysis.followupReview.reviewMarketDetail ? `${analysis.followupReview.reviewMarketDetail.label} 收盘 ${analysis.followupReview.reviewMarketDetail.close}，开盘 ${analysis.followupReview.reviewMarketDetail.open}，最高 ${analysis.followupReview.reviewMarketDetail.high}，最低 ${analysis.followupReview.reviewMarketDetail.low}，成交量 ${analysis.followupReview.reviewMarketDetail.volume}` : '未提供'}`,
+        `- 对比结论：${analysis.followupReview.validationConclusion}`,
+        '- 说明：这里保留了 19 日原有中金所跟踪内容，再在下方追加 20 日收盘后的验证结果，方便直接对比原判断与实际结果。'
+      ] : []),
       '',
       '📌 中金所成交持仓排名数据：',
       `- 🗓️ 数据交易日：${analysis.tradeDate}`,
