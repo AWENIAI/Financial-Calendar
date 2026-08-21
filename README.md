@@ -195,6 +195,22 @@ npm run generate
 
 ## 更新日志
 
+### 2026-08-21 09:46 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/32437472268
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：166
+- 文件变化统计：1 file changed, 36 deletions(-)
+- 变化文件：
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-08-22 08:00：🟠 [美股] 月度期权到期日：OPEX 风险窗口（8月月度期权）
+  - 2026-08-27 08:00：📊 [美股] 英伟达（NVIDIA，NVDA）财报发布：2026年7月
+  - 2026-08-28 08:00：🟠 [A股] 每月倒数第二个中国营业日：8月
+  - 2026-08-28 08:00：🟠 [A股] A50 期货最后交易日：8月合约
+  - 2026-08-28 08:00：🟠 [港股] 港股指数期货/期权月度到期提醒：8月
+
 ### 2026-08-20 19:55 自动更新记录
 
 - 触发来源：local
