@@ -1,40 +1,42 @@
-# A 股尾盘二次判定自动化
+# 策略 A｜成长100R × 价值100R
 
-这是一个可直接放到 GitHub 上自动执行的最小方案。
+策略 A 由仓库根目录的 GitHub Actions 统一执行，并合并到公开的 `GLOBAL_KEY.ics` 订阅日历。
 
-目标：在每个交易日北京时间 14:30 自动拉取最新行情，按固定顺序生成尾盘复盘报告，并把结果写入仓库产物和 Markdown 文件。
+目标：在每个交易日北京时间 15:10 获取 480080 / 480081 TRI 数据，执行双阈值滞回状态机，并通过 GitHub Pages 推送到 Apple 日历订阅。
 
 ## 方案结构
 
-- `src/run.py`：主程序，判断交易日、拉行情、计算指标、生成报告。
-- `reports/`：每次执行生成的报告。
-- `.github/workflows/tailclose.yml`：GitHub Actions 定时任务。
+- `scripts/risk-calendar/update-strategy-a.mjs`：获取官方数据、计算状态并生成事件 JSON。
+- `data/strategy-a.json`：当前策略 A 日历事件。
+- `data/strategy-a-state.json`：持仓状态和换仓次数。
+- `scripts/risk-calendar/generate-risk-calendar.mjs`：将事件合并到 `public/calendar/GLOBAL_KEY.ics`。
+- `.github/workflows/update-calendar-feed.yml`：15:10 云端定时任务和 Pages 发布。
 
 ## 运行方式
 
-本地运行：
+本地验证：
 
 ```bash
 cd a-share-tailclose-monitor
-python3 -m pip install -r requirements.txt
-python3 src/run.py
+npm run update-strategy-a
+npm run generate
 ```
 
-GitHub Actions 会在每天 14:30 北京时间运行。因为 GitHub 的调度时区是 UTC，所以 workflow 里用的是 06:30 UTC。
+GitHub Actions 会在每个工作日 15:10 北京时间运行，对应 `07:10 UTC`。GitHub 的定时任务可能存在几分钟延迟。
 
 ## 依赖
 
-- Python 3.11+
-- `akshare`
-- `pandas`
+- Node.js 20+
+- 国证指数官方接口
 
 ## 输出
 
 程序会生成：
 
-- `reports/YYYY-MM-DD.md`
-- 标准输出里的简版摘要
+- `data/strategy-a.json`
+- `data/strategy-a-state.json`
+- `public/calendar/GLOBAL_KEY.ics`
 
 ## 可执行边界
 
-这个版本已经能自动执行，但最终效果仍取决于行情源当时是否可用，以及同花顺板块代码能否稳定映射。映射失败时会在报告里明确写 `暂无可靠数据`，不会编造。
+结果固定为：从价值切换到成长、从成长切换到价值、保持当前价值、保持当前成长、数据错误无结果。数据校验失败时不生成有效切换结论。

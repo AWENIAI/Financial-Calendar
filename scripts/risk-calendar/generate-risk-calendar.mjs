@@ -12,6 +12,7 @@ const dataPath = path.join(rootDir, 'data/risk-events.json');
 const fixedEventsPath = path.join(rootDir, 'data/fixed-events-2026.json');
 const usMegacapEarningsPath = path.join(rootDir, 'data/us-megacap-earnings.json');
 const cffexPositionWatchPath = path.join(rootDir, 'data/cffex-position-watch.json');
+const strategyAPath = path.join(rootDir, 'data/strategy-a.json');
 const outputDir = path.join(rootDir, 'public/calendar');
 
 const LEVEL_META = {
@@ -318,7 +319,8 @@ function readEvents() {
     ...readJson(dataPath, []),
     ...readFixedEvents(),
     ...readJson(usMegacapEarningsPath, []),
-    ...readJson(cffexPositionWatchPath, [])
+    ...readJson(cffexPositionWatchPath, []),
+    ...readJson(strategyAPath, [])
   ]);
   return events
     .filter((event) => LEVEL_META[event.level])
@@ -366,6 +368,7 @@ function eventEmoji(event, meta) {
 }
 
 function summary(event) {
+  if (event.category === 'Strategy A') return event.title;
   const meta = LEVEL_META[event.level];
   return `${eventEmoji(event, meta)} [${marketTag(event.market)}] ${event.title}`;
 }
@@ -377,6 +380,7 @@ function eventDateTimeLabel(event) {
 }
 
 function eventDisplayDateTime(event, time) {
+  if (event.category === 'Strategy A') return time === CALENDAR_DISPLAY_START_TIME ? event.start : event.end;
   const date = String(event.start).slice(0, 10);
   return `${date}T${time}:00+08:00`;
 }
@@ -406,7 +410,8 @@ function categoryLabel(category) {
     'Calendar / China Month-End Business Day': '中国月末倒数第二个营业日',
     'Derivatives / SGX A50 Futures Last Trading Day': 'A50 期货最后交易日',
     'Earnings / Disclosure Deadline': 'A股定期报告披露截止窗口',
-    'Derivatives / HKEX Monthly Expiry': '港股指数期货/期权月度到期'
+    'Derivatives / HKEX Monthly Expiry': '港股指数期货/期权月度到期',
+    'Strategy A': '策略 A'
   }[category] || category;
 }
 
@@ -645,6 +650,7 @@ function buildEarningsDescription(event, meta) {
 }
 
 function buildDescription(event) {
+  if (event.category === 'Strategy A') return event.strategyDescription;
   const meta = LEVEL_META[event.level];
   if (event.category === 'Earnings / US Megacap') return buildEarningsDescription(event, meta);
   if (event.category === 'Derivatives / CFFEX Position Watch' && event.cffexPositionAnalysis) {

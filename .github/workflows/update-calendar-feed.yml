@@ -3,10 +3,10 @@ name: Update Risk Calendar Feed
 on:
   schedule:
     # GitHub Actions schedule is not guaranteed to start exactly on time.
-    # Run on weekdays at Beijing 18:00 after the China futures market has closed.
+    # Run on weekdays at Beijing 15:10 after the strategy signal is available.
     # China public holidays are handled by the CFFEX script: if same-day IH/IF/IC/IM
     # data is unavailable, it leaves the position-watch file unchanged.
-    - cron: '0 10 * * 1-5'
+    - cron: '10 7 * * 1-5'
   workflow_dispatch:
 
 permissions:
@@ -46,6 +46,9 @@ jobs:
           echo "UTC now: $(date -u '+%Y-%m-%d %H:%M:%S %Z')"
           echo "Beijing now: $(TZ=Asia/Shanghai date '+%Y-%m-%d %H:%M:%S %Z')"
 
+      - name: Update Strategy A
+        run: npm run update-strategy-a
+
       - name: Update CFFEX index futures position watch
         run: npm run update-cffex-position
 
@@ -79,7 +82,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A public/calendar data/risk-events.json data/fixed-events-2026.json data/us-megacap-earnings.json data/cffex-position-watch.json README.md README.backup.md package.json package-lock.json scripts/risk-calendar
+          git add -A public/calendar data/risk-events.json data/fixed-events-2026.json data/us-megacap-earnings.json data/cffex-position-watch.json data/strategy-a.json data/strategy-a-state.json README.md README.backup.md package.json package-lock.json scripts/risk-calendar
           git commit -m "chore: update risk calendar feed"
           git push
 
