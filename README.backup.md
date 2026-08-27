@@ -195,91 +195,22 @@ npm run generate
 
 ## 更新日志
 
-### 2026-08-25 18:26 自动更新记录
+### 2026-08-27 20:13 自动更新记录
 
-- 触发来源：schedule
-- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/32837154261
-- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
-- 当前事件数：170
-- 文件变化统计：3 files changed, 225 insertions(+), 32 deletions(-)
-- 变化文件：
-  - 修改：`data/cffex-position-watch.json`
-  - 修改：`data/us-megacap-earnings.json`
-  - 修改：`public/calendar/GLOBAL_KEY.ics`
-- 最近未来事件：
-  - 2026-08-27 08:00：📊 [美股] 英伟达（NVIDIA，NVDA）财报发布：2026年7月
-  - 2026-08-28 08:00：🟠 [A股] 每月倒数第二个中国营业日：8月
-  - 2026-08-28 08:00：🟠 [A股] A50 期货最后交易日：8月合约
-  - 2026-08-28 08:00：🟠 [港股] 港股指数期货/期权月度到期提醒：8月
-  - 2026-08-31 08:00：🟠 [A股] A股中报披露截止窗口：业绩与公告风险
-
-### 2026-08-24 18:32 自动更新记录
-
-- 触发来源：schedule
-- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/32717268033
-- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
-- 当前事件数：169
-- 文件变化统计：3 files changed, 265 insertions(+), 27 deletions(-)
-- 变化文件：
-  - 修改：`data/cffex-position-watch.json`
-  - 修改：`data/us-megacap-earnings.json`
-  - 修改：`public/calendar/GLOBAL_KEY.ics`
-- 最近未来事件：
-  - 2026-08-27 08:00：📊 [美股] 英伟达（NVIDIA，NVDA）财报发布：2026年7月
-  - 2026-08-28 08:00：🟠 [A股] 每月倒数第二个中国营业日：8月
-  - 2026-08-28 08:00：🟠 [A股] A50 期货最后交易日：8月合约
-  - 2026-08-28 08:00：🟠 [港股] 港股指数期货/期权月度到期提醒：8月
-  - 2026-08-31 08:00：🟠 [A股] A股中报披露截止窗口：业绩与公告风险
-
-### 2026-08-22 09:40 自动更新记录
-
-- 触发来源：schedule
-- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/32544079879
+- 触发来源：local
+- Action 记录：本地运行
 - 订阅文件：`public/calendar/GLOBAL_KEY.ics`
 - 当前事件数：167
-- 文件变化统计：1 file changed, 1 insertion(+), 1 deletion(-)
+- 文件变化统计：2 files changed, 64 insertions(+), 82 deletions(-)
 - 变化文件：
-  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`data/cffex-position-watch.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
 - 最近未来事件：
-  - 2026-08-27 08:00：📊 [美股] 英伟达（NVIDIA，NVDA）财报发布：2026年7月
   - 2026-08-28 08:00：🟠 [A股] 每月倒数第二个中国营业日：8月
   - 2026-08-28 08:00：🟠 [A股] A50 期货最后交易日：8月合约
   - 2026-08-28 08:00：🟠 [港股] 港股指数期货/期权月度到期提醒：8月
   - 2026-08-31 08:00：🟠 [A股] A股中报披露截止窗口：业绩与公告风险
-
-### 2026-08-21 18:24 自动更新记录
-
-- 触发来源：schedule
-- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/32472439879
-- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
-- 当前事件数：167
-- 文件变化统计：3 files changed, 132 insertions(+), 85 deletions(-)
-- 变化文件：
-  - 修改：`data/cffex-position-watch.json`
-  - 修改：`data/us-megacap-earnings.json`
-  - 修改：`public/calendar/GLOBAL_KEY.ics`
-- 最近未来事件：
-  - 2026-08-22 08:00：🟠 [美股] 月度期权到期日：OPEX 风险窗口（8月月度期权）
-  - 2026-08-27 08:00：📊 [美股] 英伟达（NVIDIA，NVDA）财报发布：2026年7月
-  - 2026-08-28 08:00：🟠 [A股] 每月倒数第二个中国营业日：8月
-  - 2026-08-28 08:00：🟠 [A股] A50 期货最后交易日：8月合约
-  - 2026-08-28 08:00：🟠 [港股] 港股指数期货/期权月度到期提醒：8月
-
-### 2026-08-21 09:46 自动更新记录
-
-- 触发来源：schedule
-- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/32437472268
-- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
-- 当前事件数：166
-- 文件变化统计：1 file changed, 36 deletions(-)
-- 变化文件：
-  - 修改：`public/calendar/GLOBAL_KEY.ics`
-- 最近未来事件：
-  - 2026-08-22 08:00：🟠 [美股] 月度期权到期日：OPEX 风险窗口（8月月度期权）
-  - 2026-08-27 08:00：📊 [美股] 英伟达（NVIDIA，NVDA）财报发布：2026年7月
-  - 2026-08-28 08:00：🟠 [A股] 每月倒数第二个中国营业日：8月
-  - 2026-08-28 08:00：🟠 [A股] A50 期货最后交易日：8月合约
-  - 2026-08-28 08:00：🟠 [港股] 港股指数期货/期权月度到期提醒：8月
+  - 2026-09-03 08:00：📊 [美股] 博通（Broadcom，AVGO）财报发布：2026年7月
 
 ### 2026-08-20 19:55 自动更新记录
 
