@@ -1,186 +1,109 @@
 from __future__ import annotations
 
 import datetime as dt
-import os
-from dataclasses import dataclass, asdict
+import json
+import urllib.parse
+import urllib.request
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
 TZ = ZoneInfo("Asia/Shanghai")
 ROOT = Path(__file__).resolve().parents[1]
+STATE_PATH = ROOT / "state" / "strategy_a.json"
 REPORT_DIR = ROOT / "reports"
+ICS_PATH = ROOT / "output" / "strategy-a.ics"
+API = "http://hq.cnindex.com.cn/market/market/getIndexDailyDataWithDataFormat"
 
 
-@dataclass
-class BoardConfig:
-    order: int
-    name: str
-    code: str | None
-    note: str = ""
+def now() -> dt.datetime:
+    return dt.datetime.now(TZ)
 
 
-BOARDS = [
-    BoardConfig(1, "半导体", "881121"),
-    BoardConfig(2, "存储芯片", "886042"),
-    BoardConfig(3, "CPO", "886033"),
-    BoardConfig(4, "半导体材料", "884091"),
-    BoardConfig(5, "人工智能", None, "需当日核验同花顺有效代码"),
-    BoardConfig(6, "算力租赁", "886050"),
-    BoardConfig(7, "CRO概念", "885927"),
-    BoardConfig(8, "人形机器人", None, "需当日核验同花顺有效代码"),
-    BoardConfig(9, "商业航天", None, "需当日核验同花顺有效代码"),
-    BoardConfig(10, "东数西算(算力)", "885957"),
-    BoardConfig(11, "锂电池概念", "885710"),
-    BoardConfig(12, "科创50", "000688"),
-    BoardConfig(13, "PCB概念", "885959", "附加监控"),
-]
+def fetch(code: str) -> dict[str, float]:
+    params = urllib.parse.urlencode({"indexCode": code, "startDate": (now().date() - dt.timedelta(days=180)).isoformat(), "endDate": now().date().isoformat(), "frequency": "day"})
+    with urllib.request.urlopen(f"{API}?{params}", timeout=20) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+    data = payload.get("data") or {}
+    expected = {"480080": ("成长100R", "CNIG100 TRI"), "480081": ("价值100R", "CNIV100 TRI")}[code]
+    if data.get("indexCode") != code or (data.get("indexName"), data.get("indexEName")) != expected:
+        raise ValueError(f"指数口径校验失败: {code}")
+    close_idx = data.get("item", []).index("close")
+    rows = {row[0]: float(row[close_idx]) for row in data.get("data", []) if row[close_idx] is not None}
+    if len(rows) < 21:
+        raise ValueError(f"{code} 有效收盘数据不足 21 个交易日")
+    return rows
 
 
-def now_shanghai() -> dt.datetime:
-    return dt.datetime.now(tz=TZ)
+def load_state() -> dict:
+    return json.loads(STATE_PATH.read_text(encoding="utf-8")) if STATE_PATH.exists() else {"current_position": None, "trade_count": 0}
 
 
-def is_a_share_trading_day(today: dt.date | None = None) -> bool:
-    today = today or now_shanghai().date()
-    try:
-        import akshare as ak
-        import pandas as pd
-
-        calendar = ak.tool_trade_date_hist_sina()
-        if isinstance(calendar, pd.DataFrame):
-            dates = pd.to_datetime(calendar.iloc[:, 0]).dt.date
-            return today in set(dates)
-    except Exception:
-        pass
-    weekday = today.weekday()
-    return weekday < 5
+def rebuild_position(growth: dict[str, float], value: dict[str, float]) -> str | None:
+    common = sorted(set(growth) & set(value))
+    if len(common) < 21:
+        return None
+    position = "VALUE"
+    for i in range(20, len(common)):
+        d_pp = ((growth[common[i]] / growth[common[i - 20]] - 1) - (value[common[i]] / value[common[i - 20]] - 1)) * 100
+        if position == "VALUE" and d_pp > 1:
+            position = "GROWTH"
+        elif position == "GROWTH" and d_pp < -1:
+            position = "VALUE"
+    return position
 
 
-def market_session_active(ts: dt.datetime | None = None) -> bool:
-    ts = ts or now_shanghai()
-    t = ts.time()
-    morning = dt.time(9, 30) <= t <= dt.time(11, 30)
-    afternoon = dt.time(13, 0) <= t <= dt.time(15, 0)
-    return morning or afternoon
+def next_trading_day(date: dt.date, common: list[str]) -> str:
+    future = [d for d in common if dt.date.fromisoformat(d) > date]
+    return future[0] if future else "待下一交易日确认"
 
 
-def fetch_index_snapshot(code: str) -> dict:
-    try:
-        import akshare as ak
-        import pandas as pd
-
-        df = ak.stock_zh_index_spot_em()
-        if not isinstance(df, pd.DataFrame) or df.empty:
-            return {}
-        candidates = df[df.astype(str).apply(lambda row: row.str.contains(code).any(), axis=1)]
-        if candidates.empty:
-            return {}
-        row = candidates.iloc[0].to_dict()
-        return row
-    except Exception:
-        return {}
-
-
-def render_board(board: BoardConfig) -> str:
-    snapshot = fetch_index_snapshot(board.code) if board.code else {}
-    current = snapshot.get("最新价", "暂无可靠数据")
-    change = snapshot.get("涨跌幅", "暂无可靠数据")
-    high = snapshot.get("最高", "暂无可靠数据")
-    low = snapshot.get("最低", "暂无可靠数据")
-    amount = snapshot.get("成交额", "暂无可靠数据")
-    return f"""## {board.order}｜{board.name}｜{board.code or '待核验'}
-数据截至：{now_shanghai().strftime('%Y-%m-%d %H:%M:%S')}
-当前指数：{current}
-今日涨跌：{change}
-今日最高：{high}
-今日最低：{low}
-成交额：{amount}
-上涨/下跌家数：暂无可靠数据
-市场宽度：暂无可靠数据
-生命周期：暂无可靠数据
-趋势：暂无可靠数据
-R1 第一压力区：暂无可靠数据
-形成原因：暂无可靠数据
-距离当前：暂无可靠数据
-R2 强压力区：暂无可靠数据
-形成原因：暂无可靠数据
-距离当前：暂无可靠数据
-S1 第一支撑区：暂无可靠数据
-形成原因：暂无可靠数据
-距离当前：暂无可靠数据
-S2 强支撑区：暂无可靠数据
-形成原因：暂无可靠数据
-距离当前：暂无可靠数据
-结构状态：暂无可靠数据
-当前承接：暂无可靠数据
-承接可信度：暂无可靠数据
-日内低点回收率：暂无可靠数据
-量价 + MA5状态：暂无可靠数据
-空仓动作：观望
-已有仓位：持有偏防守
-当前是否加仓：否
-当前是否减仓：否
-核心原因：暂无可靠数据
-什么情况下加仓：S1有效承接、宽度恢复、龙头止跌、站上MA5后再考虑
-什么情况下减仓：跌破S1/S2、放量破位、宽度恶化时减仓
-短线失效位：暂无可靠数据
-日线失效位：暂无可靠数据
-中期失效位：暂无可靠数据
-"""
-
-
-def render_report() -> str:
-    ts = now_shanghai()
-    if not is_a_share_trading_day(ts.date()):
-        return "今日A股休市，不执行14:30板块复盘。\n"
-    if not market_session_active(ts):
-        return "当前不在A股交易时段，已跳过自动复盘。\n"
-
-    header = [
-        f"# A股尾盘二次判定报告",
-        f"数据时间：{ts.strftime('%Y-%m-%d %H:%M:%S')}",
-        "",
-    ]
-    body = [render_board(board) for board in BOARDS]
-    footer = [
-        "## 🚨 当前破位清单",
-        "暂无可靠数据",
-        "",
-        "## 第一性原理总结",
-        "1. 买方现在是否愿意提高成交价格？暂无可靠数据",
-        "2. 卖方是否仍愿意不断降低价格成交？暂无可靠数据",
-        "3. 板块价格回升是真实资金承接，还是单纯跌深反抽？暂无可靠数据",
-        "4. 市场宽度是否支持指数表现？暂无可靠数据",
-        "5. 当前最重要的矛盾是什么？暂无可靠数据",
-        "",
-        "## 对抗式审查",
-        "当前主结论默认视为不成立，直到行情数据足够可靠。",
-        "",
-        "【今日最强】暂无可靠数据",
-        "【有效承接】暂无可靠数据",
-        "【初步承接】暂无可靠数据",
-        "【弱承接】暂无可靠数据",
-        "【明确破位】暂无可靠数据",
-        "【严重破位】暂无可靠数据",
-        "【适合开仓】暂无",
-        "【适合加仓】暂无",
-        "【持有优先】暂无",
-        "【减仓优先】暂无",
-        "【规避】暂无",
-        "【今天最重要的一句话】数据源可用时，这个脚本会自动产出固定格式复盘；当前版本先保证自动执行框架完整。",
-        "",
-    ]
-    return "\n".join(header + body + footer)
+def esc(text: str) -> str:
+    return text.replace("\\", "\\\\").replace("\n", "\\n").replace(",", "\\,").replace(";", "\\;")
 
 
 def main() -> None:
-    report = render_report()
-    REPORT_DIR.mkdir(parents=True, exist_ok=True)
-    path = REPORT_DIR / f"{now_shanghai().date().isoformat()}.md"
-    path.write_text(report, encoding="utf-8")
-    print(report)
-    print(f"\n[written] {path}")
+    data_date = now().date()
+    growth, value = fetch("480080"), fetch("480081")
+    common = sorted(set(growth) & set(value))
+    if len(common) < 21:
+        raise ValueError("两个指数共同有效交易日不足 21 个")
+    t, old = common[-1], common[-21]
+    rg = growth[t] / growth[old] - 1
+    rv = value[t] / value[old] - 1
+    d_pp = (rg - rv) * 100
+    state = load_state()
+    position = state.get("current_position") or rebuild_position(growth, value)
+    if position not in {"VALUE", "GROWTH"}:
+        raise ValueError("当前有效持仓无法可靠重建")
+    target = position
+    if position == "VALUE" and d_pp > 1:
+        target = "GROWTH"
+    elif position == "GROWTH" and d_pp < -1:
+        target = "VALUE"
+    switched = target != position
+    result = "从价值切换到成长" if switched and target == "GROWTH" else "从成长切换到价值" if switched else "保持当前价值" if position == "VALUE" else "保持当前成长"
+    title = f"策略 A｜{result}"
+    transition = f"因此在下一交易日从“{'价值' if position == 'VALUE' else '成长'}”切换至“{'成长' if target == 'GROWTH' else '价值'}”。" if switched else "因此保持原持仓，0次交易，0换仓成本。"
+    body = f"结果：{result}\n\n数据口径：480080 / 480081\n成长100R：{growth[t]:.4f}\n价值100R：{value[t]:.4f}\n成长20日累计收益：{rg:.4%}\n价值20日累计收益：{rv:.4%}\n相对收益差：{d_pp:+.4f}pp\n\n理由：成长100R的20日收益减去价值100R的20日收益，得到{d_pp:+.4f}pp。{transition}"
+    REPORT_DIR.mkdir(exist_ok=True)
+    (REPORT_DIR / f"{t}.txt").write_text(f"标题：{title}\n\n{body}\n", encoding="utf-8")
+    STATE_PATH.parent.mkdir(exist_ok=True)
+    STATE_PATH.write_text(json.dumps({"current_position": target, "last_signal_date": t, "last_result": result, "trade_count": state.get("trade_count", 0) + int(switched)}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    event_date = dt.date.fromisoformat(next_trading_day(dt.date.fromisoformat(t), common)) if switched and next_trading_day(dt.date.fromisoformat(t), common)[0].isdigit() else dt.date.fromisoformat(t)
+    start = dt.datetime.combine(event_date, dt.time(14, 30), TZ)
+    end = start + dt.timedelta(minutes=5)
+    ICS_PATH.parent.mkdir(exist_ok=True)
+    ICS_PATH.write_text(f"BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//AWENIAI//Strategy A//CN\nBEGIN:VEVENT\nUID:strategy-a-{t}@financial-calendar\nDTSTAMP:{now().strftime('%Y%m%dT%H%M%S')}\nDTSTART;TZID=Asia/Shanghai:{start.strftime('%Y%m%dT%H%M%S')}\nDTEND;TZID=Asia/Shanghai:{end.strftime('%Y%m%dT%H%M%S')}\nSUMMARY:{esc(title)}\nDESCRIPTION:{esc(body)}\nEND:VEVENT\nEND:VCALENDAR\n", encoding="utf-8")
+    print(body)
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as exc:
+        result = "数据错误无结果"
+        title = f"策略 A｜{result}"
+        body = f"结果：{result}\n\n数据口径：480080 / 480081\n\n理由：{exc}"
+        REPORT_DIR.mkdir(exist_ok=True)
+        (REPORT_DIR / f"{now().date().isoformat()}.txt").write_text(f"标题：{title}\n\n{body}\n", encoding="utf-8")
+        print(body)
