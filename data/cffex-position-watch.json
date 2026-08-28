@@ -1211,7 +1211,7 @@
       "followupReview": {
         "tradeDate": "2026-08-27",
         "reviewDate": "2026-08-28",
-        "createdAt": "2026-08-28 22:38:23 北京时间",
+        "createdAt": "2026-08-28 22:40:14 北京时间",
         "sourceName": "Yahoo Finance + 中国金融期货交易所",
         "sourceUrl": "https://query1.finance.yahoo.com/",
         "forecastDirection": "偏跌",
@@ -1269,7 +1269,7 @@
     ],
     "cffexPositionAnalysis": {
       "tradeDate": "2026-08-28",
-      "fetchedAt": "2026-08-28 22:38:21 北京时间",
+      "fetchedAt": "2026-08-28 22:40:11 北京时间",
       "methodology": "中信期货净变化 = 中信期货持买单量增减合计 - 中信期货持卖单量增减合计；前20机构净持仓 = 前20持买单量合计 - 前20持卖单量合计。四个品种均汇总所有合约。",
       "sourceFiles": [
         {
