@@ -195,6 +195,24 @@ npm run generate
 
 ## 更新日志
 
+### 2026-08-29 05:04 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/33210888242
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：170
+- 文件变化统计：3 files changed, 3 insertions(+), 3 deletions(-)
+- 变化文件：
+  - 修改：`data/cffex-position-watch.json`
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-08-31 08:00：🟠 [A股] A股中报披露截止窗口：业绩与公告风险
+  - 2026-09-03 08:00：📊 [美股] 博通（Broadcom，AVGO）财报发布：2026年7月
+  - 2026-09-04 08:00：🔴 [美股] 非农就业：2026年8月 Employment Situation
+  - 2026-09-08 08:00：📊 [美股] 甲骨文（Oracle，ORCL）财报发布：2026年8月
+  - 2026-09-10 08:00：🟠 [美股] PPI 发布：2026年8月生产者价格指数
+
 ### 2026-08-28 22:40 自动更新记录
 
 - 触发来源：workflow_dispatch
