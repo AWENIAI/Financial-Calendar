@@ -112,10 +112,10 @@ const EVENT_TEMPLATES = {
     assets: ['SPY', 'QQQ', 'ES', 'NQ', '美债', '美元指数', '黄金'],
     sourceName: 'ADP Research',
     sourceUrl: 'https://adpemploymentreport.com/',
-    marketExpectation: 'ADP 会提前改变市场对正式非农的预期。若明显强于预期，市场容易提前交易就业偏热和降息延后；若明显弱于预期，市场会先交易就业降温。',
-    historicalReaction: 'ADP 与正式非农并不总是一致，因此冲击通常弱于 NFP，但在非农前两天仍容易放大美元、美债和股指期货波动。',
-    actionPlan: '把它当作非农前哨而不是最终答案；数据公布前避免重仓赌正式非农方向，公布后重点看市场是否把 NFP 预期重新定价。',
-    reason: 'ADP 小非农会影响市场对美国就业强弱、非农预期和美联储政策路径的提前定价。',
+    marketExpectation: '市场会拿 ADP 预判正式非农。高于预期=就业更热，降息可能变慢；低于预期=就业降温，降息预期升温。',
+    historicalReaction: '影响路径：股市——太强会压制成长股，温和走弱反而可能利好；黄金——弱数据通常利好，强数据通常承压；利率——强数据推高美债收益率，弱数据压低收益率；美元——强数据偏强，弱数据偏弱。',
+    actionPlan: '把它当作“非农前哨”，不要当最终答案。看完后只判断市场是否提前重估非农，不要重仓赌方向。',
+    reason: 'ADP 小非农影响就业预期，进而影响美联储降息节奏、股市估值、黄金、利率和美元。',
     checklist: ['是否把 ADP 当成非农前哨而非最终结论', '是否需要降低高贝塔仓位', '是否避免数据前追单']
   },
   'us-cpi': {
@@ -157,10 +157,10 @@ const EVENT_TEMPLATES = {
     assets: ['SPY', 'QQQ', 'ES', 'NQ', '美债', '美元指数', '黄金'],
     sourceName: 'BEA',
     sourceUrl: 'https://www.bea.gov/news/schedule',
-    marketExpectation: 'PCE 尤其是核心 PCE 是美联储更偏好的通胀指标。高于预期会压低降息概率，低于预期会强化通胀回落叙事。',
-    historicalReaction: 'PCE 通常不如 CPI 瞬时剧烈，但在利率路径分歧较大时，会明显影响美债收益率、美元和成长股估值。',
-    actionPlan: '不要只看总 PCE，要同步看核心 PCE、个人收入和支出；事件前把高估值成长和长久期资产风险降到可承受范围。',
-    reason: 'PCE 是美联储重点关注的通胀指标，会影响政策路径、实际利率和风险资产估值。',
+    marketExpectation: '市场最看核心 PCE。高于预期=通胀更黏，降息可能推迟；低于预期=通胀降温，降息预期增强。',
+    historicalReaction: '影响路径：股市——高 PCE 压制成长股和高估值资产，低 PCE 通常利好；黄金——低 PCE 利好，高 PCE 承压；利率——高 PCE 推高收益率，低 PCE 压低收益率；美元——高 PCE 偏强，低 PCE 偏弱。',
+    actionPlan: '先看核心 PCE，再看个人收入和支出。小白理解：它越高，美联储越难降息；它越低，市场越敢买风险资产。',
+    reason: 'PCE 是美联储最重视的通胀指标之一，会直接影响降息预期、股市估值、黄金、利率和美元。',
     checklist: ['是否关注核心 PCE', '是否检查美债收益率方向', '是否避免数据前加杠杆']
   },
   'us-initial-claims': {
@@ -172,10 +172,10 @@ const EVENT_TEMPLATES = {
     assets: ['SPY', 'QQQ', 'ES', 'NQ', '美债', '美元指数'],
     sourceName: 'U.S. Department of Labor',
     sourceUrl: 'https://www.dol.gov/ui/data.pdf',
-    marketExpectation: '初请是高频就业温度计。连续上升会强化就业降温和降息预期；持续低位则说明劳动力市场仍紧。',
-    historicalReaction: '单周噪音较大，但如果与非农、JOLTS、ADP 同向，会放大市场对就业拐点的交易。',
-    actionPlan: '不要孤立看单周数字，重点看四周均值和是否连续偏离预期；数据前后控制短线仓位。',
-    reason: '初请失业金人数能更高频地反映就业市场是否恶化，从而影响美联储政策预期。',
+    marketExpectation: '市场看它判断就业是否开始变差。高于预期=失业压力上升，降息预期升温；低于预期=就业仍稳，降息可能变慢。',
+    historicalReaction: '影响路径：股市——小幅走弱可能利好，恶化太快会引发衰退担忧；黄金——数据差通常利好；利率——数据差压低收益率；美元——数据差偏弱，数据强偏强。',
+    actionPlan: '不要只看一周，重点看是否连续几周变差。小白理解：一次不算数，连续上升才危险。',
+    reason: '初请失业金是每周就业温度计，会影响降息预期、股市风险偏好、黄金、利率和美元。',
     checklist: ['是否看四周均值', '是否与非农/ADP/JOLTS 交叉验证', '是否避免单周噪音过度交易']
   },
   'us-jolts': {
@@ -187,10 +187,10 @@ const EVENT_TEMPLATES = {
     assets: ['SPY', 'QQQ', 'ES', 'NQ', '美债', '美元指数'],
     sourceName: 'BLS',
     sourceUrl: 'https://www.bls.gov/schedule/news_release/jolts.htm',
-    marketExpectation: '职位空缺高说明劳动力需求强，工资和服务通胀压力可能更黏；职位空缺下降则支持就业降温叙事。',
-    historicalReaction: 'JOLTS 对盘中的冲击通常低于非农，但在美联储强调劳动力供需时会显著影响利率预期。',
-    actionPlan: '重点看职位空缺、离职率和招聘率是否同向；如果数据与非农背离，不要只凭单个指标下结论。',
-    reason: 'JOLTS 能反映劳动力市场供需和工资压力，是美联储观察就业再平衡的重要数据。',
+    marketExpectation: '市场看职位空缺判断企业还想不想招人。高于预期=就业需求强，工资压力可能大；低于预期=就业降温。',
+    historicalReaction: '影响路径：股市——过强会担心利率维持高位，过弱会担心经济变差；黄金——弱数据通常利好；利率——强数据推高收益率，弱数据压低收益率；美元——强数据偏强，弱数据偏弱。',
+    actionPlan: '重点看职位空缺是不是连续下降。小白理解：岗位越多，就业越热；岗位掉太快，经济可能变冷。',
+    reason: 'JOLTS 反映劳动力供需，会影响工资通胀、降息预期、股市、黄金、利率和美元。',
     checklist: ['职位空缺是否继续下降', '离职率是否变化', '是否与非农和初请交叉验证']
   },
   'us-retail-sales': {
@@ -202,10 +202,10 @@ const EVENT_TEMPLATES = {
     assets: ['SPY', 'QQQ', 'XLY', '美债', '美元指数'],
     sourceName: 'U.S. Census Bureau',
     sourceUrl: 'https://www.census.gov/economic-indicators/calendar-listview.html',
-    marketExpectation: '零售销售强说明消费韧性仍在，可能推迟降息；零售走弱则提示增长压力和企业收入预期下修。',
-    historicalReaction: '消费数据会同时影响经济增长和利率预期，市场反应取决于当时更担心通胀还是衰退。',
-    actionPlan: '同步看核心零售和控制组，不只看总数；消费股、纳指和美债仓位在公布前避免过度集中。',
-    reason: '美国消费是经济增长核心，零售销售会影响 GDP、企业盈利和政策预期。',
+    marketExpectation: '市场看它判断美国人还买不买东西。高于预期=消费强、经济强；低于预期=消费降温、增长压力上升。',
+    historicalReaction: '影响路径：股市——温和强劲利好盈利，但太强会推迟降息；黄金——弱零售通常利好；利率——强零售推高收益率，弱零售压低收益率；美元——强零售偏强，弱零售偏弱。',
+    actionPlan: '不要只看总数，也看核心零售。小白理解：消费强代表公司收入可能好，但也可能让美联储不急着降息。',
+    reason: '零售销售影响美国经济增长、企业盈利、降息预期、股市、黄金、利率和美元。',
     checklist: ['是否看核心零售/控制组', '是否关注消费股暴露', '是否判断市场当前担心通胀还是衰退']
   },
   'us-ism-manufacturing': {
@@ -217,10 +217,10 @@ const EVENT_TEMPLATES = {
     assets: ['SPY', 'QQQ', 'DIA', '工业品', '美债', '美元指数'],
     sourceName: 'ISM',
     sourceUrl: 'https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/',
-    marketExpectation: '制造业 PMI 高于 50 表示扩张，低于 50 表示收缩；新订单、就业和价格分项会决定市场交易增长还是通胀。',
-    historicalReaction: 'ISM 制造业对周期股、工业品和美债较敏感，若与其他数据共同指向衰退或再通胀，影响会放大。',
-    actionPlan: '重点看新订单和价格分项；不要只看 headline 数字，尤其在 50 附近容易误判。',
-    reason: 'ISM 制造业 PMI 是美国景气度和企业订单的领先指标。',
+    marketExpectation: '市场看 50 荣枯线：高于 50=制造业扩张，低于 50=收缩。新订单代表未来需求，价格分项代表通胀压力。',
+    historicalReaction: '影响路径：股市——强 PMI 利好周期股，但价格太高会压制估值；黄金——弱 PMI 通常利好；利率——强 PMI 或价格高推高收益率；美元——强 PMI 偏强。',
+    actionPlan: '先看是否高于 50，再看新订单和价格。小白理解：订单好是经济好，价格高是通胀麻烦。',
+    reason: 'ISM 制造业 PMI 是经济景气领先指标，会影响周期股、成长股估值、黄金、利率和美元。',
     checklist: ['新订单是否改善', '价格分项是否再升温', '是否处于 50 荣枯线附近']
   },
   'us-ism-services': {
@@ -232,10 +232,10 @@ const EVENT_TEMPLATES = {
     assets: ['SPY', 'QQQ', '服务消费', '美债', '美元指数'],
     sourceName: 'ISM',
     sourceUrl: 'https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/',
-    marketExpectation: '服务业占美国经济权重更大。服务业强且价格分项高，会强化通胀黏性；服务业弱则加大增长担忧。',
-    historicalReaction: '服务业 PMI 在通胀黏性阶段常比制造业更能影响降息预期，尤其是价格和就业分项。',
-    actionPlan: '重点看商业活动、就业和价格分项；若价格强而增长弱，要警惕滞胀式定价。',
-    reason: 'ISM 服务业 PMI 能反映美国服务消费、就业和服务通胀压力。',
+    marketExpectation: '市场很重视服务业，因为美国经济主要靠服务。高于预期=经济有韧性；价格分项高=服务通胀可能难降。',
+    historicalReaction: '影响路径：股市——服务业强利好盈利，但价格高会压估值；黄金——增长弱或利率下降时利好；利率——服务业和价格强会推高收益率；美元——数据强偏强。',
+    actionPlan: '重点看商业活动、就业和价格分项。小白理解：服务业强是好事，但如果价格也强，降息就更难。',
+    reason: 'ISM 服务业 PMI 反映美国服务消费、就业和服务通胀，会影响股市、黄金、利率和美元。',
     checklist: ['价格分项是否偏热', '就业分项是否转弱', '是否出现增长弱但价格强']
   },
   'us-gdp': {
@@ -247,10 +247,10 @@ const EVENT_TEMPLATES = {
     assets: ['SPY', 'QQQ', 'DIA', '美债', '美元指数'],
     sourceName: 'BEA',
     sourceUrl: 'https://www.bea.gov/news/schedule',
-    marketExpectation: 'GDP 强说明经济韧性和盈利基础仍在，但也可能推迟降息；GDP 弱会提高降息预期，同时带来衰退担忧。',
-    historicalReaction: 'GDP 对市场方向的影响取决于主线矛盾：通胀阶段强 GDP 偏利空估值，衰退阶段弱 GDP 偏利空盈利。',
-    actionPlan: '先判断市场当前交易的是通胀、降息还是衰退；重点看实际 GDP、消费和价格分项。',
-    reason: 'GDP 是经济增长总量指标，会影响企业盈利、利率路径和风险偏好。',
+    marketExpectation: '市场看 GDP 判断经济强弱。高于预期=经济更强、企业盈利可能更好；低于预期=经济变弱、衰退担忧上升。',
+    historicalReaction: '影响路径：股市——强 GDP 通常利好盈利，但可能推迟降息；黄金——弱 GDP 通常利好；利率——强 GDP 推高收益率，弱 GDP 压低收益率；美元——强 GDP 偏强，弱 GDP 偏弱。',
+    actionPlan: '先判断市场怕什么：怕通胀时，GDP 太强反而不好；怕衰退时，GDP 太弱才危险。',
+    reason: 'GDP 是经济总成绩单，会影响企业盈利、降息预期、股市、黄金、利率和美元。',
     checklist: ['市场当前主线是通胀还是衰退', '消费分项是否强', '价格分项是否偏热']
   },
   'us-michigan': {
@@ -262,10 +262,10 @@ const EVENT_TEMPLATES = {
     assets: ['SPY', 'QQQ', 'XLY', '美债', '美元指数'],
     sourceName: 'University of Michigan Surveys of Consumers',
     sourceUrl: 'https://www.sca.isr.umich.edu/',
-    marketExpectation: '消费者信心影响消费预期，通胀预期影响美联储对通胀锚定的判断。长期通胀预期上升尤其容易触发鹰派定价。',
-    historicalReaction: '密歇根数据本身冲击中等，但通胀预期意外上行时，美债收益率和成长股估值反应会更明显。',
-    actionPlan: '重点看一年期和五到十年通胀预期，不要只看信心指数；若通胀预期上行，控制长久期资产暴露。',
-    reason: '密歇根通胀预期会影响市场对通胀锚定和美联储政策耐心的判断。',
+    marketExpectation: '市场看两件事：消费者信心和通胀预期。信心高=消费可能稳；通胀预期高=美联储更难降息。',
+    historicalReaction: '影响路径：股市——信心弱会压消费股，通胀预期高会压成长股；黄金——通胀预期高或增长弱时可能受益；利率——通胀预期高推高收益率；美元——通胀预期高通常偏强。',
+    actionPlan: '重点看一年期和长期通胀预期。小白理解：大家越觉得会涨价，美联储越不敢松。',
+    reason: '密歇根数据影响消费预期和通胀预期，会传导到股市、黄金、利率和美元。',
     checklist: ['一年期通胀预期是否上行', '长期通胀预期是否脱锚', '是否与实际通胀数据背离']
   },
   'us-sp-global-pmi-flash': {
@@ -277,10 +277,10 @@ const EVENT_TEMPLATES = {
     assets: ['SPY', 'QQQ', 'DIA', '美债', '美元指数'],
     sourceName: 'S&P Global',
     sourceUrl: 'https://www.spglobal.com/marketintelligence/en/mi/products/pmi.html',
-    marketExpectation: 'PMI 初值比很多硬数据更早，能提前改变市场对增长、订单和价格压力的判断。',
-    historicalReaction: '单次冲击通常低于 CPI/非农，但如果与 ISM、零售、就业数据同向，会强化经济拐点交易。',
-    actionPlan: '把它当领先信号；重点看制造业、服务业和综合 PMI 是否同向，而不是只看单个分项。',
-    reason: '标普全球 PMI 初值能提前反映企业景气度、需求和价格压力。',
+    marketExpectation: '市场把 PMI 初值当“提前剧透”。高于预期=企业景气更好；低于预期=增长可能放缓；价格分项高=通胀压力仍在。',
+    historicalReaction: '影响路径：股市——景气好利好风险偏好，但价格高压估值；黄金——景气弱或利率下行时利好；利率——景气强/价格高推高收益率；美元——数据强偏强。',
+    actionPlan: '看制造业、服务业、综合 PMI 是否同向。小白理解：它不是最终成绩单，但能提前告诉你经济冷暖。',
+    reason: '标普全球 PMI 初值是领先信号，会影响市场对增长、通胀、股市、黄金、利率和美元的预期。',
     checklist: ['制造业和服务业是否同向', '价格分项是否偏热', '是否与 ISM 后续数据一致']
   },
   'us-vix': {
