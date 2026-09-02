@@ -30,6 +30,20 @@ const LEVEL_META = {
 const CALENDAR_DISPLAY_START_TIME = '08:00';
 const CALENDAR_DISPLAY_END_TIME = '09:00';
 const US_EARNINGS_WATCHLIST_SIZE = US_EARNINGS_WATCHLIST.length;
+const REAL_TIME_DISPLAY_CATEGORIES = new Set([
+  'Derivatives / CFFEX Position Watch',
+  'Derivatives / CFFEX Follow-up Review',
+  'Macro / Employment / ADP',
+  'Macro / Employment / Initial Claims',
+  'Macro / Employment / JOLTS',
+  'Macro / PCE',
+  'Macro / Consumption / Retail Sales',
+  'Macro / PMI / ISM Manufacturing',
+  'Macro / PMI / ISM Services',
+  'Macro / Growth / GDP',
+  'Macro / Sentiment / Michigan',
+  'Macro / PMI / S&P Global Flash'
+]);
 
 const CALENDARS = [
   {
@@ -89,6 +103,21 @@ const EVENT_TEMPLATES = {
     reason: '非农就业和失业率会影响美联储政策预期、收益率曲线和风险资产定价。',
     checklist: ['是否有未保护仓位', '是否需要降低杠杆', '是否避免数据公布前追单', '止损是否过近']
   },
+  'us-adp': {
+    market: 'US',
+    level: 'high',
+    category: 'Macro / Employment / ADP',
+    title: ({ label }) => `ADP 小非农：${label}私营就业报告`,
+    location: '美国',
+    assets: ['SPY', 'QQQ', 'ES', 'NQ', '美债', '美元指数', '黄金'],
+    sourceName: 'ADP Research',
+    sourceUrl: 'https://adpemploymentreport.com/',
+    marketExpectation: 'ADP 会提前改变市场对正式非农的预期。若明显强于预期，市场容易提前交易就业偏热和降息延后；若明显弱于预期，市场会先交易就业降温。',
+    historicalReaction: 'ADP 与正式非农并不总是一致，因此冲击通常弱于 NFP，但在非农前两天仍容易放大美元、美债和股指期货波动。',
+    actionPlan: '把它当作非农前哨而不是最终答案；数据公布前避免重仓赌正式非农方向，公布后重点看市场是否把 NFP 预期重新定价。',
+    reason: 'ADP 小非农会影响市场对美国就业强弱、非农预期和美联储政策路径的提前定价。',
+    checklist: ['是否把 ADP 当成非农前哨而非最终结论', '是否需要降低高贝塔仓位', '是否避免数据前追单']
+  },
   'us-cpi': {
     market: 'US',
     level: 'critical',
@@ -118,6 +147,141 @@ const EVENT_TEMPLATES = {
     actionPlan: '如果已经有方向性仓位，PPI 更适合做减噪而不是加码；除非做宏观策略，否则不要把它当成单独赌方向的理由。',
     reason: 'PPI 是通胀链条的重要输入，可能影响市场对后续 CPI、企业利润率和利率路径的预期。',
     checklist: ['数据公布前是否需要降低仓位', '是否避免在公布前追单', '高估值科技股仓位是否过重']
+  },
+  'us-pce': {
+    market: 'US',
+    level: 'critical',
+    category: 'Macro / PCE',
+    title: ({ label }) => `PCE 发布：${label}个人消费支出物价`,
+    location: '美国',
+    assets: ['SPY', 'QQQ', 'ES', 'NQ', '美债', '美元指数', '黄金'],
+    sourceName: 'BEA',
+    sourceUrl: 'https://www.bea.gov/news/schedule',
+    marketExpectation: 'PCE 尤其是核心 PCE 是美联储更偏好的通胀指标。高于预期会压低降息概率，低于预期会强化通胀回落叙事。',
+    historicalReaction: 'PCE 通常不如 CPI 瞬时剧烈，但在利率路径分歧较大时，会明显影响美债收益率、美元和成长股估值。',
+    actionPlan: '不要只看总 PCE，要同步看核心 PCE、个人收入和支出；事件前把高估值成长和长久期资产风险降到可承受范围。',
+    reason: 'PCE 是美联储重点关注的通胀指标，会影响政策路径、实际利率和风险资产估值。',
+    checklist: ['是否关注核心 PCE', '是否检查美债收益率方向', '是否避免数据前加杠杆']
+  },
+  'us-initial-claims': {
+    market: 'US',
+    level: 'high',
+    category: 'Macro / Employment / Initial Claims',
+    title: ({ label }) => `初请失业金人数：${label}`,
+    location: '美国',
+    assets: ['SPY', 'QQQ', 'ES', 'NQ', '美债', '美元指数'],
+    sourceName: 'U.S. Department of Labor',
+    sourceUrl: 'https://www.dol.gov/ui/data.pdf',
+    marketExpectation: '初请是高频就业温度计。连续上升会强化就业降温和降息预期；持续低位则说明劳动力市场仍紧。',
+    historicalReaction: '单周噪音较大，但如果与非农、JOLTS、ADP 同向，会放大市场对就业拐点的交易。',
+    actionPlan: '不要孤立看单周数字，重点看四周均值和是否连续偏离预期；数据前后控制短线仓位。',
+    reason: '初请失业金人数能更高频地反映就业市场是否恶化，从而影响美联储政策预期。',
+    checklist: ['是否看四周均值', '是否与非农/ADP/JOLTS 交叉验证', '是否避免单周噪音过度交易']
+  },
+  'us-jolts': {
+    market: 'US',
+    level: 'high',
+    category: 'Macro / Employment / JOLTS',
+    title: ({ label }) => `JOLTS 职位空缺：${label}`,
+    location: '美国',
+    assets: ['SPY', 'QQQ', 'ES', 'NQ', '美债', '美元指数'],
+    sourceName: 'BLS',
+    sourceUrl: 'https://www.bls.gov/schedule/news_release/jolts.htm',
+    marketExpectation: '职位空缺高说明劳动力需求强，工资和服务通胀压力可能更黏；职位空缺下降则支持就业降温叙事。',
+    historicalReaction: 'JOLTS 对盘中的冲击通常低于非农，但在美联储强调劳动力供需时会显著影响利率预期。',
+    actionPlan: '重点看职位空缺、离职率和招聘率是否同向；如果数据与非农背离，不要只凭单个指标下结论。',
+    reason: 'JOLTS 能反映劳动力市场供需和工资压力，是美联储观察就业再平衡的重要数据。',
+    checklist: ['职位空缺是否继续下降', '离职率是否变化', '是否与非农和初请交叉验证']
+  },
+  'us-retail-sales': {
+    market: 'US',
+    level: 'high',
+    category: 'Macro / Consumption / Retail Sales',
+    title: ({ label }) => `零售销售：${label}`,
+    location: '美国',
+    assets: ['SPY', 'QQQ', 'XLY', '美债', '美元指数'],
+    sourceName: 'U.S. Census Bureau',
+    sourceUrl: 'https://www.census.gov/economic-indicators/calendar-listview.html',
+    marketExpectation: '零售销售强说明消费韧性仍在，可能推迟降息；零售走弱则提示增长压力和企业收入预期下修。',
+    historicalReaction: '消费数据会同时影响经济增长和利率预期，市场反应取决于当时更担心通胀还是衰退。',
+    actionPlan: '同步看核心零售和控制组，不只看总数；消费股、纳指和美债仓位在公布前避免过度集中。',
+    reason: '美国消费是经济增长核心，零售销售会影响 GDP、企业盈利和政策预期。',
+    checklist: ['是否看核心零售/控制组', '是否关注消费股暴露', '是否判断市场当前担心通胀还是衰退']
+  },
+  'us-ism-manufacturing': {
+    market: 'US',
+    level: 'high',
+    category: 'Macro / PMI / ISM Manufacturing',
+    title: ({ label }) => `ISM 制造业 PMI：${label}`,
+    location: '美国',
+    assets: ['SPY', 'QQQ', 'DIA', '工业品', '美债', '美元指数'],
+    sourceName: 'ISM',
+    sourceUrl: 'https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/',
+    marketExpectation: '制造业 PMI 高于 50 表示扩张，低于 50 表示收缩；新订单、就业和价格分项会决定市场交易增长还是通胀。',
+    historicalReaction: 'ISM 制造业对周期股、工业品和美债较敏感，若与其他数据共同指向衰退或再通胀，影响会放大。',
+    actionPlan: '重点看新订单和价格分项；不要只看 headline 数字，尤其在 50 附近容易误判。',
+    reason: 'ISM 制造业 PMI 是美国景气度和企业订单的领先指标。',
+    checklist: ['新订单是否改善', '价格分项是否再升温', '是否处于 50 荣枯线附近']
+  },
+  'us-ism-services': {
+    market: 'US',
+    level: 'high',
+    category: 'Macro / PMI / ISM Services',
+    title: ({ label }) => `ISM 服务业 PMI：${label}`,
+    location: '美国',
+    assets: ['SPY', 'QQQ', '服务消费', '美债', '美元指数'],
+    sourceName: 'ISM',
+    sourceUrl: 'https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/',
+    marketExpectation: '服务业占美国经济权重更大。服务业强且价格分项高，会强化通胀黏性；服务业弱则加大增长担忧。',
+    historicalReaction: '服务业 PMI 在通胀黏性阶段常比制造业更能影响降息预期，尤其是价格和就业分项。',
+    actionPlan: '重点看商业活动、就业和价格分项；若价格强而增长弱，要警惕滞胀式定价。',
+    reason: 'ISM 服务业 PMI 能反映美国服务消费、就业和服务通胀压力。',
+    checklist: ['价格分项是否偏热', '就业分项是否转弱', '是否出现增长弱但价格强']
+  },
+  'us-gdp': {
+    market: 'US',
+    level: 'high',
+    category: 'Macro / Growth / GDP',
+    title: ({ label }) => `GDP 发布：${label}`,
+    location: '美国',
+    assets: ['SPY', 'QQQ', 'DIA', '美债', '美元指数'],
+    sourceName: 'BEA',
+    sourceUrl: 'https://www.bea.gov/news/schedule',
+    marketExpectation: 'GDP 强说明经济韧性和盈利基础仍在，但也可能推迟降息；GDP 弱会提高降息预期，同时带来衰退担忧。',
+    historicalReaction: 'GDP 对市场方向的影响取决于主线矛盾：通胀阶段强 GDP 偏利空估值，衰退阶段弱 GDP 偏利空盈利。',
+    actionPlan: '先判断市场当前交易的是通胀、降息还是衰退；重点看实际 GDP、消费和价格分项。',
+    reason: 'GDP 是经济增长总量指标，会影响企业盈利、利率路径和风险偏好。',
+    checklist: ['市场当前主线是通胀还是衰退', '消费分项是否强', '价格分项是否偏热']
+  },
+  'us-michigan': {
+    market: 'US',
+    level: 'high',
+    category: 'Macro / Sentiment / Michigan',
+    title: ({ label }) => `密歇根消费者信心与通胀预期：${label}`,
+    location: '美国',
+    assets: ['SPY', 'QQQ', 'XLY', '美债', '美元指数'],
+    sourceName: 'University of Michigan Surveys of Consumers',
+    sourceUrl: 'https://www.sca.isr.umich.edu/',
+    marketExpectation: '消费者信心影响消费预期，通胀预期影响美联储对通胀锚定的判断。长期通胀预期上升尤其容易触发鹰派定价。',
+    historicalReaction: '密歇根数据本身冲击中等，但通胀预期意外上行时，美债收益率和成长股估值反应会更明显。',
+    actionPlan: '重点看一年期和五到十年通胀预期，不要只看信心指数；若通胀预期上行，控制长久期资产暴露。',
+    reason: '密歇根通胀预期会影响市场对通胀锚定和美联储政策耐心的判断。',
+    checklist: ['一年期通胀预期是否上行', '长期通胀预期是否脱锚', '是否与实际通胀数据背离']
+  },
+  'us-sp-global-pmi-flash': {
+    market: 'US',
+    level: 'high',
+    category: 'Macro / PMI / S&P Global Flash',
+    title: ({ label }) => `标普全球 PMI 初值：${label}`,
+    location: '美国',
+    assets: ['SPY', 'QQQ', 'DIA', '美债', '美元指数'],
+    sourceName: 'S&P Global',
+    sourceUrl: 'https://www.spglobal.com/marketintelligence/en/mi/products/pmi.html',
+    marketExpectation: 'PMI 初值比很多硬数据更早，能提前改变市场对增长、订单和价格压力的判断。',
+    historicalReaction: '单次冲击通常低于 CPI/非农，但如果与 ISM、零售、就业数据同向，会强化经济拐点交易。',
+    actionPlan: '把它当领先信号；重点看制造业、服务业和综合 PMI 是否同向，而不是只看单个分项。',
+    reason: '标普全球 PMI 初值能提前反映企业景气度、需求和价格压力。',
+    checklist: ['制造业和服务业是否同向', '价格分项是否偏热', '是否与 ISM 后续数据一致']
   },
   'us-vix': {
     market: 'US',
@@ -377,10 +541,7 @@ function eventDateTimeLabel(event) {
 }
 
 function eventDisplayDateTime(event, time) {
-  if (
-    event.category === 'Derivatives / CFFEX Position Watch' ||
-    event.category === 'Derivatives / CFFEX Follow-up Review'
-  ) {
+  if (REAL_TIME_DISPLAY_CATEGORIES.has(event.category)) {
     return time === CALENDAR_DISPLAY_START_TIME ? event.start : event.end;
   }
 
@@ -402,8 +563,18 @@ function categoryLabel(category) {
     'Macro / Fed / FOMC': '美联储议息会议',
     'Macro / Fed Minutes': '美联储会议纪要',
     'Macro / Employment / NFP': '美国非农就业数据',
+    'Macro / Employment / ADP': 'ADP 小非农',
+    'Macro / Employment / Initial Claims': '美国初请失业金人数',
+    'Macro / Employment / JOLTS': '美国 JOLTS 职位空缺',
     'Macro / CPI': '美国消费者价格指数',
     'Macro / PPI': '美国生产者价格指数',
+    'Macro / PCE': '美国 PCE 通胀数据',
+    'Macro / Consumption / Retail Sales': '美国零售销售',
+    'Macro / PMI / ISM Manufacturing': '美国 ISM 制造业 PMI',
+    'Macro / PMI / ISM Services': '美国 ISM 服务业 PMI',
+    'Macro / Growth / GDP': '美国 GDP',
+    'Macro / Sentiment / Michigan': '密歇根消费者信心与通胀预期',
+    'Macro / PMI / S&P Global Flash': '标普全球 PMI 初值',
     'Derivatives / VIX Options Expiration': 'VIX 期权到期',
     'Derivatives / Index Options Last Trading Day': '美股指数期权最后交易日',
     'Derivatives / Monthly Options Expiration': '美股月度期权到期',
