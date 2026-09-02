@@ -377,6 +377,13 @@ function eventDateTimeLabel(event) {
 }
 
 function eventDisplayDateTime(event, time) {
+  if (
+    event.category === 'Derivatives / CFFEX Position Watch' ||
+    event.category === 'Derivatives / CFFEX Follow-up Review'
+  ) {
+    return time === CALENDAR_DISPLAY_START_TIME ? event.start : event.end;
+  }
+
   const date = String(event.start).slice(0, 10);
   return `${date}T${time}:00+08:00`;
 }
@@ -715,6 +722,17 @@ function renderAlarm(event, trigger) {
   ].join('\r\n');
 }
 
+function alarmTriggersForEvent(event, meta) {
+  if (
+    event.category === 'Derivatives / CFFEX Position Watch' ||
+    event.category === 'Derivatives / CFFEX Follow-up Review'
+  ) {
+    return ['PT0S'];
+  }
+
+  return meta.alarmTriggers;
+}
+
 function renderEvent(event) {
   const meta = LEVEL_META[event.level];
   const displayStart = eventDisplayDateTime(event, CALENDAR_DISPLAY_START_TIME);
@@ -732,7 +750,7 @@ function renderEvent(event) {
     'TRANSP:TRANSPARENT',
     `X-RISK-LEVEL:${event.levelLabel || meta.label}`,
     `X-SOURCE-URL:${escapeText(event.sourceUrl)}`,
-    ...meta.alarmTriggers.map((trigger) => renderAlarm(event, trigger)),
+    ...alarmTriggersForEvent(event, meta).map((trigger) => renderAlarm(event, trigger)),
     'END:VEVENT'
   ].join('\r\n');
 }
