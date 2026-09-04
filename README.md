@@ -195,6 +195,22 @@ npm run generate
 
 ## 更新日志
 
+### 2026-09-04 12:10 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/33835716237
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：233
+- 文件变化统计：1 file changed, 1 insertion(+), 1 deletion(-)
+- 变化文件：
+  - 修改：`data/us-megacap-earnings.json`
+- 最近未来事件：
+  - 2026-09-08 08:00：📊 [美股] 甲骨文（Oracle，ORCL）财报发布：2026年8月
+  - 2026-09-10 08:00：🟠 [美股] PPI 发布：2026年8月生产者价格指数
+  - 2026-09-10 20:30：🟠 [美股] 初请失业金人数：2026-09-10 当周
+  - 2026-09-11 08:00：🔴 [美股] CPI 发布：2026年8月美国通胀数据
+  - 2026-09-11 22:00：🟠 [美股] 密歇根消费者信心与通胀预期：2026年9月初值
+
 ### 2026-09-03 22:04 自动更新记录
 
 - 触发来源：schedule
