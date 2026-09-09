@@ -2580,6 +2580,33 @@
             "directionEmoji": "🟢"
           }
         ]
+      },
+      "followupReview": {
+        "tradeDate": "2026-09-08",
+        "reviewDate": "2026-09-09",
+        "createdAt": "2026-09-09 22:06:37 北京时间",
+        "sourceName": "Yahoo Finance + 中国金融期货交易所",
+        "sourceUrl": "https://query1.finance.yahoo.com/",
+        "forecastDirection": "偏涨",
+        "forecastScore": 45,
+        "forecastConfidence": "中",
+        "actualDirection": "跌",
+        "accuracy": "不准确",
+        "accuracySummary": "预测准确度：不准确，实际下一交易日为跌。",
+        "previousMarketDetail": null,
+        "reviewMarketDetail": {
+          "label": "沪深300",
+          "symbol": "000300.SS",
+          "date": "2026-09-09",
+          "close": 4572.599609375,
+          "open": 4578.5126953125,
+          "high": 4581.90380859375,
+          "low": 4548.36279296875,
+          "volume": 2915541412
+        },
+        "closeChange": -5.9130859375,
+        "closeChangeText": "-5.91",
+        "validationConclusion": "以2026-09-08中金所席位信号预测下一交易日2026-09-09沪深300日内收盘涨跌，预测为偏涨，实际为跌，结果不准确。"
       }
     }
   },
@@ -2615,7 +2642,7 @@
     ],
     "cffexPositionAnalysis": {
       "tradeDate": "2026-09-09",
-      "fetchedAt": "2026-09-09 18:00:05 北京时间",
+      "fetchedAt": "2026-09-09 22:06:35 北京时间",
       "methodology": "中信期货净变化 = 中信期货持买单量增减合计 - 中信期货持卖单量增减合计；前20机构净持仓 = 前20持买单量合计 - 前20持卖单量合计。四个品种均汇总所有合约。",
       "sourceFiles": [
         {
