@@ -2390,20 +2390,20 @@
     "fiscalQuarter": "2026年8月",
     "consensusEps": "$1.39",
     "analystCount": "11",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-after-hours",
       "timeLabel": "美股盘后",
       "symbol": "ORCL",
       "companyName": "Oracle Corporation",
-      "marketCap": "$468,134,134,000",
+      "marketCap": "$465,570,529,000",
       "fiscalQuarterEnding": "Aug/2026",
       "fiscalQuarterEndingLabel": "2026年8月",
       "epsForecast": "$1.39",
       "noOfEsts": "11",
-      "lastYearRptDt": "9/09/2025",
-      "lastYearEPS": "$1.20"
+      "lastYearRptDt": "未提供",
+      "lastYearEPS": "未提供"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
@@ -2418,9 +2418,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-08-10 09:43:13 北京时间"
+    "lastFetchedAt": "2026-08-10 09:43:13 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
+    "stageBFetchCheckedAt": "2026-09-11 18:00:23 北京时间"
   },
   {
     "market": "US",
@@ -2505,7 +2507,7 @@
       "timeLabel": "美股盘后",
       "symbol": "MU",
       "companyName": "Micron Technology, Inc.",
-      "marketCap": "$1,129,686,760,000",
+      "marketCap": "$1,160,756,460,000",
       "fiscalQuarterEnding": "Aug/2026",
       "fiscalQuarterEndingLabel": "2026年8月",
       "epsForecast": "$31.17",
