@@ -195,6 +195,24 @@ npm run generate
 
 ## 更新日志
 
+### 2026-09-10 22:01 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/34486259251
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：238
+- 文件变化统计：3 files changed, 11 insertions(+), 11 deletions(-)
+- 变化文件：
+  - 修改：`data/cffex-position-watch.json`
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-09-11 08:00：📊 [美股] 甲骨文（Oracle，ORCL）财报发布：2026年8月
+  - 2026-09-11 08:00：🔴 [美股] CPI 发布：2026年8月美国通胀数据
+  - 2026-09-11 22:00：🟠 [美股] 密歇根消费者信心与通胀预期：2026年9月初值
+  - 2026-09-16 08:00：🟠 [美股] VIX 期权到期日：9月标准到期
+  - 2026-09-17 08:00：🔴 [美股] FOMC 利率决议：9月会议声明与发布会
+
 ### 2026-09-09 22:06 自动更新记录
 
 - 触发来源：schedule

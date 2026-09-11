@@ -2422,7 +2422,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-08-10 09:43:13 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-09-11 18:00:23 北京时间"
+    "stageBFetchCheckedAt": "2026-09-11 22:00:30 北京时间"
   },
   {
     "market": "US",
@@ -2507,7 +2507,7 @@
       "timeLabel": "美股盘后",
       "symbol": "MU",
       "companyName": "Micron Technology, Inc.",
-      "marketCap": "$1,160,756,460,000",
+      "marketCap": "$1,103,880,130,000",
       "fiscalQuarterEnding": "Aug/2026",
       "fiscalQuarterEndingLabel": "2026年8月",
       "epsForecast": "$31.17",
