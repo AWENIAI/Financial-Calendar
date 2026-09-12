@@ -195,6 +195,22 @@ npm run generate
 
 ## 更新日志
 
+### 2026-09-12 12:15 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/34672494304
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：239
+- 文件变化统计：1 file changed, 1 insertion(+), 1 deletion(-)
+- 变化文件：
+  - 修改：`data/us-megacap-earnings.json`
+- 最近未来事件：
+  - 2026-09-16 08:00：🟠 [美股] VIX 期权到期日：9月标准到期
+  - 2026-09-17 08:00：🔴 [美股] FOMC 利率决议：9月会议声明与发布会
+  - 2026-09-17 20:30：🟠 [美股] 零售销售：2026年8月
+  - 2026-09-17 20:30：🟠 [美股] 初请失业金人数：2026-09-17 当周
+  - 2026-09-18 08:00：🟠 [美股] 指数期权 AM-settled 最后交易日提醒：9月 AM-settled 指数期权
+
 ### 2026-09-11 22:00 自动更新记录
 
 - 触发来源：schedule
