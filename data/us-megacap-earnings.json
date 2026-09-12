@@ -2422,7 +2422,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-08-10 09:43:13 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-09-12 12:15:23 北京时间"
+    "stageBFetchCheckedAt": "2026-09-12 18:00:24 北京时间"
   },
   {
     "market": "US",
@@ -2453,7 +2453,7 @@
       "timeLabel": "美股盘后",
       "symbol": "COST",
       "companyName": "Costco Wholesale Corporation",
-      "marketCap": "$400,283,959,000",
+      "marketCap": "$400,186,409,000",
       "fiscalQuarterEnding": "Aug/2026",
       "fiscalQuarterEndingLabel": "2026年8月",
       "epsForecast": "$6.48",
