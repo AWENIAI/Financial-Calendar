@@ -2422,7 +2422,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-08-10 09:43:13 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-09-12 18:00:24 北京时间"
+    "stageBFetchCheckedAt": "2026-09-13 18:00:25 北京时间"
   },
   {
     "market": "US",
@@ -2531,5 +2531,113 @@
     "recordStatus": "跟踪中：阶段A财报发布前",
     "analysisLocked": false,
     "lastFetchedAt": "2026-08-24 18:32:26 北京时间"
+  },
+  {
+    "market": "US",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Earnings / US Megacap",
+    "title": "强生（Johnson & Johnson，JNJ）财报发布：2026年9月",
+    "start": "2026-10-13T20:30:00+08:00",
+    "end": "2026-10-13T21:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "美国",
+    "assets": [
+      "JNJ",
+      "QQQ",
+      "SPY",
+      "纳斯达克100"
+    ],
+    "companyChineseName": "强生",
+    "companyEnglishName": "Johnson & Johnson",
+    "ticker": "JNJ",
+    "fiscalQuarter": "2026年9月",
+    "consensusEps": "$2.95",
+    "analystCount": "6",
+    "analysisPhase": "A",
+    "analysisPhaseLabel": "阶段A：财报发布前",
+    "nasdaqCalendarFields": {
+      "time": "time-pre-market",
+      "timeLabel": "美股盘前",
+      "symbol": "JNJ",
+      "companyName": "Johnson & Johnson",
+      "marketCap": "$641,876,490,000",
+      "fiscalQuarterEnding": "Sep/2026",
+      "fiscalQuarterEndingLabel": "2026年9月",
+      "epsForecast": "$2.95",
+      "noOfEsts": "6",
+      "lastYearRptDt": "10/14/2025",
+      "lastYearEPS": "$2.80"
+    },
+    "timeStatus": "confirmed",
+    "sourceName": "纳斯达克财报日历",
+    "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $2.95，覆盖分析师数量为 6。",
+    "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
+    "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
+    "reason": "强生（Johnson & Johnson，JNJ）是订阅股票池 35 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "checklist": [
+      "是否持有该股或相关 ETF",
+      "是否能承受盘后跳空",
+      "是否需要提前降低仓位",
+      "是否关注财报后指引"
+    ],
+    "recordStatus": "跟踪中：阶段A财报发布前",
+    "analysisLocked": false,
+    "lastFetchedAt": "2026-09-13 18:00:08 北京时间"
+  },
+  {
+    "market": "US",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Earnings / US Megacap",
+    "title": "摩根大通（JPMorgan Chase，JPM）财报发布：2026年9月",
+    "start": "2026-10-13T20:30:00+08:00",
+    "end": "2026-10-13T21:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "美国",
+    "assets": [
+      "JPM",
+      "QQQ",
+      "SPY",
+      "纳斯达克100"
+    ],
+    "companyChineseName": "摩根大通",
+    "companyEnglishName": "JPMorgan Chase",
+    "ticker": "JPM",
+    "fiscalQuarter": "2026年9月",
+    "consensusEps": "$5.84",
+    "analystCount": "6",
+    "analysisPhase": "A",
+    "analysisPhaseLabel": "阶段A：财报发布前",
+    "nasdaqCalendarFields": {
+      "time": "time-pre-market",
+      "timeLabel": "美股盘前",
+      "symbol": "JPM",
+      "companyName": "J P Morgan Chase & Co",
+      "marketCap": "$939,828,310,000",
+      "fiscalQuarterEnding": "Sep/2026",
+      "fiscalQuarterEndingLabel": "2026年9月",
+      "epsForecast": "$5.84",
+      "noOfEsts": "6",
+      "lastYearRptDt": "10/14/2025",
+      "lastYearEPS": "$5.07"
+    },
+    "timeStatus": "confirmed",
+    "sourceName": "纳斯达克财报日历",
+    "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $5.84，覆盖分析师数量为 6。",
+    "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
+    "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
+    "reason": "摩根大通（JPMorgan Chase，JPM）是订阅股票池 35 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "checklist": [
+      "是否持有该股或相关 ETF",
+      "是否能承受盘后跳空",
+      "是否需要提前降低仓位",
+      "是否关注财报后指引"
+    ],
+    "recordStatus": "跟踪中：阶段A财报发布前",
+    "analysisLocked": false,
+    "lastFetchedAt": "2026-09-13 18:00:08 北京时间"
   }
 ]
