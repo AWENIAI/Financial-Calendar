@@ -2639,5 +2639,59 @@
     "recordStatus": "跟踪中：阶段A财报发布前",
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-13 18:00:08 北京时间"
+  },
+  {
+    "market": "US",
+    "level": "high",
+    "levelLabel": "高",
+    "category": "Earnings / US Megacap",
+    "title": "美国银行（Bank of America，BAC）财报发布：2026年9月",
+    "start": "2026-10-14T20:30:00+08:00",
+    "end": "2026-10-14T21:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "location": "美国",
+    "assets": [
+      "BAC",
+      "QQQ",
+      "SPY",
+      "纳斯达克100"
+    ],
+    "companyChineseName": "美国银行",
+    "companyEnglishName": "Bank of America",
+    "ticker": "BAC",
+    "fiscalQuarter": "2026年9月",
+    "consensusEps": "$1.18",
+    "analystCount": "6",
+    "analysisPhase": "A",
+    "analysisPhaseLabel": "阶段A：财报发布前",
+    "nasdaqCalendarFields": {
+      "time": "time-pre-market",
+      "timeLabel": "美股盘前",
+      "symbol": "BAC",
+      "companyName": "Bank of America Corporation",
+      "marketCap": "$437,466,333,000",
+      "fiscalQuarterEnding": "Sep/2026",
+      "fiscalQuarterEndingLabel": "2026年9月",
+      "epsForecast": "$1.18",
+      "noOfEsts": "6",
+      "lastYearRptDt": "10/15/2025",
+      "lastYearEPS": "$1.06"
+    },
+    "timeStatus": "confirmed",
+    "sourceName": "纳斯达克财报日历",
+    "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $1.18，覆盖分析师数量为 6。",
+    "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
+    "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
+    "reason": "美国银行（Bank of America，BAC）是订阅股票池 35 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
+    "checklist": [
+      "是否持有该股或相关 ETF",
+      "是否能承受盘后跳空",
+      "是否需要提前降低仓位",
+      "是否关注财报后指引"
+    ],
+    "recordStatus": "跟踪中：阶段A财报发布前",
+    "analysisLocked": false,
+    "lastFetchedAt": "2026-09-14 18:00:07 北京时间"
   }
 ]
