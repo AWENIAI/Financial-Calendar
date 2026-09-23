@@ -195,6 +195,24 @@ npm run generate
 
 ## 更新日志
 
+### 2026-09-22 22:19 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/35739343897
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：252
+- 文件变化统计：3 files changed, 41 insertions(+), 14 deletions(-)
+- 变化文件：
+  - 修改：`data/cffex-position-watch.json`
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-09-23 21:45：🟠 [美股] 标普全球 PMI 初值：2026年9月
+  - 2026-09-24 20:30：🟠 [美股] 初请失业金人数：2026-09-24 当周
+  - 2026-09-25 08:00：📊 [美股] 好市多（Costco，COST）财报发布：2026年8月
+  - 2026-09-25 20:30：🔴 [美股] PCE 发布：2026年8月个人消费支出物价
+  - 2026-09-25 22:00：🟠 [美股] 密歇根消费者信心与通胀预期：2026年9月终值
+
 ### 2026-09-22 00:09 自动更新记录
 
 - 触发来源：schedule
