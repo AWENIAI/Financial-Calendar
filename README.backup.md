@@ -195,6 +195,22 @@ npm run generate
 
 ## 更新日志
 
+### 2026-09-26 12:39 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/36218440265
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：254
+- 文件变化统计：1 file changed, 1 insertion(+), 1 deletion(-)
+- 变化文件：
+  - 修改：`data/us-megacap-earnings.json`
+- 最近未来事件：
+  - 2026-09-29 08:00：🟠 [A股] 每月倒数第二个中国营业日：9月
+  - 2026-09-29 08:00：🟠 [A股] A50 期货最后交易日：9月合约
+  - 2026-09-29 08:00：🟠 [港股] 港股指数期货/期权月度到期提醒：9月
+  - 2026-09-29 22:00：🟠 [美股] JOLTS 职位空缺：2026年8月
+  - 2026-09-30 20:15：🟠 [美股] ADP 小非农：2026年9月私营就业报告
+
 ### 2026-09-25 22:56 自动更新记录
 
 - 触发来源：schedule
