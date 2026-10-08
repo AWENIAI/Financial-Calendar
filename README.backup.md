@@ -195,6 +195,24 @@ npm run generate
 
 ## 更新日志
 
+### 2026-10-08 01:10 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/37656932490
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：278
+- 文件变化统计：3 files changed, 139 insertions(+), 139 deletions(-)
+- 变化文件：
+  - 修改：`data/cffex-position-watch.json`
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-10-08 08:00：🟠 [美股] FOMC 会议纪要发布：9月会议纪要
+  - 2026-10-08 20:30：🟠 [美股] 初请失业金人数：2026-10-08 当周
+  - 2026-10-13 08:00：📊 [美股] 强生（Johnson & Johnson，JNJ）财报发布：2026年9月
+  - 2026-10-13 08:00：📊 [美股] 摩根大通（JPMorgan Chase，JPM）财报发布：2026年9月
+  - 2026-10-13 08:00：📊 [美股] 联合健康（UnitedHealth，UNH）财报发布：2026年9月
+
 ### 2026-10-07 00:27 自动更新记录
 
 - 触发来源：schedule
