@@ -2590,7 +2590,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-13 18:00:08 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-15 18:00:21 北京时间"
+    "stageBFetchCheckedAt": "2026-10-15 22:37:41 北京时间"
   },
   {
     "market": "US",
@@ -2646,7 +2646,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-13 18:00:08 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-15 18:00:26 北京时间"
+    "stageBFetchCheckedAt": "2026-10-15 22:37:44 北京时间"
   },
   {
     "market": "US",
@@ -2701,8 +2701,8 @@
     "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-17 22:36:24 北京时间",
-    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-15 18:00:36 北京时间"
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
+    "stageBFetchCheckedAt": "2026-10-15 22:37:44 北京时间"
   },
   {
     "market": "US",
@@ -2757,8 +2757,8 @@
     "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-14 18:00:07 北京时间",
-    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-15 18:00:40 北京时间"
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
+    "stageBFetchCheckedAt": "2026-10-15 22:37:44 北京时间"
   },
   {
     "market": "US",
@@ -2780,8 +2780,8 @@
     "companyEnglishName": "Meta Platforms",
     "ticker": "META",
     "fiscalQuarter": "2026年9月",
-    "consensusEps": "$6.39",
-    "analystCount": "12",
+    "consensusEps": "$6.35",
+    "analystCount": "11",
     "analysisPhase": "A",
     "analysisPhaseLabel": "阶段A：财报发布前",
     "nasdaqCalendarFields": {
@@ -2792,15 +2792,15 @@
       "marketCap": "$1,942,473,540,000",
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
-      "epsForecast": "$6.39",
-      "noOfEsts": "12",
+      "epsForecast": "$6.35",
+      "noOfEsts": "11",
       "lastYearRptDt": "10/29/2025",
       "lastYearEPS": "$7.25"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
     "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
-    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $6.39，覆盖分析师数量为 12。",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $6.35，覆盖分析师数量为 11。",
     "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
     "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
     "reason": "Meta 平台（Meta Platforms，META）是订阅股票池 35 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
@@ -3036,8 +3036,8 @@
     "levelLabel": "高",
     "category": "Earnings / US Megacap",
     "title": "希捷科技（Seagate Technology，STX）财报发布：2026年9月",
-    "start": "2026-10-27T21:30:00+08:00",
-    "end": "2026-10-27T22:00:00+08:00",
+    "start": "2026-10-28T04:05:00+08:00",
+    "end": "2026-10-28T04:35:00+08:00",
     "timezone": "Asia/Shanghai",
     "location": "美国",
     "assets": [
@@ -3055,8 +3055,8 @@
     "analysisPhase": "A",
     "analysisPhaseLabel": "阶段A：财报发布前",
     "nasdaqCalendarFields": {
-      "time": "time-not-supplied",
-      "timeLabel": "未提供具体时间",
+      "time": "time-after-hours",
+      "timeLabel": "美股盘后",
       "symbol": "STX",
       "companyName": "Seagate Technology Holdings PLC",
       "marketCap": "$170,898,506,000",
@@ -3067,7 +3067,7 @@
       "lastYearRptDt": "10/28/2025",
       "lastYearEPS": "$2.51"
     },
-    "timeStatus": "estimated",
+    "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
     "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
     "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $7.11，覆盖分析师数量为 4。",
@@ -3320,7 +3320,7 @@
     "companyEnglishName": "Eli Lilly",
     "ticker": "LLY",
     "fiscalQuarter": "2026年9月",
-    "consensusEps": "$7.54",
+    "consensusEps": "$6.40",
     "analystCount": "4",
     "analysisPhase": "A",
     "analysisPhaseLabel": "阶段A：财报发布前",
@@ -3332,7 +3332,7 @@
       "marketCap": "$1,098,102,410,000",
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
-      "epsForecast": "$7.54",
+      "epsForecast": "$6.40",
       "noOfEsts": "4",
       "lastYearRptDt": "10/30/2025",
       "lastYearEPS": "$7.02"
@@ -3340,7 +3340,7 @@
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
     "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
-    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $7.54，覆盖分析师数量为 4。",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $6.40，覆盖分析师数量为 4。",
     "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
     "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
     "reason": "礼来（Eli Lilly，LLY）是订阅股票池 35 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
@@ -3537,7 +3537,7 @@
     "ticker": "ABBV",
     "fiscalQuarter": "2026年9月",
     "consensusEps": "$3.76",
-    "analystCount": "4",
+    "analystCount": "5",
     "analysisPhase": "A",
     "analysisPhaseLabel": "阶段A：财报发布前",
     "nasdaqCalendarFields": {
@@ -3549,14 +3549,14 @@
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$3.76",
-      "noOfEsts": "4",
+      "noOfEsts": "5",
       "lastYearRptDt": "10/31/2025",
       "lastYearEPS": "$1.86"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
     "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
-    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $3.76，覆盖分析师数量为 4。",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $3.76，覆盖分析师数量为 5。",
     "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
     "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
     "reason": "艾伯维（AbbVie，ABBV）是订阅股票池 35 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
@@ -3590,7 +3590,7 @@
     "companyEnglishName": "Chevron",
     "ticker": "CVX",
     "fiscalQuarter": "2026年9月",
-    "consensusEps": "$4.66",
+    "consensusEps": "$4.62",
     "analystCount": "6",
     "analysisPhase": "A",
     "analysisPhaseLabel": "阶段A：财报发布前",
@@ -3602,7 +3602,7 @@
       "marketCap": "$430,184,694,000",
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
-      "epsForecast": "$4.66",
+      "epsForecast": "$4.62",
       "noOfEsts": "6",
       "lastYearRptDt": "10/31/2025",
       "lastYearEPS": "$1.85"
@@ -3610,7 +3610,7 @@
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
     "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
-    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $4.66，覆盖分析师数量为 6。",
+    "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $4.62，覆盖分析师数量为 6。",
     "historicalReaction": "美股超大市值公司财报常会影响指数权重、行业链条和盘后期货，财报后第一个常规交易时段更容易放大波动。",
     "actionPlan": "财报前避免临时加重仓；如果已有仓位，先确认能承受盘后跳空。财报出来后优先看指引和盘后成交反应，再决定是否调整。",
     "reason": "雪佛龙（Chevron，CVX）是订阅股票池 35 个重点美股标的之一，财报可能影响相关行业、QQQ/SPY 权重和市场风险偏好。",
@@ -3977,7 +3977,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "BRK.B",
       "companyName": "Berkshire Hathaway Inc.",
-      "marketCap": "$1,120,928,270,000",
+      "marketCap": "$1,134,193,800,000",
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$5.91",
