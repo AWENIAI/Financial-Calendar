@@ -195,6 +195,24 @@ npm run generate
 
 ## 更新日志
 
+### 2026-10-16 22:28 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/38915989922
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：287
+- 文件变化统计：3 files changed, 42 insertions(+), 15 deletions(-)
+- 变化文件：
+  - 修改：`data/cffex-position-watch.json`
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-10-17 08:00：🟠 [美股] 月度期权到期日：OPEX 风险窗口（10月月度期权）
+  - 2026-10-21 08:00：🟠 [美股] VIX 期权到期日：10月标准到期
+  - 2026-10-22 08:00：📊 [美股] Meta 平台（Meta Platforms，META）财报发布：2026年9月
+  - 2026-10-22 08:00：📊 [美股] 泛林集团（Lam Research，LRCX）财报发布：2026年9月
+  - 2026-10-22 08:00：📊 [美股] 特斯拉（Tesla，TSLA）财报发布：2026年9月
+
 ### 2026-10-16 12:11 自动更新记录
 
 - 触发来源：schedule
