@@ -2898,8 +2898,8 @@
     "fiscalQuarter": "2026年9月",
     "consensusEps": "$4.98",
     "analystCount": "12",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-after-hours",
       "timeLabel": "美股盘后",
@@ -2910,8 +2910,8 @@
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$4.98",
       "noOfEsts": "12",
-      "lastYearRptDt": "10/29/2025",
-      "lastYearEPS": "$7.25"
+      "lastYearRptDt": "未提供",
+      "lastYearEPS": "未提供"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
@@ -2926,9 +2926,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-10-05 18:00:06 北京时间"
+    "lastFetchedAt": "2026-10-05 18:00:06 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
+    "stageBFetchCheckedAt": "2026-10-22 18:00:19 北京时间"
   },
   {
     "market": "US",
@@ -2952,8 +2954,8 @@
     "fiscalQuarter": "2026年9月",
     "consensusEps": "$2.17",
     "analystCount": "9",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-after-hours",
       "timeLabel": "美股盘后",
@@ -2964,8 +2966,8 @@
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$2.17",
       "noOfEsts": "9",
-      "lastYearRptDt": "10/22/2025",
-      "lastYearEPS": "$1.26"
+      "lastYearRptDt": "未提供",
+      "lastYearEPS": "未提供"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
@@ -2980,9 +2982,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-09-28 18:00:06 北京时间"
+    "lastFetchedAt": "2026-09-28 18:00:06 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
+    "stageBFetchCheckedAt": "2026-10-22 18:00:22 北京时间"
   },
   {
     "market": "US",
@@ -3006,8 +3010,8 @@
     "fiscalQuarter": "2026年9月",
     "consensusEps": "$0.22",
     "analystCount": "10",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-after-hours",
       "timeLabel": "美股盘后",
@@ -3018,8 +3022,8 @@
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$0.22",
       "noOfEsts": "10",
-      "lastYearRptDt": "10/22/2025",
-      "lastYearEPS": "$0.37"
+      "lastYearRptDt": "未提供",
+      "lastYearEPS": "未提供"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
@@ -3034,9 +3038,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-09-28 18:00:06 北京时间"
+    "lastFetchedAt": "2026-09-28 18:00:06 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
+    "stageBFetchCheckedAt": "2026-10-22 18:00:23 北京时间"
   },
   {
     "market": "US",
@@ -4255,7 +4261,7 @@
       "timeLabel": "美股盘前",
       "symbol": "WMT",
       "companyName": "Walmart Inc.",
-      "marketCap": "$941,735,670,000",
+      "marketCap": "$934,992,020,000",
       "fiscalQuarterEnding": "Oct/2026",
       "fiscalQuarterEndingLabel": "2026年10月",
       "epsForecast": "$0.64",
