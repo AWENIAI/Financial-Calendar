@@ -195,6 +195,24 @@ npm run generate
 
 ## 更新日志
 
+### 2026-10-22 22:50 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/39799092833
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：293
+- 文件变化统计：3 files changed, 84 insertions(+), 57 deletions(-)
+- 变化文件：
+  - 修改：`data/cffex-position-watch.json`
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-10-23 08:00：📊 [美股] 西部数据（Western Digital，WDC）财报发布：2026年9月
+  - 2026-10-23 21:45：🟠 [美股] 标普全球 PMI 初值：2026年10月
+  - 2026-10-27 08:00：📊 [美股] 可口可乐（Coca-Cola，KO）财报发布：2026年9月
+  - 2026-10-28 08:00：📊 [美股] 希捷科技（Seagate Technology，STX）财报发布：2026年9月
+  - 2026-10-28 08:00：📊 [美股] 维萨（Visa，V）财报发布：2026年9月
+
 ### 2026-10-21 22:49 自动更新记录
 
 - 触发来源：schedule
