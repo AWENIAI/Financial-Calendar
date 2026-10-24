@@ -2930,7 +2930,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-10-05 18:00:06 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-24 12:15:31 北京时间"
+    "stageBFetchCheckedAt": "2026-10-24 18:00:26 北京时间"
   },
   {
     "market": "US",
@@ -2986,7 +2986,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-28 18:00:06 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-24 12:15:33 北京时间"
+    "stageBFetchCheckedAt": "2026-10-24 18:00:29 北京时间"
   },
   {
     "market": "US",
@@ -3042,7 +3042,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-28 18:00:06 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-24 12:15:33 北京时间"
+    "stageBFetchCheckedAt": "2026-10-24 18:00:30 北京时间"
   },
   {
     "market": "US",
@@ -3098,7 +3098,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-29 01:55:53 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-24 12:15:33 北京时间"
+    "stageBFetchCheckedAt": "2026-10-24 18:00:31 北京时间"
   },
   {
     "market": "US",
@@ -3129,7 +3129,7 @@
       "timeLabel": "美股盘前",
       "symbol": "KO",
       "companyName": "Coca-Cola Company (The)",
-      "marketCap": "$398,760,280,000",
+      "marketCap": "$410,205,061,000",
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$0.87",
@@ -3183,7 +3183,7 @@
       "timeLabel": "美股盘后",
       "symbol": "STX",
       "companyName": "Seagate Technology Holdings PLC",
-      "marketCap": "$159,391,678,000",
+      "marketCap": "$146,869,338,000",
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$7.17",
@@ -3237,7 +3237,7 @@
       "timeLabel": "美股盘后",
       "symbol": "V",
       "companyName": "Visa Inc.",
-      "marketCap": "$728,728,140,000",
+      "marketCap": "$740,324,150,000",
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$3.43",
@@ -3993,7 +3993,7 @@
       "timeLabel": "美股盘后",
       "symbol": "AMD",
       "companyName": "Advanced Micro Devices, Inc.",
-      "marketCap": "$902,301,610,000",
+      "marketCap": "$829,183,030,000",
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$1.68",
@@ -4263,7 +4263,7 @@
       "timeLabel": "美股盘前",
       "symbol": "WMT",
       "companyName": "Walmart Inc.",
-      "marketCap": "$934,595,330,000",
+      "marketCap": "$960,935,360,000",
       "fiscalQuarterEnding": "Oct/2026",
       "fiscalQuarterEndingLabel": "2026年10月",
       "epsForecast": "$0.64",
