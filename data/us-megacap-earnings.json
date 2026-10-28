@@ -3134,8 +3134,8 @@
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$0.87",
       "noOfEsts": "8",
-      "lastYearRptDt": "10/21/2025",
-      "lastYearEPS": "$0.82"
+      "lastYearRptDt": "未提供",
+      "lastYearEPS": "未提供"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
@@ -3154,7 +3154,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-20 18:00:07 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-27 23:40:57 北京时间"
+    "stageBFetchCheckedAt": "2026-10-28 18:00:20 北京时间"
   },
   {
     "market": "US",
@@ -3178,8 +3178,8 @@
     "fiscalQuarter": "2026年9月",
     "consensusEps": "$7.17",
     "analystCount": "4",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-after-hours",
       "timeLabel": "美股盘后",
@@ -3190,8 +3190,8 @@
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$7.17",
       "noOfEsts": "4",
-      "lastYearRptDt": "10/28/2025",
-      "lastYearEPS": "$2.51"
+      "lastYearRptDt": "未提供",
+      "lastYearEPS": "未提供"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
@@ -3206,9 +3206,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-09-27 18:00:07 北京时间"
+    "lastFetchedAt": "2026-09-27 18:00:07 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
+    "stageBFetchCheckedAt": "2026-10-28 18:00:23 北京时间"
   },
   {
     "market": "US",
@@ -3232,8 +3234,8 @@
     "fiscalQuarter": "2026年9月",
     "consensusEps": "$3.43",
     "analystCount": "12",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-after-hours",
       "timeLabel": "美股盘后",
@@ -3244,8 +3246,8 @@
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$3.43",
       "noOfEsts": "12",
-      "lastYearRptDt": "10/28/2025",
-      "lastYearEPS": "$2.98"
+      "lastYearRptDt": "未提供",
+      "lastYearEPS": "未提供"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
@@ -3260,9 +3262,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-09-27 18:00:07 北京时间"
+    "lastFetchedAt": "2026-09-27 18:00:07 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
+    "stageBFetchCheckedAt": "2026-10-28 18:00:24 北京时间"
   },
   {
     "market": "US",
