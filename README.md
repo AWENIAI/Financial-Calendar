@@ -195,6 +195,22 @@ npm run generate
 
 ## 更新日志
 
+### 2026-10-30 13:26 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/41008403389
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：298
+- 文件变化统计：1 file changed, 6 insertions(+), 6 deletions(-)
+- 变化文件：
+  - 修改：`data/us-megacap-earnings.json`
+- 最近未来事件：
+  - 2026-10-30 20:30：🔴 [美股] PCE 发布：2026年9月个人消费支出物价
+  - 2026-10-30 22:00：🟠 [美股] 密歇根消费者信心与通胀预期：2026年10月终值
+  - 2026-11-02 23:00：🟠 [美股] ISM 制造业 PMI：2026年10月
+  - 2026-11-03 08:00：📊 [美股] 帕兰提尔（Palantir Technologies，PLTR）财报发布：2026年9月
+  - 2026-11-03 08:00：📊 [美股] 苹果（Apple，AAPL）财报发布：2026年9月
+
 ### 2026-10-30 00:33 自动更新记录
 
 - 触发来源：schedule

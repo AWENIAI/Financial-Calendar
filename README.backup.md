@@ -195,6 +195,24 @@ npm run generate
 
 ## 更新日志
 
+### 2026-10-30 00:33 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/40912666563
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：298
+- 文件变化统计：3 files changed, 123 insertions(+), 57 deletions(-)
+- 变化文件：
+  - 修改：`data/cffex-position-watch.json`
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-10-30 08:00：📊 [美股] 亚马逊（Amazon，AMZN）财报发布：2026年9月
+  - 2026-10-30 08:00：📊 [美股] 英特尔（Intel，INTC）财报发布：2026年9月
+  - 2026-10-30 08:00：📊 [美股] 闪迪（SanDisk，SNDK）财报发布：2026年9月
+  - 2026-10-30 08:00：🟠 [A股] A股三季报披露截止前最后交易日窗口：业绩与公告风险
+  - 2026-10-30 08:00：📊 [美股] 埃克森美孚（Exxon Mobil，XOM）财报发布：2026年9月
+
 ### 2026-10-29 00:24 自动更新记录
 
 - 触发来源：schedule
