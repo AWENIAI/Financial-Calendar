@@ -3437,8 +3437,8 @@
     "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
     "lastFetchedAt": "2026-10-05 18:00:06 北京时间",
-    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-30 18:00:25 北京时间"
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
+    "stageBFetchCheckedAt": "2026-10-31 00:28:39 北京时间"
   },
   {
     "market": "US",
@@ -3493,8 +3493,8 @@
     "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-29 01:55:53 北京时间",
-    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-30 18:00:25 北京时间"
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
+    "stageBFetchCheckedAt": "2026-10-31 00:28:43 北京时间"
   },
   {
     "market": "US",
@@ -3550,7 +3550,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-10-05 18:00:06 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-30 18:00:26 北京时间"
+    "stageBFetchCheckedAt": "2026-10-31 00:28:43 北京时间"
   },
   {
     "market": "US",
@@ -3606,7 +3606,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-29 01:55:53 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-30 18:00:27 北京时间"
+    "stageBFetchCheckedAt": "2026-10-31 00:28:43 北京时间"
   },
   {
     "market": "US",
@@ -3662,7 +3662,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-29 01:55:53 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-30 18:00:27 北京时间"
+    "stageBFetchCheckedAt": "2026-10-31 00:28:43 北京时间"
   },
   {
     "market": "US",
@@ -3718,7 +3718,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-22 00:09:29 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-30 18:00:28 北京时间"
+    "stageBFetchCheckedAt": "2026-10-31 00:28:44 北京时间"
   },
   {
     "market": "US",
@@ -3772,7 +3772,9 @@
     ],
     "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-10-02 00:50:41 北京时间"
+    "lastFetchedAt": "2026-10-02 00:50:41 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
+    "stageBFetchCheckedAt": "2026-10-31 00:28:44 北京时间"
   },
   {
     "market": "US",
@@ -3796,14 +3798,14 @@
     "fiscalQuarter": "2026年9月",
     "consensusEps": "$3.90",
     "analystCount": "6",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-pre-market",
       "timeLabel": "美股盘前",
       "symbol": "XOM",
       "companyName": "ExxonMobil Holdings Corporation",
-      "marketCap": "$748,450,220,000",
+      "marketCap": "$753,672,320,000",
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$3.90",
@@ -3824,9 +3826,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-09-30 00:18:16 北京时间"
+    "lastFetchedAt": "2026-09-30 00:18:16 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
+    "stageBFetchCheckedAt": "2026-10-31 00:28:44 北京时间"
   },
   {
     "market": "US",
@@ -3850,14 +3854,14 @@
     "fiscalQuarter": "2026年9月",
     "consensusEps": "$3.74",
     "analystCount": "5",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-pre-market",
       "timeLabel": "美股盘前",
       "symbol": "ABBV",
       "companyName": "AbbVie Inc.",
-      "marketCap": "$505,377,882,000",
+      "marketCap": "$513,860,043,000",
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$3.74",
@@ -3878,7 +3882,7 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-30 00:18:16 北京时间"
   },
@@ -3904,14 +3908,14 @@
     "fiscalQuarter": "2026年9月",
     "consensusEps": "$4.78",
     "analystCount": "7",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-pre-market",
       "timeLabel": "美股盘前",
       "symbol": "CVX",
       "companyName": "Chevron Corporation",
-      "marketCap": "$452,846,780,000",
+      "marketCap": "$457,312,010,000",
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$4.78",
@@ -3932,7 +3936,7 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-30 00:18:16 北京时间"
   },
@@ -3965,7 +3969,7 @@
       "timeLabel": "美股盘后",
       "symbol": "PLTR",
       "companyName": "Palantir Technologies Inc.",
-      "marketCap": "$472,748,130,000",
+      "marketCap": "$471,811,359,000",
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$0.33",
@@ -4019,7 +4023,7 @@
       "timeLabel": "美股盘后",
       "symbol": "AAPL",
       "companyName": "Apple Inc.",
-      "marketCap": "$5,017,916,900,000",
+      "marketCap": "$5,092,055,400,000",
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$1.98",
@@ -4073,7 +4077,7 @@
       "timeLabel": "美股盘后",
       "symbol": "AMD",
       "companyName": "Advanced Micro Devices, Inc.",
-      "marketCap": "$944,288,890,000",
+      "marketCap": "$924,666,490,000",
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$1.68",
@@ -4127,7 +4131,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "BRK.B",
       "companyName": "Berkshire Hathaway Inc.",
-      "marketCap": "$1,166,315,620,000",
+      "marketCap": "$1,174,292,140,000",
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$5.91",
@@ -4181,7 +4185,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "CSCO",
       "companyName": "Cisco Systems, Inc.",
-      "marketCap": "$434,827,919,000",
+      "marketCap": "$428,125,520,000",
       "fiscalQuarterEnding": "Oct/2026",
       "fiscalQuarterEndingLabel": "2026年10月",
       "epsForecast": "$1.15",
@@ -4235,7 +4239,7 @@
       "timeLabel": "美股盘后",
       "symbol": "AMAT",
       "companyName": "Applied Materials, Inc.",
-      "marketCap": "$330,136,551,000",
+      "marketCap": "$334,628,291,000",
       "fiscalQuarterEnding": "Oct/2026",
       "fiscalQuarterEndingLabel": "2026年10月",
       "epsForecast": "$4.06",
@@ -4266,8 +4270,8 @@
     "levelLabel": "高",
     "category": "Earnings / US Megacap",
     "title": "英伟达（NVIDIA，NVDA）财报发布：2026年10月",
-    "start": "2026-11-18T21:30:00+08:00",
-    "end": "2026-11-18T22:00:00+08:00",
+    "start": "2026-11-18T04:05:00+08:00",
+    "end": "2026-11-18T04:35:00+08:00",
     "timezone": "Asia/Shanghai",
     "location": "美国",
     "assets": [
@@ -4285,11 +4289,11 @@
     "analysisPhase": "A",
     "analysisPhaseLabel": "阶段A：财报发布前",
     "nasdaqCalendarFields": {
-      "time": "time-not-supplied",
-      "timeLabel": "未提供具体时间",
+      "time": "time-after-hours",
+      "timeLabel": "美股盘后",
       "symbol": "NVDA",
       "companyName": "NVIDIA Corporation",
-      "marketCap": "$5,190,657,800,000",
+      "marketCap": "$5,149,206,000,000",
       "fiscalQuarterEnding": "Oct/2026",
       "fiscalQuarterEndingLabel": "2026年10月",
       "epsForecast": "$2.49",
@@ -4297,7 +4301,7 @@
       "lastYearRptDt": "11/19/2025",
       "lastYearEPS": "$1.24"
     },
-    "timeStatus": "estimated",
+    "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
     "sourceUrl": "https://www.nasdaq.com/market-activity/earnings",
     "marketExpectation": "市场会重点看营收、利润率、指引和管理层措辞。当前纳斯达克共识每股收益为 $2.49，覆盖分析师数量为 13。",
@@ -4343,7 +4347,7 @@
       "timeLabel": "美股盘前",
       "symbol": "WMT",
       "companyName": "Walmart Inc.",
-      "marketCap": "$942,291,030,000",
+      "marketCap": "$961,966,700,000",
       "fiscalQuarterEnding": "Oct/2026",
       "fiscalQuarterEndingLabel": "2026年10月",
       "epsForecast": "$0.64",
