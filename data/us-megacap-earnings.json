@@ -3438,7 +3438,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-10-05 18:00:06 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-31 13:11:16 北京时间"
+    "stageBFetchCheckedAt": "2026-10-31 18:00:23 北京时间"
   },
   {
     "market": "US",
@@ -3494,7 +3494,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-29 01:55:53 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-31 13:11:20 北京时间"
+    "stageBFetchCheckedAt": "2026-10-31 18:00:27 北京时间"
   },
   {
     "market": "US",
@@ -3549,8 +3549,8 @@
     "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
     "lastFetchedAt": "2026-10-05 18:00:06 北京时间",
-    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-31 13:11:22 北京时间"
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
+    "stageBFetchCheckedAt": "2026-10-31 18:00:28 北京时间"
   },
   {
     "market": "US",
@@ -3606,7 +3606,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-29 01:55:53 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-31 13:11:22 北京时间"
+    "stageBFetchCheckedAt": "2026-10-31 18:00:29 北京时间"
   },
   {
     "market": "US",
@@ -3662,7 +3662,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-29 01:55:53 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-31 13:11:22 北京时间"
+    "stageBFetchCheckedAt": "2026-10-31 18:00:30 北京时间"
   },
   {
     "market": "US",
@@ -3718,7 +3718,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-22 00:09:29 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-31 13:11:22 北京时间"
+    "stageBFetchCheckedAt": "2026-10-31 18:00:30 北京时间"
   },
   {
     "market": "US",
@@ -3774,7 +3774,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-10-02 00:50:41 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-31 13:11:22 北京时间"
+    "stageBFetchCheckedAt": "2026-10-31 18:00:31 北京时间"
   },
   {
     "market": "US",
@@ -3810,8 +3810,8 @@
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$3.90",
       "noOfEsts": "6",
-      "lastYearRptDt": "10/31/2025",
-      "lastYearEPS": "$1.88"
+      "lastYearRptDt": "未提供",
+      "lastYearEPS": "未提供"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
@@ -3830,7 +3830,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-30 00:18:16 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-31 13:11:22 北京时间"
+    "stageBFetchCheckedAt": "2026-10-31 18:00:32 北京时间"
   },
   {
     "market": "US",
@@ -3866,8 +3866,8 @@
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$3.74",
       "noOfEsts": "5",
-      "lastYearRptDt": "10/31/2025",
-      "lastYearEPS": "$1.86"
+      "lastYearRptDt": "未提供",
+      "lastYearEPS": "未提供"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
@@ -3920,8 +3920,8 @@
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$4.78",
       "noOfEsts": "7",
-      "lastYearRptDt": "10/31/2025",
-      "lastYearEPS": "$1.85"
+      "lastYearRptDt": "未提供",
+      "lastYearEPS": "未提供"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
