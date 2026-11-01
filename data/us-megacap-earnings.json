@@ -3661,8 +3661,8 @@
     "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-29 01:55:53 北京时间",
-    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-31 18:00:30 北京时间"
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
+    "stageBFetchCheckedAt": "2026-11-01 18:00:23 北京时间"
   },
   {
     "market": "US",
@@ -3718,7 +3718,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-22 00:09:29 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-31 18:00:30 北京时间"
+    "stageBFetchCheckedAt": "2026-11-01 18:00:24 北京时间"
   },
   {
     "market": "US",
@@ -3774,7 +3774,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-10-02 00:50:41 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-31 18:00:31 北京时间"
+    "stageBFetchCheckedAt": "2026-11-01 18:00:24 北京时间"
   },
   {
     "market": "US",
@@ -3830,7 +3830,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-09-30 00:18:16 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
-    "stageBFetchCheckedAt": "2026-10-31 18:00:32 北京时间"
+    "stageBFetchCheckedAt": "2026-11-01 18:00:25 北京时间"
   },
   {
     "market": "US",
@@ -3884,7 +3884,9 @@
     ],
     "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-09-30 00:18:16 北京时间"
+    "lastFetchedAt": "2026-09-30 00:18:16 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
+    "stageBFetchCheckedAt": "2026-11-01 18:00:26 北京时间"
   },
   {
     "market": "US",
@@ -3938,7 +3940,9 @@
     ],
     "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-09-30 00:18:16 北京时间"
+    "lastFetchedAt": "2026-09-30 00:18:16 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 0 个候选页面",
+    "stageBFetchCheckedAt": "2026-11-01 18:00:27 北京时间"
   },
   {
     "market": "US",
