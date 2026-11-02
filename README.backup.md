@@ -195,6 +195,22 @@ npm run generate
 
 ## 更新日志
 
+### 2026-10-31 13:11 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/41171546869
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：299
+- 文件变化统计：1 file changed, 9 insertions(+), 9 deletions(-)
+- 变化文件：
+  - 修改：`data/us-megacap-earnings.json`
+- 最近未来事件：
+  - 2026-11-02 23:00：🟠 [美股] ISM 制造业 PMI：2026年10月
+  - 2026-11-03 08:00：📊 [美股] 帕兰提尔（Palantir Technologies，PLTR）财报发布：2026年9月
+  - 2026-11-03 08:00：📊 [美股] 苹果（Apple，AAPL）财报发布：2026年9月
+  - 2026-11-03 23:00：🟠 [美股] JOLTS 职位空缺：2026年9月
+  - 2026-11-04 08:00：📊 [美股] AMD（AMD，AMD）财报发布：2026年9月
+
 ### 2026-10-31 00:28 自动更新记录
 
 - 触发来源：schedule
