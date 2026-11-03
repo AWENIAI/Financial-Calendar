@@ -3966,8 +3966,8 @@
     "fiscalQuarter": "2026年9月",
     "consensusEps": "$0.32",
     "analystCount": "10",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-after-hours",
       "timeLabel": "美股盘后",
@@ -3978,8 +3978,8 @@
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$0.32",
       "noOfEsts": "10",
-      "lastYearRptDt": "11/03/2025",
-      "lastYearEPS": "$0.18"
+      "lastYearRptDt": "未提供",
+      "lastYearEPS": "未提供"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
@@ -3994,9 +3994,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-10-03 00:03:32 北京时间"
+    "lastFetchedAt": "2026-10-03 00:03:32 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
+    "stageBFetchCheckedAt": "2026-11-03 18:00:28 北京时间"
   },
   {
     "market": "US",
@@ -4020,8 +4022,8 @@
     "fiscalQuarter": "2026年9月",
     "consensusEps": "$1.98",
     "analystCount": "7",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-after-hours",
       "timeLabel": "美股盘后",
@@ -4032,8 +4034,8 @@
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$1.98",
       "noOfEsts": "7",
-      "lastYearRptDt": "10/30/2025",
-      "lastYearEPS": "$1.85"
+      "lastYearRptDt": "未提供",
+      "lastYearEPS": "未提供"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
@@ -4048,9 +4050,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-09-29 01:55:53 北京时间"
+    "lastFetchedAt": "2026-09-29 01:55:53 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
+    "stageBFetchCheckedAt": "2026-11-03 18:00:35 北京时间"
   },
   {
     "market": "US",
