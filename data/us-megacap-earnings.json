@@ -3998,7 +3998,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-10-03 00:03:32 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-11-05 01:47:36 北京时间"
+    "stageBFetchCheckedAt": "2026-11-05 18:00:42 北京时间"
   },
   {
     "market": "US",
@@ -4261,7 +4261,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "BRK.B",
       "companyName": "Berkshire Hathaway Inc.",
-      "marketCap": "$1,198,913,880,000",
+      "marketCap": "$1,201,505,700,000",
       "fiscalQuarterEnding": "Sep/2026",
       "fiscalQuarterEndingLabel": "2026年9月",
       "epsForecast": "$5.91",
