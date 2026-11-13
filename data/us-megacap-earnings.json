@@ -2134,11 +2134,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "已归档：阶段B分析已生成",
-    "analysisLocked": true,
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
+    "analysisLocked": false,
     "lastFetchedAt": "2026-08-01 07:58:07 北京时间",
-    "stageBFetchStatus": "已自动抓取官方财报正文并生成阶段B复盘",
-    "stageBFetchCheckedAt": "2026-08-15 09:40:24 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
+    "stageBFetchCheckedAt": "2026-11-13 14:14:25 北京时间",
     "reportedFinancials": {
       "sourceName": "公司官方财报新闻稿 / 投资者关系页面",
       "sourceUrl": "https://247wallst.com/companies/amat/earnings/",
