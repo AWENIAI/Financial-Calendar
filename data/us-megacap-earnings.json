@@ -2138,7 +2138,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-08-01 07:58:07 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-11-13 14:14:25 北京时间",
+    "stageBFetchCheckedAt": "2026-11-13 18:00:22 北京时间",
     "reportedFinancials": {
       "sourceName": "公司官方财报新闻稿 / 投资者关系页面",
       "sourceUrl": "https://247wallst.com/companies/amat/earnings/",
@@ -4370,8 +4370,8 @@
     "fiscalQuarter": "2026年10月",
     "consensusEps": "$4.06",
     "analystCount": "10",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-after-hours",
       "timeLabel": "美股盘后",
@@ -4382,8 +4382,8 @@
       "fiscalQuarterEndingLabel": "2026年10月",
       "epsForecast": "$4.06",
       "noOfEsts": "10",
-      "lastYearRptDt": "11/13/2025",
-      "lastYearEPS": "$2.17"
+      "lastYearRptDt": "未提供",
+      "lastYearEPS": "未提供"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
@@ -4398,7 +4398,7 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
     "lastFetchedAt": "2026-10-14 01:18:32 北京时间"
   },
@@ -4424,8 +4424,8 @@
     "fiscalQuarter": "2026年10月",
     "consensusEps": "$1.15",
     "analystCount": "8",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-after-hours",
       "timeLabel": "美股盘后",
@@ -4436,8 +4436,8 @@
       "fiscalQuarterEndingLabel": "2026年10月",
       "epsForecast": "$1.15",
       "noOfEsts": "8",
-      "lastYearRptDt": "11/12/2025",
-      "lastYearEPS": "$0.81"
+      "lastYearRptDt": "未提供",
+      "lastYearEPS": "未提供"
     },
     "timeStatus": "confirmed",
     "sourceName": "纳斯达克财报日历",
@@ -4452,9 +4452,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-10-12 18:00:05 北京时间"
+    "lastFetchedAt": "2026-10-12 18:00:05 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
+    "stageBFetchCheckedAt": "2026-11-13 18:00:27 北京时间"
   },
   {
     "market": "US",
