@@ -195,6 +195,24 @@ npm run generate
 
 ## 更新日志
 
+### 2026-11-14 01:28 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/43473089991
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：312
+- 文件变化统计：3 files changed, 14 insertions(+), 14 deletions(-)
+- 变化文件：
+  - 修改：`data/cffex-position-watch.json`
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-11-17 21:30：🟠 [美股] 零售销售：2026年10月
+  - 2026-11-18 08:00：📊 [美股] 英伟达（NVIDIA，NVDA）财报发布：2026年10月
+  - 2026-11-18 08:00：🟠 [美股] VIX 期权到期日：11月标准到期
+  - 2026-11-19 08:00：🟠 [美股] FOMC 会议纪要发布：10月会议纪要
+  - 2026-11-19 08:00：📊 [美股] 沃尔玛（Walmart，WMT）财报发布：2026年10月
+
 ### 2026-11-13 14:14 自动更新记录
 
 - 触发来源：schedule
