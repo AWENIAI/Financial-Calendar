@@ -2138,7 +2138,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-08-01 07:58:07 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-11-14 01:28:43 北京时间",
+    "stageBFetchCheckedAt": "2026-11-14 13:57:43 北京时间",
     "reportedFinancials": {
       "sourceName": "公司官方财报新闻稿 / 投资者关系页面",
       "sourceUrl": "https://247wallst.com/companies/amat/earnings/",
@@ -4456,7 +4456,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-10-12 18:00:05 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-11-14 01:28:46 北京时间"
+    "stageBFetchCheckedAt": "2026-11-14 13:57:46 北京时间"
   },
   {
     "market": "US",
