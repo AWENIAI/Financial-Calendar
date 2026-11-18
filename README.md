@@ -195,6 +195,24 @@ npm run generate
 
 ## 更新日志
 
+### 2026-11-19 02:36 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/44371392535
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：316
+- 文件变化统计：3 files changed, 25 insertions(+), 25 deletions(-)
+- 变化文件：
+  - 修改：`data/cffex-position-watch.json`
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-11-19 08:00：🟠 [美股] FOMC 会议纪要发布：10月会议纪要
+  - 2026-11-19 08:00：📊 [美股] 沃尔玛（Walmart，WMT）财报发布：2026年10月
+  - 2026-11-19 21:30：🟠 [美股] 初请失业金人数：2026-11-19 当周
+  - 2026-11-20 08:00：🟠 [美股] 指数期权 AM-settled 最后交易日提醒：11月 AM-settled 指数期权
+  - 2026-11-20 08:00：🟠 [A股] 股指期货/期权月度交割日提醒：11月
+
 ### 2026-11-18 02:55 自动更新记录
 
 - 触发来源：schedule
