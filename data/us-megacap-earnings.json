@@ -2138,7 +2138,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-08-01 07:58:07 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-11-19 18:00:27 北京时间",
+    "stageBFetchCheckedAt": "2026-11-20 02:47:12 北京时间",
     "reportedFinancials": {
       "sourceName": "公司官方财报新闻稿 / 投资者关系页面",
       "sourceUrl": "https://247wallst.com/companies/amat/earnings/",
@@ -4512,7 +4512,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-10-19 18:00:06 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-11-19 18:00:32 北京时间"
+    "stageBFetchCheckedAt": "2026-11-20 02:47:15 北京时间"
   },
   {
     "market": "US",
@@ -4536,14 +4536,14 @@
     "fiscalQuarter": "2026年10月",
     "consensusEps": "$0.64",
     "analystCount": "13",
-    "analysisPhase": "A",
-    "analysisPhaseLabel": "阶段A：财报发布前",
+    "analysisPhase": "B",
+    "analysisPhaseLabel": "阶段B：财报发布后",
     "nasdaqCalendarFields": {
       "time": "time-pre-market",
       "timeLabel": "美股盘前",
       "symbol": "WMT",
       "companyName": "Walmart Inc.",
-      "marketCap": "$1,011,711,340,000",
+      "marketCap": "$1,010,441,910,000",
       "fiscalQuarterEnding": "Oct/2026",
       "fiscalQuarterEndingLabel": "2026年10月",
       "epsForecast": "$0.64",
@@ -4564,9 +4564,11 @@
       "是否需要提前降低仓位",
       "是否关注财报后指引"
     ],
-    "recordStatus": "跟踪中：阶段A财报发布前",
+    "recordStatus": "待补充：阶段B财报正文与复盘分析",
     "analysisLocked": false,
-    "lastFetchedAt": "2026-10-20 00:46:13 北京时间"
+    "lastFetchedAt": "2026-10-20 00:46:13 北京时间",
+    "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
+    "stageBFetchCheckedAt": "2026-11-20 02:47:17 北京时间"
   },
   {
     "market": "US",
@@ -4597,7 +4599,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "ORCL",
       "companyName": "Oracle Corporation",
-      "marketCap": "$347,729,625,000",
+      "marketCap": "$344,373,297,000",
       "fiscalQuarterEnding": "Nov/2026",
       "fiscalQuarterEndingLabel": "2026年11月",
       "epsForecast": "$1.56",
@@ -4651,7 +4653,7 @@
       "timeLabel": "美股盘后",
       "symbol": "AVGO",
       "companyName": "Broadcom Inc.",
-      "marketCap": "$1,630,671,990,000",
+      "marketCap": "$1,690,103,710,000",
       "fiscalQuarterEnding": "Oct/2026",
       "fiscalQuarterEndingLabel": "2026年10月",
       "epsForecast": "$3.45",
@@ -4705,7 +4707,7 @@
       "timeLabel": "美股盘后",
       "symbol": "COST",
       "companyName": "Costco Wholesale Corporation",
-      "marketCap": "$491,909,022,000",
+      "marketCap": "$485,944,492,000",
       "fiscalQuarterEnding": "Nov/2026",
       "fiscalQuarterEndingLabel": "2026年11月",
       "epsForecast": "$4.89",
@@ -4759,7 +4761,7 @@
       "timeLabel": "未提供具体时间",
       "symbol": "MU",
       "companyName": "Micron Technology, Inc.",
-      "marketCap": "$806,048,500,000",
+      "marketCap": "$797,958,860,000",
       "fiscalQuarterEnding": "Nov/2026",
       "fiscalQuarterEndingLabel": "2026年11月",
       "epsForecast": "$37.95",
