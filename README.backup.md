@@ -195,6 +195,24 @@ npm run generate
 
 ## 更新日志
 
+### 2026-11-20 02:47 自动更新记录
+
+- 触发来源：schedule
+- Action 记录：https://github.com/AWENIAI/Financial-Calendar/actions/runs/44591372655
+- 订阅文件：`public/calendar/GLOBAL_KEY.ics`
+- 当前事件数：317
+- 文件变化统计：3 files changed, 20 insertions(+), 18 deletions(-)
+- 变化文件：
+  - 修改：`data/cffex-position-watch.json`
+  - 修改：`data/us-megacap-earnings.json`
+  - 修改：`public/calendar/GLOBAL_KEY.ics`
+- 最近未来事件：
+  - 2026-11-20 08:00：🟠 [美股] 指数期权 AM-settled 最后交易日提醒：11月 AM-settled 指数期权
+  - 2026-11-20 08:00：🟠 [A股] 股指期货/期权月度交割日提醒：11月
+  - 2026-11-21 08:00：🟠 [美股] 月度期权到期日：OPEX 风险窗口（11月月度期权）
+  - 2026-11-23 22:45：🟠 [美股] 标普全球 PMI 初值：2026年11月
+  - 2026-11-25 21:30：🔴 [美股] PCE 发布：2026年10月个人消费支出物价
+
 ### 2026-11-19 02:36 自动更新记录
 
 - 触发来源：schedule
