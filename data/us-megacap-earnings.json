@@ -2138,7 +2138,7 @@
     "analysisLocked": false,
     "lastFetchedAt": "2026-08-01 07:58:07 北京时间",
     "stageBFetchStatus": "未找到可验证的官方财报正文；已搜索 6 个候选页面",
-    "stageBFetchCheckedAt": "2026-11-21 14:47:53 北京时间",
+    "stageBFetchCheckedAt": "2026-11-21 18:00:28 北京时间",
     "reportedFinancials": {
       "sourceName": "公司官方财报新闻稿 / 投资者关系页面",
       "sourceUrl": "https://247wallst.com/companies/amat/earnings/",
@@ -4713,7 +4713,7 @@
       "timeLabel": "美股盘后",
       "symbol": "COST",
       "companyName": "Costco Wholesale Corporation",
-      "marketCap": "$485,944,492,000",
+      "marketCap": "$484,708,188,000",
       "fiscalQuarterEnding": "Nov/2026",
       "fiscalQuarterEndingLabel": "2026年11月",
       "epsForecast": "$4.89",
